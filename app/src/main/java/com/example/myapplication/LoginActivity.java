@@ -23,8 +23,8 @@ public class LoginActivity extends AppCompatActivity {
 
 
     TextView btnlogin;
-    TextView dontHaveAnAccount;
-//dsda
+    TextView createNewAccount;
+
     EditText inputEmail, inputPassword;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     ProgressDialog progressDialog;
@@ -39,14 +39,14 @@ public class LoginActivity extends AppCompatActivity {
 
 
         btnlogin = findViewById(R.id.login);
-        dontHaveAnAccount = findViewById(R.id.register);
+        createNewAccount = findViewById(R.id.register);
         inputEmail = findViewById(R.id.editText);
         inputPassword = findViewById(R.id.editText2);
         progressDialog = new ProgressDialog(this);
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
 
-        dontHaveAnAccount.setOnClickListener(new View.OnClickListener() {
+        createNewAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
