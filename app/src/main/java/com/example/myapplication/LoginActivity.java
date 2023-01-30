@@ -24,7 +24,7 @@ public class LoginActivity extends AppCompatActivity {
 
     TextView btnlogin;
     TextView dontHaveAnAccount;
-
+//dsda
     EditText inputEmail, inputPassword;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     ProgressDialog progressDialog;
