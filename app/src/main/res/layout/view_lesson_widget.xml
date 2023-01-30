@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lessonMainWidget"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/button_background"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="16dp"
+    >
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_weight="9"
+        >
+
+        <TextView
+            android:textColor="@color/black"
+            android:id="@+id/informationMainWidget"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:text=""
+            android:textSize="18sp"
+            tools:ignore="RtlSymmetry" />
+
+
+
+    </LinearLayout>
+
+
+
+    <Button
+        android:background="@drawable/background_style_round"
+        android:id="@+id/goToActivityButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:drawableEnd="@drawable/ic_baseline_play_arrow_24"
+        android:drawableTint="@color/white"
+        android:padding="5dp"
+        android:layout_margin="5dp"
+        android:layout_gravity="center_vertical"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+</LinearLayout>
