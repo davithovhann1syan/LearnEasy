@@ -6,4 +6,24 @@
     <string name="password">Password</string>
     <string name="email_address">Email address</string>
     <string name="welcome">Welcome</string>
+    <string name="translate">Translate</string>
+    <string name="test">Test</string>
+    <string name="go_back">Go back</string>
+    <string name="vocabulary">Vocabulary</string>
+    <string name="grammar">Grammar</string>
+    <string name="select">Select</string>
+    <string name="welcome_to_english_learning_application_we_are_excited_to_help_you_learn">Welcome to English learning application, we are excited to help you learn</string>
+    <string name="next">Next</string>
+    <string name="enter_text_to_translate">Enter text to translate</string>
+    <string name="select_your_preferred_study_option">select your preferred study option</string>
+
+
+    <string-array name="languages">
+        <item>English</item>
+        <item>Spanish</item>
+        <item>German</item>
+        <item>French</item>
+        <item>Italian</item>
+    </string-array>
+
 </resources>

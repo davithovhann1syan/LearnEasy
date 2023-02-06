@@ -15,6 +15,8 @@ public class StudyOptionsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_study_options);
         TextView grammar = findViewById(R.id.grammar);
         TextView back = findViewById(R.id.back);
+        TextView translate = findViewById(R.id.Translate);
+
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,6 +28,14 @@ public class StudyOptionsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),GrammarActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        translate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), TranslateActivity.class);
                 startActivity(intent);
             }
         });

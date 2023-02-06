@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,15 +13,16 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Select"
+        android:text="@string/select_your_preferred_study_option"
         android:textSize="25sp"
+        android:gravity="center"
         android:textColor="@color/black"/>
 
     <TextView
         android:id="@+id/grammar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Grammar"
+        android:text="@string/grammar"
         android:textSize="25sp"
         android:textColor="@color/black"
         android:background="@drawable/button_background"
@@ -31,7 +33,7 @@
         android:id="@+id/vocabulary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Vocabulary"
+        android:text="@string/vocabulary"
         android:textSize="25sp"
         android:textColor="@color/black"
         android:background="@drawable/button_background"
@@ -39,10 +41,10 @@
         android:paddingHorizontal="25dp"
         android:layout_marginVertical="20dp"/>
     <TextView
-        android:id="@+id/Quiz"
+        android:id="@+id/Translate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Quiz"
+        android:text="@string/translate"
         android:textSize="25sp"
         android:textColor="@color/black"
         android:background="@drawable/button_background"
@@ -53,23 +55,23 @@
         android:id="@+id/Test"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Test"
+        android:text="@string/test"
         android:textSize="25sp"
         android:textColor="@color/black"
         android:background="@drawable/button_background"
         android:paddingVertical="15dp"
         android:paddingHorizontal="25dp"
         android:layout_marginVertical="20dp"/>
+
     <TextView
         android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Go back"
-        android:textColor="@color/black"
-        android:paddingVertical="10dp"
-        android:paddingHorizontal="15dp"
         android:background="@drawable/button_background"
-        android:textSize="15sp"
-        />
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="10dp"
+        android:text="@string/go_back"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
 
 </LinearLayout>
