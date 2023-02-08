@@ -32,29 +32,18 @@
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/go_to_login_page"
+        android:id="@+id/logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:background="@drawable/button_background"
         android:paddingHorizontal="15dp"
         android:paddingVertical="10dp"
-        android:text="@string/login"
+        android:text="@string/logout"
         android:textColor="@color/black"
         android:layout_marginBottom="30dp"
         android:textSize="20sp"
-        android:margin="20dp"/>
+        />
 
-    <TextView
-        android:id="@+id/go_to_register_page"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:background="@drawable/button_background"
-        android:paddingHorizontal="15dp"
-        android:paddingVertical="10dp"
-        android:text="@string/register"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
 
 </LinearLayout>

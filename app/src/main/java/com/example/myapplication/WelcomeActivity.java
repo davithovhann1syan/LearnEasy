@@ -8,9 +8,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class WelcomeActivity extends AppCompatActivity {
 
-    TextView next, login, register;
+    TextView next, logout;
 
 
     @SuppressLint("MissingInflatedId")
@@ -19,8 +21,7 @@ public class WelcomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
         next = findViewById(R.id.nextPage);
-        register = findViewById(R.id.go_to_register_page);
-        login = findViewById(R.id.go_to_login_page);
+        logout = findViewById(R.id.logout);
 
 
         next.setOnClickListener(new View.OnClickListener() {
@@ -31,20 +32,15 @@ public class WelcomeActivity extends AppCompatActivity {
             }
         });
 
-        login.setOnClickListener(new View.OnClickListener() {
+        logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                FirebaseAuth mAuth = FirebaseAuth.getInstance();
+                mAuth.signOut();
                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                finish();
             }
         });
-
-        register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
-            }
-        });
-
 
 
     }

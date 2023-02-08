@@ -46,6 +46,11 @@ public class LoginActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
 
+
+        if (mUser != null){
+            startActivity( new Intent(getApplicationContext(), WelcomeActivity.class));
+        }
+
         createNewAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
