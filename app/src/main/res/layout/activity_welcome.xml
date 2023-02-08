@@ -9,26 +9,52 @@
     tools:context=".WelcomeActivity">
 
     <TextView
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginHorizontal="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="25sp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/welcome_to_english_learning_application_we_are_excited_to_help_you_learn"
         android:textColor="@color/black"
-        android:text="@string/welcome_to_english_learning_application_we_are_excited_to_help_you_learn"/>
+        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/nextPage"
-        android:layout_marginHorizontal="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/button_background"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="10dp"
+        android:layout_marginBottom="30dp"
         android:text="@string/next"
         android:textColor="@color/black"
-        android:paddingVertical="10dp"
-        android:paddingHorizontal="15dp"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/go_to_login_page"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
         android:background="@drawable/button_background"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="10dp"
+        android:text="@string/login"
+        android:textColor="@color/black"
+        android:layout_marginBottom="30dp"
         android:textSize="20sp"
-        />
+        android:margin="20dp"/>
+
+    <TextView
+        android:id="@+id/go_to_register_page"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/button_background"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="10dp"
+        android:text="@string/register"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
 
 </LinearLayout>
