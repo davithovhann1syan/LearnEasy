@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import java.lang.invoke.VolatileCallSite;
+
 public class StudyOptionsActivity extends AppCompatActivity {
 
     @Override
@@ -15,6 +17,8 @@ public class StudyOptionsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_study_options);
         TextView grammar = findViewById(R.id.grammar);
         TextView back = findViewById(R.id.back);
+        TextView grammarTest = findViewById(R.id.grammar_test);
+        TextView vocabularyTest = findViewById(R.id.vocabulary_test);
         TextView translate = findViewById(R.id.Translate);
 
 
@@ -39,5 +43,23 @@ public class StudyOptionsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        grammarTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), GrammarTestActvity.class);
+                startActivity(intent);
+
+            }
+        });
+
+        vocabularyTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), VocabularyTestActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
