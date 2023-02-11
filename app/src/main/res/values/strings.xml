@@ -21,6 +21,9 @@
     <string name="test_vocabulary_knowledge">Test vocabulary knowledge</string>
     <string name="translator">Translator</string>
     <string name="vocabulary_test">Vocabulary Test</string>
+    <string name="enter_text">Enter Text</string>
+    <string name="translated_text">Translated Text Here</string>
+    <string name="say_something_to_translate">Say something to translate</string>
 
 
     <string-array name="languages">

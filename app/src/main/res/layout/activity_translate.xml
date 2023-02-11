@@ -1,111 +1,168 @@
-<?xml version = "1.0" encoding = "utf-8"?>
-    <RelativeLayout
-        xmlns:android = "http://schemas.android.com/apk/res/android"
-        xmlns:tools = "http://schemas.android.com/tools" android:layout_width="match_parent"
-        android:layout_height = "match_parent" android:paddingLeft= "20dp"
-        android:paddingRight = "20dp"
-        android:paddingTop = "20dp"
-        android:paddingBottom = "20dp"
-        tools:context = ".GrammarActivity">
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/off_white">
 
-        <TextView android:text = "@string/translate"
-            android:layout_width="wrap_content"
-            android:layout_height = "wrap_content"
-            android:id = "@+id/textview"
-            android:textSize = "35sp"
-            android:layout_alignParentTop = "true"
-            android:layout_centerHorizontal = "true" />
-
-        <ImageView
-            android:id="@+id/image"
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
-            android:layout_height="182dp"
-            android:padding="25dp"
-            android:paddingTop="25dp"
-            android:scaleType="center"
-            android:src="@drawable/translate_logo" />
-
-        <EditText
-            android:layout_width = "wrap_content"
-            android:layout_height = "wrap_content"
-            android:id = "@+id/editText"
-            android:hint = "select language"
-            android:focusable = "true"
-            android:background="@drawable/button_background"
-            android:textColorHighlight = "@color/black"
-            android:textColorHint = "@color/black"
-            android:layout_marginTop = "46dp"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="5dp"
-            android:layout_marginBottom="10dp"
-            android:layout_below = "@+id/image"
-            android:layout_alignParentStart = "true"
-            android:layout_alignParentEnd = "true" />
-
-
-
-        <EditText
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:background="@drawable/button_background"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="5dp"
-            android:layout_marginTop="10dp"
-            android:ems="10"
-            android:id="@+id/editText2"
-            android:layout_below="@+id/editText"
-            android:layout_alignParentStart="true"
-            android:layout_alignEnd="@+id/editText"
-            android:textColorHint="@color/black"
-            android:hint="@string/enter_text_to_translate" />
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/app_logo"
+                android:layout_gravity="center"
+                android:layout_marginEnd="4dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/translator"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginStart="4dp"
+                android:textSize="23sp"
+                android:layout_gravity="center"/>
 
 
-        <EditText
-            android:id="@+id/editText3"
-            android:layout_width="wrap_content"
+        </LinearLayout>
+
+        
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="40dp"
+            android:weightSum="3"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/background"
+            android:elevation="4dp">
+            
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/idFromSpinner"
+                android:layout_margin="3dp"
+                android:padding="3dp"
+                android:layout_gravity="center"
+                />
+            
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/applepic"
+                android:layout_gravity="center"
+                />
+
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/idToSpinner"
+                android:layout_margin="3dp"
+                android:padding="3dp"
+                android:layout_gravity="center"
+                />
+
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:padding="5dp"
+            app:hintEnabled="false"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            app:boxBackgroundMode="none"
+            android:elevation="8dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/idEditSource"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/background"
+                android:ems="10"
+                android:gravity="top"
+                android:hint="@string/enter_text"
+                android:importantForAutofill="no"
+                android:inputType="textMultiLine|textImeMultiLine"
+                android:textColor="@color/black"
+                android:textSize="19sp"
+                android:textColorHighlight="@color/color_secondary"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+        
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/editText"
-            android:layout_alignEnd="@+id/editText"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="22dp"
-            android:layout_marginTop="65dp"
-            android:layout_marginEnd="-2dp"
-            android:background="@drawable/button_background"
-            android:ems="10"
-            android:hint="This is your translation"
-            android:inputType="textPassword"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="5dp"
-            android:textColorHint="@color/black" />
+            android:layout_margin="20dp"
+            android:id="@+id/idBtnTranslation"
+            android:text="@string/translate"
+            android:textSize="19sp"
+            android:textAllCaps="false" />
 
         <TextView
-            android:layout_width="100dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/go_back"
-            android:id="@+id/back"
+            android:id="@+id/idTranslatedTV"
+            android:text="@string/translated_text"
+            android:background="@drawable/background"
+            android:elevation="3dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_gravity="center"
             android:textAlignment="center"
-            android:background="@drawable/button_background"
-            android:layout_alignParentBottom="true"
-            android:paddingVertical="8dp"
-            android:paddingHorizontal="12dp"
-            android:textColor="@color/black"
-            android:layout_toStartOf="@+id/textview" />
+            android:padding="16sp"
+            android:textSize="16sp"
+            android:textColor="@color/color_primary"
+            android:letterSpacing="0.03"
+            android:visibility="gone"/>
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Or"
+            android:textSize="16sp"
+            android:textColor="@color/color_primary_dark"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"/>
+        
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/voice"
+            android:padding="4dp"
+            android:id="@+id/idIVMic"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/say_something_to_translate"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"/>
 
-    <TextView
-        android:id="@+id/translate_bttn"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="-129dp"
-        android:layout_marginBottom="248dp"
-        android:layout_toEndOf="@+id/textview"
-        android:background="@drawable/button_background"
-        android:paddingHorizontal="12dp"
-        android:paddingVertical="8dp"
-        android:text="@string/translate"
-        android:textAlignment="center"
-        android:textColor="@color/black" />
 
-</RelativeLayout>
+    </LinearLayout>
 
+</ScrollView>
