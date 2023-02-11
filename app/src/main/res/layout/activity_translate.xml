@@ -65,7 +65,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:src="@drawable/applepic"
+                android:src="@drawable/switch_logo"
                 android:layout_gravity="center"
                 />
 
