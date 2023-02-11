@@ -33,12 +33,11 @@ public class TranslateActivity extends AppCompatActivity {
 
     private Spinner fromSpinner, toSpinner;
     private TextInputEditText sourceText;
-    private ImageView micIV;
     private MaterialButton translateBtn;
-    private TextView translateTV;
+    private TextView translateTV, goBack;
+
 
     String[] fromLanguage = {"From", "English", "France", "Belarusian", "Russian", "Ukrainian", "Czech" , "Arabic", "Hindi"};
-
 
     String[] toLanguage = {"To", "English", "France", "Belarusian", "Russian", "Ukrainian", "Czech" , "Arabic", "Hindi"};
 
@@ -53,9 +52,17 @@ public class TranslateActivity extends AppCompatActivity {
         fromSpinner = findViewById(R.id.idFromSpinner);
         toSpinner = findViewById(R.id.idToSpinner);
         sourceText = findViewById(R.id.idEditSource);
-        micIV = findViewById(R.id.idIVMic);
         translateBtn = findViewById(R.id.idBtnTranslation);
         translateTV = findViewById(R.id.idTranslatedTV);
+        goBack = findViewById(R.id.back);
+
+
+        goBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         fromSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -89,23 +96,6 @@ public class TranslateActivity extends AppCompatActivity {
         toAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         toSpinner.setAdapter(toAdapter);
 
-        micIV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
-                intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
-                intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
-                intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Say something to translate");
-                try {
-                    startActivityForResult(intent, REQUEST_PERMISSION_CODE);
-                }catch (Exception e){
-                    e.printStackTrace();
-                    Toast.makeText(TranslateActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-        ///home/davit/StudioProjects/EnglishLearningApp/app/src/main/res/drawable
-        ///home/davit/StudioProjects/EnglishLearningApp/app/src/main/res/drawable-v24
 
         translateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -160,15 +150,6 @@ public class TranslateActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQUEST_PERMISSION_CODE){
-            ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-            sourceText.setText(result.get(0));
-        }
-    }
-
     //String[] fromLanguage = {"From", "English", "France", "Belarusian", "Russian", "Ukrainian", "Czech" , "Arabic", "Indian"};
     private int getLanguageCode(String language) {
         int languageCode = 0;
@@ -199,5 +180,8 @@ public class TranslateActivity extends AppCompatActivity {
                 languageCode = 0;
         }
         return languageCode;
+
+
     }
+
 }

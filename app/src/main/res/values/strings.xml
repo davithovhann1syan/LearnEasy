@@ -24,6 +24,8 @@
     <string name="enter_text">Enter Text</string>
     <string name="translated_text">Translated Text Here</string>
     <string name="say_something_to_translate">Say something to translate</string>
+    <string name="present_simple_text_example">Simple present tense conveys action in the present. It is applied to show a habitual action or general truth. Predominantly, we use the present tense to describe an action occurring in the present time.\n \nFor instance,\n \nI cook every day.\n" +
+                "The sun rises in the east.</string>
 
 
     <string-array name="languages">

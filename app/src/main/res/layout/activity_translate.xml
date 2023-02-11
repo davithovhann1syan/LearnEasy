@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/off_white"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     
     <LinearLayout
@@ -127,6 +128,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
             android:layout_gravity="center"
             android:textAlignment="center"
             android:padding="16sp"
@@ -134,33 +136,20 @@
             android:textColor="@color/color_primary"
             android:letterSpacing="0.03"
             android:visibility="gone"/>
-        
+
+
         <TextView
+            android:id="@+id/back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Or"
-            android:textSize="16sp"
-            android:textColor="@color/color_primary_dark"
+            android:background="@drawable/background"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="10dp"
+            android:text="@string/go_back"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"/>
-        
-        <ImageView
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:src="@drawable/voice"
-            android:padding="4dp"
-            android:id="@+id/idIVMic"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/say_something_to_translate"
-            android:textSize="16sp"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:textAlignment="center"/>
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"/>
 
 
     </LinearLayout>
