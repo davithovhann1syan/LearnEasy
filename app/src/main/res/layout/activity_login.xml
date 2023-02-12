@@ -43,6 +43,7 @@
         android:paddingVertical="5dp"
         android:layout_marginBottom="10dp"
         android:layout_below = "@+id/imageView"
+        android:singleLine="true"
         android:layout_alignParentStart = "true"
         android:layout_alignParentEnd = "true" />
 
@@ -66,34 +67,39 @@
         android:layout_below="@+id/editText"
         android:layout_alignParentStart="true"
         android:layout_alignEnd="@+id/editText"
+        android:singleLine="true"
         android:textColorHint="@color/black"
         android:hint="@string/password" />
 
 
     <TextView
+        android:id="@+id/login"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="@string/login"
-        android:id="@+id/login"
-        android:textAlignment="center"
-        android:background="@drawable/button_background"
         android:layout_alignParentBottom="true"
-        android:paddingVertical="8dp"
+        android:layout_marginEnd="-97dp"
+        android:layout_marginBottom="352dp"
+        android:layout_toStartOf="@+id/textview"
+        android:background="@drawable/button_background"
         android:paddingHorizontal="12dp"
-        android:textColor="@color/black"
-        android:layout_toStartOf="@+id/textview" />
+        android:paddingVertical="8dp"
+        android:text="@string/login"
+        android:textAlignment="center"
+        android:textColor="@color/black" />
 
     <TextView
+        android:id="@+id/register"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="@string/register"
-        android:id="@+id/register"
-        android:textColor="@color/black"
-        android:textAlignment="center"
-        android:paddingVertical="8dp"
-        android:paddingHorizontal="12dp"
-        android:background="@drawable/button_background"
         android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/textview" />
+        android:layout_marginStart="-89dp"
+        android:layout_marginBottom="295dp"
+        android:layout_toEndOf="@+id/textview"
+        android:background="@drawable/button_background"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="8dp"
+        android:text="@string/register"
+        android:textAlignment="center"
+        android:textColor="@color/black" />
 
 </RelativeLayout>

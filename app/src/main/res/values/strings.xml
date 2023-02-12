@@ -12,7 +12,7 @@
     <string name="vocabulary">Vocabulary</string>
     <string name="grammar">Grammar</string>
     <string name="select">Select</string>
-    <string name="welcome_to_english_learning_application_we_are_excited_to_help_you_learn">Welcome to English learning application, we are excited to help you learn</string>
+    <string name="greeting">Welcome to <b>English Learning Application!</b> We are thrilled to have you here and embark on this journey of English language learning with you. Our application is designed to provide you with a comprehensive and interactive learning experience, making it easier and fun for you to master the English language.</string>
     <string name="next">Next</string>
     <string name="enter_text_to_translate">Enter text to translate</string>
     <string name="select_your_preferred_study_option">select your preferred study option</string>
@@ -23,10 +23,6 @@
     <string name="vocabulary_test">Vocabulary Test</string>
     <string name="enter_text">Enter Text</string>
     <string name="translated_text">Translated Text Here</string>
-    <string name="say_something_to_translate">Say something to translate</string>
-    <string name="present_simple_text_example">Simple present tense conveys action in the present. It is applied to show a habitual action or general truth. Predominantly, we use the present tense to describe an action occurring in the present time.\n \nFor instance,\n \nI cook every day.\n" +
-                "The sun rises in the east.</string>
-
 
     <string-array name="languages">
         <item>English</item>

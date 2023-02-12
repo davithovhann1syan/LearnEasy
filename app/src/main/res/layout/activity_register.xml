@@ -41,6 +41,7 @@
         android:paddingHorizontal="10dp"
         android:paddingVertical="5dp"
         android:layout_marginBottom="10dp"
+        android:singleLine="true"
         android:layout_below = "@+id/imageView"
         android:layout_alignParentStart = "true"
         android:layout_alignParentEnd = "true" />
@@ -64,6 +65,7 @@
         android:id="@+id/editText2"
         android:layout_below="@+id/editText"
         android:layout_alignParentStart="true"
+        android:singleLine="true"
         android:layout_alignEnd="@+id/editText"
         android:textColorHint="@color/black"
         android:hint="@string/password" />
@@ -81,6 +83,7 @@
         android:layout_marginTop="65dp"
         android:layout_marginEnd="-2dp"
         android:background="@drawable/button_background"
+        android:singleLine="true"
         android:ems="10"
         android:hint="@string/confirm_password"
         android:inputType="textPassword"
@@ -89,29 +92,18 @@
         android:textColorHint="@color/black" />
 
     <TextView
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:text="@string/login"
-        android:id="@+id/login"
-        android:textAlignment="center"
-        android:background="@drawable/button_background"
-        android:layout_alignParentBottom="true"
-        android:paddingVertical="8dp"
-        android:paddingHorizontal="12dp"
-        android:textColor="@color/black"
-        android:layout_toStartOf="@+id/textview" />
-
-    <TextView
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:text="@string/register"
         android:id="@+id/register"
-        android:textColor="@color/black"
-        android:textAlignment="center"
-        android:paddingVertical="8dp"
-        android:paddingHorizontal="12dp"
-        android:background="@drawable/button_background"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/textview" />
+        android:layout_marginStart="-112dp"
+        android:layout_marginBottom="307dp"
+        android:layout_toEndOf="@+id/textview"
+        android:background="@drawable/button_background"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="8dp"
+        android:text="@string/register"
+        android:textAlignment="center"
+        android:textColor="@color/black" />
 
 </RelativeLayout>
