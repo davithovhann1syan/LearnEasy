@@ -31,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     FirebaseUser mUser;
+    TextView btnGoogle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
         btnlogin = findViewById(R.id.login);
+        btnGoogle = findViewById(R.id.btnGoogle);
         createNewAccount = findViewById(R.id.register);
         inputEmail = findViewById(R.id.editText);
         inputPassword = findViewById(R.id.editText2);
@@ -65,6 +67,14 @@ public class LoginActivity extends AppCompatActivity {
                 performLogin();
             }
         });
+
+        /*btnGoogle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), GoogleSignInActivity.class);
+                startActivity(intent);
+            }
+        });*/
 
 
 
