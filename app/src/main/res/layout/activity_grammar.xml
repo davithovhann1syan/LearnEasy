@@ -101,7 +101,7 @@
                 android:id="@+id/back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Go back"
+                android:text="@string/go_back"
                 android:paddingVertical="10dp"
                 android:paddingHorizontal="15dp"
                 android:background="@drawable/button_background"
