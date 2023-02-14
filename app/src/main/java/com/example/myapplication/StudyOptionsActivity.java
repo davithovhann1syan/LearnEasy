@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import java.lang.invoke.VolatileCallSite;
-
 public class StudyOptionsActivity extends AppCompatActivity {
 
     @Override
@@ -47,7 +45,7 @@ public class StudyOptionsActivity extends AppCompatActivity {
         grammarTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), GrammarTestActvity.class);
+                Intent intent = new Intent(getApplicationContext(), GrammarTestActivity.class);
                 startActivity(intent);
 
             }
