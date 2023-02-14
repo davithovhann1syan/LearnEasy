@@ -26,7 +26,7 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_grammar_test_actvity);
+        setContentView(R.layout.activity_grammar_test_activity);
 
         totalQuestionsTextView = findViewById(R.id.total_questions);
         questionTextView = findViewById(R.id.question);
