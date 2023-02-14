@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="@color/off_white"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -40,7 +40,7 @@
 
         </LinearLayout>
 
-        
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_marginStart="20dp"
@@ -51,7 +51,7 @@
             android:layout_height="60dp"
             android:background="@drawable/background"
             android:elevation="4dp">
-            
+
             <Spinner
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -61,7 +61,7 @@
                 android:padding="3dp"
                 android:layout_gravity="center"
                 />
-            
+
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -108,7 +108,7 @@
                 android:textColorHighlight="@color/color_secondary"/>
 
         </com.google.android.material.textfield.TextInputLayout>
-        
+
         <com.google.android.material.button.MaterialButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -133,7 +133,7 @@
             android:textAlignment="center"
             android:padding="16sp"
             android:textSize="16sp"
-            android:textColor="@color/color_primary"
+            android:textColor="@color/black"
             android:letterSpacing="0.03"
             android:visibility="gone"/>
 

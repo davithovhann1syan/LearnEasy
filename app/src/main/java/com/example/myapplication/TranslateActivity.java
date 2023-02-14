@@ -28,6 +28,7 @@ import com.google.firebase.ml.naturallanguage.translate.FirebaseTranslatorOption
 
 import java.util.ArrayList;
 import java.util.Locale;
+import java.util.Objects;
 
 public class TranslateActivity extends AppCompatActivity {
 
@@ -102,7 +103,7 @@ public class TranslateActivity extends AppCompatActivity {
             public void onClick(View view) {
                 translateTV.setVisibility(View.VISIBLE);
                 translateTV.setText("");
-                if (sourceText.getText().toString().isEmpty()){
+                if (Objects.requireNonNull(sourceText.getText()).toString().isEmpty()){
                     Toast.makeText(TranslateActivity.this, "Please enter text to translate", Toast.LENGTH_SHORT).show();
                 } else if (fromLanguageCode == 0){
                     Toast.makeText(TranslateActivity.this, "Please select source language", Toast.LENGTH_SHORT).show();

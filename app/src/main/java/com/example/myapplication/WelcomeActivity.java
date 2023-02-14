@@ -38,7 +38,7 @@ public class WelcomeActivity extends AppCompatActivity {
                 FirebaseAuth mAuth = FirebaseAuth.getInstance();
                 mAuth.signOut();
                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                finish();
+                startActivity(intent);
             }
         });
 
