@@ -37,18 +37,9 @@ public class RegisterActivity extends AppCompatActivity {
         inputPassword = findViewById(R.id.editText2);
         inputConfirmPassword = findViewById(R.id.editText3);
         register = findViewById(R.id.register);
-        alreadyHaveAnAccount = findViewById(R.id.login);
         progressDialog = new ProgressDialog(this);
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
-
-        alreadyHaveAnAccount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(intent);
-            }
-        });
 
 
         register.setOnClickListener(new View.OnClickListener() {

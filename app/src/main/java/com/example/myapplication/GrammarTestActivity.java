@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 public class GrammarTestActivity extends AppCompatActivity implements View.OnClickListener{
 
-    TextView totalQuestionsTextView;
+    TextView totalQuestionsTextView, goBack;
     TextView questionTextView;
     Button ansA, ansB, ansC, ansD;
     Button submitBtn;
@@ -28,6 +28,7 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grammar_test_activity);
 
+        goBack = findViewById(R.id.back);
         totalQuestionsTextView = findViewById(R.id.total_questions);
         questionTextView = findViewById(R.id.question);
         ansA = findViewById(R.id.ans_A);
@@ -46,7 +47,12 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
 
         loadNewQuestion();
 
-
+        goBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
 
     }
