@@ -2,11 +2,14 @@ package com.example.myapplication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,6 +22,8 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class RegisterActivity extends AppCompatActivity {
 
+
+    private ConstraintLayout layout;
     TextView alreadyHaveAnAccount;
     TextView register;
     EditText inputEmail, inputPassword, inputConfirmPassword;
@@ -33,14 +38,19 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        inputEmail = findViewById(R.id.editText);
-        inputPassword = findViewById(R.id.editText2);
-        inputConfirmPassword = findViewById(R.id.editText3);
+        layout = findViewById(R.id.main_layout);
+        inputEmail = findViewById(R.id.inputEmailForRegistration);
+        inputPassword = findViewById(R.id.inputPasswordForRegistration);
+        inputConfirmPassword = findViewById(R.id.inputConfirmPasswordForRegistration);
         register = findViewById(R.id.register);
         progressDialog = new ProgressDialog(this);
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
 
+        layout.setOnClickListener(v->{
+            InputMethodManager inm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            inm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),0);
+        });
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override

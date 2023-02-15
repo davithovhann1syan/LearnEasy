@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
+    android:background="@drawable/background_welcome"
     tools:context=".WelcomeActivity">
 
     <TextView
@@ -15,7 +16,8 @@
         android:layout_marginTop="50dp"
         android:layout_marginBottom="20dp"
         android:text="@string/greeting"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
+        android:textAlignment="center"
         android:textSize="25sp" />
 
     <TextView
@@ -23,12 +25,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:background="@drawable/button_background"
+        android:background="@drawable/background"
         android:paddingHorizontal="15dp"
         android:paddingVertical="10dp"
         android:layout_marginBottom="30dp"
         android:text="@string/next"
-        android:textColor="@color/black"
+        android:textColor="@color/color_primary_dark"
         android:textSize="20sp" />
 
     <TextView
@@ -36,11 +38,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:background="@drawable/button_background"
+        android:background="@drawable/background"
         android:paddingHorizontal="15dp"
         android:paddingVertical="10dp"
         android:text="@string/logout"
-        android:textColor="@color/black"
+        android:textColor="@color/color_primary_dark"
         android:layout_marginBottom="30dp"
         android:textSize="20sp"
         />

@@ -2,14 +2,15 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/off_white"
+    android:background="@drawable/background_login_register"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/off_white">
+        android:background="@drawable/background_login_register"
+        android:id="@+id/main_layout">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -31,7 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/translator"
-                android:textColor="@color/black"
+                android:textColor="@color/color_primary_dark"
                 android:textStyle="bold"
                 android:layout_marginStart="4dp"
                 android:textSize="23sp"
@@ -103,7 +104,7 @@
                 android:hint="@string/enter_text"
                 android:importantForAutofill="no"
                 android:inputType="textMultiLine|textImeMultiLine"
-                android:textColor="@color/black"
+                android:textColor="@color/color_primary_dark"
                 android:textSize="19sp"
                 android:textColorHighlight="@color/color_secondary"/>
 
@@ -145,9 +146,10 @@
             android:background="@drawable/background"
             android:paddingHorizontal="15dp"
             android:paddingVertical="10dp"
+            android:textAlignment="center"
             android:text="@string/go_back"
             android:layout_gravity="center"
-            android:textColor="@color/black"
+            android:textColor="@color/color_primary_dark"
             android:textSize="15sp"
             android:layout_marginTop="10dp"/>
 

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LessonActivity">
+    tools:context=".LessonActivity"
+    android:background="@drawable/background_welcome">
 
 
     <TextView
@@ -12,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Heading"
-        android:textColor="@color/black"
+        android:textColor="@color/color_primary_dark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -25,7 +26,9 @@
         android:layout_height="wrap_content"
         android:text="Example"
         android:textSize="25sp"
-        android:textColor="@color/black"
+        android:textColor="@color/color_primary_dark"
+        android:textAlignment="center"
+        android:background="@drawable/background"
         app:layout_constraintBottom_toTopOf="@+id/backButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,7 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Back"
-        android:background="@drawable/button_background"
+        android:background="@drawable/background"
         android:paddingHorizontal="15dp"
         android:paddingVertical="10dp"
         android:textColor="@color/black"

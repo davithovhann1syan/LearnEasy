@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/off_white"
+    android:background="@drawable/background_welcome"
     android:padding="24dp"
-    tools:context=".VocabularyTestActivity">
+    tools:context=".GrammarTestActivity">
 
     <TextView
         android:layout_width="wrap_content"
@@ -28,7 +28,7 @@
         android:layout_marginBottom="20dp"
         android:text="This will be the question"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/off_white"
         android:textSize="24dp"
         android:textStyle="bold" />
 
@@ -47,7 +47,7 @@
             android:layout_margin="5dp"
             android:backgroundTint="@color/white"
             android:text="Ans A"
-            android:textColor="@color/black"/>
+            android:textColor="@color/color_primary_dark"/>
 
         <Button
             android:layout_width="match_parent"
@@ -56,7 +56,7 @@
             android:layout_margin="5dp"
             android:backgroundTint="@color/white"
             android:text="Ans B"
-            android:textColor="@color/black"/>
+            android:textColor="@color/color_primary_dark"/>
 
         <Button
             android:layout_width="match_parent"
@@ -65,7 +65,7 @@
             android:layout_margin="5dp"
             android:backgroundTint="@color/white"
             android:text="Ans C"
-            android:textColor="@color/black"/>
+            android:textColor="@color/color_primary_dark"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -73,7 +73,7 @@
             android:layout_margin="5dp"
             android:backgroundTint="@color/white"
             android:text="Ans D"
-            android:textColor="@color/black"/>
+            android:textColor="@color/color_primary_dark"/>
 
     </LinearLayout>
 
@@ -86,16 +86,21 @@
         android:layout_marginTop="40dp"
         android:background="@drawable/background" />
 
+
     <TextView
         android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="20dp"
-        android:textSize="20dp"
+        android:layout_marginBottom="70dp"
+        android:textSize="13dp"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="15dp"
+        android:textColor="@color/color_primary_dark"
         android:layout_centerHorizontal="true"
         android:background="@drawable/background"
         android:text="@string/go_back" />
+
 
 
 </RelativeLayout>

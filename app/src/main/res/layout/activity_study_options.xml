@@ -8,6 +8,7 @@
     android:orientation="vertical"
     android:padding="20dp"
     android:gravity="center"
+    android:background="@drawable/background_welcome"
     tools:context=".MainActivity">
 
     <TextView
@@ -16,7 +17,8 @@
         android:text="@string/select_your_preferred_study_option"
         android:textSize="25sp"
         android:gravity="center"
-        android:textColor="@color/black"/>
+        android:textStyle="bold"
+        android:textColor="@color/off_white"/>
 
     <TextView
         android:id="@+id/grammar"
@@ -24,8 +26,8 @@
         android:layout_height="wrap_content"
         android:text="@string/grammar"
         android:textSize="25sp"
-        android:textColor="@color/black"
-        android:background="@drawable/button_background"
+        android:textColor="@color/color_primary_dark"
+        android:background="@drawable/background"
         android:paddingVertical="15dp"
         android:paddingHorizontal="25dp"
         android:textAlignment="center"
@@ -34,10 +36,10 @@
         android:id="@+id/grammar_test"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Grammar Test"
+        android:text="@string/grammar_test"
         android:textSize="25sp"
-        android:textColor="@color/black"
-        android:background="@drawable/button_background"
+        android:textColor="@color/color_primary_dark"
+        android:background="@drawable/background"
         android:paddingVertical="15dp"
         android:paddingHorizontal="25dp"
         android:textAlignment="center"
@@ -48,8 +50,8 @@
         android:layout_height="wrap_content"
         android:text="@string/translator"
         android:textSize="25sp"
-        android:textColor="@color/black"
-        android:background="@drawable/button_background"
+        android:textColor="@color/color_primary_dark"
+        android:background="@drawable/background"
         android:paddingVertical="15dp"
         android:paddingHorizontal="25dp"
         android:textAlignment="center"
@@ -60,8 +62,8 @@
         android:layout_height="wrap_content"
         android:text="@string/vocabulary_test"
         android:textSize="25sp"
-        android:textColor="@color/black"
-        android:background="@drawable/button_background"
+        android:textColor="@color/color_primary_dark"
+        android:background="@drawable/background"
         android:paddingVertical="15dp"
         android:paddingHorizontal="25dp"
         android:textAlignment="center"
@@ -71,11 +73,11 @@
         android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_background"
+        android:background="@drawable/background"
         android:paddingHorizontal="15dp"
         android:paddingVertical="10dp"
         android:text="@string/go_back"
-        android:textColor="@color/black"
+        android:textColor="@color/color_primary_dark"
         android:textSize="15sp" />
 
 </LinearLayout>

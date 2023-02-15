@@ -4,13 +4,17 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,6 +40,7 @@ public class TranslateActivity extends AppCompatActivity {
     private TextInputEditText sourceText;
     private MaterialButton translateBtn;
     private TextView translateTV, goBack;
+    private LinearLayout layout;
 
 
     String[] fromLanguage = {"From", "English", "France", "Belarusian", "Russian", "Ukrainian", "Czech" , "Arabic", "Hindi"};
@@ -56,6 +61,12 @@ public class TranslateActivity extends AppCompatActivity {
         translateBtn = findViewById(R.id.idBtnTranslation);
         translateTV = findViewById(R.id.idTranslatedTV);
         goBack = findViewById(R.id.back);
+        layout = findViewById(R.id.main_layout);
+
+        layout.setOnClickListener(v->{
+            InputMethodManager inm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            inm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),0);
+        });
 
 
         goBack.setOnClickListener(new View.OnClickListener() {

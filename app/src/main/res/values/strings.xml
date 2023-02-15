@@ -15,7 +15,7 @@
     <string name="greeting">Welcome to <b>English Learning Application!</b> We are thrilled to have you here and embark on this journey of English language learning with you. Our application is designed to provide you with a comprehensive and interactive learning experience, making it easier and fun for you to master the English language.</string>
     <string name="next">Next</string>
     <string name="enter_text_to_translate">Enter text to translate</string>
-    <string name="select_your_preferred_study_option">select your preferred study option</string>
+    <string name="select_your_preferred_study_option">select preferred study option</string>
     <string name="logout">logout</string>
     <string name="test_grammar_klowledge">Test grammar knowledge</string>
     <string name="test_vocabulary_knowledge">Test vocabulary knowledge</string>
@@ -23,6 +23,12 @@
     <string name="vocabulary_test">Vocabulary Test</string>
     <string name="enter_text">Enter Text</string>
     <string name="translated_text">Translated Text Here</string>
+    <string name="already_have_an_account">Already Have an Account?</string>
+    <string name="email">Email</string>
+    <string name="google">Google</string>
+    <string name="facebook">Facebook</string>
+    <string name="todo">TODO</string>
+    <string name="grammar_test">Grammar Test</string>
 
     <string-array name="languages">
         <item>English</item>

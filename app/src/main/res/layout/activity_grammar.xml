@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/background_login_register"
     tools:context=".GrammarActivity">
 
     <ScrollView
@@ -101,13 +102,13 @@
                 android:id="@+id/back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/go_back"
+                android:text="Go back"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/color_primary_dark"
                 android:paddingVertical="10dp"
                 android:paddingHorizontal="15dp"
-                android:background="@drawable/button_background"
-                android:textColor="@color/black"
+                android:background="@drawable/background"
                 android:textSize="15sp"
-                android:layout_marginTop="20dp"
                 />
 
 
