@@ -13,7 +13,7 @@
         android:id="@+id/textLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="@string/login"
         android:textColor="@color/white"
         android:textSize="36sp"
         android:textStyle="bold"
@@ -29,7 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Forgot Password?"
+        android:text="@string/forgot_password"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -47,18 +47,19 @@
         android:drawableLeft="@drawable/ic_email"
         android:drawablePadding="10dp"
         android:ems="10"
-        android:hint="Email"
+        android:hint="@string/email"
         android:inputType="textPersonName"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
-        android:paddingRight="10dp"
+        android:paddingEnd="10dp"
         android:paddingBottom="10dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/textLogin"
+        tools:ignore="RtlHardcoded,TextFields" />
 
     <Button
         android:id="@+id/btnGoogle"
@@ -67,10 +68,10 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/btn_bg"
-        android:drawableStart="@drawable/ic_google"
+        android:drawableLeft="@drawable/ic_google"
         android:drawablePadding="10dp"
-        android:paddingLeft="20dp"
-        android:text="Google"
+        android:paddingStart="20dp"
+        android:text="@string/google"
         android:textAlignment="textStart"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -78,7 +79,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.385" />
+        app:layout_constraintVertical_bias="0.385"
+        tools:ignore="RtlHardcoded,RtlSymmetry" />
 
     <Button
         android:id="@+id/btnLogin"
@@ -86,7 +88,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:background="@drawable/btn_bg"
-        android:text="Login"
+        android:text="@string/login"
         app:layout_constraintEnd_toEndOf="@+id/inputPassword"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/inputPassword"
@@ -109,8 +111,8 @@
             android:id="@+id/textViewSignUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="Dont have an Account? SignUp"
+            android:layout_marginStart="10dp"
+            android:text="@string/dont_have_an_account_signup"
             android:textColor="@color/white" />
 
     </LinearLayout>
@@ -122,10 +124,10 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/btn_bg"
-        android:drawableStart="@drawable/ic_facebook"
+        android:drawableLeft="@drawable/ic_facebook"
         android:drawablePadding="10dp"
-        android:paddingLeft="20dp"
-        android:text="Facebook"
+        android:paddingStart="20dp"
+        android:text="@string/facebook"
         android:textAlignment="textStart"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="@+id/btnGoogle"
@@ -133,7 +135,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnGoogle"
         app:layout_constraintTop_toTopOf="@+id/btnGoogle"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="RtlSymmetry" />
 
     <EditText
         android:id="@+id/inputPassword"
