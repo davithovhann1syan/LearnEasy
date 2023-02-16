@@ -8,6 +8,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -39,13 +40,22 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         layout = findViewById(R.id.main_layout);
-        inputEmail = findViewById(R.id.inputEmailForRegistration);
+       inputEmail = findViewById(R.id.inputEmailForRegistration);
         inputPassword = findViewById(R.id.inputPasswordForRegistration);
         inputConfirmPassword = findViewById(R.id.inputConfirmPasswordForRegistration);
         register = findViewById(R.id.register);
+        alreadyHaveAnAccount = findViewById(R.id.alreadyHaveAccount);
         progressDialog = new ProgressDialog(this);
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
+
+        alreadyHaveAnAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
+            }
+        });
 
         layout.setOnClickListener(v->{
             InputMethodManager inm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);

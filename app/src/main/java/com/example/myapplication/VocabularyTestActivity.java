@@ -9,14 +9,15 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class VocabularyTestActivity extends AppCompatActivity implements View.OnClickListener{
 
     TextView totalQuestionsTextView, goBack;
-    TextView questionTextView;
     Button ansA, ansB, ansC, ansD;
     Button submitBtn;
+    ImageView questionImg;
 
     int score=0;
     int totalQuestion = QuestionAnswerGrammar.question.length;
@@ -30,7 +31,7 @@ public class VocabularyTestActivity extends AppCompatActivity implements View.On
 
         goBack = findViewById(R.id.back);
         totalQuestionsTextView = findViewById(R.id.total_questions);
-        questionTextView = findViewById(R.id.question);
+        questionImg = findViewById(R.id.question_image);
         ansA = findViewById(R.id.ans_A);
         ansB = findViewById(R.id.ans_B);
         ansC = findViewById(R.id.ans_C);
@@ -91,7 +92,8 @@ public class VocabularyTestActivity extends AppCompatActivity implements View.On
             return;
         }
 
-        questionTextView.setText(QuestionAnswerVocabulary.question[currentQuestionIndex]);
+        //questionTextView.setText(QuestionAnswerVocabulary.question[currentQuestionIndex]);
+        questionImg.setImageResource(QuestionAnswerVocabulary.images[currentQuestionIndex]);
         ansA.setText(QuestionAnswerVocabulary.choices[currentQuestionIndex][0]);
         ansB.setText(QuestionAnswerVocabulary.choices[currentQuestionIndex][1]);
         ansC.setText(QuestionAnswerVocabulary.choices[currentQuestionIndex][2]);
@@ -119,7 +121,7 @@ public class VocabularyTestActivity extends AppCompatActivity implements View.On
 
     void restartQuiz(){
         score = 0;
-        currentQuestionIndex =0;
+        currentQuestionIndex = 0;
         loadNewQuestion();
     }
 

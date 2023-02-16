@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_login_register"
+    android:background="@drawable/background_login_and_register"
     tools:context=".LoginActivity"
     android:id="@+id/main_layout">
 
@@ -106,17 +106,11 @@
         app:layout_constraintTop_toBottomOf="@+id/btnLogin">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Dont have an Account?"
-            android:textColor="@color/white" />
-
-        <TextView
             android:id="@+id/textViewSignUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="SignUp"
+            android:text="Dont have an Account? SignUp"
             android:textColor="@color/white" />
 
     </LinearLayout>

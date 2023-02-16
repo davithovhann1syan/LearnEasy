@@ -35,7 +35,7 @@ public class LessonActivity extends AppCompatActivity {
 
         }
 
-        setContentView(R.layout.activity_lesson);
+        setContentView(R.layout.activity_grammar_lesson);
 
         heading = findViewById(R.id.heading);
         information = findViewById(R.id.information);

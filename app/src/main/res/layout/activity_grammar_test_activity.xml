@@ -95,9 +95,9 @@
         android:textSize="13dp"
         android:paddingVertical="10dp"
         android:paddingHorizontal="15dp"
-        android:textColor="@color/color_primary_dark"
+        android:textColor="@color/off_white"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/background"
+        android:background="@drawable/bg_button"
         android:text="@string/go_back" />
 
 

@@ -13,8 +13,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Heading"
-        android:textColor="@color/color_primary_dark"
+        android:textColor="@color/off_white"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
+        android:textAllCaps="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:paddingTop="20dp"
@@ -26,9 +28,10 @@
         android:layout_height="wrap_content"
         android:text="Example"
         android:textSize="25sp"
-        android:textColor="@color/color_primary_dark"
+        android:textColor="@color/off_white"
         android:textAlignment="center"
-        android:background="@drawable/background"
+        android:paddingHorizontal="10sp"
+        android:background="@drawable/bg_button"
         app:layout_constraintBottom_toTopOf="@+id/backButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,16 +41,17 @@
         android:id="@+id/backButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back"
-        android:background="@drawable/background"
+        android:text="Previous page"
+        android:background="@drawable/bg_button"
         android:paddingHorizontal="15dp"
         android:paddingVertical="10dp"
-        android:textColor="@color/black"
+        android:textColor="@color/off_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginBottom="20dp"
-        android:textSize="25dp"/>
+        android:textSize="15sp"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

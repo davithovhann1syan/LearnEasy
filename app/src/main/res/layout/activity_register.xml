@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_login_register"
+    android:background="@drawable/background_login_and_register"
     tools:context=".RegisterActivity"
     android:id="@+id/main_layout">
 
@@ -141,7 +141,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/btn_bg"
-        android:drawableStart="@drawable/ic_google"
+        android:drawableLeft="@drawable/ic_google"
         android:drawablePadding="10dp"
         android:paddingStart="20dp"
         android:text="@string/google"
@@ -160,7 +160,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/btn_bg"
-        android:drawableStart="@drawable/ic_facebook"
+        android:drawableLeft="@drawable/ic_facebook"
         android:drawablePadding="10dp"
         android:paddingStart="20dp"
         android:text="@string/facebook"

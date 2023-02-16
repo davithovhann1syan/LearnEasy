@@ -7,14 +7,15 @@
     android:orientation="vertical"
     android:padding="20dp"
     android:gravity="center"
-    android:background="@drawable/background_login_register"
+    android:background="@drawable/background_general"
     tools:context=".MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Select your English level"
+        android:text="@string/select_your_english_level"
         android:textSize="25sp"
+        android:textAllCaps="true"
         android:textStyle="bold"
         android:textColor="@color/off_white"/>
 
@@ -22,11 +23,11 @@
         android:id="@+id/beginner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Beginner"
+        android:text="@string/beginner"
         android:textAlignment="center"
         android:textSize="25sp"
-        android:textColor="@color/color_primary_dark"
-        android:background="@drawable/background"
+        android:textColor="@color/off_white"
+        android:background="@drawable/bg_button"
         android:paddingVertical="15dp"
         android:paddingHorizontal="25dp"
         android:layout_marginVertical="20dp"/>
@@ -34,11 +35,11 @@
         android:id="@+id/intermediate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Intermediate"
+        android:text="@string/intermediate"
         android:textAlignment="center"
         android:textSize="25sp"
-        android:textColor="@color/color_primary_dark"
-        android:background="@drawable/background"
+        android:textColor="@color/off_white"
+        android:background="@drawable/bg_button"
         android:paddingVertical="15dp"
         android:paddingHorizontal="25dp"
         android:layout_marginVertical="20dp"/>
@@ -46,11 +47,11 @@
         android:id="@+id/advanced"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Advanced"
+        android:text="@string/advanced"
         android:textAlignment="center"
         android:textSize="25sp"
-        android:textColor="@color/color_primary_dark"
-        android:background="@drawable/background"
+        android:textColor="@color/off_white"
+        android:background="@drawable/bg_button"
         android:paddingVertical="15dp"
         android:paddingHorizontal="25dp"
         android:layout_marginVertical="20dp"/>
@@ -58,11 +59,11 @@
         android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Go back"
-        android:textColor="@color/color_primary_dark"
+        android:text="@string/go_back"
+        android:textColor="@color/off_white"
         android:paddingVertical="10dp"
         android:paddingHorizontal="15dp"
-        android:background="@drawable/background"
+        android:background="@drawable/bg_button"
         android:textSize="15sp"
         />
 

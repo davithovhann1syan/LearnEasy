@@ -13,24 +13,24 @@
         android:layout_height="wrap_content"
         android:id="@+id/total_questions"
         android:text="Total Questions "
+        android:textColor="@color/off_white"
+        android:textAllCaps="true"
         android:layout_centerHorizontal="true"
         android:textSize="20dp"/>
 
 
-    <TextView
-        android:id="@+id/question"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/question_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_above="@id/choices_layout"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
-        android:text="This will be the question"
-        android:textAlignment="center"
-        android:textColor="@color/off_white"
-        android:textSize="24dp"
-        android:textStyle="bold" />
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop"
+        />
 
 
     <LinearLayout
@@ -96,9 +96,9 @@
         android:textSize="13dp"
         android:paddingVertical="10dp"
         android:paddingHorizontal="15dp"
-        android:textColor="@color/color_primary_dark"
+        android:textColor="@color/off_white"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/background"
+        android:background="@drawable/bg_button"
         android:text="@string/go_back" />
 
 

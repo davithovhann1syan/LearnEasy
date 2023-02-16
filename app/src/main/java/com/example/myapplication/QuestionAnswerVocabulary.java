@@ -1,13 +1,6 @@
 package com.example.myapplication;
-
 public class QuestionAnswerVocabulary {
 
-    public static String question[] ={
-            "Which company owns the android?",
-            "Which one is not the programming language?",
-            "Where you are watching this video?",
-            "Which company owns the Apple?"
-    };
 
     public static String choices[][] = {
             {"Google","Apple","Nokia","Samsung"},
@@ -21,6 +14,13 @@ public class QuestionAnswerVocabulary {
             "Notepad",
             "Youtube",
             "Apple"
+    };
+
+    public static Integer images[] = {
+            R.drawable.ic_email,
+            R.drawable.ic_google,
+            R.drawable.ic_person,
+            R.drawable.ic_security,
     };
 
 }
