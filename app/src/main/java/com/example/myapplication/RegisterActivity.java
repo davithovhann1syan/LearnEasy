@@ -23,7 +23,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class RegisterActivity extends AppCompatActivity {
 
-
+    TextView btnSignInGoogle;
     private ConstraintLayout layout;
     TextView alreadyHaveAnAccount;
     TextView register;
@@ -40,7 +40,7 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         layout = findViewById(R.id.main_layout);
-       inputEmail = findViewById(R.id.inputEmailForRegistration);
+        inputEmail = findViewById(R.id.inputEmailForRegistration);
         inputPassword = findViewById(R.id.inputPasswordForRegistration);
         inputConfirmPassword = findViewById(R.id.inputConfirmPasswordForRegistration);
         register = findViewById(R.id.register);
