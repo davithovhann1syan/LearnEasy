@@ -26,7 +26,7 @@ public class RegisterActivity extends AppCompatActivity {
     TextView btnSignInGoogle;
     private ConstraintLayout layout;
     TextView alreadyHaveAnAccount;
-    TextView register;
+    TextView btnRegister;
     EditText inputEmail, inputPassword, inputConfirmPassword;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     ProgressDialog progressDialog;
@@ -43,7 +43,7 @@ public class RegisterActivity extends AppCompatActivity {
         inputEmail = findViewById(R.id.inputEmailForRegistration);
         inputPassword = findViewById(R.id.inputPasswordForRegistration);
         inputConfirmPassword = findViewById(R.id.inputConfirmPasswordForRegistration);
-        register = findViewById(R.id.register);
+        btnRegister = findViewById(R.id.btnRegister);
         alreadyHaveAnAccount = findViewById(R.id.alreadyHaveAccount);
         progressDialog = new ProgressDialog(this);
         mAuth = FirebaseAuth.getInstance();
@@ -62,7 +62,7 @@ public class RegisterActivity extends AppCompatActivity {
             inm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),0);
         });
 
-        register.setOnClickListener(new View.OnClickListener() {
+        btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 PerformAuth();

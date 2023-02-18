@@ -3,24 +3,24 @@ public class QuestionAnswerVocabulary {
 
 
     public static String choices[][] = {
-            {"Google","Apple","Nokia","Samsung"},
-            {"Java","Kotlin","Notepad","Python"},
-            {"Facebook","Whatsapp","Instagram","Youtube"},
-            {"Google","Apple","Nokia","Samsung"}
+            {"Tree","Christmas Tree","Three","Apple"},
+            {"Apple","Peach","Pomegranate","Olive"},
+            {"Peach","Apple","Tree","Raspberry"},
+            {"Apple","Peach","Raspberry","Pomegranate"}
     };
 
     public static String correctAnswers[] = {
-            "Google",
-            "Notepad",
-            "Youtube",
-            "Apple"
+            "Christmas Tree",
+            "Apple",
+            "Peach",
+            "Raspberry"
     };
 
     public static Integer images[] = {
-            R.drawable.ic_email,
-            R.drawable.ic_google,
-            R.drawable.ic_person,
-            R.drawable.ic_security,
+            R.drawable.christamas_tree,
+            R.drawable.apple,
+            R.drawable.peach,
+            R.drawable.raspberry,
     };
 
 }
