@@ -14,32 +14,33 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView btn1 = findViewById(R.id.beginner);
-        TextView btn2 = findViewById(R.id.intermediate);
-        TextView btn3 = findViewById(R.id.advanced);
-        TextView back = findViewById(R.id.back);
+        TextView beginner = findViewById(R.id.beginner);
+        TextView intermediate = findViewById(R.id.intermediate);
+        TextView advanced = findViewById(R.id.advanced);
+        //TextView back = findViewById(R.id.back);
 
-        back.setOnClickListener(new View.OnClickListener() {
+        /*back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
-        });
-        btn1.setOnClickListener(new View.OnClickListener() {
+        });*/
+
+        beginner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),StudyOptionsActivity.class);
                 startActivity(intent);
             }
         });
-        btn2.setOnClickListener(new View.OnClickListener() {
+        intermediate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),StudyOptionsActivity.class);
                 startActivity(intent);
             }
         });
-        btn3.setOnClickListener(new View.OnClickListener() {
+        advanced.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),StudyOptionsActivity.class);

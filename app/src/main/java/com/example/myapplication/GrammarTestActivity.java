@@ -1,17 +1,33 @@
 package com.example.myapplication;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class GrammarTestActivity extends AppCompatActivity implements View.OnClickListener{
+
+    FirebaseFirestore firebaseFirestore;
 
     TextView totalQuestionsTextView, goBack;
     TextView questionTextView;
@@ -19,9 +35,11 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
     Button submitBtn;
 
     int score=0;
-    int totalQuestion = QuestionAnswerGrammar.question.length;
+    int totalQuestion = 1;
     int currentQuestionIndex = 0;
     String selectedAnswer = "";
+
+    ArrayList<GrammarQuizModel> arrayList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +63,9 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
 
         totalQuestionsTextView.setText("Total questions : "+totalQuestion);
 
-        loadNewQuestion();
+
+
+
 
         goBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,47 +74,86 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
             }
         });
 
+        firebaseFirestore= FirebaseFirestore.getInstance();
+
+        firebaseFirestore.collection("grammartest")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()){
+                            for (DocumentSnapshot documentSnapshot: task.getResult()) {
+                                String question = documentSnapshot.get("question").toString();
+                                List<String> choices = (List<String>) documentSnapshot.get("choices");
+                                String answer = documentSnapshot.get("answer").toString();
+                                arrayList.add(new GrammarQuizModel(question,choices,answer));
+
+                            }
+                            loadNewQuestion();
+                            totalQuestion = arrayList.size();
+                            totalQuestionsTextView.setText("Total question " + totalQuestion);
+                        }
+                    }
+                });
+
 
     }
 
     @Override
     public void onClick(View view) {
 
-        ansA.setBackgroundColor(Color.WHITE);
-        ansB.setBackgroundColor(Color.WHITE);
-        ansC.setBackgroundColor(Color.WHITE);
-        ansD.setBackgroundColor(Color.WHITE);
+        (new Handler()).postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                ansA.setBackgroundColor(Color.WHITE);
+                ansB.setBackgroundColor(Color.WHITE);
+                ansC.setBackgroundColor(Color.WHITE);
+                ansD.setBackgroundColor(Color.WHITE);
 
-        Button clickedButton = (Button) view;
-        if(clickedButton.getId()==R.id.submit_btn){
-            if(selectedAnswer.equals(QuestionAnswerGrammar.correctAnswers[currentQuestionIndex])){
-                score++;
+                Button clickedButton = (Button) view;
+                if(clickedButton.getId()==R.id.submit_btn){
+                    if(selectedAnswer.equals(arrayList.get(currentQuestionIndex).answer)){
+                        score++;
+                        clickedButton.setBackgroundColor(Color.GREEN);
+                    } else {
+                        clickedButton.setBackgroundColor(Color.RED);
+                    }
+                    currentQuestionIndex++;
+
+                    (new Handler()).postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            loadNewQuestion();
+                        }
+                    }, 500);
+
+
+
+                }else{
+                    //choices button clicked
+                    selectedAnswer = clickedButton.getText().toString();
+                    clickedButton.setBackgroundColor(Color.MAGENTA);
+
+                }
             }
-            currentQuestionIndex++;
-            loadNewQuestion();
+        },500);
 
-
-        }else{
-            //choices button clicked
-            selectedAnswer  = clickedButton.getText().toString();
-            clickedButton.setBackgroundColor(Color.MAGENTA);
-
-        }
 
     }
 
     void loadNewQuestion(){
+
 
         if(currentQuestionIndex == totalQuestion ){
             finishQuiz();
             return;
         }
 
-        questionTextView.setText(QuestionAnswerGrammar.question[currentQuestionIndex]);
-        ansA.setText(QuestionAnswerGrammar.choices[currentQuestionIndex][0]);
-        ansB.setText(QuestionAnswerGrammar.choices[currentQuestionIndex][1]);
-        ansC.setText(QuestionAnswerGrammar.choices[currentQuestionIndex][2]);
-        ansD.setText(QuestionAnswerGrammar.choices[currentQuestionIndex][3]);
+        questionTextView.setText(arrayList.get(currentQuestionIndex).question);
+        ansA.setText(arrayList.get(currentQuestionIndex).choices.get(0));
+        ansB.setText(arrayList.get(currentQuestionIndex).choices.get(1));
+        ansC.setText(arrayList.get(currentQuestionIndex).choices.get(2));
+        ansD.setText(arrayList.get(currentQuestionIndex).choices.get(3));
 
     }
 
@@ -110,6 +169,7 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
                 .setTitle(passStatus)
                 .setMessage("Score is "+ score+" out of "+ totalQuestion)
                 .setPositiveButton("Restart",(dialogInterface, i) -> restartQuiz() )
+                .setPositiveButton("View wrong answers",(dialogInterface, i) -> wrongAnswersPage() )
                 .setCancelable(false)
                 .show();
 
@@ -120,6 +180,11 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
         score = 0;
         currentQuestionIndex =0;
         loadNewQuestion();
+    }
+
+    void wrongAnswersPage(){
+        Intent intent = new Intent(getApplicationContext(), GrammarWrongAnswers.class);
+        startActivity(intent);
     }
 
 }

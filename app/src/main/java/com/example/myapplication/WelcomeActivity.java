@@ -21,7 +21,7 @@ public class WelcomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
         next = findViewById(R.id.nextPage);
-        logout = findViewById(R.id.logout);
+       // logout = findViewById(R.id.logout);
 
 
         next.setOnClickListener(new View.OnClickListener() {
@@ -32,7 +32,7 @@ public class WelcomeActivity extends AppCompatActivity {
             }
         });
 
-        logout.setOnClickListener(new View.OnClickListener() {
+        /*logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -40,7 +40,7 @@ public class WelcomeActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
 
     }
