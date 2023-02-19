@@ -80,10 +80,10 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-        layout.setOnClickListener(v->{
+        /*layout.setOnClickListener(v->{
             InputMethodManager inm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
             inm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),0);
-        });
+        });*/
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -140,9 +140,19 @@ public class RegisterActivity extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()){
-                        progressDialog.dismiss();
-                        sendUserToNextActivity();
-                        Toast.makeText(RegisterActivity.this, "Registration successful", Toast.LENGTH_SHORT).show();
+
+                        mAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()){
+                                    progressDialog.dismiss();
+                                    Toast.makeText(RegisterActivity.this, "Verify email address", Toast.LENGTH_SHORT).show();
+                                } else{
+                                    Toast.makeText(RegisterActivity.this, ""+task.getException(), Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+
                     } else{
                         progressDialog.dismiss();
                         Toast.makeText(RegisterActivity.this, ""+task.getException(), Toast.LENGTH_SHORT).show();

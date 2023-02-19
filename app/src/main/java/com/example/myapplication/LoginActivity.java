@@ -86,10 +86,10 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        layout.setOnClickListener(v->{
+        /*layout.setOnClickListener(v->{
             InputMethodManager inm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
             inm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),0);
-        });
+        });*/
 
         if (mUser != null){
             startActivity( new Intent(getApplicationContext(), WelcomeActivity.class));
@@ -158,9 +158,14 @@ public class LoginActivity extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()){
-                        progressDialog.dismiss();
-                        sendUserToNextActivity();
-                        Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
+                        if (mAuth.getCurrentUser().isEmailVerified()){
+                            progressDialog.dismiss();
+                            sendUserToNextActivity();
+                            Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
+                        } else {
+                            progressDialog.dismiss();
+                            Toast.makeText(LoginActivity.this, "Verify your email address", Toast.LENGTH_SHORT).show();
+                        }
                     } else{
                         progressDialog.dismiss();
                         Toast.makeText(LoginActivity.this, ""+task.getException(), Toast.LENGTH_SHORT).show();
