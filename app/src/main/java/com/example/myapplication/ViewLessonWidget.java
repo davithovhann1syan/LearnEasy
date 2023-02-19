@@ -53,17 +53,25 @@ public class ViewLessonWidget extends LinearLayout {
 
     private void init(Context context){
 
-        viewLessonName = findViewById(R.id.informationMainWidget);
+        viewLessonName = findViewById(R.id.title);
 
         goToButton = findViewById(R.id.goToActivityButton);
         goToButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(context, LessonActivity.class);
-                i.putExtra("NAME", name);
-                i.putExtra("INFO", information);
+                Intent intent = new Intent(context, GrammarTestActivity.class);
+                context.startActivity(intent);
 
-                context.startActivity(i);
+            }
+        });
+
+        viewLessonName.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, LessonActivity.class);
+                intent.putExtra("NAME", name);
+                intent.putExtra("INFO", information);
+                context.startActivity(intent);
 
             }
         });

@@ -22,7 +22,9 @@
 
         <TextView
             android:textColor="@color/off_white"
-            android:id="@+id/informationMainWidget"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingStart="20dp"

@@ -37,6 +37,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private ConstraintLayout layout;
     Button btnlogin;
+
     TextView createNewAccount;
     EditText inputEmail, inputPassword;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
@@ -45,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseUser mUser;
     TextView btnSignInGoogle;
-
+    TextView btnSignInFacebook;
     GoogleSignInOptions gso;
     GoogleSignInClient gsc;
 
@@ -57,6 +58,7 @@ public class LoginActivity extends AppCompatActivity {
         layout = findViewById(R.id.main_layout);
         btnlogin = findViewById(R.id.btnLogin);
         btnSignInGoogle = findViewById(R.id.btnGoogle);
+        btnSignInFacebook = findViewById(R.id.btnFacebook);
         createNewAccount = findViewById(R.id.textViewSignUp);
         inputEmail = findViewById(R.id.inputEmail);
         inputPassword = findViewById(R.id.inputPassword);
@@ -74,6 +76,13 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 signIn();
+            }
+        });
+
+        btnSignInFacebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //login
             }
         });
 

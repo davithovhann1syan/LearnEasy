@@ -29,7 +29,7 @@ public class StudyOptionsActivity extends AppCompatActivity {
         grammar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),GrammarActivity.class);
+                Intent intent = new Intent(getApplicationContext(), GrammarStudyGroupActivity.class);
                 startActivity(intent);
             }
         });

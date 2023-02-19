@@ -20,18 +20,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:paddingTop="20dp"
+
         android:textSize="25sp"/>
 
     <TextView
         android:id="@+id/information"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Example"
-        android:textSize="25sp"
-        android:textColor="@color/off_white"
-        android:textAlignment="center"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:background="@drawable/button_background"
         android:paddingHorizontal="10sp"
-        android:background="@drawable/bg_button"
+        android:text="Example"
+        android:textAlignment="center"
+        android:textColor="@color/off_white"
+        android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/backButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
