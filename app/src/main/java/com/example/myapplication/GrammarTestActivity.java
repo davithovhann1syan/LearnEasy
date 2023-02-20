@@ -4,10 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -31,7 +33,7 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
 
     TextView totalQuestionsTextView, goBack;
     TextView questionTextView;
-    Button ansA, ansB, ansC, ansD;
+    AppCompatButton ansA, ansB, ansC, ansD;
     Button submitBtn;
 
     int score=0;
@@ -105,18 +107,16 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
         (new Handler()).postDelayed(new Runnable() {
             @Override
             public void run() {
-                ansA.setBackgroundColor(Color.WHITE);
-                ansB.setBackgroundColor(Color.WHITE);
-                ansC.setBackgroundColor(Color.WHITE);
-                ansD.setBackgroundColor(Color.WHITE);
+                Drawable d = getResources().getDrawable(R.drawable.button_background_style);
+                ansA.setBackgroundDrawable(d);
+                ansB.setBackgroundDrawable(d);
+                ansC.setBackgroundDrawable(d);
+                ansD.setBackgroundDrawable(d);
+                AppCompatButton clickedButton = (AppCompatButton) view;
 
-                Button clickedButton = (Button) view;
                 if(clickedButton.getId()==R.id.submit_btn){
                     if(selectedAnswer.equals(arrayList.get(currentQuestionIndex).answer)){
                         score++;
-                        clickedButton.setBackgroundColor(Color.GREEN);
-                    } else {
-                        clickedButton.setBackgroundColor(Color.RED);
                     }
                     currentQuestionIndex++;
 
@@ -125,14 +125,14 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
                         public void run() {
                             loadNewQuestion();
                         }
-                    }, 500);
+                    }, 200);
 
 
 
                 }else{
                     //choices button clicked
                     selectedAnswer = clickedButton.getText().toString();
-                    clickedButton.setBackgroundColor(Color.MAGENTA);
+                    clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_bg));
 
                 }
             }
@@ -168,7 +168,7 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
         new AlertDialog.Builder(this)
                 .setTitle(passStatus)
                 .setMessage("Score is "+ score+" out of "+ totalQuestion)
-                .setPositiveButton("Restart",(dialogInterface, i) -> restartQuiz() )
+               /* .setPositiveButton("Restart",(dialogInterface, i) -> restartQuiz() )*/
                 .setPositiveButton("View wrong answers",(dialogInterface, i) -> wrongAnswersPage() )
                 .setCancelable(false)
                 .show();
@@ -176,11 +176,11 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
 
     }
 
-    void restartQuiz(){
+   /* void restartQuiz(){
         score = 0;
         currentQuestionIndex =0;
         loadNewQuestion();
-    }
+    }*/
 
     void wrongAnswersPage(){
         Intent intent = new Intent(getApplicationContext(), GrammarWrongAnswers.class);

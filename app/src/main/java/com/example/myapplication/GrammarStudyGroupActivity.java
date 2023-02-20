@@ -42,7 +42,7 @@ public class GrammarStudyGroupActivity extends AppCompatActivity {
 
     }
     void startActivity(){
-        Intent intent = new Intent(getApplicationContext(), LessonActivity.class);
+        Intent intent = new Intent(getApplicationContext(), GrammarActivity.class);
         startActivity(intent);
     }
 }

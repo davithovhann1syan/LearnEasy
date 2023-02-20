@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.app.ProgressDialog;
@@ -36,7 +37,7 @@ import org.w3c.dom.Text;
 public class LoginActivity extends AppCompatActivity {
 
     private ConstraintLayout layout;
-    Button btnlogin;
+    AppCompatButton btnlogin;
 
     TextView createNewAccount;
     EditText inputEmail, inputPassword;
@@ -45,8 +46,8 @@ public class LoginActivity extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     FirebaseUser mUser;
-    TextView btnSignInGoogle;
-    TextView btnSignInFacebook;
+    AppCompatButton btnSignInGoogle;
+    AppCompatButton btnSignInFacebook;
     GoogleSignInOptions gso;
     GoogleSignInClient gsc;
 

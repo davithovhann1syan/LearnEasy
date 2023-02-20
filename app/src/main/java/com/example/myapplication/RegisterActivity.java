@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.app.ProgressDialog;
@@ -31,10 +32,11 @@ import java.util.Objects;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    TextView btnSignInGoogle;
+    AppCompatButton btnSignInGoogle;
+    AppCompatButton btnSignInFacebook;
     private ConstraintLayout layout;
     TextView alreadyHaveAnAccount;
-    TextView btnRegister;
+    AppCompatButton btnRegister;
     EditText inputEmail, inputPassword, inputConfirmPassword;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     ProgressDialog progressDialog;
@@ -60,6 +62,7 @@ public class RegisterActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
         btnSignInGoogle = findViewById(R.id.btnGoogle);
+        btnSignInFacebook = findViewById(R.id.btnFacebook);
 
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()

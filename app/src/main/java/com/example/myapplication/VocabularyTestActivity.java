@@ -3,9 +3,15 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.content.res.AppCompatResources;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.core.content.res.ResourcesCompat;
 
 import android.app.AlertDialog;
+import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,7 +21,7 @@ import android.widget.TextView;
 public class VocabularyTestActivity extends AppCompatActivity implements View.OnClickListener{
 
     TextView totalQuestionsTextView, goBack;
-    Button ansA, ansB, ansC, ansD;
+    AppCompatButton ansA, ansB, ansC, ansD;
     Button submitBtn;
     ImageView questionImg;
 
@@ -62,12 +68,13 @@ public class VocabularyTestActivity extends AppCompatActivity implements View.On
     @Override
     public void onClick(View view) {
 
-        ansA.setBackgroundColor(Color.WHITE);
-        ansB.setBackgroundColor(Color.WHITE);
-        ansC.setBackgroundColor(Color.WHITE);
-        ansD.setBackgroundColor(Color.WHITE);
+        Drawable d = getResources().getDrawable(R.drawable.button_background_style);
+        ansA.setBackgroundDrawable(d);
+        ansB.setBackgroundDrawable(d);
+        ansC.setBackgroundDrawable(d);
+        ansD.setBackgroundDrawable(d);
 
-        Button clickedButton = (Button) view;
+        AppCompatButton clickedButton = (AppCompatButton) view;
         if(clickedButton.getId()==R.id.submit_btn){
             if(selectedAnswer.equals(QuestionAnswerVocabulary.correctAnswers[currentQuestionIndex])){
                 score++;
@@ -79,7 +86,7 @@ public class VocabularyTestActivity extends AppCompatActivity implements View.On
         }else{
             //choices button clicked
             selectedAnswer  = clickedButton.getText().toString();
-            clickedButton.setBackgroundColor(Color.MAGENTA);
+            clickedButton.setBackground(getResources().getDrawable(R.drawable.button_selection_bg));
 
         }
 
@@ -112,18 +119,26 @@ public class VocabularyTestActivity extends AppCompatActivity implements View.On
         new AlertDialog.Builder(this)
                 .setTitle(passStatus)
                 .setMessage("Score is "+ score+" out of "+ totalQuestion)
-                .setPositiveButton("Restart",(dialogInterface, i) -> restartQuiz() )
+                /*.setPositiveButton("Restart quiz",(dialogInterface, i) -> restartQuiz() )*/
+                .setPositiveButton("View wrong answers",(dialogInterface, i) -> worngAnswerPage() )
                 .setCancelable(false)
                 .show();
 
 
     }
 
-    void restartQuiz(){
+    private void worngAnswerPage() {
+        Intent intent = new Intent(getApplicationContext(), VocabularyWrongAnswers.class);
+        startActivity(intent);
+    }
+
+   /* void restartQuiz(){
         score = 0;
         currentQuestionIndex = 0;
         loadNewQuestion();
-    }
+    }*/
+
+
 
 
 
