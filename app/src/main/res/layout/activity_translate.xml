@@ -112,14 +112,16 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.button.MaterialButton
+        <androidx.appcompat.widget.AppCompatButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:id="@+id/idBtnTranslation"
+            android:textColor="@color/off_white"
             android:text="@string/translate"
             android:textSize="19sp"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:background="@drawable/button_background_style"/>
 
         <TextView
             android:layout_width="match_parent"

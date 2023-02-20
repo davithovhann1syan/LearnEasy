@@ -2,11 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_login_and_register"
-    tools:context=".RegisterActivity"
-    android:id="@+id/main_layout">
+    tools:context=".RegisterActivity">
 
     <EditText
         android:id="@+id/inputConfirmPasswordForRegistration"
@@ -54,13 +54,14 @@
         app:layout_constraintStart_toStartOf="@+id/inputEmailForRegistration"
         app:layout_constraintTop_toBottomOf="@+id/inputEmailForRegistration" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnRegister"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:background="@drawable/btn_bg"
+        android:background="@drawable/button_background_style"
         android:text="@string/register"
+        android:textColor="@color/off_white"
         app:layout_constraintEnd_toEndOf="@+id/inputConfirmPasswordForRegistration"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/inputConfirmPasswordForRegistration"
@@ -101,6 +102,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="44dp"
         android:layout_marginEnd="32dp"
+        android:autofillHints=""
         android:background="@drawable/input_bg"
         android:drawableStart="@drawable/ic_email"
         android:drawablePadding="10dp"
@@ -117,8 +119,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/register"
-        tools:ignore="TextFields"
-        android:autofillHints="" />
+        tools:ignore="TextFields" />
 
 
     <ImageView
@@ -126,46 +127,48 @@
         android:layout_width="193dp"
         android:layout_height="149dp"
         android:layout_marginBottom="50dp"
+        android:contentDescription="@string/todo"
         app:layout_constraintBottom_toBottomOf="@id/register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/app_logo"
-        android:contentDescription="@string/todo" />
+        app:srcCompat="@drawable/app_logo" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnGoogle"
         android:layout_width="166dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="8dp"
-        android:background="@drawable/btn_bg"
+        android:background="@drawable/button_background_style"
         android:drawableLeft="@drawable/ic_google"
         android:drawablePadding="10dp"
         android:paddingStart="20dp"
         android:text="@string/google"
         android:textAlignment="textStart"
         android:textAllCaps="false"
+        android:textColor="@color/off_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnFacebook"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/alreadyHaveAccount"
         tools:ignore="RtlHardcoded,RtlSymmetry" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnFacebook"
         android:layout_width="166dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="32dp"
-        android:background="@drawable/btn_bg"
+        android:background="@drawable/button_background_style"
         android:drawableLeft="@drawable/ic_facebook"
         android:drawablePadding="10dp"
         android:paddingStart="20dp"
         android:text="@string/facebook"
         android:textAlignment="textStart"
         android:textAllCaps="false"
+        android:textColor="@color/off_white"
         app:layout_constraintBottom_toBottomOf="@+id/btnGoogle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnGoogle"

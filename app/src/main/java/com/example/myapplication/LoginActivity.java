@@ -91,8 +91,8 @@ public class LoginActivity extends AppCompatActivity {
             inm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),0);
         });*/
 
-        if (mUser != null){
-            startActivity( new Intent(getApplicationContext(), WelcomeActivity.class));
+        if (mUser != null) {
+            startActivity(new Intent(getApplicationContext(), WelcomeActivity.class));
         }
 
         createNewAccount.setOnClickListener(new View.OnClickListener() {
@@ -111,19 +111,18 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-
     }
 
     private void signIn() {
         Intent intent = gsc.getSignInIntent();
-        startActivityForResult(intent,100);
+        startActivityForResult(intent, 100);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode == 100){
+        if (requestCode == 100) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
                 task.getResult(ApiException.class);
@@ -144,11 +143,11 @@ public class LoginActivity extends AppCompatActivity {
         String email = inputEmail.getText().toString();
         String password = inputPassword.getText().toString();
 
-        if(!email.matches(emailPattern)){
+        if (!email.matches(emailPattern)) {
             inputEmail.setError("Enter Valid email");
-        } else if (password.isEmpty() || password.length() < 6){
+        } else if (password.isEmpty() || password.length() < 6) {
             inputPassword.setError("Enter valid password");
-        } else{
+        } else {
             progressDialog.setMessage("Waiting for Login...");
             progressDialog.setTitle("Login");
             progressDialog.setCanceledOnTouchOutside(false);
@@ -157,8 +156,8 @@ public class LoginActivity extends AppCompatActivity {
             mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (task.isSuccessful()){
-                        if (mAuth.getCurrentUser().isEmailVerified()){
+                    if (task.isSuccessful()) {
+                        if (mAuth.getCurrentUser().isEmailVerified()) {
                             progressDialog.dismiss();
                             sendUserToNextActivity();
                             Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
@@ -166,9 +165,9 @@ public class LoginActivity extends AppCompatActivity {
                             progressDialog.dismiss();
                             Toast.makeText(LoginActivity.this, "Verify your email address", Toast.LENGTH_SHORT).show();
                         }
-                    } else{
+                    } else {
                         progressDialog.dismiss();
-                        Toast.makeText(LoginActivity.this, ""+task.getException(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "" + task.getException(), Toast.LENGTH_SHORT).show();
                     }
                 }
             });
@@ -176,9 +175,10 @@ public class LoginActivity extends AppCompatActivity {
         }
 
     }
+
     private void sendUserToNextActivity() {
         Intent intent = new Intent(LoginActivity.this, WelcomeActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 }

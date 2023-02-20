@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Context;
 import android.content.Intent;
@@ -38,7 +39,7 @@ public class TranslateActivity extends AppCompatActivity {
 
     private Spinner fromSpinner, toSpinner;
     private TextInputEditText sourceText;
-    private MaterialButton translateBtn;
+    private AppCompatButton translateBtn;
     private TextView translateTV, goBack;
     private LinearLayout layout;
 

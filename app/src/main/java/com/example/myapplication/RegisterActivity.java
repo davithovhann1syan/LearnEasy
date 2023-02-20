@@ -27,6 +27,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.Objects;
+
 public class RegisterActivity extends AppCompatActivity {
 
     TextView btnSignInGoogle;
@@ -75,6 +77,8 @@ public class RegisterActivity extends AppCompatActivity {
         alreadyHaveAnAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                FirebaseAuth mAuth = FirebaseAuth.getInstance();
+                mAuth.signOut();
                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(intent);
             }
@@ -102,7 +106,7 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode == 100){
+        if (requestCode == 100) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
                 task.getResult(ApiException.class);
@@ -124,38 +128,38 @@ public class RegisterActivity extends AppCompatActivity {
         String password = inputPassword.getText().toString();
         String confirmPassword = inputConfirmPassword.getText().toString();
 
-        if(!email.matches(emailPattern)){
+        if (!email.matches(emailPattern)) {
             inputEmail.setError("Enter Valid email");
-        } else if (password.isEmpty() || password.length() < 6){
+        } else if (password.isEmpty() || password.length() < 6) {
             inputPassword.setError("Enter valid password");
-        } else if (!password.equals(confirmPassword)){
+        } else if (!password.equals(confirmPassword)) {
             inputConfirmPassword.setError("Passwords don't match");
-        } else{
+        } else {
             progressDialog.setMessage("Waiting for registration...");
             progressDialog.setTitle("Registration");
             progressDialog.setCanceledOnTouchOutside(false);
             progressDialog.show();
 
-            mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (task.isSuccessful()){
+                    if (task.isSuccessful()) {
 
                         mAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
-                                if (task.isSuccessful()){
+                                if (task.isSuccessful()) {
                                     progressDialog.dismiss();
                                     Toast.makeText(RegisterActivity.this, "Verify email address", Toast.LENGTH_SHORT).show();
-                                } else{
-                                    Toast.makeText(RegisterActivity.this, ""+task.getException(), Toast.LENGTH_SHORT).show();
+                                } else {
+                                    Toast.makeText(RegisterActivity.this, "" + task.getException(), Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });
 
-                    } else{
+                    } else {
                         progressDialog.dismiss();
-                        Toast.makeText(RegisterActivity.this, ""+task.getException(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this, "" + task.getException(), Toast.LENGTH_SHORT).show();
                     }
                 }
             });
@@ -165,7 +169,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void sendUserToNextActivity() {
         Intent intent = new Intent(RegisterActivity.this, WelcomeActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 }
