@@ -14,17 +14,21 @@ public class ViewLessonWidget extends LinearLayout {
 
     TextView goToButton;
     private String name;
+
+    String type;
     TextView viewLessonName;
     private String information;
 
 
-    public ViewLessonWidget(Context context, String name, String info) {
+    public ViewLessonWidget(Context context, String name, String info, String type) {
         super(context);
         LayoutInflater inflater = context.getSystemService(LayoutInflater.class);
         View v = inflater.inflate(R.layout.view_lesson_widget, this, true);
         this.name = name;
         this.information = info;
         init(context);
+        this.type = type;
+        viewLessonName.setText(name);
 
     }
 
@@ -71,6 +75,7 @@ public class ViewLessonWidget extends LinearLayout {
                 Intent intent = new Intent(context, LessonActivity.class);
                 intent.putExtra("NAME", name);
                 intent.putExtra("INFO", information);
+                intent.putExtra("TYPE", type);
                 context.startActivity(intent);
 
             }
@@ -83,8 +88,15 @@ public class ViewLessonWidget extends LinearLayout {
         viewLessonName.setText(name);
     }
 
+    public void setType(String temp){
+        type = temp;
+    }
+
     public void setInformation(String temp){
         information = temp;
 
+    }
+    public String getType(){
+        return type;
     }
 }

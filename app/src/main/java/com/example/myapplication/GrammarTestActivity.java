@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -29,6 +30,8 @@ import java.util.List;
 
 public class GrammarTestActivity extends AppCompatActivity implements View.OnClickListener{
 
+    int bestScore = 0;
+
     FirebaseFirestore firebaseFirestore;
 
     TextView totalQuestionsTextView, goBack;
@@ -36,13 +39,14 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
     AppCompatButton ansA, ansB, ansC, ansD;
     Button submitBtn;
 
-    int score=0;
+    int score = 0;
     int totalQuestion = 1;
     int currentQuestionIndex = 0;
     String selectedAnswer = "";
 
     ArrayList<GrammarQuizModel> arrayList = new ArrayList<>();
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,7 +67,7 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
         ansD.setOnClickListener(this);
         submitBtn.setOnClickListener(this);
 
-        totalQuestionsTextView.setText("Total questions : "+totalQuestion);
+        totalQuestionsTextView.setText("Total questions : " + totalQuestion);
 
 
 
@@ -117,12 +121,17 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
                 if(clickedButton.getId()==R.id.submit_btn){
                     if(selectedAnswer.equals(arrayList.get(currentQuestionIndex).answer)){
                         score++;
+                        clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_right));
+                    } else{
+                        clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_wrong));
                     }
+
                     currentQuestionIndex++;
 
                     (new Handler()).postDelayed(new Runnable() {
                         @Override
                         public void run() {
+                            clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_bg));
                             loadNewQuestion();
                         }
                     }, 200);
@@ -139,7 +148,10 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
         },500);
 
 
+
     }
+
+
 
     void loadNewQuestion(){
 
@@ -164,6 +176,7 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
         }else{
             passStatus = "Failed";
         }
+
 
         new AlertDialog.Builder(this)
                 .setTitle(passStatus)

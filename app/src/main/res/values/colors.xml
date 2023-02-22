@@ -6,6 +6,8 @@
     <color name="color_secondary">#7C8DFF</color>
     <color name="color_secondary_dark">#7C8DFF</color>
     <color name="off_white">#f7f6f9</color>
+    <color name="red">#FF0000</color>
+    <color name="green">#25C501</color>
 
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>

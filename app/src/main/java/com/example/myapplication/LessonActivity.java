@@ -14,6 +14,9 @@ public class LessonActivity extends AppCompatActivity {
     String name;
     String info;
 
+    String type;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,17 +26,22 @@ public class LessonActivity extends AppCompatActivity {
             if(extras == null) {
                 name = null;
                 info = null;
+                type = null;
 
             } else {
                 name = extras.getString("NAME");
                 info = extras.getString("INFO");
+                type = extras.getString("TYPE");
 
             }
         } else {
             name = (String) savedInstanceState.getSerializable("NAME");
             info = (String) savedInstanceState.getSerializable("INFO");
+            type = (String) savedInstanceState.getSerializable("TYPE");
 
         }
+
+
 
         setContentView(R.layout.activity_grammar_lesson);
 
@@ -51,5 +59,9 @@ public class LessonActivity extends AppCompatActivity {
                 finish();            }
         });
 
+    }
+
+    public String getType(){
+        return type;
     }
 }

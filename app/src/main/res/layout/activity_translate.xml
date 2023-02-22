@@ -22,23 +22,13 @@
             android:gravity="center">
 
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="30dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:src="@drawable/app_logo"
                 android:layout_gravity="center"
                 android:layout_marginEnd="4dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/translator"
-                android:textColor="@color/off_white"
-                android:textStyle="bold"
-                android:layout_marginStart="4dp"
-                android:textAlignment="center"
-                android:textAllCaps="true"
-                android:textSize="23sp"
-                android:layout_gravity="center"/>
+
 
 
         </LinearLayout>
@@ -155,7 +145,7 @@
             android:layout_gravity="center"
             android:textColor="@color/off_white"
             android:textSize="15sp"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp" />
 
 
     </LinearLayout>

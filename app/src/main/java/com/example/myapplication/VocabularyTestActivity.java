@@ -7,6 +7,7 @@ import androidx.appcompat.content.res.AppCompatResources;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.content.res.ResourcesCompat;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -65,7 +66,7 @@ public class VocabularyTestActivity extends AppCompatActivity implements View.On
 
 
 
-    @Override
+
     public void onClick(View view) {
 
         Drawable d = getResources().getDrawable(R.drawable.button_background_style);

@@ -31,18 +31,19 @@ public class GrammarStudyGroupActivity extends AppCompatActivity {
 
         back.setOnClickListener(v -> finish());
 
-        nounsPronouns.setOnClickListener(v -> startActivity());
-        verbsAdverbs.setOnClickListener(v -> startActivity());
-        adjectives.setOnClickListener(v -> startActivity());
-        prepositions.setOnClickListener(v -> startActivity());
-        interjectionsConjunctions.setOnClickListener(v -> startActivity());
+        nounsPronouns.setOnClickListener(v -> startActivity("nouns"));
+        verbsAdverbs.setOnClickListener(v -> startActivity("verbs"));
+        adjectives.setOnClickListener(v -> startActivity("adjectives"));
+        prepositions.setOnClickListener(v -> startActivity("prepositions"));
+        interjectionsConjunctions.setOnClickListener(v -> startActivity("interjections"));
 
 
 
 
     }
-    void startActivity(){
+    void startActivity(String type){
         Intent intent = new Intent(getApplicationContext(), GrammarActivity.class);
+        intent.putExtra("OPENTYPE", type);
         startActivity(intent);
     }
 }
