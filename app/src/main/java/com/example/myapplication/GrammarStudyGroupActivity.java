@@ -9,8 +9,10 @@ import android.widget.TextView;
 
 public class GrammarStudyGroupActivity extends AppCompatActivity {
 
-    TextView nounsPronouns;
-    TextView verbsAdverbs;
+    TextView nouns;
+    TextView pronouns;
+    TextView verbs;
+    TextView adverbs;
     TextView adjectives;
     TextView prepositions;
     TextView interjectionsConjunctions;
@@ -22,8 +24,10 @@ public class GrammarStudyGroupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grammar_study_group);
 
-        nounsPronouns = findViewById(R.id.nouns_and_pronouns);
-        verbsAdverbs = findViewById(R.id.verbs_and_adverbs);
+        nouns = findViewById(R.id.nouns);
+        pronouns = findViewById(R.id.pronouns);
+        verbs = findViewById(R.id.verbs);
+        adverbs = findViewById(R.id.adverbs);
         adjectives = findViewById(R.id.adjectives);
         prepositions = findViewById(R.id.prepositions);
         interjectionsConjunctions = findViewById(R.id.interjections_conjuctions);
@@ -31,8 +35,10 @@ public class GrammarStudyGroupActivity extends AppCompatActivity {
 
         back.setOnClickListener(v -> finish());
 
-        nounsPronouns.setOnClickListener(v -> startActivity("nouns"));
-        verbsAdverbs.setOnClickListener(v -> startActivity("verbs"));
+        nouns.setOnClickListener(v -> startActivity("nouns"));
+        pronouns.setOnClickListener(v -> startActivity("pronouns"));
+        verbs.setOnClickListener(v -> startActivity("verbs"));
+        adverbs.setOnClickListener(v -> startActivity("adverbs"));
         adjectives.setOnClickListener(v -> startActivity("adjectives"));
         prepositions.setOnClickListener(v -> startActivity("prepositions"));
         interjectionsConjunctions.setOnClickListener(v -> startActivity("interjections"));

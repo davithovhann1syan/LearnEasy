@@ -45,80 +45,183 @@ public class GrammarActivity extends AppCompatActivity {
 
         viewLessonWidgetArrayList = new ArrayList<>();
 
-        ViewLessonWidget obj1 = new ViewLessonWidget(this, "nouns","test", "nouns");
-        ViewLessonWidget obj2 = new ViewLessonWidget(this, "verbs", "test", "verbs");
-        ViewLessonWidget obj3 = new ViewLessonWidget(this, "adjectives", "test", "adjectives");
-        ViewLessonWidget obj4 = new ViewLessonWidget(this, "prepositions", "test", "prepositions");
-        ViewLessonWidget obj5 = new ViewLessonWidget(this, "interjections", "test", "interjections");
+        // nouns
+
+        ViewLessonWidget obj1 = new ViewLessonWidget(this, "Lesson 1: Introduction to Nouns","test", "nouns");
+        ViewLessonWidget obj2 = new ViewLessonWidget(this, "Lesson 2: Types of Nouns","test", "nouns");
+        ViewLessonWidget obj3 = new ViewLessonWidget(this, "Lesson 3: Singular and Plural Nouns","test", "nouns");
+        ViewLessonWidget obj4 = new ViewLessonWidget(this, "Lesson 4: Countable and Uncountable Nouns","test", "nouns");
+        ViewLessonWidget obj5 = new ViewLessonWidget(this, "Lesson 5: Gender-Specific Nouns","test", "nouns");
+        ViewLessonWidget obj6 = new ViewLessonWidget(this, "Lesson 6: Possessive Nouns","test", "nouns");
+        ViewLessonWidget obj7 = new ViewLessonWidget(this, "Lesson 7: Noun Phrases","test", "nouns");
+        ViewLessonWidget obj8 = new ViewLessonWidget(this, "Lesson 8: Using Nouns in Sentences","test", "nouns");
+        ViewLessonWidget obj9 = new ViewLessonWidget(this, "Lesson 9: Common Noun Mistakes to Avoid","test", "nouns");
+        ViewLessonWidget obj10 = new ViewLessonWidget(this, "Lesson 10: Using Nouns Effectively in Writing","test", "nouns");
 
         viewLessonWidgetArrayList.add(obj1);
         viewLessonWidgetArrayList.add(obj2);
         viewLessonWidgetArrayList.add(obj3);
         viewLessonWidgetArrayList.add(obj4);
         viewLessonWidgetArrayList.add(obj5);
+        viewLessonWidgetArrayList.add(obj6);
+        viewLessonWidgetArrayList.add(obj7);
+        viewLessonWidgetArrayList.add(obj8);
+        viewLessonWidgetArrayList.add(obj9);
+        viewLessonWidgetArrayList.add(obj10);
+
+
+        // pronouns
+
+        ViewLessonWidget obj11 = new ViewLessonWidget(this, "Lesson 1: Introduction to Pronouns","test", "pronouns");
+        ViewLessonWidget obj12 = new ViewLessonWidget(this, "Lesson 2: Personal Pronouns","test", "pronouns");
+        ViewLessonWidget obj13 = new ViewLessonWidget(this, "Lesson 3: Possessive Pronouns","test", "pronouns");
+        ViewLessonWidget obj14 = new ViewLessonWidget(this, "Lesson 4: Reflexive Pronouns","test", "pronouns");
+        ViewLessonWidget obj15 = new ViewLessonWidget(this, "Lesson 5: Demonstrative Pronouns","test", "pronouns");
+        ViewLessonWidget obj16 = new ViewLessonWidget(this, "Lesson 6: Interrogative Pronouns","test", "pronouns");
+        ViewLessonWidget obj17 = new ViewLessonWidget(this, "Lesson 7: Relative Pronouns","test", "pronouns");
+        ViewLessonWidget obj18 = new ViewLessonWidget(this, "Lesson 8: Indefinite Pronouns","test", "pronouns");
+        ViewLessonWidget obj19 = new ViewLessonWidget(this, "Lesson 9: Common Pronoun Errors","test", "pronouns");
+        ViewLessonWidget obj20 = new ViewLessonWidget(this, "Lesson 10: Using Pronouns Effectively in Writing","test", "pronouns");
+
+        viewLessonWidgetArrayList.add(obj11);
+        viewLessonWidgetArrayList.add(obj12);
+        viewLessonWidgetArrayList.add(obj13);
+        viewLessonWidgetArrayList.add(obj14);
+        viewLessonWidgetArrayList.add(obj15);
+        viewLessonWidgetArrayList.add(obj16);
+        viewLessonWidgetArrayList.add(obj17);
+        viewLessonWidgetArrayList.add(obj18);
+        viewLessonWidgetArrayList.add(obj19);
+        viewLessonWidgetArrayList.add(obj20);
+
+        // verbs
+
+        ViewLessonWidget obj21 = new ViewLessonWidget(this, "Lesson 1: Introduction to Verbs","test", "verbs");
+        ViewLessonWidget obj22 = new ViewLessonWidget(this, "Lesson 2: Types of Verbs","test", "verbs");
+        ViewLessonWidget obj23 = new ViewLessonWidget(this, "Lesson 3: Verb Tense","test", "verbs");
+        ViewLessonWidget obj24 = new ViewLessonWidget(this, "Lesson 4: Regular and Irregular Verbs","test", "verbs");
+        ViewLessonWidget obj25 = new ViewLessonWidget(this, "Lesson 5: Verb Agreement","test", "verbs");
+        ViewLessonWidget obj26 = new ViewLessonWidget(this, "Lesson 6: Active and Passive Voice","test", "verbs");
+        ViewLessonWidget obj27 = new ViewLessonWidget(this, "Lesson 7: Verb Phrases","test", "verbs");
+        ViewLessonWidget obj28 = new ViewLessonWidget(this, "Lesson 8: Gerunds and Infinitives","test", "verbs");
+        ViewLessonWidget obj29 = new ViewLessonWidget(this, "Lesson 9: Phrasal Verbs","test", "verbs");
+        ViewLessonWidget obj30 = new ViewLessonWidget(this, "Lesson 10: Verb Collocations","test", "verbs");
+        ViewLessonWidget obj31 = new ViewLessonWidget(this, "Lesson 11: Writing with Verbs","test", "verbs");
+
+
+        viewLessonWidgetArrayList.add(obj21);
+        viewLessonWidgetArrayList.add(obj22);
+        viewLessonWidgetArrayList.add(obj23);
+        viewLessonWidgetArrayList.add(obj24);
+        viewLessonWidgetArrayList.add(obj25);
+        viewLessonWidgetArrayList.add(obj26);
+        viewLessonWidgetArrayList.add(obj27);
+        viewLessonWidgetArrayList.add(obj28);
+        viewLessonWidgetArrayList.add(obj29);
+        viewLessonWidgetArrayList.add(obj30);
+        viewLessonWidgetArrayList.add(obj31);
+
+        //adverbs
+
+        ViewLessonWidget obj32 = new ViewLessonWidget(this, "Lesson 1: Introduction to Adverbs","test", "adverbs");
+        ViewLessonWidget obj33 = new ViewLessonWidget(this, "Lesson 2: Types of Adverbs","test", "adverbs");
+        ViewLessonWidget obj34 = new ViewLessonWidget(this, "Lesson 3: Adverbs of Manner","test", "adverbs");
+        ViewLessonWidget obj35 = new ViewLessonWidget(this, "Lesson 4: Adverbs of Time and Place","test", "adverbs");
+        ViewLessonWidget obj36 = new ViewLessonWidget(this, "Lesson 5: Adverbs of Frequency and Degree","test", "adverbs");
+        ViewLessonWidget obj37 = new ViewLessonWidget(this, "Lesson 6: AComparison of Adverbs","test", "adverbs");
+        ViewLessonWidget obj38 = new ViewLessonWidget(this, "Lesson 7: Position of Adverbs","test", "adverbs");
+        ViewLessonWidget obj39 = new ViewLessonWidget(this, "Lesson 8: Adverbs and Negatives","test", "adverbs");
+        ViewLessonWidget obj40 = new ViewLessonWidget(this, "Lesson 9: Common Adverb Mistakes to Avoid","test", "adverbs");
+        ViewLessonWidget obj41 = new ViewLessonWidget(this, "Lesson 10: Using Adverbs to Express Attitude and Emotion","test", "adverbs");
+
+        viewLessonWidgetArrayList.add(obj32);
+        viewLessonWidgetArrayList.add(obj33);
+        viewLessonWidgetArrayList.add(obj34);
+        viewLessonWidgetArrayList.add(obj35);
+        viewLessonWidgetArrayList.add(obj36);
+        viewLessonWidgetArrayList.add(obj37);
+        viewLessonWidgetArrayList.add(obj38);
+        viewLessonWidgetArrayList.add(obj39);
+        viewLessonWidgetArrayList.add(obj40);
+        viewLessonWidgetArrayList.add(obj41);
+
+        //adjectives
+
+        ViewLessonWidget obj42 = new ViewLessonWidget(this, "Lesson 1: Introduction to Adjectives","test", "adjectives");
+        ViewLessonWidget obj43 = new ViewLessonWidget(this, "Lesson 2: Types of Adjectives","test", "adjectives");
+        ViewLessonWidget obj44 = new ViewLessonWidget(this, "Lesson 3: Comparative and Superlative Adjectives","test", "adjectives");
+        ViewLessonWidget obj45 = new ViewLessonWidget(this, "Lesson 4: Order of Adjectives","test", "adjectives");
+        ViewLessonWidget obj46 = new ViewLessonWidget(this, "Lesson 5: Using Adjectives Effectively in Writing","test", "adjectives");
+        ViewLessonWidget obj47 = new ViewLessonWidget(this, "Lesson 6: Irregular Adjectives","test", "adjectives");
+        ViewLessonWidget obj48 = new ViewLessonWidget(this, "Lesson 7: Adjectives and Articles","test", "adjectives");
+        ViewLessonWidget obj49 = new ViewLessonWidget(this, "Lesson 8: Adjective Endings","test", "adjectives");
+        ViewLessonWidget obj50 = new ViewLessonWidget(this, "Lesson 9: Adjective Order in Questions","test", "adjectives");
+        ViewLessonWidget obj51 = new ViewLessonWidget(this, "Lesson 10: Review and Practice","test", "adjectives");
+
+        viewLessonWidgetArrayList.add(obj42);
+        viewLessonWidgetArrayList.add(obj43);
+        viewLessonWidgetArrayList.add(obj44);
+        viewLessonWidgetArrayList.add(obj45);
+        viewLessonWidgetArrayList.add(obj46);
+        viewLessonWidgetArrayList.add(obj47);
+        viewLessonWidgetArrayList.add(obj48);
+        viewLessonWidgetArrayList.add(obj49);
+        viewLessonWidgetArrayList.add(obj50);
+        viewLessonWidgetArrayList.add(obj51);
+
+        //prepositions
+
+        ViewLessonWidget obj52 = new ViewLessonWidget(this, "Lesson 1: Introduction to Prepositions","test", "prepositions");
+        ViewLessonWidget obj53 = new ViewLessonWidget(this, "Lesson 2: Preposition Categories","test", "prepositions");
+        ViewLessonWidget obj54 = new ViewLessonWidget(this, "Lesson 3: Using Prepositions in Simple Sentences","test", "prepositions");
+        ViewLessonWidget obj55 = new ViewLessonWidget(this, "Lesson 4: Prepositions with Verbs","test", "prepositions");
+        ViewLessonWidget obj56 = new ViewLessonWidget(this, "Lesson 5: Prepositions with Nouns and Pronouns","test", "prepositions");
+        ViewLessonWidget obj57 = new ViewLessonWidget(this, "Lesson 6: Prepositions with Adjectives and Adverbs","test", "prepositions");
+        ViewLessonWidget obj58 = new ViewLessonWidget(this, "Lesson 7: Prepositions of Time","test", "prepositions");
+        ViewLessonWidget obj59 = new ViewLessonWidget(this, "Lesson 8: Prepositions of Location and Direction","test", "prepositions");
+        ViewLessonWidget obj60 = new ViewLessonWidget(this, "Lesson 9: Prepositions in Idioms","test", "prepositions");
+        ViewLessonWidget obj61 = new ViewLessonWidget(this, "Lesson 10: Preposition Mistakes to Avoid","test", "prepositions");
+
+        viewLessonWidgetArrayList.add(obj52);
+        viewLessonWidgetArrayList.add(obj53);
+        viewLessonWidgetArrayList.add(obj54);
+        viewLessonWidgetArrayList.add(obj55);
+        viewLessonWidgetArrayList.add(obj56);
+        viewLessonWidgetArrayList.add(obj57);
+        viewLessonWidgetArrayList.add(obj58);
+        viewLessonWidgetArrayList.add(obj59);
+        viewLessonWidgetArrayList.add(obj60);
+        viewLessonWidgetArrayList.add(obj61);
+
+        //interjections and conjunctions
+
+        ViewLessonWidget obj62 = new ViewLessonWidget(this, "Lesson 1: Introduction to Interjections and Conjunctions","test", "interjections");
+        ViewLessonWidget obj63 = new ViewLessonWidget(this, "Lesson 2: Interjections","test", "interjections");
+        ViewLessonWidget obj64 = new ViewLessonWidget(this, "Lesson 3: Conjunction Categories","test", "interjections");
+        ViewLessonWidget obj65 = new ViewLessonWidget(this, "Lesson 4: Coordinating Conjunctions","test", "interjections");
+        ViewLessonWidget obj66 = new ViewLessonWidget(this, "Lesson 5: Subordinating Conjunctions","test", "interjections");
+        ViewLessonWidget obj67 = new ViewLessonWidget(this, "Lesson 6: Correlative Conjunctions","test", "interjections");
+        ViewLessonWidget obj68 = new ViewLessonWidget(this, "Lesson 7: Interjections in Writing","test", "interjections");
+        ViewLessonWidget obj69 = new ViewLessonWidget(this, "Lesson 8: Conjunctions in Writing","test", "interjections");
+        ViewLessonWidget obj70 = new ViewLessonWidget(this, "Lesson 9: Interjection and Conjunction Mistakes to Avoid","test", "interjections");
+        ViewLessonWidget obj71 = new ViewLessonWidget(this, "Lesson 10: Using Interjections and Conjunctions in Conversations","test", "interjections");
+
+        viewLessonWidgetArrayList.add(obj62);
+        viewLessonWidgetArrayList.add(obj63);
+        viewLessonWidgetArrayList.add(obj64);
+        viewLessonWidgetArrayList.add(obj65);
+        viewLessonWidgetArrayList.add(obj66);
+        viewLessonWidgetArrayList.add(obj67);
+        viewLessonWidgetArrayList.add(obj68);
+        viewLessonWidgetArrayList.add(obj69);
+        viewLessonWidgetArrayList.add(obj70);
+        viewLessonWidgetArrayList.add(obj71);
+
+
 
         drawWidgets(viewLessonWidgetArrayList);
 
-    /*  viewLessonWidget.setName("Simple Present Tense");
-        viewLessonWidget.setType("");
-        viewLessonWidget.setInformation("Simple present tense conveys action in the present. It is applied to show a habitual action or general truth. Predominantly, we use the present tense to describe an action occurring in the present time.\n \nFor instance,\n \nI cook every day.\n" +
-                "The sun rises in the east.");*/
 
-
-     /*viewLessonWidget1.setName("Present Continuous Tense");
-        viewLessonWidget1.setInformation("Present continuous tense is used to delineate an action that is taking place at the current time of speaking. It is also used to depict something that we have arranged to do in the future. The structure of this tense is is/am/are + main verb + ing. \n\nFor example \n\nThe boys are playing cricket on the ground.\n" +
-                "The train is going to arrive at 6:00 tomorrow morning.");
-
-
-        viewLessonWidget1.setName("Present Perfect Tense");
-        viewLessonWidget1.setInformation("Present perfect tense is used when we have to describe an action that has been completed in the immediate past or that occurred at an indefinite time in the past, or that began in the past but continues in the present. The structure of this tense is has/have + main verb + ed or en.\n\nFor instance,\n\nHave you ever been to Europe?\n" +
-                "Gujarat has been a state since 1960.");
-
-
-        viewLessonWidget1.setName("Present Perfect Continuous Tense");
-        viewLessonWidget1.setInformation("Present perfect continuous tense depicts an action that started in the past, is continuing at present, and may continue in the future. The structure of this tense is has/have + been + main verb + ing. \n\nFor example,\n\nIt has been raining for the past two days.\n" +
-                "She has been watching TV for the last four hours.");
-
-
-        viewLessonWidget1.setName("Simple Past Tense");
-        viewLessonWidget1.setInformation("Simple past tense refers to an action that was done in the past. Use this tense to show an event or action that took place at a specific time in the past and now it’s over.\n\nFor example,\n\nI worked in the IT sector.\n" +
-                "The milk used to cost 10 rupees per liter some years ago.");
-
-
-        viewLessonWidget1.setName("Past Continuous Tense");
-        viewLessonWidget1.setInformation("Past continuous tense describes in progress action in the past when another past action takes place. The structure of this tense is was/were + main verb + ing. \n\nFor instance,\n\nAlex was playing video games when his mother arrived home.\n" +
-                "Seema was waiting at the airport when her brother got off the plane.");
-
-
-        viewLessonWidget1.setName("Past Perfect Tense");
-        viewLessonWidget1.setInformation("Past perfect tense refers to an action that leads up to another in the past. The more contemporary past event is expressed in the simple past, and the earlier past event is expressed in the past perfect. The structure of this tense is had + main verb + ed or en.\n\nFor example,\n\nRichard had lived in Europe, before he moved to Australia.\n" +
-                "He had visited his sister before he went for the study in the USA.");
-
-
-        viewLessonWidget1.setName("Past Perfect Continuous Tense");
-        viewLessonWidget1.setInformation("Past perfect continuous tense describes an ongoing action in the past that is completed before another action takes place in the past. The structure of this tense is had + been + main verb + ing.\n\nFor instance,\n\nShe had been studying all day.\n" +
-                "Lily had been working in Google for three years when she lost her job.");
-
-
-        viewLessonWidget1.setName("Simple Future Tense");
-        viewLessonWidget1.setInformation("Simple future tense refers to an action that will take place in the future. Generally, it is used to describe a prediction or intention.\n\nFor example,\n\nI am going to move to the USA to pursue my masters.\n" +
-                "She will help me tomorrow to complete my assignments.");
-
-
-        viewLessonWidget1.setName("Future Continuous Tense");
-        viewLessonWidget1.setInformation("Future continuous tense describes an action that is taking place in the present and will continue taking place in the future also. The structure of this tense is will be/shall be + main verb + ing.\n\nFor instance,\n\nI will be studying tomorrow.\n" +
-                "We shall not be watching a movie today.");
-
-
-        viewLessonWidget1.setName("Future Perfect Tense");
-        viewLessonWidget1.setInformation("Future perfect tense is used to describe an action that precedes another in the future. The structure of this tense is will/shall + have + main verb + ed or en.\n\nFor instance,\n\nBy the end of this year, the president will have established new industries in the country.\n" +
-                "They will have finished their work by tomorrow.");
-
-
-        viewLessonWidget1.setName("Future Perfect Continuous Tense");
-        viewLessonWidget1.setInformation("Future perfect continuous tense refers to an ongoing action that will take place prior to a certain time in the future. The structure of this tense is will have + been + main verb + ing.\n\nFor example,\n\nI will not have been staying in India by next year.\n" +
-                "He will have been dancing for two hours.");
-*/
     }
 
     public void drawWidgets(ArrayList<ViewLessonWidget> list) {

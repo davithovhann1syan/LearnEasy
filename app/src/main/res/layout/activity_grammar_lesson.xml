@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:paddingTop="20dp"
 
-        android:textSize="25sp"/>
+        android:textSize="15sp"/>
 
     <TextView
         android:id="@+id/information"
@@ -29,12 +29,12 @@
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:background="@drawable/button_background"
+        android:background="@drawable/button_background_style"
         android:paddingHorizontal="10sp"
-        android:text="Example"
+        android:text="text"
         android:textAlignment="center"
         android:textColor="@color/off_white"
-        android:textSize="25sp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/backButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

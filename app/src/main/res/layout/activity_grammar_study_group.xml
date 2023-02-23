@@ -14,19 +14,45 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="text"
-        android:textSize="25sp"
+        android:text="Start your grammar course"
+        android:textSize="15sp"
         android:textAllCaps="true"
         android:gravity="center"
         android:textStyle="bold"
         android:textColor="@color/off_white"/>
 
     <TextView
-        android:id="@+id/nouns_and_pronouns"
+        android:id="@+id/nouns"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="nouns and pronouns"
-        android:textSize="25sp"
+        android:text="nouns"
+        android:textSize="15sp"
+        android:textColor="@color/off_white"
+        android:background="@drawable/bg_button"
+        android:paddingVertical="15dp"
+        android:paddingHorizontal="25dp"
+        android:textAlignment="center"
+        android:layout_marginVertical="20dp"/>
+
+    <TextView
+        android:id="@+id/pronouns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="pronouns"
+        android:textSize="15sp"
+        android:textColor="@color/off_white"
+        android:background="@drawable/bg_button"
+        android:paddingVertical="15dp"
+        android:paddingHorizontal="25dp"
+        android:textAlignment="center"
+        android:layout_marginVertical="20dp"/>
+
+    <TextView
+        android:id="@+id/verbs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="verbs"
+        android:textSize="15sp"
         android:textColor="@color/off_white"
         android:background="@drawable/bg_button"
         android:paddingVertical="15dp"
@@ -34,11 +60,11 @@
         android:textAlignment="center"
         android:layout_marginVertical="20dp"/>
     <TextView
-        android:id="@+id/verbs_and_adverbs"
+        android:id="@+id/adverbs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="verbs and adverbs"
-        android:textSize="25sp"
+        android:text="verbs"
+        android:textSize="15sp"
         android:textColor="@color/off_white"
         android:background="@drawable/bg_button"
         android:paddingVertical="15dp"
@@ -50,7 +76,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="adjectives"
-        android:textSize="25sp"
+        android:textSize="15sp"
         android:textColor="@color/off_white"
         android:background="@drawable/bg_button"
         android:paddingVertical="15dp"
@@ -62,7 +88,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="prepositions"
-        android:textSize="25sp"
+        android:textSize="15sp"
         android:textColor="@color/off_white"
         android:background="@drawable/bg_button"
         android:paddingVertical="15dp"
@@ -75,7 +101,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="interjections, conjunctions"
-        android:textSize="25sp"
+        android:textSize="15sp"
         android:textColor="@color/off_white"
         android:background="@drawable/bg_button"
         android:paddingVertical="15dp"
@@ -95,3 +121,4 @@
         android:textSize="15sp" />
 
 </LinearLayout>
+
