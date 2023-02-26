@@ -39,6 +39,8 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
     AppCompatButton ansA, ansB, ansC, ansD;
     AppCompatButton submitBtn, nextBtn;
 
+    String lvl;
+
 
     int score = 0;
     int totalQuestion = 1;
@@ -71,17 +73,6 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
         nextBtn.setOnClickListener(this);
         totalQuestionsTextView.setText("Total questions : " + totalQuestion);
 
-       /* nextBtn.setOnClickListener(new View.OnClickListener() {
-
-
-            @Override
-            public void onClick(View v) {
-
-
-            }
-        });*/
-
-
 
         goBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,7 +83,7 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
 
         firebaseFirestore= FirebaseFirestore.getInstance();
 
-        firebaseFirestore.collection("grammartest")
+        firebaseFirestore.collection("englishleveltest")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -118,10 +109,7 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
     @Override
     public void onClick(View view) {
 
-        (new Handler()).postDelayed(new Runnable() {
-            @SuppressLint("UseCompatLoadingForDrawables")
-            @Override
-            public void run() {
+
                 Drawable d = getResources().getDrawable(R.drawable.button_background_style);
                 ansA.setBackgroundDrawable(d);
                 ansB.setBackgroundDrawable(d);
@@ -154,12 +142,14 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
                     selectedAnswer = clickedButton.getText().toString();
                     clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_bg));
                 }
+
             }
-        },200);
 
 
 
-    }
+
+
+
 
 
 
@@ -180,6 +170,15 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
     }
 
     void finishQuiz(){
+
+        double x = score / arrayList.size();
+
+        if ( x <= 0.5){
+            lvl = "beginner";
+        } else if (x > 0.5 && x <= 0.7 ){
+            lvl = "intermediate";
+        } else lvl = "advanced";
+
         String passStatus = "";
         if(score > totalQuestion*0.60){
             passStatus = "Passed";
@@ -188,25 +187,18 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
         }
 
 
+
         new AlertDialog.Builder(this)
-                .setTitle(passStatus)
-                .setMessage("Score is "+ score+" out of "+ totalQuestion)
-                /* .setPositiveButton("Restart",(dialogInterface, i) -> restartQuiz() )*/
-                .setPositiveButton("View wrong answers",(dialogInterface, i) -> wrongAnswersPage() )
+                .setMessage("Good job! Your score is "+ score+" out of "+ totalQuestion + " so your english grammar level is close to " + lvl + " so we recommend you to pick the course for your english level")
+                .setPositiveButton("Click to pick course",(dialogInterface, i) -> goBack() )
                 .setCancelable(false)
                 .show();
 
 
     }
 
-   /* void restartQuiz(){
-        score = 0;
-        currentQuestionIndex =0;
-        loadNewQuestion();
-    }*/
-
-    void wrongAnswersPage(){
-        Intent intent = new Intent(getApplicationContext(), GrammarWrongAnswers.class);
+    void goBack(){
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
     }
 
