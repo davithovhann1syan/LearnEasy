@@ -68,7 +68,7 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
         ansC.setOnClickListener(this);
         ansD.setOnClickListener(this);
         submitBtn.setOnClickListener(this);
-
+        nextBtn.setOnClickListener(this);
         totalQuestionsTextView.setText("Total questions : " + totalQuestion);
 
        /* nextBtn.setOnClickListener(new View.OnClickListener() {
@@ -143,8 +143,10 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
                     if (selectedAnswer.equals(arrayList.get(currentQuestionIndex).answer)){
                         score++;
                     }
+                    submitBtn.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style));
                     currentQuestionIndex++;
                     loadNewQuestion();
+                    clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style));
 
                 } else {
                     //choices button clicked
