@@ -2,14 +2,14 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_general"
+    android:background="@drawable/app_background2"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/background_general"
+        android:background="@drawable/app_background2"
         android:id="@+id/main_layout">
 
         <LinearLayout
@@ -113,25 +113,40 @@
             android:textAllCaps="false"
             android:background="@drawable/button_background_style"/>
 
-        <TextView
+        <RelativeLayout
+            android:id="@+id/translation_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"
+            android:visibility="gone">
+
+            <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            android:translationZ="10dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
+
+            <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/idTranslatedTV"
             android:text="@string/translated_text"
             android:background="@drawable/background"
             android:elevation="3dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="10dp"
             android:layout_gravity="center"
             android:textAlignment="center"
             android:padding="16sp"
             android:textSize="16sp"
             android:textColor="@color/black"
-            android:letterSpacing="0.03"
-            android:visibility="gone"/>
+            android:letterSpacing="0.03"/>
 
+        </RelativeLayout>
 
         <TextView
             android:id="@+id/back"
@@ -146,7 +161,6 @@
             android:textColor="@color/off_white"
             android:textSize="15sp"
             android:layout_marginTop="10dp" />
-
 
     </LinearLayout>
 

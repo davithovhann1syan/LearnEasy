@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LessonActivity"
-    android:background="@drawable/background_welcome">
+    android:background="@drawable/app_background2"
+    android:orientation="vertical"
+   >
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginHorizontal="15dp"
+    >
 
 
     <TextView
@@ -13,6 +25,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Heading"
+        android:layout_margin="20dp"
+        android:layout_gravity="center_horizontal"
         android:textColor="@color/off_white"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,14 +41,15 @@
         android:id="@+id/information"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="25sp"
         android:background="@drawable/button_background_style"
-        android:paddingHorizontal="10sp"
         android:text="text"
+        android:layout_margin="20dp"
+        android:layout_gravity="center_horizontal"
         android:textAlignment="center"
         android:textColor="@color/off_white"
-        android:textSize="15sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/backButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,6 +62,8 @@
         android:text="Previous page"
         android:background="@drawable/bg_button"
         android:paddingHorizontal="15dp"
+        android:layout_margin="10dp"
+        android:layout_gravity="center_horizontal"
         android:paddingVertical="10dp"
         android:textColor="@color/off_white"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -57,4 +74,6 @@
 
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
+
+</ScrollView>

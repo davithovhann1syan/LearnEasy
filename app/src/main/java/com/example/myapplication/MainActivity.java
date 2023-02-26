@@ -17,14 +17,15 @@ public class MainActivity extends AppCompatActivity {
         TextView beginner = findViewById(R.id.beginner);
         TextView intermediate = findViewById(R.id.intermediate);
         TextView advanced = findViewById(R.id.advanced);
-        //TextView back = findViewById(R.id.back);
+        TextView test = findViewById(R.id.take_a_test);
 
-        /*back.setOnClickListener(new View.OnClickListener() {
+        test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                Intent intent = new Intent(getApplicationContext(), EnglishLevelTestActivity.class);
+                startActivity(intent);
             }
-        });*/
+        });
 
         beginner.setOnClickListener(new View.OnClickListener() {
             @Override

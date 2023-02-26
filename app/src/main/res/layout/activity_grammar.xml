@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/background_general"
+    android:background="@drawable/app_background2"
     tools:context=".GrammarActivity">
 
     <ScrollView

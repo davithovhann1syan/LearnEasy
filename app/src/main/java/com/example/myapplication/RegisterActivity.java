@@ -33,7 +33,7 @@ import java.util.Objects;
 public class RegisterActivity extends AppCompatActivity {
 
     AppCompatButton btnSignInGoogle;
-    AppCompatButton btnSignInFacebook;
+    AppCompatButton btnSignInPhone;
     private ConstraintLayout layout;
     TextView alreadyHaveAnAccount;
     AppCompatButton btnRegister;
@@ -62,7 +62,7 @@ public class RegisterActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
         btnSignInGoogle = findViewById(R.id.btnGoogle);
-        btnSignInFacebook = findViewById(R.id.btnFacebook);
+        btnSignInPhone = findViewById(R.id.btnPhone);
 
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()

@@ -15,6 +15,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -43,6 +45,10 @@ public class TranslateActivity extends AppCompatActivity {
     private TextView translateTV, goBack;
     private LinearLayout layout;
 
+    RelativeLayout translateContainer;
+
+    ProgressBar progressBar;
+
 
     String[] fromLanguage = {"From", "English", "France", "Belarusian", "Russian", "Ukrainian", "Czech" , "Arabic", "Hindi"};
 
@@ -63,6 +69,8 @@ public class TranslateActivity extends AppCompatActivity {
         translateTV = findViewById(R.id.idTranslatedTV);
         goBack = findViewById(R.id.back);
         layout = findViewById(R.id.main_layout);
+        translateContainer = findViewById(R.id.translation_container);
+        progressBar = findViewById(R.id.progressBar);
 
         layout.setOnClickListener(v->{
             InputMethodManager inm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -130,7 +138,9 @@ public class TranslateActivity extends AppCompatActivity {
     }
 
     private void translateText(int fromLanguageCode, String source) {
-        translateTV.setText("Downloading model, please wait...");
+        progressBar.setVisibility(View.VISIBLE);
+        translateContainer.setVisibility(View.VISIBLE);
+        //translateTV.setText("Translating...");
         FirebaseTranslatorOptions options = new FirebaseTranslatorOptions.Builder()
                 .setSourceLanguage(fromLanguageCode)
                 .setTargetLanguage(toLanguageCode)
@@ -141,11 +151,14 @@ public class TranslateActivity extends AppCompatActivity {
         translator.downloadModelIfNeeded(conditions).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
-                translateTV.setText("Translation...");
+
+                //translateTV.setText("Translation...");
+
                 translator.translate(source).addOnSuccessListener(new OnSuccessListener<String>() {
                     @Override
                     public void onSuccess(String s) {
                         translateTV.setText(s);
+                        progressBar.setVisibility(View.INVISIBLE);
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override

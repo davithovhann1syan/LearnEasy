@@ -57,6 +57,7 @@ public class GrammarActivity extends AppCompatActivity {
         ViewLessonWidget obj8 = new ViewLessonWidget(this, "Lesson 8: Using Nouns in Sentences","test", "nouns");
         ViewLessonWidget obj9 = new ViewLessonWidget(this, "Lesson 9: Common Noun Mistakes to Avoid","test", "nouns");
         ViewLessonWidget obj10 = new ViewLessonWidget(this, "Lesson 10: Using Nouns Effectively in Writing","test", "nouns");
+        ViewLessonWidget obj100 = new ViewLessonWidget(this, "Lesson 11: Using Nouns Effectively in Writing","test", "nouns");
 
         viewLessonWidgetArrayList.add(obj1);
         viewLessonWidgetArrayList.add(obj2);
@@ -68,6 +69,7 @@ public class GrammarActivity extends AppCompatActivity {
         viewLessonWidgetArrayList.add(obj8);
         viewLessonWidgetArrayList.add(obj9);
         viewLessonWidgetArrayList.add(obj10);
+        viewLessonWidgetArrayList.add(obj100);
 
 
         // pronouns
@@ -156,7 +158,6 @@ public class GrammarActivity extends AppCompatActivity {
         ViewLessonWidget obj48 = new ViewLessonWidget(this, "Lesson 7: Adjectives and Articles","test", "adjectives");
         ViewLessonWidget obj49 = new ViewLessonWidget(this, "Lesson 8: Adjective Endings","test", "adjectives");
         ViewLessonWidget obj50 = new ViewLessonWidget(this, "Lesson 9: Adjective Order in Questions","test", "adjectives");
-        ViewLessonWidget obj51 = new ViewLessonWidget(this, "Lesson 10: Review and Practice","test", "adjectives");
 
         viewLessonWidgetArrayList.add(obj42);
         viewLessonWidgetArrayList.add(obj43);
@@ -167,7 +168,6 @@ public class GrammarActivity extends AppCompatActivity {
         viewLessonWidgetArrayList.add(obj48);
         viewLessonWidgetArrayList.add(obj49);
         viewLessonWidgetArrayList.add(obj50);
-        viewLessonWidgetArrayList.add(obj51);
 
         //prepositions
 

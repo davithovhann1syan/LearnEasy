@@ -47,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseUser mUser;
     AppCompatButton btnSignInGoogle;
-    AppCompatButton btnSignInFacebook;
+    //AppCompatButton btnSignInFacebook;
     GoogleSignInOptions gso;
     GoogleSignInClient gsc;
 
@@ -59,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
         layout = findViewById(R.id.main_layout);
         btnlogin = findViewById(R.id.btnLogin);
         btnSignInGoogle = findViewById(R.id.btnGoogle);
-        btnSignInFacebook = findViewById(R.id.btnFacebook);
+        //btnSignInFacebook = findViewById(R.id.btnFacebook);
         createNewAccount = findViewById(R.id.textViewSignUp);
         inputEmail = findViewById(R.id.inputEmail);
         inputPassword = findViewById(R.id.inputPassword);
@@ -76,16 +76,16 @@ public class LoginActivity extends AppCompatActivity {
         btnSignInGoogle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                signIn();
+                signInGoogle();
             }
         });
 
-        btnSignInFacebook.setOnClickListener(new View.OnClickListener() {
+        /*btnSignInFacebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //login
             }
-        });
+        });*/
 
         /*layout.setOnClickListener(v->{
             InputMethodManager inm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -114,7 +114,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    private void signIn() {
+    private void signInGoogle() {
         Intent intent = gsc.getSignInIntent();
         startActivityForResult(intent, 100);
     }
@@ -158,7 +158,7 @@ public class LoginActivity extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
-                        if (mAuth.getCurrentUser().isEmailVerified()) {
+                        if (mAuth.getCurrentUser().isEmailVerified()) { // .isVerified ov stugum es
                             progressDialog.dismiss();
                             sendUserToNextActivity();
                             Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();

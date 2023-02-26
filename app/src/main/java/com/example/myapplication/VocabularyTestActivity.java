@@ -27,7 +27,7 @@ public class VocabularyTestActivity extends AppCompatActivity implements View.On
     ImageView questionImg;
 
     int score=0;
-    int totalQuestion = QuestionAnswerGrammar.question.length;
+    int totalQuestion = QuestionAnswerVocabulary.images.length;
     int currentQuestionIndex = 0;
     String selectedAnswer = "";
 

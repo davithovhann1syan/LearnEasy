@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_welcome"
+    android:background="@drawable/app_background2"
     android:padding="24dp"
     tools:context=".GrammarTestActivity">
 
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:background="@drawable/button_background_style"
-            android:text="Ans A"
+            android:text=""
             android:textColor="@color/off_white" />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:background="@drawable/button_background_style"
-            android:text="Ans B"
+            android:text=""
             android:textColor="@color/off_white" />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -66,7 +66,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:background="@drawable/button_background_style"
-            android:text="Ans C"
+            android:text=""
             android:textColor="@color/off_white" />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -75,21 +75,42 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:background="@drawable/button_background_style"
-            android:text="Ans D"
+            android:text=""
             android:textColor="@color/off_white" />
 
     </LinearLayout>
 
-    <androidx.appcompat.widget.AppCompatButton
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/submit_btn"
-        android:text="Submit"
-        android:layout_below="@id/choices_layout"
-        android:layout_marginTop="40dp"
-        android:textColor="@color/off_white"
-        android:background="@drawable/button_background_style" />
+        android:layout_above="@+id/back"
+        android:gravity="center"
+        android:layout_below="@+id/choices_layout"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/submit_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/choices_layout"
+            android:layout_weight="1"
+            android:background="@drawable/button_background_style"
+            android:text="submit"
+            android:textColor="@color/off_white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/next_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/choices_layout"
+            android:layout_weight="1"
+            android:background="@drawable/button_background_style_mirror"
+            android:text="next"
+            android:textColor="@color/off_white" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/back"

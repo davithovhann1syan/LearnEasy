@@ -28,7 +28,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GrammarTestActivity extends AppCompatActivity implements View.OnClickListener{
+public class EnglishLevelTestActivity extends AppCompatActivity implements View.OnClickListener{
 
     int bestScore = 0;
 
@@ -37,8 +37,9 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
     TextView totalQuestionsTextView, goBack;
     TextView questionTextView;
     AppCompatButton ansA, ansB, ansC, ansD;
-    AppCompatButton submitBtn, nextBtn;
+    Button submitBtn;
 
+    String level;
 
     int score = 0;
     int totalQuestion = 1;
@@ -52,11 +53,10 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grammar_test_activity);
-
+        level = "beginner";
         goBack = findViewById(R.id.back);
         totalQuestionsTextView = findViewById(R.id.total_questions);
         questionTextView = findViewById(R.id.question);
-        nextBtn = findViewById(R.id.next_btn);
         ansA = findViewById(R.id.ans_A);
         ansB = findViewById(R.id.ans_B);
         ansC = findViewById(R.id.ans_C);
@@ -71,15 +71,6 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
 
         totalQuestionsTextView.setText("Total questions : " + totalQuestion);
 
-       /* nextBtn.setOnClickListener(new View.OnClickListener() {
-
-
-            @Override
-            public void onClick(View v) {
-
-
-            }
-        });*/
 
 
 
@@ -119,7 +110,6 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
     public void onClick(View view) {
 
         (new Handler()).postDelayed(new Runnable() {
-            @SuppressLint("UseCompatLoadingForDrawables")
             @Override
             public void run() {
                 Drawable d = getResources().getDrawable(R.drawable.button_background_style);
@@ -131,29 +121,33 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
 
                 if(clickedButton.getId()==R.id.submit_btn){
                     if(selectedAnswer.equals(arrayList.get(currentQuestionIndex).answer)){
+                        score++;
                         clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_right));
                     } else{
                         clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_wrong));
                     }
 
-                }
-                else if(clickedButton.getId() == R.id.next_btn){
-
-                    clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_bg));
-                    if (selectedAnswer.equals(arrayList.get(currentQuestionIndex).answer)){
-                        score++;
-                    }
                     currentQuestionIndex++;
-                    loadNewQuestion();
 
-                } else {
+                    (new Handler()).postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_bg));
+                            loadNewQuestion();
+                            submitBtn.setBackgroundDrawable(d);
+                        }
+                    }, 200);
+
+
+
+                }else{
                     //choices button clicked
-                    submitBtn.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style));
                     selectedAnswer = clickedButton.getText().toString();
                     clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_bg));
+
                 }
             }
-        },200);
+        },500);
 
 
 
@@ -185,12 +179,19 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
             passStatus = "Failed";
         }
 
+        if (totalQuestion / score < 0.5){
+            level = "beginner";
+
+        } else if (totalQuestion / score >= 0.5 && (float)totalQuestion / score < 0.8) {
+            level = "intermediate";
+        } else if (totalQuestion / score >= 0.8) {
+            level = "advanced";
+        }
 
         new AlertDialog.Builder(this)
                 .setTitle(passStatus)
-                .setMessage("Score is "+ score+" out of "+ totalQuestion)
-                /* .setPositiveButton("Restart",(dialogInterface, i) -> restartQuiz() )*/
-                .setPositiveButton("View wrong answers",(dialogInterface, i) -> wrongAnswersPage() )
+                .setMessage("Score is "+ score+" out of "+ totalQuestion + " so your enlish grammar level is approximately " + level + " so we recommend you to pick the course for your english level")
+                .setPositiveButton("Click to pick course",(dialogInterface, i) -> goBack() )
                 .setCancelable(false)
                 .show();
 
@@ -203,8 +204,8 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
         loadNewQuestion();
     }*/
 
-    void wrongAnswersPage(){
-        Intent intent = new Intent(getApplicationContext(), GrammarWrongAnswers.class);
+    void goBack(){
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
     }
 

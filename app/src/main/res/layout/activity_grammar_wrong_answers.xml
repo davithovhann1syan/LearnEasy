@@ -7,13 +7,17 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
+    android:background="@drawable/app_background"
     tools:context=".GrammarWrongAnswers">
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/bg_button"
+        android:paddingHorizontal="10dp"
         android:text="@string/go_back"
+        android:textColor="@color/off_white"
         />
 
 </LinearLayout>

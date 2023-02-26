@@ -19,7 +19,7 @@ public class GrammarWrongAnswers extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), GrammarTestActivity.class);
+                Intent intent = new Intent(getApplicationContext(), GrammarStudyGroupActivity.class);
                 startActivity(intent);
             }
         });
