@@ -37,9 +37,8 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
     TextView totalQuestionsTextView, goBack;
     TextView questionTextView;
     AppCompatButton ansA, ansB, ansC, ansD;
-    Button submitBtn;
+    AppCompatButton submitBtn, nextBtn;
 
-    String level;
 
     int score = 0;
     int totalQuestion = 1;
@@ -52,11 +51,12 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_grammar_test_activity);
-        level = "beginner";
+        setContentView(R.layout.activity_english_level_test);
+
         goBack = findViewById(R.id.back);
         totalQuestionsTextView = findViewById(R.id.total_questions);
         questionTextView = findViewById(R.id.question);
+        nextBtn = findViewById(R.id.next_btn);
         ansA = findViewById(R.id.ans_A);
         ansB = findViewById(R.id.ans_B);
         ansC = findViewById(R.id.ans_C);
@@ -68,9 +68,18 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
         ansC.setOnClickListener(this);
         ansD.setOnClickListener(this);
         submitBtn.setOnClickListener(this);
-
+        nextBtn.setOnClickListener(this);
         totalQuestionsTextView.setText("Total questions : " + totalQuestion);
 
+       /* nextBtn.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View v) {
+
+
+            }
+        });*/
 
 
 
@@ -110,6 +119,7 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
     public void onClick(View view) {
 
         (new Handler()).postDelayed(new Runnable() {
+            @SuppressLint("UseCompatLoadingForDrawables")
             @Override
             public void run() {
                 Drawable d = getResources().getDrawable(R.drawable.button_background_style);
@@ -121,33 +131,31 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
 
                 if(clickedButton.getId()==R.id.submit_btn){
                     if(selectedAnswer.equals(arrayList.get(currentQuestionIndex).answer)){
-                        score++;
                         clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_right));
                     } else{
                         clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_wrong));
                     }
 
+                }
+                else if(clickedButton.getId() == R.id.next_btn){
+
+                    clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_bg));
+                    if (selectedAnswer.equals(arrayList.get(currentQuestionIndex).answer)){
+                        score++;
+                    }
+                    submitBtn.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style));
                     currentQuestionIndex++;
+                    loadNewQuestion();
+                    clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style));
 
-                    (new Handler()).postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_bg));
-                            loadNewQuestion();
-                            submitBtn.setBackgroundDrawable(d);
-                        }
-                    }, 200);
-
-
-
-                }else{
+                } else {
                     //choices button clicked
+                    submitBtn.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style));
                     selectedAnswer = clickedButton.getText().toString();
                     clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_bg));
-
                 }
             }
-        },500);
+        },200);
 
 
 
@@ -179,19 +187,12 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
             passStatus = "Failed";
         }
 
-        if (totalQuestion / score < 0.5){
-            level = "beginner";
-
-        } else if (totalQuestion / score >= 0.5 && (float)totalQuestion / score < 0.8) {
-            level = "intermediate";
-        } else if (totalQuestion / score >= 0.8) {
-            level = "advanced";
-        }
 
         new AlertDialog.Builder(this)
                 .setTitle(passStatus)
-                .setMessage("Score is "+ score+" out of "+ totalQuestion + " so your enlish grammar level is approximately " + level + " so we recommend you to pick the course for your english level")
-                .setPositiveButton("Click to pick course",(dialogInterface, i) -> goBack() )
+                .setMessage("Score is "+ score+" out of "+ totalQuestion)
+                /* .setPositiveButton("Restart",(dialogInterface, i) -> restartQuiz() )*/
+                .setPositiveButton("View wrong answers",(dialogInterface, i) -> wrongAnswersPage() )
                 .setCancelable(false)
                 .show();
 
@@ -204,8 +205,8 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
         loadNewQuestion();
     }*/
 
-    void goBack(){
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+    void wrongAnswersPage(){
+        Intent intent = new Intent(getApplicationContext(), GrammarWrongAnswers.class);
         startActivity(intent);
     }
 
