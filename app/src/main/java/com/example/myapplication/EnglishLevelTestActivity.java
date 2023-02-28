@@ -37,7 +37,7 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
     int score = 0;
     int totalQuestion = 1;
     int currentQuestionIndex = 0;
-    String selectedAnswer = "";
+    String selectedAnswer = "", level;
     AppCompatButton rightQuestion, wrongQuestion;
 
     ArrayList<GrammarQuizModel> arrayList = new ArrayList<>();
@@ -160,7 +160,7 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
                     submitBtn.setBackgroundDrawable(bg_style);
                     currentQuestionIndex++;
                     loadNewQuestion();
-                    clickedButton.setBackgroundDrawable(bg_style);
+                    clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style_mirror));
 
                 } else {
                     //choices button clicked
@@ -185,7 +185,6 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
         ansD.setEnabled(true);
 
 
-
         if(currentQuestionIndex == totalQuestion ){
             finishQuiz();
             return;
@@ -207,12 +206,19 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
             passStatus = "Failed";
         }
 
+        if (totalQuestion / score < 0.5){
+            level = "beginner";
+
+        } else if (totalQuestion / score >= 0.5 && (float)totalQuestion / score < 0.8) {
+            level = "intermediate";
+        } else if (totalQuestion / score >= 0.8) {
+            level = "advanced";
+        }
 
         new AlertDialog.Builder(this)
                 .setTitle(passStatus)
-                .setMessage("Score is "+ score+" out of "+ totalQuestion)
-                /* .setPositiveButton("Restart",(dialogInterface, i) -> restartQuiz() )*/
-                .setPositiveButton("View wrong answers",(dialogInterface, i) -> wrongAnswersPage() )
+                .setMessage("Score is "+ score+" out of "+ totalQuestion + " so your enlish grammar level is approximately " + level + " so we recommend you to pick the course for your english level")
+                .setPositiveButton("Click to pick course",(dialogInterface, i) -> goBack() )
                 .setCancelable(false)
                 .show();
 
@@ -225,8 +231,8 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
         loadNewQuestion();
     }*/
 
-    void wrongAnswersPage(){
-        Intent intent = new Intent(getApplicationContext(), GrammarWrongAnswers.class);
+    void goBack(){
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
     }
 
