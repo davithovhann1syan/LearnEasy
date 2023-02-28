@@ -1,16 +1,13 @@
 package com.example.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.firebase.firestore.FirebaseFirestore;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -47,7 +44,24 @@ public class GrammarActivity extends AppCompatActivity {
 
         // nouns
 
-        ViewLessonWidget obj1 = new ViewLessonWidget(this, "Lesson 1: Introduction to Nouns","test", "nouns");
+        ViewLessonWidget obj1 = new ViewLessonWidget(this, "Lesson 1: Introduction to Nouns","Definition of a noun:\n" +
+                "A noun is a type of word that refers to a person, place, thing, idea, or concept. In other words, a noun is a word that names something. Nouns can be singular (referring to one item) or plural (referring to more than one item), and they can be concrete (referring to things that you can see or touch) or abstract (referring to ideas or concepts).\n" +
+                "\n" +
+                "Examples of nouns:\n" +
+                "Here are some examples of nouns:\n" +
+                "\n" +
+                "Person: John, teacher, doctor\n" +
+                "Place: park, school, city\n" +
+                "Thing: book, car, computer\n" +
+                "Idea: love, happiness, freedom\n" +
+                "Role of nouns in English:\n" +
+                "Nouns are an essential part of the English language, as they allow us to name and refer to things in the world around us. They are used in sentences as subjects, objects, and complements, and they can also be used to modify other words in a sentence.\n" +
+                "\n" +
+                "For example, in the sentence \"John is a teacher,\" \"John\" and \"teacher\" are both nouns. \"John\" is the subject of the sentence, and \"teacher\" is the complement, describing what John is.\n" +
+                "\n" +
+                "In the sentence \"I saw a book on the table,\" \"book\" is a noun used as the object of the verb \"saw.\" And in the sentence \"She wore a beautiful red dress,\" \"beautiful\" and \"red\" are adjectives modifying the noun \"dress.\"\n" +
+                "\n" +
+                "Overall, nouns are an important part of building sentences and conveying meaning in English.", "nouns");
         ViewLessonWidget obj2 = new ViewLessonWidget(this, "Lesson 2: Types of Nouns","test", "nouns");
         ViewLessonWidget obj3 = new ViewLessonWidget(this, "Lesson 3: Singular and Plural Nouns","test", "nouns");
         ViewLessonWidget obj4 = new ViewLessonWidget(this, "Lesson 4: Countable and Uncountable Nouns","test", "nouns");

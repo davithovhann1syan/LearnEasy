@@ -1,16 +1,17 @@
 package com.example.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class LessonActivity extends AppCompatActivity {
 
     TextView heading;
     TextView information;
-    TextView backButton;
+    TextView backButton, testButton;
     String name;
     String info;
 
@@ -48,10 +49,19 @@ public class LessonActivity extends AppCompatActivity {
         heading = findViewById(R.id.heading);
         information = findViewById(R.id.information);
         backButton = findViewById(R.id.backButton);
+        testButton = findViewById(R.id.testButton);
 
         heading.setText(name);
 
         information.setText(info);
+
+        testButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), GrammarTestActivity.class);
+                startActivity(intent);
+            }
+        });
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override

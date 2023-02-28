@@ -55,22 +55,50 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/heading" />
 
-    <TextView
-        android:id="@+id/backButton"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Previous page"
-        android:background="@drawable/bg_button"
-        android:paddingHorizontal="15dp"
-        android:layout_margin="10dp"
-        android:layout_gravity="center_horizontal"
-        android:paddingVertical="10dp"
-        android:textColor="@color/off_white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="20dp"
-        android:textSize="15sp"/>
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/backButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/go_back"
+            android:background="@drawable/button_background_style"
+            android:paddingHorizontal="15dp"
+            android:layout_margin="10dp"
+            android:layout_gravity="center_horizontal"
+            android:paddingVertical="10dp"
+            android:textColor="@color/off_white"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="20dp"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/testButton"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="go to test"
+            android:textAlignment="center"
+            android:background="@drawable/button_background_style_mirror"
+            android:paddingHorizontal="15dp"
+            android:layout_margin="10dp"
+            android:layout_gravity="center_horizontal"
+            android:paddingVertical="10dp"
+            android:textColor="@color/off_white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="20dp"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
 
 
 
