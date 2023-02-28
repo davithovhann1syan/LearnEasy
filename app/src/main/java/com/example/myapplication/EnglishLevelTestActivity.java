@@ -1,23 +1,17 @@
 package com.example.myapplication;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
-
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -39,13 +33,12 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
     AppCompatButton ansA, ansB, ansC, ansD;
     AppCompatButton submitBtn, nextBtn;
 
-    String lvl;
-
 
     int score = 0;
     int totalQuestion = 1;
     int currentQuestionIndex = 0;
     String selectedAnswer = "";
+    AppCompatButton rightQuestion, wrongQuestion;
 
     ArrayList<GrammarQuizModel> arrayList = new ArrayList<>();
 
@@ -53,7 +46,7 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_english_level_test);
+        setContentView(R.layout.activity_grammar_test_activity);
 
         goBack = findViewById(R.id.back);
         totalQuestionsTextView = findViewById(R.id.total_questions);
@@ -96,10 +89,14 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
                                 arrayList.add(new GrammarQuizModel(question,choices,answer));
 
                             }
+
                             loadNewQuestion();
+
                             totalQuestion = arrayList.size();
                             totalQuestionsTextView.setText("Total question " + totalQuestion);
+
                         }
+
                     }
                 });
 
@@ -109,51 +106,84 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
     @Override
     public void onClick(View view) {
 
+        if (ansA.getText().equals(arrayList.get(currentQuestionIndex).answer)){
+            rightQuestion = ansA;
+        } else if (ansB.getText().equals(arrayList.get(currentQuestionIndex).answer)) {
+            rightQuestion = ansB;
 
-                Drawable d = getResources().getDrawable(R.drawable.button_background_style);
-                ansA.setBackgroundDrawable(d);
-                ansB.setBackgroundDrawable(d);
-                ansC.setBackgroundDrawable(d);
-                ansD.setBackgroundDrawable(d);
+        } else if (ansC.getText().equals(arrayList.get(currentQuestionIndex).answer)) {
+            rightQuestion = ansC;
+
+        } else if (ansD.getText().equals(arrayList.get(currentQuestionIndex).answer)) {
+            rightQuestion = ansD;
+        }
+
+
+
+
+
+        (new Handler()).postDelayed(new Runnable() {
+            @SuppressLint("UseCompatLoadingForDrawables")
+            @Override
+            public void run() {
+                Drawable bg_style = getResources().getDrawable(R.drawable.button_background_style);
+                Drawable bg_select = getResources().getDrawable(R.drawable.button_selection_bg);
+                ansA.setBackgroundDrawable(bg_style);
+                ansB.setBackgroundDrawable(bg_style);
+                ansC.setBackgroundDrawable(bg_style);
+                ansD.setBackgroundDrawable(bg_style);
                 AppCompatButton clickedButton = (AppCompatButton) view;
 
                 if(clickedButton.getId()==R.id.submit_btn){
                     if(selectedAnswer.equals(arrayList.get(currentQuestionIndex).answer)){
+                        //wrongQuestion.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_wrong));
+                        rightQuestion.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_right));
                         clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_right));
                     } else{
+                        //wrongQuestion.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_wrong));
                         clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_wrong));
+                        rightQuestion.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_right));
                     }
+
+                    ansA.setEnabled(false);
+                    ansB.setEnabled(false);
+                    ansC.setEnabled(false);
+                    ansD.setEnabled(false);
 
                 }
                 else if(clickedButton.getId() == R.id.next_btn){
 
-                    clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_bg));
+                    clickedButton.setBackgroundDrawable(bg_select);
                     if (selectedAnswer.equals(arrayList.get(currentQuestionIndex).answer)){
                         score++;
                     }
-                    submitBtn.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style));
+                    submitBtn.setBackgroundDrawable(bg_style);
                     currentQuestionIndex++;
                     loadNewQuestion();
-                    clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style));
+                    clickedButton.setBackgroundDrawable(bg_style);
 
                 } else {
                     //choices button clicked
-                    submitBtn.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style));
+                    submitBtn.setBackgroundDrawable(bg_style);
                     selectedAnswer = clickedButton.getText().toString();
-                    clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_bg));
+                    clickedButton.setBackgroundDrawable(bg_select);
                 }
-
             }
+        },200);
 
 
 
-
-
-
+    }
 
 
 
     void loadNewQuestion(){
+
+        ansA.setEnabled(true);
+        ansB.setEnabled(true);
+        ansC.setEnabled(true);
+        ansD.setEnabled(true);
+
 
 
         if(currentQuestionIndex == totalQuestion ){
@@ -170,15 +200,6 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
     }
 
     void finishQuiz(){
-
-        double x = score / arrayList.size();
-
-        if ( x <= 0.5){
-            lvl = "beginner";
-        } else if (x > 0.5 && x <= 0.7 ){
-            lvl = "intermediate";
-        } else lvl = "advanced";
-
         String passStatus = "";
         if(score > totalQuestion*0.60){
             passStatus = "Passed";
@@ -187,18 +208,25 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
         }
 
 
-
         new AlertDialog.Builder(this)
-                .setMessage("Good job! Your score is "+ score+" out of "+ totalQuestion + " so your english grammar level is close to " + lvl + " so we recommend you to pick the course for your english level")
-                .setPositiveButton("Click to pick course",(dialogInterface, i) -> goBack() )
+                .setTitle(passStatus)
+                .setMessage("Score is "+ score+" out of "+ totalQuestion)
+                /* .setPositiveButton("Restart",(dialogInterface, i) -> restartQuiz() )*/
+                .setPositiveButton("View wrong answers",(dialogInterface, i) -> wrongAnswersPage() )
                 .setCancelable(false)
                 .show();
 
 
     }
 
-    void goBack(){
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+   /* void restartQuiz(){
+        score = 0;
+        currentQuestionIndex =0;
+        loadNewQuestion();
+    }*/
+
+    void wrongAnswersPage(){
+        Intent intent = new Intent(getApplicationContext(), GrammarWrongAnswers.class);
         startActivity(intent);
     }
 

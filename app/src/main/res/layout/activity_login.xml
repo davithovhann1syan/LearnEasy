@@ -63,24 +63,22 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnGoogle"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="8dp"
         android:background="@drawable/button_background_style"
         android:drawableLeft="@drawable/ic_google"
         android:drawablePadding="10dp"
-        android:paddingStart="20dp"
+        android:paddingHorizontal="15dp"
         android:text="@string/google"
         android:textAlignment="textStart"
         android:textAllCaps="false"
         android:textColor="@color/off_white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnPhone"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.385"
+        app:layout_constraintTop_toBottomOf="@+id/signUpContainer"
+        app:layout_constraintVertical_bias="0.475"
         tools:ignore="RtlHardcoded,RtlSymmetry" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -97,49 +95,37 @@
         app:layout_constraintTop_toBottomOf="@+id/forgotPassword" />
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/signUpContainer"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="40dp"
         android:gravity="center"
         android:orientation="horizontal"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="@+id/btnLogin"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/btnLogin"
         app:layout_constraintTop_toBottomOf="@+id/btnLogin">
 
         <TextView
-            android:id="@+id/textViewSignUp"
+            android:id="@+id/signUpText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:text="@string/dont_have_an_account_signup"
             android:textColor="@color/white" />
 
-    </LinearLayout>
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/textViewSignUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@string/sign_up"
+            android:textColor="@color/white" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnPhone"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/button_background_style"
-        android:drawableLeft="@drawable/ic_phone"
-        android:drawablePadding="10dp"
-        android:paddingStart="20dp"
-        android:text="@string/phone"
-        android:textAlignment="textStart"
-        android:textAllCaps="false"
-        android:textColor="@color/off_white"
-        app:layout_constraintBottom_toBottomOf="@+id/btnGoogle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btnGoogle"
-        app:layout_constraintTop_toTopOf="@+id/btnGoogle"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="RtlSymmetry" />
+
+
+    </LinearLayout>
 
     <EditText
         android:id="@+id/inputPassword"
@@ -174,6 +160,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/app_logo" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

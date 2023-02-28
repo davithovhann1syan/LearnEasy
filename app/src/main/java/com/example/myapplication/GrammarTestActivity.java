@@ -38,6 +38,7 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
     int totalQuestion = 1;
     int currentQuestionIndex = 0;
     String selectedAnswer = "";
+    AppCompatButton rightQuestion, wrongQuestion;
 
     ArrayList<GrammarQuizModel> arrayList = new ArrayList<>();
 
@@ -65,6 +66,13 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
         nextBtn.setOnClickListener(this);
         totalQuestionsTextView.setText("Total questions : " + totalQuestion);
 
+       /* nextBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });*/
+
+
 
         goBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,7 +83,7 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
 
         firebaseFirestore= FirebaseFirestore.getInstance();
 
-        firebaseFirestore.collection("grammartest")
+        firebaseFirestore.collection("englishleveltest")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -88,10 +96,14 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
                                 arrayList.add(new GrammarQuizModel(question,choices,answer));
 
                             }
+
                             loadNewQuestion();
+
                             totalQuestion = arrayList.size();
                             totalQuestionsTextView.setText("Total question " + totalQuestion);
+
                         }
+
                     }
                 });
 
@@ -101,41 +113,66 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
     @Override
     public void onClick(View view) {
 
+        if (ansA.getText().equals(arrayList.get(currentQuestionIndex).answer)){
+            rightQuestion = ansA;
+        } else if (ansB.getText().equals(arrayList.get(currentQuestionIndex).answer)) {
+            rightQuestion = ansB;
+
+        } else if (ansC.getText().equals(arrayList.get(currentQuestionIndex).answer)) {
+            rightQuestion = ansC;
+
+        } else if (ansD.getText().equals(arrayList.get(currentQuestionIndex).answer)) {
+            rightQuestion = ansD;
+        }
+
+
+
+
         (new Handler()).postDelayed(new Runnable() {
             @SuppressLint("UseCompatLoadingForDrawables")
             @Override
             public void run() {
-                Drawable d = getResources().getDrawable(R.drawable.button_background_style);
-                ansA.setBackgroundDrawable(d);
-                ansB.setBackgroundDrawable(d);
-                ansC.setBackgroundDrawable(d);
-                ansD.setBackgroundDrawable(d);
+                Drawable bg_style = getResources().getDrawable(R.drawable.button_background_style);
+                Drawable bg_select = getResources().getDrawable(R.drawable.button_selection_bg);
+                ansA.setBackgroundDrawable(bg_style);
+                ansB.setBackgroundDrawable(bg_style);
+                ansC.setBackgroundDrawable(bg_style);
+                ansD.setBackgroundDrawable(bg_style);
                 AppCompatButton clickedButton = (AppCompatButton) view;
 
                 if(clickedButton.getId()==R.id.submit_btn){
                     if(selectedAnswer.equals(arrayList.get(currentQuestionIndex).answer)){
+                        //wrongQuestion.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_wrong));
+                        rightQuestion.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_right));
                         clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_right));
                     } else{
+                        //wrongQuestion.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_wrong));
                         clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_wrong));
+                        rightQuestion.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_right));
                     }
+
+                    ansA.setEnabled(false);
+                    ansB.setEnabled(false);
+                    ansC.setEnabled(false);
+                    ansD.setEnabled(false);
 
                 }
                 else if(clickedButton.getId() == R.id.next_btn){
 
-                    clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_bg));
+                    clickedButton.setBackgroundDrawable(bg_select);
                     if (selectedAnswer.equals(arrayList.get(currentQuestionIndex).answer)){
                         score++;
                     }
-                    submitBtn.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style));
+                    submitBtn.setBackgroundDrawable(bg_style);
                     currentQuestionIndex++;
                     loadNewQuestion();
-                    clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style));
+                    clickedButton.setBackgroundDrawable(bg_style);
 
                 } else {
                     //choices button clicked
-                    submitBtn.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style));
+                    submitBtn.setBackgroundDrawable(bg_style);
                     selectedAnswer = clickedButton.getText().toString();
-                    clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_bg));
+                    clickedButton.setBackgroundDrawable(bg_select);
                 }
             }
         },200);
@@ -147,6 +184,12 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
 
 
     void loadNewQuestion(){
+
+        ansA.setEnabled(true);
+        ansB.setEnabled(true);
+        ansC.setEnabled(true);
+        ansD.setEnabled(true);
+
 
 
         if(currentQuestionIndex == totalQuestion ){

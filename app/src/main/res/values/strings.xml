@@ -24,7 +24,7 @@
     <string name="vocabulary_test">Vocabulary Test</string>
     <string name="enter_text">Enter Text</string>
     <string name="translated_text">Translated Text Here</string>
-    <string name="already_have_an_account">Already Have an Account? <b>Log in</b> </string>
+    <string name="log_in"> Log in </string>
     <string name="email">Email</string>
     <string name="google">Google</string>
     <string name="phone">Phone</string>
@@ -34,10 +34,12 @@
     <string name="intermediate">Intermediate</string>
     <string name="beginner">Beginner</string>
     <string name="level_select_text">Pick your english level</string>
-    <string name="dont_have_an_account_signup">Dont have an Account? <b>Sign up</b></string>
+    <string name="dont_have_an_account_signup">Dont have an Account? </string>
+    <string name="sign_up">Sign up</string>
     <string name="forgot_password">Forgot Password?</string>
     <string name="what_to_choose_text">Don\'t know what to choose? Determine your english level with this test</string>
     <string name="Take_a_test"> Take a test </string>
+    <string name="already_have_an_account">already have an account?</string>
 
     <string-array name="languages">
         <item>English</item>
