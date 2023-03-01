@@ -19,9 +19,6 @@
             android:name=".EnglishLevelTestActivity"
             android:exported="false" />
         <activity
-            android:name=".VocabularyWrongAnswers"
-            android:exported="false" />
-        <activity
             android:name=".SplashScreen"
             android:exported="true"
             android:theme="@style/SplashScreen">
@@ -33,9 +30,6 @@
         </activity>
         <activity
             android:name=".GrammarStudyGroupActivity"
-            android:exported="false" />
-        <activity
-            android:name=".GrammarWrongAnswers"
             android:exported="false" />
         <activity
             android:name=".VocabularyTestActivity"

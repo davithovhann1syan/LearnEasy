@@ -99,6 +99,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/choices_layout"
             android:layout_weight="1"
+            android:layout_marginRight="5dp"
             android:background="@drawable/button_background_style"
             android:text="submit"
             android:textColor="@color/off_white" />
@@ -111,7 +112,8 @@
             android:layout_weight="1"
             android:background="@drawable/button_background_style_mirror"
             android:text="next"
-            android:textColor="@color/off_white" />
+            android:textColor="@color/off_white"
+            />
 
     </LinearLayout>
 

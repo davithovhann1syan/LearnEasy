@@ -3,11 +3,13 @@ package com.example.myapplication;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,8 +39,9 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
     int score = 0;
     int totalQuestion = 1;
     int currentQuestionIndex = 0;
-    String selectedAnswer = "", level;
-    AppCompatButton rightQuestion, wrongQuestion;
+    String level;
+    AppCompatButton rightAnswer, wrongAnswer, selectedAnswer;
+
 
     ArrayList<GrammarQuizModel> arrayList = new ArrayList<>();
 
@@ -101,21 +104,24 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
                 });
 
 
+
     }
 
-    @Override
+
     public void onClick(View view) {
 
+
+
         if (ansA.getText().equals(arrayList.get(currentQuestionIndex).answer)){
-            rightQuestion = ansA;
+            rightAnswer = ansA;
         } else if (ansB.getText().equals(arrayList.get(currentQuestionIndex).answer)) {
-            rightQuestion = ansB;
+            rightAnswer = ansB;
 
         } else if (ansC.getText().equals(arrayList.get(currentQuestionIndex).answer)) {
-            rightQuestion = ansC;
+            rightAnswer = ansC;
 
         } else if (ansD.getText().equals(arrayList.get(currentQuestionIndex).answer)) {
-            rightQuestion = ansD;
+            rightAnswer = ansD;
         }
 
 
@@ -135,38 +141,54 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
                 AppCompatButton clickedButton = (AppCompatButton) view;
 
                 if(clickedButton.getId()==R.id.submit_btn){
-                    if(selectedAnswer.equals(arrayList.get(currentQuestionIndex).answer)){
-                        //wrongQuestion.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_wrong));
-                        rightQuestion.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_right));
-                        clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_right));
-                    } else{
-                        //wrongQuestion.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_wrong));
-                        clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_wrong));
-                        rightQuestion.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_right));
-                    }
 
-                    ansA.setEnabled(false);
-                    ansB.setEnabled(false);
-                    ansC.setEnabled(false);
-                    ansD.setEnabled(false);
+                    if (selectedAnswer == null){
+                        Toast.makeText(EnglishLevelTestActivity.this, "Please select any option", Toast.LENGTH_SHORT).show();
+                    } else {
+
+
+                        if(selectedAnswer.getText().toString().equals(arrayList.get(currentQuestionIndex).answer)){
+                            rightAnswer.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_right));
+                            rightAnswer.setTextColor(Color.GREEN);
+                        } else{
+                            wrongAnswer.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_wrong));
+                            rightAnswer.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_right));
+                            wrongAnswer.setTextColor(Color.RED);
+                        }
+                        ansA.setEnabled(false);
+                        ansB.setEnabled(false);
+                        ansC.setEnabled(false);
+                        ansD.setEnabled(false);
+
+                    }
 
                 }
                 else if(clickedButton.getId() == R.id.next_btn){
 
-                    clickedButton.setBackgroundDrawable(bg_select);
-                    if (selectedAnswer.equals(arrayList.get(currentQuestionIndex).answer)){
-                        score++;
-                    }
-                    submitBtn.setBackgroundDrawable(bg_style);
-                    currentQuestionIndex++;
-                    loadNewQuestion();
-                    clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style_mirror));
+
+
+                        clickedButton.setBackgroundDrawable(bg_select);
+                        if (selectedAnswer.getText().toString().equals(arrayList.get(currentQuestionIndex).answer)){
+                            score++;
+                        }
+                        submitBtn.setBackgroundDrawable(bg_style);
+                        currentQuestionIndex++;
+                        loadNewQuestion();
+                        clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style_mirror));
+
+
 
                 } else {
                     //choices button clicked
                     submitBtn.setBackgroundDrawable(bg_style);
-                    selectedAnswer = clickedButton.getText().toString();
+                    selectedAnswer = clickedButton;
                     clickedButton.setBackgroundDrawable(bg_select);
+
+                    if (!selectedAnswer.getText().toString().equals(arrayList.get(currentQuestionIndex).answer)){
+                        wrongAnswer = selectedAnswer;
+                    }
+
+                    nextBtn.setEnabled(true);
                 }
             }
         },200);
@@ -177,12 +199,25 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
 
 
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     void loadNewQuestion(){
 
         ansA.setEnabled(true);
         ansB.setEnabled(true);
         ansC.setEnabled(true);
         ansD.setEnabled(true);
+
+        ansA.setTextColor(Color.WHITE);
+        ansB.setTextColor(Color.WHITE);
+        ansC.setTextColor(Color.WHITE);
+        ansD.setTextColor(Color.WHITE);
+
+        nextBtn.setEnabled(false);
+
+
+        selectedAnswer = null;
+
+
 
 
         if(currentQuestionIndex == totalQuestion ){
@@ -199,19 +234,16 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
     }
 
     void finishQuiz(){
-        String passStatus = "";
-        if(score > totalQuestion*0.60){
-            passStatus = "Passed";
-        }else{
-            passStatus = "Failed";
-        }
+        String passStatus = "Result";
 
-        if (totalQuestion / score < 0.5){
+        float x = (float) score / totalQuestion;
+
+        if (x < 0.5){
             level = "beginner";
 
-        } else if (totalQuestion / score >= 0.5 && (float)totalQuestion / score < 0.8) {
+        } else if (x >= 0.5 && (float)totalQuestion / score < 0.8) {
             level = "intermediate";
-        } else if (totalQuestion / score >= 0.8) {
+        } else if (x >= 0.8) {
             level = "advanced";
         }
 

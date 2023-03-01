@@ -1,23 +1,15 @@
 package com.example.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.content.res.AppCompatResources;
-import androidx.appcompat.widget.AppCompatButton;
-import androidx.core.content.res.ResourcesCompat;
-
-import android.annotation.SuppressLint;
 import android.app.AlertDialog;
-import android.content.Intent;
-import android.content.res.Resources;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 public class VocabularyTestActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -121,23 +113,19 @@ public class VocabularyTestActivity extends AppCompatActivity implements View.On
                 .setTitle(passStatus)
                 .setMessage("Score is "+ score+" out of "+ totalQuestion)
                 /*.setPositiveButton("Restart quiz",(dialogInterface, i) -> restartQuiz() )*/
-                .setPositiveButton("View wrong answers",(dialogInterface, i) -> worngAnswerPage() )
+                .setPositiveButton("View wrong answers",(dialogInterface, i) -> restartQuiz() )
                 .setCancelable(false)
                 .show();
 
 
     }
 
-    private void worngAnswerPage() {
-        Intent intent = new Intent(getApplicationContext(), VocabularyWrongAnswers.class);
-        startActivity(intent);
-    }
 
-   /* void restartQuiz(){
+   void restartQuiz(){
         score = 0;
         currentQuestionIndex = 0;
         loadNewQuestion();
-    }*/
+    }
 
 
 
