@@ -40,12 +40,12 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:background="@drawable/button_background_style_mirror"
-        android:id="@+id/goToActivityButton"
+        android:id="@+id/go_to_activity_button"
         android:textStyle="bold"
         android:textColor="@color/off_white"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:text="TEST"
+        android:text="@string/test"
         android:padding="5dp"
         android:layout_margin="5dp"
         android:layout_gravity="center_vertical"

@@ -39,6 +39,22 @@
     <string name="what_to_choose_text">Don\'t know what to choose? Determine your english level with this test</string>
     <string name="Take_a_test">Test</string>
     <string name="already_have_an_account">already have an account?</string>
+    <string name="total_questions">Total Questions</string>
+    <string name="this_will_be_the_question">This will be the question</string>
+    <string name="submit">submit</string>
+    <string name="heading">Heading</string>
+    <string name="text">text</string>
+    <string name="start_your_grammar_course">Start your grammar course</string>
+    <string name="nouns">nouns</string>
+    <string name="pronouns">pronouns</string>
+    <string name="adverbs">adverbs</string>
+    <string name="verbs">verbs</string>
+    <string name="adjectives">adjectives</string>
+    <string name="prepositions">prepositions</string>
+    <string name="interjections_conjunctions">interjections, conjunctions</string>
+    <string name="enter_your_email_address">Enter your email address:</string>
+    <string name="cancel">Cancel</string>
+    <string name="reset">Reset</string>
 
     <string-array name="languages">
         <item>English</item>

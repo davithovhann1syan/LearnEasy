@@ -1,40 +1,31 @@
 package com.example.myapplication;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.speech.RecognizerIntent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.firebase.FirebaseApiNotAvailableException;
 import com.google.firebase.ml.common.modeldownload.FirebaseModelDownloadConditions;
 import com.google.firebase.ml.naturallanguage.FirebaseNaturalLanguage;
 import com.google.firebase.ml.naturallanguage.translate.FirebaseTranslateLanguage;
 import com.google.firebase.ml.naturallanguage.translate.FirebaseTranslator;
 import com.google.firebase.ml.naturallanguage.translate.FirebaseTranslatorOptions;
 
-import java.util.ArrayList;
-import java.util.Locale;
 import java.util.Objects;
 
 public class TranslateActivity extends AppCompatActivity {
@@ -62,15 +53,15 @@ public class TranslateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_translate);
 
-        fromSpinner = findViewById(R.id.idFromSpinner);
-        toSpinner = findViewById(R.id.idToSpinner);
-        sourceText = findViewById(R.id.idEditSource);
-        translateBtn = findViewById(R.id.idBtnTranslation);
-        translateTV = findViewById(R.id.idTranslatedTV);
+        fromSpinner = findViewById(R.id.id_from_spinner);
+        toSpinner = findViewById(R.id.id_to_spinner);
+        sourceText = findViewById(R.id.id_edit_source);
+        translateBtn = findViewById(R.id.id_btn_translation);
+        translateTV = findViewById(R.id.id_translated_tv);
         goBack = findViewById(R.id.back);
         layout = findViewById(R.id.main_layout);
         translateContainer = findViewById(R.id.translation_container);
-        progressBar = findViewById(R.id.progressBar);
+        progressBar = findViewById(R.id.progress_bar);
 
         layout.setOnClickListener(v->{
             InputMethodManager inm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);

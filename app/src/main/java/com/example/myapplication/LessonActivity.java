@@ -47,8 +47,8 @@ public class LessonActivity extends AppCompatActivity {
         setContentView(R.layout.activity_grammar_lesson);
         heading = findViewById(R.id.heading);
         information = findViewById(R.id.information);
-        backButton = findViewById(R.id.backButton);
-        testButton = findViewById(R.id.testButton);
+        backButton = findViewById(R.id.back_button);
+        testButton = findViewById(R.id.test_button);
 
         heading.setText(name);
 

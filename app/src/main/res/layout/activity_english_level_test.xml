@@ -12,11 +12,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/total_questions"
-        android:text="Total Questions "
+        android:text="@string/total_questions"
         android:textColor="@color/off_white"
         android:textAllCaps="true"
         android:layout_centerHorizontal="true"
-        android:textSize="20dp"/>
+        android:textSize="20sp"/>
 
 
     <TextView
@@ -28,10 +28,10 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
-        android:text="This will be the question"
+        android:text="@string/this_will_be_the_question"
         android:textAlignment="center"
         android:textColor="@color/off_white"
-        android:textSize="24dp"
+        android:textSize="24sp"
         android:textStyle="bold" />
 
 
@@ -97,21 +97,19 @@
             android:id="@+id/submit_btn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/choices_layout"
             android:layout_weight="1"
-            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
             android:background="@drawable/button_background_style"
-            android:text="submit"
+            android:text="@string/submit"
             android:textColor="@color/off_white" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/next_btn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/choices_layout"
             android:layout_weight="1"
             android:background="@drawable/button_background_style_mirror"
-            android:text="next"
+            android:text="@string/next"
             android:textColor="@color/off_white"
             />
 
@@ -124,7 +122,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="70dp"
-        android:textSize="14dp"
+        android:textSize="14sp"
         android:paddingVertical="10dp"
         android:paddingHorizontal="15dp"
         android:textColor="@color/off_white"

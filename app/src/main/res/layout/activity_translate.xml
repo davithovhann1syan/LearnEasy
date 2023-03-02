@@ -49,7 +49,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:id="@+id/idFromSpinner"
+                android:id="@+id/id_from_spinner"
                 android:layout_margin="3dp"
                 android:padding="3dp"
                 android:layout_gravity="center"
@@ -67,7 +67,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:id="@+id/idToSpinner"
+                android:id="@+id/id_to_spinner"
                 android:layout_margin="3dp"
                 android:padding="3dp"
                 android:layout_gravity="center"
@@ -87,7 +87,7 @@
             android:elevation="8dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/idEditSource"
+                android:id="@+id/id_edit_source"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/background"
@@ -106,7 +106,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:id="@+id/idBtnTranslation"
+            android:id="@+id/id_btn_translation"
             android:textColor="@color/off_white"
             android:text="@string/translate"
             android:textSize="19sp"
@@ -125,7 +125,7 @@
             android:visibility="gone">
 
             <ProgressBar
-            android:id="@+id/progressBar"
+            android:id="@+id/progress_bar"
             android:layout_centerInParent="true"
             android:visibility="gone"
             android:translationZ="10dp"
@@ -135,7 +135,7 @@
             <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/idTranslatedTV"
+            android:id="@+id/id_translated_tv"
             android:text="@string/translated_text"
             android:background="@drawable/background"
             android:elevation="3dp"

@@ -56,7 +56,7 @@ public class RegisterActivity extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
-        btnSignInGoogle = findViewById(R.id.btnGoogle);
+        btnSignInGoogle = findViewById(R.id.btn_google);
 
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()

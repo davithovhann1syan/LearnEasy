@@ -19,7 +19,7 @@
         android:layout_marginBottom="80dp">
 
         <LinearLayout
-            android:id="@+id/lessonLinearLayout"
+            android:id="@+id/lesson_linear_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"

@@ -55,15 +55,15 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         layout = findViewById(R.id.main_layout);
-        btnlogin = findViewById(R.id.btnLogin);
-        btnSignInGoogle = findViewById(R.id.btnGoogle);
+        btnlogin = findViewById(R.id.btn_login);
+        btnSignInGoogle = findViewById(R.id.btn_google);
         createNewAccount = findViewById(R.id.textViewSignUp);
-        inputEmail = findViewById(R.id.inputEmail);
-        inputPassword = findViewById(R.id.inputPassword);
+        inputEmail = findViewById(R.id.input_email);
+        inputPassword = findViewById(R.id.input_password);
         progressDialog = new ProgressDialog(this);
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
-        forgotPassword = findViewById(R.id.forgotPassword);
+        forgotPassword = findViewById(R.id.forgot_password);
 
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
@@ -114,10 +114,10 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
                 View dialogView = getLayoutInflater().inflate(R.layout.dialog_forget, null);
-                EditText emailBox = dialogView.findViewById(R.id.emailBox);
+                EditText emailBox = dialogView.findViewById(R.id.email_box);
                 builder.setView(dialogView);
                 AlertDialog dialog = builder.create();
-                dialogView.findViewById(R.id.btnReset).setOnClickListener(new View.OnClickListener() {
+                dialogView.findViewById(R.id.btn_reset).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         String userEmail = emailBox.getText().toString();
@@ -138,7 +138,7 @@ public class LoginActivity extends AppCompatActivity {
                         });
                     }
                 });
-                dialogView.findViewById(R.id.btnCancel).setOnClickListener(new View.OnClickListener() {
+                dialogView.findViewById(R.id.btn_cancel).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         dialog.dismiss();

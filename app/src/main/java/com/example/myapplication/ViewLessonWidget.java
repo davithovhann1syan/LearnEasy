@@ -59,7 +59,7 @@ public class ViewLessonWidget extends LinearLayout {
 
         viewLessonName = findViewById(R.id.title);
 
-        goToButton = findViewById(R.id.goToActivityButton);
+        goToButton = findViewById(R.id.go_to_activity_button);
         goToButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

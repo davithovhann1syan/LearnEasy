@@ -32,7 +32,7 @@ public class GrammarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grammar);
         TextView back = findViewById(R.id.back);
-        linearLayout = findViewById(R.id.lessonLinearLayout);
+        linearLayout = findViewById(R.id.lesson_linear_layout);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

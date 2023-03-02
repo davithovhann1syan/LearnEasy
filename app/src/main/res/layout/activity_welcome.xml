@@ -27,7 +27,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/nextPage"
+        android:id="@+id/next_page"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"

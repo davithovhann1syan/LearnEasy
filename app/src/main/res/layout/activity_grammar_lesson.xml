@@ -13,7 +13,7 @@
 
 <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:layout_gravity="center_horizontal"
     android:layout_marginHorizontal="15dp"
@@ -24,7 +24,7 @@
         android:id="@+id/heading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Heading"
+        android:text="@string/heading"
         android:layout_margin="20dp"
         android:layout_gravity="center_horizontal"
         android:textColor="@color/off_white"
@@ -45,13 +45,13 @@
         android:paddingVertical="10dp"
         android:paddingHorizontal="25sp"
         android:background="@drawable/lesson_background_style"
-        android:text="text"
+        android:text="@string/text"
         android:layout_margin="20dp"
         android:layout_gravity="center_horizontal"
         android:textAlignment="center"
         android:textColor="@color/off_white"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/backButton"
+        app:layout_constraintBottom_toTopOf="@+id/back_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/heading" />
@@ -62,7 +62,7 @@
         android:gravity="center">
 
         <TextView
-            android:id="@+id/backButton"
+            android:id="@+id/back_button"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -81,7 +81,7 @@
             android:textSize="15sp"/>
 
         <TextView
-            android:id="@+id/testButton"
+            android:id="@+id/test_button"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

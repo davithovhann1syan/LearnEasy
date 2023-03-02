@@ -8,8 +8,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.google.firebase.auth.FirebaseAuth;
-
 public class WelcomeActivity extends AppCompatActivity {
 
     TextView next, logout;
@@ -20,8 +18,7 @@ public class WelcomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
-        next = findViewById(R.id.nextPage);
-       // logout = findViewById(R.id.logout);
+        next = findViewById(R.id.next_page);
 
 
         next.setOnClickListener(new View.OnClickListener() {
@@ -32,15 +29,6 @@ public class WelcomeActivity extends AppCompatActivity {
             }
         });
 
-        /*logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth mAuth = FirebaseAuth.getInstance();
-                mAuth.signOut();
-                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(intent);
-            }
-        });*/
 
 
     }

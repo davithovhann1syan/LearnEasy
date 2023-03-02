@@ -35,7 +35,7 @@
         android:layout_marginVertical="20dp"/>
 
     <TextView
-        android:id="@+id/Translate"
+        android:id="@+id/translate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/translator"
