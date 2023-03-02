@@ -38,13 +38,14 @@
 
 
 
-    <Button
-        android:background="@drawable/background_style_round"
+    <androidx.appcompat.widget.AppCompatButton
+        android:background="@drawable/button_background_style_mirror"
         android:id="@+id/goToActivityButton"
+        android:textStyle="bold"
+        android:textColor="@color/off_white"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:drawableEnd="@drawable/ic_baseline_play_arrow_24"
-        android:drawableTint="@color/white"
+        android:text="TEST"
         android:padding="5dp"
         android:layout_margin="5dp"
         android:layout_gravity="center_vertical"

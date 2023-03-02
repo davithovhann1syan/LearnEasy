@@ -142,10 +142,13 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
 
                 if(clickedButton.getId()==R.id.submit_btn){
 
+
+
                     if (selectedAnswer == null){
                         Toast.makeText(EnglishLevelTestActivity.this, "Please select any option", Toast.LENGTH_SHORT).show();
                     } else {
 
+                        nextBtn.setEnabled(true);
 
                         if(selectedAnswer.getText().toString().equals(arrayList.get(currentQuestionIndex).answer)){
                             rightAnswer.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_right));
@@ -153,6 +156,7 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
                         } else{
                             wrongAnswer.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_wrong));
                             rightAnswer.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_right));
+                            rightAnswer.setTextColor(Color.GREEN);
                             wrongAnswer.setTextColor(Color.RED);
                         }
                         ansA.setEnabled(false);
@@ -164,7 +168,6 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
 
                 }
                 else if(clickedButton.getId() == R.id.next_btn){
-
 
 
                         clickedButton.setBackgroundDrawable(bg_select);
@@ -188,7 +191,7 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
                         wrongAnswer = selectedAnswer;
                     }
 
-                    nextBtn.setEnabled(true);
+
                 }
             }
         },200);

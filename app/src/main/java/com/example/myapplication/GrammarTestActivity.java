@@ -34,6 +34,8 @@ import java.util.List;
         AppCompatButton submitBtn, nextBtn;
 
 
+
+
         int score = 0;
         int totalQuestion = 1;
         int currentQuestionIndex = 0;
@@ -134,6 +136,8 @@ import java.util.List;
 
                     if(clickedButton.getId()==R.id.submit_btn){
 
+                        nextBtn.setEnabled(true);
+
                         if (selectedAnswer == null){
                             Toast.makeText(GrammarTestActivity.this, "Please select any option", Toast.LENGTH_SHORT).show();
                         } else {
@@ -145,6 +149,7 @@ import java.util.List;
                                 wrongAnswer.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_wrong));
                                 rightAnswer.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_right));
                                 wrongAnswer.setTextColor(Color.RED);
+                                rightAnswer.setTextColor(Color.GREEN);
                             }
                             ansA.setEnabled(false);
                             ansB.setEnabled(false);
@@ -179,7 +184,7 @@ import java.util.List;
                             wrongAnswer = selectedAnswer;
                         }
 
-                        nextBtn.setEnabled(true);
+
                     }
                 }
             },200);
