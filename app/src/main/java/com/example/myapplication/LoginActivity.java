@@ -45,7 +45,6 @@ public class LoginActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseUser mUser;
     AppCompatButton btnSignInGoogle;
-    //AppCompatButton btnSignInFacebook;
     GoogleSignInOptions gso;
     GoogleSignInClient gsc;
 
@@ -77,18 +76,6 @@ public class LoginActivity extends AppCompatActivity {
                 signInGoogle();
             }
         });
-
-        /*btnSignInFacebook.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //login
-            }
-        });*/
-
-        /*layout.setOnClickListener(v->{
-            InputMethodManager inm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-            inm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),0);
-        });*/
 
         if (mUser != null) {
             startActivity(new Intent(getApplicationContext(), WelcomeActivity.class));

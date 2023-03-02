@@ -43,6 +43,7 @@
         android:id="@+id/go_to_activity_button"
         android:textStyle="bold"
         android:textColor="@color/off_white"
+        android:gravity="center"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:text="@string/test"

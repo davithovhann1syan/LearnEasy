@@ -2,10 +2,12 @@ package com.example.myapplication;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,7 +24,9 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
-    public class GrammarTestActivity extends AppCompatActivity implements View.OnClickListener{
+import java.util.Objects;
+
+public class GrammarTestActivity extends AppCompatActivity implements View.OnClickListener{
 
         int bestScore = 0;
 
@@ -77,21 +81,32 @@ import java.util.List;
 
             firebaseFirestore= FirebaseFirestore.getInstance();
 
-            firebaseFirestore.collection("englishleveltest")
+            firebaseFirestore.collection("grammarquiz")
                     .get()
                     .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                         @Override
                         public void onComplete(@NonNull Task<QuerySnapshot> task) {
                             if (task.isSuccessful()){
+
+                                Bundle extras = getIntent().getExtras();
+                                String subType = extras.getString("SUBTYPE");
+
                                 for (DocumentSnapshot documentSnapshot: task.getResult()) {
-                                    String question = documentSnapshot.get("question").toString();
                                     List<String> choices = (List<String>) documentSnapshot.get("choices");
+                                    String question = documentSnapshot.get("question").toString();
                                     String answer = documentSnapshot.get("answer").toString();
-                                    arrayList.add(new GrammarQuizModel(question,choices,answer));
+                                    String type = documentSnapshot.get("type").toString();
+
+                                    if (Objects.equals(subType, type)){
+                                        arrayList.add(new GrammarQuizModel(question,choices,answer, type));
+
+                                    }
 
                                 }
 
                                 loadNewQuestion();
+
+
 
                                 totalQuestion = arrayList.size();
                                 totalQuestionsTextView.setText("Total question " + totalQuestion);

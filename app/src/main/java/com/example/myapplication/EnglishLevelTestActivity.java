@@ -43,7 +43,7 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
     AppCompatButton rightAnswer, wrongAnswer, selectedAnswer;
 
 
-    ArrayList<GrammarQuizModel> arrayList = new ArrayList<>();
+    ArrayList<EnglishLevelQuizModel> arrayList = new ArrayList<>();
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -89,7 +89,7 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
                                 String question = documentSnapshot.get("question").toString();
                                 List<String> choices = (List<String>) documentSnapshot.get("choices");
                                 String answer = documentSnapshot.get("answer").toString();
-                                arrayList.add(new GrammarQuizModel(question,choices,answer));
+                                arrayList.add(new EnglishLevelQuizModel(question,choices,answer));
 
                             }
 

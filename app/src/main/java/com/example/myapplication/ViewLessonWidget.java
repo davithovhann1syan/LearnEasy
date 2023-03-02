@@ -13,14 +13,15 @@ import androidx.annotation.Nullable;
 public class ViewLessonWidget extends LinearLayout {
 
     TextView goToButton;
-    private String name;
+    String name;
 
     String type;
     TextView viewLessonName;
-    private String information;
+    String information;
 
+    String subType;
 
-    public ViewLessonWidget(Context context, String name, String info, String type) {
+    public ViewLessonWidget(Context context, String name, String info, String type, String subType) {
         super(context);
         LayoutInflater inflater = context.getSystemService(LayoutInflater.class);
         View v = inflater.inflate(R.layout.view_lesson_widget, this, true);
@@ -29,6 +30,7 @@ public class ViewLessonWidget extends LinearLayout {
         init(context);
         this.type = type;
         viewLessonName.setText(name);
+        this.subType = subType;
 
     }
 
@@ -64,6 +66,8 @@ public class ViewLessonWidget extends LinearLayout {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, GrammarTestActivity.class);
+                intent.putExtra("SUBTYPE", subType);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
 
             }
@@ -76,6 +80,7 @@ public class ViewLessonWidget extends LinearLayout {
                 intent.putExtra("NAME", name);
                 intent.putExtra("INFO", information);
                 intent.putExtra("TYPE", type);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
 
             }

@@ -30,7 +30,7 @@ public class GrammarStudyGroupActivity extends AppCompatActivity {
         adverbs = findViewById(R.id.adverbs);
         adjectives = findViewById(R.id.adjectives);
         prepositions = findViewById(R.id.prepositions);
-        interjectionsConjunctions = findViewById(R.id.interjections_conjuctions);
+        interjectionsConjunctions = findViewById(R.id.interjections_conjunction);
         back = findViewById(R.id.back);
 
         back.setOnClickListener(new View.OnClickListener() {
