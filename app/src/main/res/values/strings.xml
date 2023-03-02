@@ -12,8 +12,7 @@
     <string name="vocabulary">Vocabulary</string>
     <string name="grammar">Grammar</string>
     <string name="select">Select</string>
-    <string name="greeting">Welcome! We are so excited that you have joined us to start learning English. Our app is designed to make the learning experience
-        interactive and enjoyable, so you can become an expert in English in no time. We are here to support you every step of the way!</string>
+    <string name="greeting">Welcome! We are thrilled that you are starting to learn English with us. Our app is designed to make learning interactive and enjoyable, helping you become better in English in short time. We are here to support you every step of the way, so you can achieve your language goals with ease!</string>
     <string name="next">Next</string>
     <string name="enter_text_to_translate">Enter text to translate</string>
     <string name="select_your_preferred_study_option">select preferred study option</string>
