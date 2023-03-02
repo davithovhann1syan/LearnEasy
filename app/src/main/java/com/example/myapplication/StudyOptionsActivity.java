@@ -19,9 +19,12 @@ public class StudyOptionsActivity extends AppCompatActivity {
         TextView translate = findViewById(R.id.Translate);
 
 
+
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 finish();
             }
         });

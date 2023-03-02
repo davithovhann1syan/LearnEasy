@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         TextView beginner = findViewById(R.id.beginner);
         TextView intermediate = findViewById(R.id.intermediate);
         TextView advanced = findViewById(R.id.advanced);
-        TextView test = findViewById(R.id.take_a_test);
+        AppCompatButton test = findViewById(R.id.take_a_test);
 
         test.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         beginner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
                 Intent intent = new Intent(getApplicationContext(),StudyOptionsActivity.class);
                 startActivity(intent);
             }

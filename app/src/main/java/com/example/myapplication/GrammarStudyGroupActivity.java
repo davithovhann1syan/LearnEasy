@@ -33,7 +33,12 @@ public class GrammarStudyGroupActivity extends AppCompatActivity {
         interjectionsConjunctions = findViewById(R.id.interjections_conjuctions);
         back = findViewById(R.id.back);
 
-        back.setOnClickListener(v -> finish());
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         nouns.setOnClickListener(v -> startActivity("nouns"));
         pronouns.setOnClickListener(v -> startActivity("pronouns"));
