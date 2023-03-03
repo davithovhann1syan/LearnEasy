@@ -252,7 +252,7 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
             new AlertDialog.Builder(this)
                     .setTitle(passStatus)
                     .setMessage("Score is "+ score+" out of "+ totalQuestion)
-                    .setPositiveButton("Restart",(dialogInterface, i) -> restartQuiz() )
+                    .setPositiveButton("Finish",(dialogInterface, i) -> finish() )
                     .setCancelable(false)
                     .show();
 
