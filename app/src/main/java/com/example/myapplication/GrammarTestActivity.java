@@ -98,7 +98,7 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
                                     String type = documentSnapshot.get("type").toString();
 
                                     if (Objects.equals(subType, type)){
-                                        arrayList.add(new GrammarQuizModel(question,choices,answer, type));
+                                        arrayList.add(new GrammarQuizModel(question,choices,answer,type));
 
                                     }
 
@@ -241,16 +241,11 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
         }
 
         void finishQuiz(){
-            String passStatus = "";
-            if(score > totalQuestion*0.60){
-                passStatus = "Passed";
-            }else{
-                passStatus = "Failed";
-            }
+
 
 
             new AlertDialog.Builder(this)
-                    .setTitle(passStatus)
+                    .setTitle("Result")
                     .setMessage("Score is "+ score+" out of "+ totalQuestion)
                     .setPositiveButton("Finish",(dialogInterface, i) -> finish() )
                     .setCancelable(false)

@@ -16,7 +16,11 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import org.checkerframework.checker.units.qual.C;
+
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Objects;
 
@@ -52,6 +56,13 @@ public class GrammarActivity extends AppCompatActivity {
             }
         });
 
+        Comparator<ViewLessonWidget> comparator = new Comparator<ViewLessonWidget>() {
+            @Override
+            public int compare(ViewLessonWidget viewLessonWidget, ViewLessonWidget t1) {
+                return viewLessonWidget.name.compareTo(t1.name);
+            }
+        };
+
         firebaseFirestore = FirebaseFirestore.getInstance();
 
         firebaseFirestore.collection("grammarLessons")
@@ -68,6 +79,7 @@ public class GrammarActivity extends AppCompatActivity {
 
                                 viewLessonWidgetArrayList.add(new ViewLessonWidget(getApplicationContext(), title, information , type, subType));
                             }
+                            Collections.sort(viewLessonWidgetArrayList, comparator);
                             drawWidgets(viewLessonWidgetArrayList);
                         }
                     }

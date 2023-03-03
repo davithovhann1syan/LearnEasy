@@ -80,6 +80,7 @@ public class ViewLessonWidget extends LinearLayout {
                 intent.putExtra("NAME", name);
                 intent.putExtra("INFO", information);
                 intent.putExtra("TYPE", type);
+                intent.putExtra("SUBTYPE", subType);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
 

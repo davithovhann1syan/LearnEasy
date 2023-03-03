@@ -17,6 +17,8 @@ public class LessonActivity extends AppCompatActivity {
 
     String type;
 
+    String subType;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,17 +30,20 @@ public class LessonActivity extends AppCompatActivity {
                 name = null;
                 info = null;
                 type = null;
+                subType = null;
 
             } else {
                 name = extras.getString("NAME");
                 info = extras.getString("INFO");
                 type = extras.getString("TYPE");
+                subType = extras.getString("SUBTYPE");
 
             }
         } else {
             name = (String) savedInstanceState.getSerializable("NAME");
             info = (String) savedInstanceState.getSerializable("INFO");
             type = (String) savedInstanceState.getSerializable("TYPE");
+            subType = (String) savedInstanceState.getSerializable("SUBTYPE");
 
         }
 
@@ -58,7 +63,9 @@ public class LessonActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), GrammarTestActivity.class);
-                startActivity(intent);
+                intent.putExtra("SUBTYPE", subType);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                getApplicationContext().startActivity(intent);
             }
         });
 
