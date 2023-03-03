@@ -93,7 +93,13 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
 
                             }
 
-                            loadNewQuestion();
+                            (new Handler()).postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    loadNewQuestion();
+                                }
+                            },200);
+
 
                             totalQuestion = arrayList.size();
                             totalQuestionsTextView.setText("Total question " + totalQuestion);
@@ -109,8 +115,6 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
 
 
     public void onClick(View view) {
-
-
 
         if (ansA.getText().equals(arrayList.get(currentQuestionIndex).answer)){
             rightAnswer = ansA;
@@ -132,7 +136,7 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
             @SuppressLint("UseCompatLoadingForDrawables")
             @Override
             public void run() {
-                Drawable bg_style = getResources().getDrawable(R.drawable.button_background_style);
+                Drawable bg_style = getResources().getDrawable(R.drawable.bg_button);
                 Drawable bg_select = getResources().getDrawable(R.drawable.button_selection_bg);
                 ansA.setBackgroundDrawable(bg_style);
                 ansB.setBackgroundDrawable(bg_style);
@@ -144,20 +148,18 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
 
 
 
+                    nextBtn.setEnabled(true);
+
                     if (selectedAnswer == null){
                         Toast.makeText(EnglishLevelTestActivity.this, "Please select any option", Toast.LENGTH_SHORT).show();
                     } else {
 
-                        nextBtn.setEnabled(true);
-
                         if(selectedAnswer.getText().toString().equals(arrayList.get(currentQuestionIndex).answer)){
                             rightAnswer.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_right));
-                            rightAnswer.setTextColor(Color.GREEN);
+
                         } else{
                             wrongAnswer.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_wrong));
                             rightAnswer.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_right));
-                            rightAnswer.setTextColor(Color.GREEN);
-                            wrongAnswer.setTextColor(Color.RED);
                         }
                         ansA.setEnabled(false);
                         ansB.setEnabled(false);
@@ -166,20 +168,19 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
 
                     }
 
+
+
                 }
                 else if(clickedButton.getId() == R.id.next_btn){
 
-
-                        clickedButton.setBackgroundDrawable(bg_select);
-                        if (selectedAnswer.getText().toString().equals(arrayList.get(currentQuestionIndex).answer)){
-                            score++;
-                        }
-                        submitBtn.setBackgroundDrawable(bg_style);
-                        currentQuestionIndex++;
-                        loadNewQuestion();
-                        clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style_mirror));
-
-
+                    clickedButton.setBackgroundDrawable(bg_select);
+                    if (selectedAnswer.getText().toString().equals(arrayList.get(currentQuestionIndex).answer)){
+                        score++;
+                    }
+                    submitBtn.setBackgroundDrawable(getResources().getDrawable(R.drawable.bg_button));
+                    currentQuestionIndex++;
+                    loadNewQuestion();
+                    clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style_mirror));
 
                 } else {
                     //choices button clicked
@@ -197,7 +198,6 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
         },200);
 
 
-
     }
 
 
@@ -205,21 +205,16 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
     @SuppressLint("UseCompatLoadingForDrawables")
     void loadNewQuestion(){
 
+        submitBtn.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style));
+
         ansA.setEnabled(true);
         ansB.setEnabled(true);
         ansC.setEnabled(true);
         ansD.setEnabled(true);
 
-        ansA.setTextColor(Color.WHITE);
-        ansB.setTextColor(Color.WHITE);
-        ansC.setTextColor(Color.WHITE);
-        ansD.setTextColor(Color.WHITE);
-
         nextBtn.setEnabled(false);
 
-
         selectedAnswer = null;
-
 
 
 
@@ -235,6 +230,7 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
         ansD.setText(arrayList.get(currentQuestionIndex).choices.get(3));
 
     }
+
 
     void finishQuiz(){
         String passStatus = "Result";
@@ -259,12 +255,6 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
 
 
     }
-
-   /* void restartQuiz(){
-        score = 0;
-        currentQuestionIndex =0;
-        loadNewQuestion();
-    }*/
 
     void goBack(){
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);

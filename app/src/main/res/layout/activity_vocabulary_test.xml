@@ -100,7 +100,7 @@
         android:paddingHorizontal="15dp"
         android:textColor="@color/off_white"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/bg_button"
+        android:background="@drawable/button_background_style"
         android:text="@string/go_back" />
 
 

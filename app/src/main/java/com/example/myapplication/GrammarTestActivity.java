@@ -104,7 +104,14 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
 
                                 }
 
-                                loadNewQuestion();
+                                (new Handler()).postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        loadNewQuestion();
+                                    }
+                                },200);
+
+
 
 
 
@@ -141,7 +148,7 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
                 @SuppressLint("UseCompatLoadingForDrawables")
                 @Override
                 public void run() {
-                    Drawable bg_style = getResources().getDrawable(R.drawable.button_background_style);
+                    Drawable bg_style = getResources().getDrawable(R.drawable.bg_button);
                     Drawable bg_select = getResources().getDrawable(R.drawable.button_selection_bg);
                     ansA.setBackgroundDrawable(bg_style);
                     ansB.setBackgroundDrawable(bg_style);
@@ -151,6 +158,8 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
 
                     if(clickedButton.getId()==R.id.submit_btn){
 
+
+
                         nextBtn.setEnabled(true);
 
                         if (selectedAnswer == null){
@@ -159,12 +168,9 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
 
                             if(selectedAnswer.getText().toString().equals(arrayList.get(currentQuestionIndex).answer)){
                                 rightAnswer.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_right));
-                                rightAnswer.setTextColor(Color.GREEN);
                             } else{
                                 wrongAnswer.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_wrong));
                                 rightAnswer.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_right));
-                                wrongAnswer.setTextColor(Color.RED);
-                                rightAnswer.setTextColor(Color.GREEN);
                             }
                             ansA.setEnabled(false);
                             ansB.setEnabled(false);
@@ -178,19 +184,16 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
                     }
                     else if(clickedButton.getId() == R.id.next_btn){
 
-
-
                             clickedButton.setBackgroundDrawable(bg_select);
                             if (selectedAnswer.getText().toString().equals(arrayList.get(currentQuestionIndex).answer)){
                                 score++;
                             }
-                            submitBtn.setBackgroundDrawable(bg_style);
+                            submitBtn.setBackgroundDrawable(getResources().getDrawable(R.drawable.bg_button));
                             currentQuestionIndex++;
                             loadNewQuestion();
                             clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style_mirror));
 
                     } else {
-                        //choices button clicked
                         submitBtn.setBackgroundDrawable(bg_style);
                         selectedAnswer = clickedButton;
                         clickedButton.setBackgroundDrawable(bg_select);
@@ -212,16 +215,12 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
         @SuppressLint("UseCompatLoadingForDrawables")
         void loadNewQuestion(){
 
+            submitBtn.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style));
+
             ansA.setEnabled(true);
             ansB.setEnabled(true);
             ansC.setEnabled(true);
             ansD.setEnabled(true);
-
-            ansA.setTextColor(Color.WHITE);
-            ansB.setTextColor(Color.WHITE);
-            ansC.setTextColor(Color.WHITE);
-            ansD.setTextColor(Color.WHITE);
-
             nextBtn.setEnabled(false);
 
             selectedAnswer = null;

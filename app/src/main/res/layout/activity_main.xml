@@ -27,7 +27,7 @@
         android:textAlignment="center"
         android:textSize="25sp"
         android:textColor="@color/off_white"
-        android:background="@drawable/bg_button"
+        android:background="@drawable/button_background_style"
         android:paddingVertical="15dp"
         android:paddingHorizontal="25dp"
         android:layout_marginVertical="20dp"/>
@@ -39,7 +39,7 @@
         android:textAlignment="center"
         android:textSize="25sp"
         android:textColor="@color/off_white"
-        android:background="@drawable/bg_button"
+        android:background="@drawable/button_background_style"
         android:paddingVertical="15dp"
         android:paddingHorizontal="25dp"
         android:layout_marginVertical="20dp"/>
@@ -51,7 +51,7 @@
         android:textAlignment="center"
         android:textSize="25sp"
         android:textColor="@color/off_white"
-        android:background="@drawable/bg_button"
+        android:background="@drawable/button_background_style"
         android:paddingVertical="15dp"
         android:paddingHorizontal="25dp"
         android:layout_marginVertical="20dp"/>
