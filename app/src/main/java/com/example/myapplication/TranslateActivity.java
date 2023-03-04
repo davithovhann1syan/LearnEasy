@@ -64,10 +64,10 @@ public class TranslateActivity extends AppCompatActivity {
         translateContainer = findViewById(R.id.translation_container);
         progressBar = findViewById(R.id.progress_bar);
 
-        layout.setOnClickListener(v->{
+        /* layout.setOnClickListener(v->{
             InputMethodManager inm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
             inm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),0);
-        });
+        });*/
 
 
         goBack.setOnClickListener(new View.OnClickListener() {

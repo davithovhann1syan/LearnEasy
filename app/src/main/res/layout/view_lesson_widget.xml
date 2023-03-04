@@ -19,7 +19,7 @@
         android:gravity="center"
         android:background="@drawable/button_background_style"
         android:layout_weight="9"
-        android:padding = "10dp"
+
         >
 
         <TextView
@@ -40,11 +40,11 @@
             android:id="@+id/simple_progress_bar"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
             android:max="10"
-            android:padding="20dp"
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             android:progressTint="@color/green"
-            android:progress="1"/>
+            android:progress="3"/>
 
 
     </LinearLayout>

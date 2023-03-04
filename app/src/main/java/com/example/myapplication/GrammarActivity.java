@@ -31,15 +31,7 @@ import developers.mobile.abt.FirebaseAbt;
 
 public class GrammarActivity extends AppCompatActivity {
 
-    ViewLessonWidget viewLessonWidget;
     LinearLayout linearLayout;
-
-    String highScore = "0";
-    String nouns;
-    String verbs;
-    String adjectives;
-    String prepositions;
-    String interjections;
 
     FirebaseFirestore firebaseFirestore;
 
