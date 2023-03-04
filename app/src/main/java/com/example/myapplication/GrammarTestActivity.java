@@ -30,6 +30,8 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
 
         int bestScore = 0;
 
+        String subType, type;
+
         FirebaseFirestore firebaseFirestore;
 
         TextView totalQuestionsTextView, currentQuestionView, goBack;
@@ -90,7 +92,8 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
                             if (task.isSuccessful()){
 
                                 Bundle extras = getIntent().getExtras();
-                                String subType = extras.getString("SUBTYPE");
+                                subType = extras.getString("SUBTYPE");
+                                type = extras.getString("TYPE");
 
                                 for (DocumentSnapshot documentSnapshot: task.getResult()) {
                                     List<String> choices = (List<String>) documentSnapshot.get("choices");
@@ -159,15 +162,16 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
 
 
 
-                        nextBtn.setEnabled(true);
+
 
                         if (selectedAnswer == null){
                             Toast.makeText(GrammarTestActivity.this, "Please select any option", Toast.LENGTH_SHORT).show();
                         } else {
-
+                            nextBtn.setEnabled(true);
                             if(selectedAnswer.getText().toString().equals(arrayList.get(currentQuestionIndex).answer)){
                                 rightAnswer.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_right));
                             } else{
+
                                 wrongAnswer.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_wrong));
                                 rightAnswer.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_right));
                             }
@@ -194,6 +198,8 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
                             currentQuestionView.setText(currentQuestionIndex + 1 +"");
                             clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style_mirror));
 
+
+
                     } else {
                         submitBtn.setBackgroundDrawable(bg_style);
                         selectedAnswer = clickedButton;
@@ -203,6 +209,7 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
                             wrongAnswer = selectedAnswer;
                         }
 
+                        nextBtn.setEnabled(false);
 
                     }
                 }
@@ -243,6 +250,8 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
 
         void finishQuiz(){
 
+            PreferenceManager preferenceManager = new PreferenceManager(getApplicationContext());
+            preferenceManager.putString(subType, score+"");
 
 
             new AlertDialog.Builder(this)
@@ -252,6 +261,12 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
                     .setCancelable(false)
                     .show();
 
+                    /*{
+                        Intent intent = new Intent(getApplicationContext(), GrammarActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                        intent.putExtra("OPENTYPE", type);
+                        startActivity(intent);
+                    }*/
 
         }
 

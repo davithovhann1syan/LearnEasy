@@ -3,6 +3,7 @@ package com.example.myapplication;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -24,6 +25,8 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Objects;
 
+import javax.crypto.spec.PBEKeySpec;
+
 import developers.mobile.abt.FirebaseAbt;
 
 public class GrammarActivity extends AppCompatActivity {
@@ -31,6 +34,7 @@ public class GrammarActivity extends AppCompatActivity {
     ViewLessonWidget viewLessonWidget;
     LinearLayout linearLayout;
 
+    String highScore = "0";
     String nouns;
     String verbs;
     String adjectives;
@@ -49,6 +53,11 @@ public class GrammarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_grammar);
         TextView back = findViewById(R.id.back);
         linearLayout = findViewById(R.id.lesson_linear_layout);
+
+
+       PreferenceManager preferenceManager = new PreferenceManager(getApplicationContext());
+
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,11 +85,19 @@ public class GrammarActivity extends AppCompatActivity {
                                 String title = documentSnapshot.get("title").toString();
                                 String type = documentSnapshot.get("type").toString();
                                 String subType = documentSnapshot.get("subType").toString();
+                                String score = preferenceManager.getString(subType);
 
-                                viewLessonWidgetArrayList.add(new ViewLessonWidget(getApplicationContext(), title, information , type, subType));
+
+
+                                if (score == null){
+                                    score = "0";
+                                }
+                               viewLessonWidgetArrayList.add(new ViewLessonWidget(getApplicationContext(), title, information , type, subType, score));
                             }
+
                             Collections.sort(viewLessonWidgetArrayList, comparator);
                             drawWidgets(viewLessonWidgetArrayList);
+
                         }
                     }
                 });

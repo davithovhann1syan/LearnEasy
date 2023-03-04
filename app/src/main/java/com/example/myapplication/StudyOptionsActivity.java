@@ -30,6 +30,7 @@ public class StudyOptionsActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 finish();
+
             }
         });
         grammar.setOnClickListener(new View.OnClickListener() {

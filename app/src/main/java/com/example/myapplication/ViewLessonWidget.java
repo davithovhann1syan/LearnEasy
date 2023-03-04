@@ -6,6 +6,7 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -19,9 +20,13 @@ public class ViewLessonWidget extends LinearLayout {
     TextView viewLessonName;
     String information;
 
+    ProgressBar progressBar;
+
     String subType;
 
-    public ViewLessonWidget(Context context, String name, String info, String type, String subType) {
+    String score = "0";
+
+    public ViewLessonWidget(Context context, String name, String info, String type, String subType, String score) {
         super(context);
         LayoutInflater inflater = context.getSystemService(LayoutInflater.class);
         View v = inflater.inflate(R.layout.view_lesson_widget, this, true);
@@ -31,6 +36,8 @@ public class ViewLessonWidget extends LinearLayout {
         this.type = type;
         viewLessonName.setText(name);
         this.subType = subType;
+        this.score = score;
+        progressBar.setProgress(Integer.parseInt(score));
 
     }
 
@@ -60,13 +67,15 @@ public class ViewLessonWidget extends LinearLayout {
     private void init(Context context){
 
         viewLessonName = findViewById(R.id.title);
+        progressBar = findViewById(R.id.simple_progress_bar);
 
-        goToButton = findViewById(R.id.go_to_activity_button);
+        goToButton = findViewById(R.id.test_button);
         goToButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, GrammarTestActivity.class);
                 intent.putExtra("SUBTYPE", subType);
+                intent.putExtra("TYPE", type);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
 

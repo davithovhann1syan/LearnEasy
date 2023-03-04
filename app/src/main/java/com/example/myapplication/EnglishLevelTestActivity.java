@@ -145,13 +145,10 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
                 if(clickedButton.getId()==R.id.submit_btn){
 
 
-
-                    nextBtn.setEnabled(true);
-
                     if (selectedAnswer == null){
                         Toast.makeText(EnglishLevelTestActivity.this, "Please select any option", Toast.LENGTH_SHORT).show();
                     } else {
-
+                        nextBtn.setEnabled(true);
                         if(selectedAnswer.getText().toString().equals(arrayList.get(currentQuestionIndex).answer)){
                             rightAnswer.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_right));
 
@@ -258,8 +255,7 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
     }
 
     void goBack(){
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(intent);
+       finish();
     }
 
 }
