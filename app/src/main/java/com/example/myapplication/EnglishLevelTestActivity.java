@@ -3,10 +3,10 @@ package com.example.myapplication;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,7 +30,7 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
 
     FirebaseFirestore firebaseFirestore;
 
-    TextView totalQuestionsTextView, goBack;
+    TextView totalQuestionsTextView, currentQuestionView, goBack;
     TextView questionTextView;
     AppCompatButton ansA, ansB, ansC, ansD;
     AppCompatButton submitBtn, nextBtn;
@@ -39,7 +39,9 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
     int score = 0;
     int totalQuestion = 1;
     int currentQuestionIndex = 0;
-    String level;
+    String level = "?";
+
+
     AppCompatButton rightAnswer, wrongAnswer, selectedAnswer;
 
 
@@ -53,6 +55,7 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
 
         goBack = findViewById(R.id.back);
         totalQuestionsTextView = findViewById(R.id.total_questions);
+        currentQuestionView = findViewById(R.id.current_question);
         questionTextView = findViewById(R.id.question);
         nextBtn = findViewById(R.id.next_btn);
         ansA = findViewById(R.id.ans_A);
@@ -69,7 +72,7 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
         nextBtn.setOnClickListener(this);
         totalQuestionsTextView.setText("Total questions : " + totalQuestion);
 
-
+        Log.i("DAS", level);
         goBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -93,16 +96,11 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
 
                             }
 
-                            (new Handler()).postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                    loadNewQuestion();
-                                }
-                            },200);
-
-
                             totalQuestion = arrayList.size();
-                            totalQuestionsTextView.setText("Total question " + totalQuestion);
+                            totalQuestionsTextView.setText(totalQuestion+"");
+                            currentQuestionView.setText(currentQuestionIndex+1+"");
+
+                            loadNewQuestion();
 
                         }
 
@@ -179,6 +177,7 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
                     }
                     submitBtn.setBackgroundDrawable(getResources().getDrawable(R.drawable.bg_button));
                     currentQuestionIndex++;
+                    currentQuestionView.setText(currentQuestionIndex+1+"");
                     loadNewQuestion();
                     clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style_mirror));
 
@@ -240,12 +239,14 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
         if (x < 0.5){
             level = "beginner";
 
-        } else if (x >= 0.5 && (float)totalQuestion / score < 0.8) {
-            level = "intermediate";
-        } else if (x >= 0.8) {
+        }  else if (x >= 0.8) {
             level = "advanced";
         }
+        else {
+            level = "intermediate";
+        }
 
+        Log.i("DAS", level);
         new AlertDialog.Builder(this)
                 .setTitle(passStatus)
                 .setMessage("Score is "+ score+" out of "+ totalQuestion + " so your enlish grammar level is approximately " + level + " so we recommend you to pick the course for your english level")

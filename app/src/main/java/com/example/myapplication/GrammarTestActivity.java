@@ -32,7 +32,7 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
 
         FirebaseFirestore firebaseFirestore;
 
-        TextView totalQuestionsTextView, goBack;
+        TextView totalQuestionsTextView, currentQuestionView, goBack;
         TextView questionTextView;
         AppCompatButton ansA, ansB, ansC, ansD;
         AppCompatButton submitBtn, nextBtn;
@@ -62,6 +62,7 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
             ansC = findViewById(R.id.ans_C);
             ansD = findViewById(R.id.ans_D);
             submitBtn = findViewById(R.id.submit_btn);
+            currentQuestionView = findViewById(R.id.current_question);
 
             ansA.setOnClickListener(this);
             ansB.setOnClickListener(this);
@@ -69,7 +70,7 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
             ansD.setOnClickListener(this);
             submitBtn.setOnClickListener(this);
             nextBtn.setOnClickListener(this);
-            totalQuestionsTextView.setText("Total questions : " + totalQuestion);
+            totalQuestionsTextView.setText(totalQuestion+"");
 
 
             goBack.setOnClickListener(new View.OnClickListener() {
@@ -104,19 +105,17 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
 
                                 }
 
-                                (new Handler()).postDelayed(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        loadNewQuestion();
-                                    }
-                                },200);
-
-
-
-
-
                                 totalQuestion = arrayList.size();
-                                totalQuestionsTextView.setText("Total question " + totalQuestion);
+                                totalQuestionsTextView.setText(totalQuestion+"");
+                                currentQuestionView.setText(currentQuestionIndex+1+"");
+
+                                loadNewQuestion();
+
+
+
+
+
+
 
                             }
 
@@ -191,6 +190,8 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
                             submitBtn.setBackgroundDrawable(getResources().getDrawable(R.drawable.bg_button));
                             currentQuestionIndex++;
                             loadNewQuestion();
+
+                            currentQuestionView.setText(currentQuestionIndex + 1 +"");
                             clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style_mirror));
 
                     } else {

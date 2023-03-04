@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/app_background"
-    android:padding="24dp"
-    tools:context=".GrammarTestActivity">
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@drawable/app_background2"
+android:padding="24dp"
+tools:context=".GrammarTestActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/total_questions"
-        android:text="@string/total_questions"
-        android:textColor="@color/off_white"
-        android:textAllCaps="true"
-        android:layout_centerHorizontal="true"
-        android:textSize="20dp"/>
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/total_questions"
+    android:text="@string/total_questions"
+    android:textColor="@color/off_white"
+    android:textAllCaps="true"
+    android:layout_centerHorizontal="true"
+    android:textSize="20sp"/>
 
 
     <ImageView
@@ -33,75 +33,99 @@
         />
 
 
-    <LinearLayout
-        android:id="@+id/choices_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:orientation="vertical">
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/ans_A"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="@drawable/button_background_style"
-            android:text=""
-            android:textColor="@color/off_white" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/ans_B"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="@drawable/button_background_style"
-            android:text=""
-            android:textColor="@color/off_white" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/ans_C"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="@drawable/button_background_style"
-            android:text=""
-            android:textColor="@color/off_white" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/ans_D"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="@drawable/button_background_style"
-            android:text=""
-            android:textColor="@color/off_white" />
-
-    </LinearLayout>
+<LinearLayout
+    android:id="@+id/choices_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:orientation="vertical">
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/ans_A"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/submit_btn"
-        android:text="@string/submit"
-        android:layout_below="@id/choices_layout"
-        android:layout_marginTop="40dp"
-        android:textColor="@color/off_white"
-        android:background="@drawable/button_background_style" />
-
-
-    <TextView
-        android:id="@+id/back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="70dp"
-        android:textSize="13sp"
-        android:paddingVertical="10dp"
-        android:paddingHorizontal="15dp"
-        android:textColor="@color/off_white"
-        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
+        android:padding="10dp"
         android:background="@drawable/button_background_style"
-        android:text="@string/go_back" />
+        android:text=""
+        android:textColor="@color/off_white" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/ans_B"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        android:background="@drawable/button_background_style"
+        android:text=""
+        android:textColor="@color/off_white" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/ans_C"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        android:background="@drawable/button_background_style"
+        android:text=""
+        android:textColor="@color/off_white" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/ans_D"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        android:background="@drawable/button_background_style"
+        android:text=""
+        android:textColor="@color/off_white" />
+
+</LinearLayout>
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_above="@+id/back"
+    android:gravity="center"
+    android:layout_below="@+id/choices_layout"
+    android:layout_marginTop="20dp"
+    android:orientation="horizontal">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/submit_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_weight="1"
+        android:background="@drawable/button_background_style"
+        android:text="@string/submit"
+        android:textColor="@color/off_white" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/next_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/button_background_style_mirror"
+        android:text="@string/next"
+        android:textColor="@color/off_white" />
+
+</LinearLayout>
+
+<TextView
+    android:id="@+id/back"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_marginBottom="20dp"
+    android:textSize="13sp"
+    android:paddingVertical="10dp"
+    android:paddingHorizontal="15dp"
+    android:textColor="@color/off_white"
+    android:layout_centerHorizontal="true"
+    android:background="@drawable/button_background_style"
+    android:text="@string/go_back" />
 
 
 

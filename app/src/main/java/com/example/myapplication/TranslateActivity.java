@@ -41,9 +41,9 @@ public class TranslateActivity extends AppCompatActivity {
     ProgressBar progressBar;
 
 
-    String[] fromLanguage = {"From", "English", "France", "Belarusian", "Russian", "Ukrainian", "Czech" , "Arabic", "Hindi"};
+    String[] fromLanguage = {"From", "English", "French", "Belarusian", "Russian", "Ukrainian", "Czech" , "Arabic", "Hindi"};
 
-    String[] toLanguage = {"To", "English", "France", "Belarusian", "Russian", "Ukrainian", "Czech" , "Arabic", "Hindi"};
+    String[] toLanguage = {"To", "English", "French", "Belarusian", "Russian", "Ukrainian", "Czech" , "Arabic", "Hindi"};
 
     private static final int REQUEST_PERMISSION_CODE = 1;
     int languageCode, fromLanguageCode, toLanguageCode = 0;
