@@ -18,11 +18,13 @@ import androidx.appcompat.widget.AppCompatButton;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 
@@ -252,6 +254,28 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
 
             PreferenceManager preferenceManager = new PreferenceManager(getApplicationContext());
             preferenceManager.putString(subType, score+"");
+
+            firebaseFirestore.collection("userScores")
+                    .whereEqualTo("TYPE",type)
+                    .whereEqualTo("SUBTYPE", subType)
+                    .whereEqualTo("USERID", FirebaseAuth.getInstance().getCurrentUser().getUid())
+                    .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                    if (task.isSuccessful()){
+                        if (!task.getResult().isEmpty()){
+                            firebaseFirestore.collection("userScores").document(task.getResult().getDocuments().get(0).getId()).update("SCORE", score);
+                        } else {
+                            HashMap<String, Object> hashMap = new HashMap<>();
+                            hashMap.put("TYPE", type);
+                            hashMap.put("SUBTYPE", subType);
+                            hashMap.put("SCORE", score);
+                            hashMap.put("USERID", FirebaseAuth.getInstance().getCurrentUser().getUid());
+                            firebaseFirestore.collection("userScores").add(hashMap);
+                        }
+                    }
+                }
+            });
 
 
             new AlertDialog.Builder(this)

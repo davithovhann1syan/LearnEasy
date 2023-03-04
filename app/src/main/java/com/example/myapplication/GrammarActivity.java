@@ -3,16 +3,20 @@ package com.example.myapplication;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -77,18 +81,48 @@ public class GrammarActivity extends AppCompatActivity {
                                 String title = documentSnapshot.get("title").toString();
                                 String type = documentSnapshot.get("type").toString();
                                 String subType = documentSnapshot.get("subType").toString();
-                                String score = preferenceManager.getString(subType);
 
 
 
-                                if (score == null){
-                                    score = "0";
-                                }
-                               viewLessonWidgetArrayList.add(new ViewLessonWidget(getApplicationContext(), title, information , type, subType, score));
+                                firebaseFirestore.collection("userScores")
+                                        .whereEqualTo("TYPE",type)
+                                        .whereEqualTo("SUBTYPE", subType)
+                                        .whereEqualTo("USERID", FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                        .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+
+                                                if (task.isSuccessful()){
+
+                                                    String score;
+                                                    if (task.getResult().getDocuments().isEmpty()){
+                                                        score = "0";
+
+                                                    } else {
+                                                        score = task.getResult().getDocuments().get(0).get("SCORE")+"";
+                                                    }
+                                                    viewLessonWidgetArrayList.add(new ViewLessonWidget(getApplicationContext(), title, information , type, subType, score));
+                                                }
+                                                else {
+                                                    Toast.makeText(GrammarActivity.this, ""+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                                }
+
+                                            }
+                                        });
+
+
+
+
+
                             }
+                            (new Handler()).postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    viewLessonWidgetArrayList.sort(comparator);
+                                    drawWidgets(viewLessonWidgetArrayList);
+                                }
+                            }, 500);
 
-                            Collections.sort(viewLessonWidgetArrayList, comparator);
-                            drawWidgets(viewLessonWidgetArrayList);
 
                         }
                     }
