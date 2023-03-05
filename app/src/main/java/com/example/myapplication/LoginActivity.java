@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
@@ -156,13 +157,14 @@ public class LoginActivity extends AppCompatActivity {
                 task.getResult(ApiException.class);
                 HomeActivity();
             } catch (ApiException e) {
-                Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Error "+e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }
     }
 
     private void HomeActivity() {
         finish();
+        Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(getApplicationContext(), WelcomeActivity.class);
         startActivity(intent);
     }
@@ -185,7 +187,7 @@ public class LoginActivity extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
-                        if (mAuth.getCurrentUser().isEmailVerified()) { // .isVerified ov stugum es
+                        if (mAuth.getCurrentUser().isEmailVerified()) {
                             progressDialog.dismiss();
                             sendUserToNextActivity();
                             Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();

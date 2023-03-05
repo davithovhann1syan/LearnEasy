@@ -18,7 +18,7 @@
         android:drawableStart="@drawable/ic_security"
         android:drawablePadding="10dp"
         android:ems="10"
-        android:hint="@string/password"
+        android:hint="@string/confirm_password"
         android:inputType="textPassword"
         android:paddingStart="20dp"
         android:paddingTop="10dp"

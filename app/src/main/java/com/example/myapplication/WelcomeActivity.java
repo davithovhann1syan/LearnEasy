@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class WelcomeActivity extends AppCompatActivity {
 
     TextView next, logout;

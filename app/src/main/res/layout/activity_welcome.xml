@@ -17,12 +17,24 @@
         android:layout_weight="1"
         android:layout_gravity="center_horizontal">
 
-        <ImageView
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="20dp"
-            android:src="@drawable/app_logo" />
+            android:layout_height="match_parent"
+            android:layout_margin="20dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="0dp"
+                android:src="@drawable/app_logo" />
+            />
+    </RelativeLayout>
+
+
 
     </LinearLayout>
 
