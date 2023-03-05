@@ -17,6 +17,7 @@
         android:textColor="@color/white"
         android:textSize="36sp"
         android:textStyle="bold"
+        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -63,13 +64,11 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_google"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_background_style"
-        android:drawableLeft="@drawable/ic_google"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/ic_google"
         android:drawablePadding="10dp"
         android:paddingHorizontal="15dp"
-        android:text="@string/google"
         android:textAlignment="textStart"
         android:textAllCaps="false"
         android:textColor="@color/off_white"
@@ -78,7 +77,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sign_up_container"
-        app:layout_constraintVertical_bias="0.475"
+        app:layout_constraintVertical_bias="0.459"
         tools:ignore="RtlHardcoded,RtlSymmetry" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -150,10 +149,12 @@
         app:layout_constraintTop_toBottomOf="@+id/input_email" />
 
     <ImageView
+
         android:id="@+id/image_view"
         android:layout_width="193dp"
         android:layout_height="149dp"
         android:layout_marginBottom="50dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="@id/text_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

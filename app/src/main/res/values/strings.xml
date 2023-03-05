@@ -14,6 +14,7 @@
     <string name="select">Select</string>
     <string name="greeting">Welcome! We are thrilled that you are starting to learn English with us. Our app is designed to make learning interactive and enjoyable, helping you become better in English in short time. We are here to support you every step of the way, so you can achieve your language goals with ease!</string>
     <string name="next">Next</string>
+    <string name="start_journey">Click to start your journey</string>
     <string name="enter_text_to_translate">Enter text to translate</string>
     <string name="select_your_preferred_study_option">select preferred study option</string>
     <string name="logout">logout</string>

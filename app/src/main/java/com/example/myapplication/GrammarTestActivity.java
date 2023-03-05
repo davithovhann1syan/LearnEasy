@@ -60,7 +60,6 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
             goBack = findViewById(R.id.back);
             totalQuestionsTextView = findViewById(R.id.total_questions);
             questionTextView = findViewById(R.id.question);
-            nextBtn = findViewById(R.id.next_btn);
             ansA = findViewById(R.id.ans_A);
             ansB = findViewById(R.id.ans_B);
             ansC = findViewById(R.id.ans_C);
@@ -73,7 +72,6 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
             ansC.setOnClickListener(this);
             ansD.setOnClickListener(this);
             submitBtn.setOnClickListener(this);
-            nextBtn.setOnClickListener(this);
             totalQuestionsTextView.setText(totalQuestion+"");
 
 
@@ -145,9 +143,6 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
             }
 
 
-
-
-
             (new Handler()).postDelayed(new Runnable() {
                 @SuppressLint("UseCompatLoadingForDrawables")
                 @Override
@@ -162,32 +157,38 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
 
                     if(clickedButton.getId()==R.id.submit_btn){
 
-
-
-
-
                         if (selectedAnswer == null){
                             Toast.makeText(GrammarTestActivity.this, "Please select any option", Toast.LENGTH_SHORT).show();
                         } else {
-                            nextBtn.setEnabled(true);
                             if(selectedAnswer.getText().toString().equals(arrayList.get(currentQuestionIndex).answer)){
                                 rightAnswer.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_right));
+                                score++;
                             } else{
-
                                 wrongAnswer.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_wrong));
                                 rightAnswer.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_right));
                             }
+
+                            currentQuestionIndex++;
+                            currentQuestionView.setText(currentQuestionIndex + 1 +"");
+
                             ansA.setEnabled(false);
                             ansB.setEnabled(false);
                             ansC.setEnabled(false);
                             ansD.setEnabled(false);
+                            (new Handler()).postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    loadNewQuestion();
+                                }
+                            }, 1500);
+
 
                         }
 
 
 
                     }
-                    else if(clickedButton.getId() == R.id.next_btn){
+                    /*else if(clickedButton.getId() == R.id.next_btn){
 
                             clickedButton.setBackgroundDrawable(bg_select);
                             if (selectedAnswer.getText().toString().equals(arrayList.get(currentQuestionIndex).answer)){
@@ -202,7 +203,7 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
 
 
 
-                    } else {
+                    }*/ else {
                         submitBtn.setBackgroundDrawable(bg_style);
                         selectedAnswer = clickedButton;
                         clickedButton.setBackgroundDrawable(bg_select);
@@ -210,8 +211,6 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
                         if (!selectedAnswer.getText().toString().equals(arrayList.get(currentQuestionIndex).answer)){
                             wrongAnswer = selectedAnswer;
                         }
-
-                        nextBtn.setEnabled(false);
 
                     }
                 }
@@ -222,33 +221,37 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
 
 
 
-        @SuppressLint("UseCompatLoadingForDrawables")
-        void loadNewQuestion(){
+    @SuppressLint("UseCompatLoadingForDrawables")
+    void loadNewQuestion(){
 
-            submitBtn.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style));
+        submitBtn.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style));
 
-            ansA.setEnabled(true);
-            ansB.setEnabled(true);
-            ansC.setEnabled(true);
-            ansD.setEnabled(true);
-            nextBtn.setEnabled(false);
+        ansA.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style));
+        ansB.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style));
+        ansC.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style));
+        ansD.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style));
 
-            selectedAnswer = null;
+        ansA.setEnabled(true);
+        ansB.setEnabled(true);
+        ansC.setEnabled(true);
+        ansD.setEnabled(true);
+
+        selectedAnswer = null;
 
 
 
-            if(currentQuestionIndex == totalQuestion ){
-                finishQuiz();
-                return;
-            }
-
-            questionTextView.setText(arrayList.get(currentQuestionIndex).question);
-            ansA.setText(arrayList.get(currentQuestionIndex).choices.get(0));
-            ansB.setText(arrayList.get(currentQuestionIndex).choices.get(1));
-            ansC.setText(arrayList.get(currentQuestionIndex).choices.get(2));
-            ansD.setText(arrayList.get(currentQuestionIndex).choices.get(3));
-
+        if(currentQuestionIndex == totalQuestion ){
+            finishQuiz();
+            return;
         }
+
+        questionTextView.setText(arrayList.get(currentQuestionIndex).question);
+        ansA.setText(arrayList.get(currentQuestionIndex).choices.get(0));
+        ansB.setText(arrayList.get(currentQuestionIndex).choices.get(1));
+        ansC.setText(arrayList.get(currentQuestionIndex).choices.get(2));
+        ansD.setText(arrayList.get(currentQuestionIndex).choices.get(3));
+
+    }
 
         void finishQuiz(){
 

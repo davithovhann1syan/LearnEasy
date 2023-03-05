@@ -78,7 +78,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         if (mUser != null) {
-            startActivity(new Intent(getApplicationContext(), WelcomeActivity.class));
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
         }
 
         createNewAccount.setOnClickListener(new View.OnClickListener() {
