@@ -2,12 +2,9 @@ package com.example.myapplication;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
-import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -45,6 +42,9 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
 
 
         int score = 0;
+
+        int submitClicks = 0;
+
         int totalQuestion = 1;
         int currentQuestionIndex = 0;
         AppCompatButton rightAnswer, wrongAnswer, selectedAnswer;
@@ -128,96 +128,83 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
 
         }
 
-        public void onClick(View view) {
+    public void onClick(View view) {
 
-            if (ansA.getText().equals(arrayList.get(currentQuestionIndex).answer)){
-                rightAnswer = ansA;
-            } else if (ansB.getText().equals(arrayList.get(currentQuestionIndex).answer)) {
-                rightAnswer = ansB;
+        if (ansA.getText().equals(arrayList.get(currentQuestionIndex).answer)){
+            rightAnswer = ansA;
+        } else if (ansB.getText().equals(arrayList.get(currentQuestionIndex).answer)) {
+            rightAnswer = ansB;
 
-            } else if (ansC.getText().equals(arrayList.get(currentQuestionIndex).answer)) {
-                rightAnswer = ansC;
+        } else if (ansC.getText().equals(arrayList.get(currentQuestionIndex).answer)) {
+            rightAnswer = ansC;
 
-            } else if (ansD.getText().equals(arrayList.get(currentQuestionIndex).answer)) {
-                rightAnswer = ansD;
-            }
+        } else if (ansD.getText().equals(arrayList.get(currentQuestionIndex).answer)) {
+            rightAnswer = ansD;
+        }
 
 
-            (new Handler()).postDelayed(new Runnable() {
-                @SuppressLint("UseCompatLoadingForDrawables")
-                @Override
-                public void run() {
-                    Drawable bg_style = getResources().getDrawable(R.drawable.bg_button);
-                    Drawable bg_select = getResources().getDrawable(R.drawable.button_selection_bg);
-                    ansA.setBackgroundDrawable(bg_style);
-                    ansB.setBackgroundDrawable(bg_style);
-                    ansC.setBackgroundDrawable(bg_style);
-                    ansD.setBackgroundDrawable(bg_style);
-                    AppCompatButton clickedButton = (AppCompatButton) view;
+        (new Handler()).postDelayed(new Runnable() {
+            @SuppressLint("UseCompatLoadingForDrawables")
+            @Override
+            public void run() {
+                Drawable bg_style = getResources().getDrawable(R.drawable.bg_button);
+                Drawable bg_select = getResources().getDrawable(R.drawable.button_selection_bg);
+                ansA.setBackgroundDrawable(bg_style);
+                ansB.setBackgroundDrawable(bg_style);
+                ansC.setBackgroundDrawable(bg_style);
+                ansD.setBackgroundDrawable(bg_style);
+                AppCompatButton clickedButton = (AppCompatButton) view;
 
-                    if(clickedButton.getId()==R.id.submit_btn){
+                if(clickedButton.getId()==R.id.submit_btn){
 
+                    submitClicks++;
+
+
+
+
+                    if (submitClicks == 1){
                         if (selectedAnswer == null){
                             Toast.makeText(GrammarTestActivity.this, "Please select any option", Toast.LENGTH_SHORT).show();
                         } else {
-                            if(selectedAnswer.getText().toString().equals(arrayList.get(currentQuestionIndex).answer)){
+                            submitBtn.setText("NEXT");
+                            if (selectedAnswer.getText().toString().equals(arrayList.get(currentQuestionIndex).answer)) {
                                 rightAnswer.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_right));
                                 score++;
-                            } else{
+                            } else {
                                 wrongAnswer.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_wrong));
                                 rightAnswer.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_right));
                             }
 
                             currentQuestionIndex++;
-                            currentQuestionView.setText(currentQuestionIndex + 1 +"");
+                            currentQuestionView.setText(currentQuestionIndex + 1 + "");
 
                             ansA.setEnabled(false);
                             ansB.setEnabled(false);
                             ansC.setEnabled(false);
                             ansD.setEnabled(false);
-                            (new Handler()).postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                    loadNewQuestion();
-                                }
-                            }, 1500);
-
-
                         }
-
-
-
                     }
-                    /*else if(clickedButton.getId() == R.id.next_btn){
 
-                            clickedButton.setBackgroundDrawable(bg_select);
-                            if (selectedAnswer.getText().toString().equals(arrayList.get(currentQuestionIndex).answer)){
-                                score++;
-                            }
-                            submitBtn.setBackgroundDrawable(getResources().getDrawable(R.drawable.bg_button));
-                            currentQuestionIndex++;
-                            loadNewQuestion();
-
-                            currentQuestionView.setText(currentQuestionIndex + 1 +"");
-                            clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style_mirror));
-
-
-
-                    }*/ else {
-                        submitBtn.setBackgroundDrawable(bg_style);
-                        selectedAnswer = clickedButton;
-                        clickedButton.setBackgroundDrawable(bg_select);
-
-                        if (!selectedAnswer.getText().toString().equals(arrayList.get(currentQuestionIndex).answer)){
-                            wrongAnswer = selectedAnswer;
-                        }
-
+                    if (submitClicks == 2){
+                        loadNewQuestion();
                     }
                 }
-            },200);
+
+                else {
+                    submitBtn.setBackgroundDrawable(bg_style);
+                    selectedAnswer = clickedButton;
+                    clickedButton.setBackgroundDrawable(bg_select);
+
+                    if (!selectedAnswer.getText().toString().equals(arrayList.get(currentQuestionIndex).answer)){
+                        wrongAnswer = selectedAnswer;
+                    }
+
+                }
+            }
+        },200);
 
 
-        }
+    }
 
 
 
@@ -230,6 +217,10 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
         ansB.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style));
         ansC.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style));
         ansD.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style));
+
+        submitBtn.setText("SUBMIT");
+
+        submitClicks = 0;
 
         ansA.setEnabled(true);
         ansB.setEnabled(true);
@@ -252,7 +243,6 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
         ansD.setText(arrayList.get(currentQuestionIndex).choices.get(3));
 
     }
-
         void finishQuiz(){
 
             PreferenceManager preferenceManager = new PreferenceManager(getApplicationContext());

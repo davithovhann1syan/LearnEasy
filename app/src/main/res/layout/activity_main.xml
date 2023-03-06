@@ -78,7 +78,7 @@
             android:layout_weight="1"
             android:textAlignment="center"
             android:padding="10dp"
-
+            android:layout_marginLeft="10dp"
             android:textSize="20sp"
             android:textColor="@color/off_white"
             android:text="@string/Take_a_test"/>

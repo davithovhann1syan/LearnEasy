@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        intermediate.setOnClickListener(new View.OnClickListener() {
+       /* intermediate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),StudyOptionsActivity.class);
@@ -50,6 +50,6 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(),StudyOptionsActivity.class);
                 startActivity(intent);
             }
-        });
+        });*/
     }
 }

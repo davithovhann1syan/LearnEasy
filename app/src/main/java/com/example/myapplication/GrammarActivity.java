@@ -44,6 +44,8 @@ public class GrammarActivity extends AppCompatActivity {
 
     ProgressBar progressBar;
 
+    String highScore;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,7 +105,10 @@ public class GrammarActivity extends AppCompatActivity {
 
                                                     } else {
                                                         score = task.getResult().getDocuments().get(0).get("SCORE")+"";
+
                                                     }
+
+
                                                     viewLessonWidgetArrayList.add(new ViewLessonWidget(getApplicationContext(), title, information , type, subType, score));
                                                 }
                                                 else {

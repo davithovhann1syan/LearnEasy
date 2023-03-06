@@ -2,7 +2,6 @@ package com.example.myapplication;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
-import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -40,6 +39,8 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
     int totalQuestion = 1;
     int currentQuestionIndex = 0;
     String level = "?";
+
+    int submitClicks = 0;
 
 
     AppCompatButton rightAnswer, wrongAnswer, selectedAnswer;
@@ -129,7 +130,7 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
             @SuppressLint("UseCompatLoadingForDrawables")
             @Override
             public void run() {
-                Drawable bg_style = getResources().getDrawable(R.drawable.bg_button);
+                Drawable bg_style = getResources().getDrawable(R.drawable.button_background_style);
                 Drawable bg_select = getResources().getDrawable(R.drawable.button_selection_bg);
                 ansA.setBackgroundDrawable(bg_style);
                 ansB.setBackgroundDrawable(bg_style);
@@ -139,53 +140,42 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
 
                 if(clickedButton.getId()==R.id.submit_btn){
 
-                    if (selectedAnswer == null){
-                        Toast.makeText(EnglishLevelTestActivity.this, "Please select any option", Toast.LENGTH_SHORT).show();
-                    } else {
-                        if(selectedAnswer.getText().toString().equals(arrayList.get(currentQuestionIndex).answer)){
-                            rightAnswer.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_right));
-                            score++;
-                        } else{
-                            wrongAnswer.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_wrong));
-                            rightAnswer.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_right));
-                        }
+                    submitClicks++;
 
-                        currentQuestionIndex++;
-                        currentQuestionView.setText(currentQuestionIndex + 1 +"");
 
-                        ansA.setEnabled(false);
-                        ansB.setEnabled(false);
-                        ansC.setEnabled(false);
-                        ansD.setEnabled(false);
-                        (new Handler()).postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                loadNewQuestion();
+
+
+                    if (submitClicks == 1){
+                        if (selectedAnswer == null){
+
+                            Toast.makeText(EnglishLevelTestActivity.this, "Please select any option", Toast.LENGTH_SHORT).show();
+                        } else {
+                            submitBtn.setText("NEXT");
+                            if (selectedAnswer.getText().toString().equals(arrayList.get(currentQuestionIndex).answer)) {
+                                rightAnswer.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_right));
+                                score++;
+                            } else {
+                                wrongAnswer.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_wrong));
+                                rightAnswer.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_right));
                             }
-                        }, 1500);
 
+                            currentQuestionIndex++;
+                            currentQuestionView.setText(currentQuestionIndex + 1 + "");
 
+                            ansA.setEnabled(false);
+                            ansB.setEnabled(false);
+                            ansC.setEnabled(false);
+                            ansD.setEnabled(false);
+                        }
                     }
 
-
+                    if (submitClicks == 2){
+                        loadNewQuestion();
+                    }
 
                 }
-                    /*else if(clickedButton.getId() == R.id.next_btn){
 
-                            clickedButton.setBackgroundDrawable(bg_select);
-                            if (selectedAnswer.getText().toString().equals(arrayList.get(currentQuestionIndex).answer)){
-                                score++;
-                            }
-                            submitBtn.setBackgroundDrawable(getResources().getDrawable(R.drawable.bg_button));
-                            currentQuestionIndex++;
-                            loadNewQuestion();
-
-                            currentQuestionView.setText(currentQuestionIndex + 1 +"");
-                            clickedButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style_mirror));
-
-
-
-                    }*/ else {
+                else {
                     submitBtn.setBackgroundDrawable(bg_style);
                     selectedAnswer = clickedButton;
                     clickedButton.setBackgroundDrawable(bg_select);
@@ -212,6 +202,10 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
         ansB.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style));
         ansC.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style));
         ansD.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style));
+
+        submitBtn.setText("SUBMIT");
+
+        submitClicks = 0;
 
         ansA.setEnabled(true);
         ansB.setEnabled(true);
