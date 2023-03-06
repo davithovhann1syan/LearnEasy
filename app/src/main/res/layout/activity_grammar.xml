@@ -8,25 +8,37 @@
     android:background="@drawable/app_background2"
     tools:context=".GrammarActivity">
 
+    <ProgressBar
+        android:id="@+id/progress_bar_grammar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:outlineAmbientShadowColor="@color/off_white"
+        android:indeterminateDrawable="@drawable/progress_bar_style"
+        app:layout_constraintTop_toTopOf="@+id/scrollView3" />
+
+
     <ScrollView
+        android:id="@+id/scrollView3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="80dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck"
-        android:layout_marginBottom="80dp">
+        tools:ignore="SpeakableTextPresentCheck">
 
         <LinearLayout
             android:id="@+id/lesson_linear_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:orientation="vertical"
             android:paddingTop="15dp"
-            android:gravity="center"
-            android:paddingBottom="20dp"
-            >
+            android:paddingBottom="20dp">
 
         </LinearLayout>
 

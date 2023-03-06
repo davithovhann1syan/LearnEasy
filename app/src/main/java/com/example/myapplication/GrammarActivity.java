@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -41,6 +42,7 @@ public class GrammarActivity extends AppCompatActivity {
 
     ArrayList<ViewLessonWidget> viewLessonWidgetArrayList;
 
+    ProgressBar progressBar;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -49,6 +51,7 @@ public class GrammarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_grammar);
         TextView back = findViewById(R.id.back);
         linearLayout = findViewById(R.id.lesson_linear_layout);
+        progressBar = findViewById(R.id.progress_bar_grammar);
 
 
        PreferenceManager preferenceManager = new PreferenceManager(getApplicationContext());
@@ -119,6 +122,7 @@ public class GrammarActivity extends AppCompatActivity {
                                 @Override
                                 public void run() {
                                     viewLessonWidgetArrayList.sort(comparator);
+                                    progressBar.setVisibility(View.GONE);
                                     drawWidgets(viewLessonWidgetArrayList);
                                 }
                             }, 500);
