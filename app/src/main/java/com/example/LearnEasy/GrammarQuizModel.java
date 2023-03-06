@@ -1,17 +1,18 @@
-package com.example.myapplication;
+package com.example.LearnEasy;
 
 import java.util.List;
 
-public class EnglishLevelQuizModel {
+public class GrammarQuizModel {
     public String question;
     public List<String> choices;
     public String answer;
 
+    public String type;
 
-    public EnglishLevelQuizModel(String question, List<String> choices, String answer) {
+    public GrammarQuizModel(String question, List<String> choices, String answer, String type) {
         this.question = question;
         this.choices = choices;
         this.answer = answer;
-
+        this.type = type;
     }
 }
