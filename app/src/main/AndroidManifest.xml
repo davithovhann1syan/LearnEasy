@@ -22,7 +22,7 @@
             android:screenOrientation="portrait"/>
 
         <activity
-            android:name=".SplashScreen"
+            android:name=".SplashScreenStart"
             android:exported="true"
             android:theme="@style/SplashScreen"
             android:configChanges="orientation"

@@ -25,9 +25,11 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -47,7 +49,6 @@ public class LoginActivity extends AppCompatActivity {
     AppCompatButton btnSignInGoogle;
     GoogleSignInOptions gso;
     GoogleSignInClient gsc;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,11 +65,8 @@ public class LoginActivity extends AppCompatActivity {
         mUser = mAuth.getCurrentUser();
         forgotPassword = findViewById(R.id.forgot_password);
 
-        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestEmail()
-                .build();
-
-        gsc = GoogleSignIn.getClient(this, gso);
+        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build();
+        gsc = GoogleSignIn.getClient(LoginActivity.this, gso);
 
         btnSignInGoogle.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,6 +74,7 @@ public class LoginActivity extends AppCompatActivity {
                 signInGoogle();
             }
         });
+        
 
         if (mUser != null) {
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
@@ -85,6 +84,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+                FirebaseAuth.getInstance().signOut();
                 startActivity(intent);
             }
         });
@@ -142,31 +142,50 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void signInGoogle() {
-        Intent intent = gsc.getSignInIntent();
-        startActivityForResult(intent, 100);
+        Intent signInIntent = gsc.getSignInIntent();
+        startActivityForResult(signInIntent, 100);
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
+        super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 100) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
-                task.getResult(ApiException.class);
-                HomeActivity();
+                GoogleSignInAccount account = task.getResult(ApiException.class);
+                firebaseAuthWithGoogle(account.getIdToken());
+                Toast.makeText(LoginActivity.this, "Sign in Complete ", Toast.LENGTH_SHORT).show();
             } catch (ApiException e) {
-                Toast.makeText(this, "Error "+e.getMessage(), Toast.LENGTH_SHORT).show();
+
+                Toast.makeText(LoginActivity.this, "Authentication Failed Poblems with " + e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }
+
     }
 
-    private void HomeActivity() {
-        finish();
-        Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(getApplicationContext(), WelcomeActivity.class);
-        startActivity(intent);
+    private void firebaseAuthWithGoogle(String idToken) {
+
+        //getting user credentials with the help of AuthCredential method and also passing user Token Id.
+        AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
+
+        //trying to sign in user using signInWithCredential and passing above credentials of user.
+        mAuth.signInWithCredential(credential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(intent);
+
+                } else {
+                    // If sign in fails, display a message to the user.
+                    Toast.makeText(LoginActivity.this, "Authentication Failed", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
+
+
 
     private void performLogin() {
         String email = inputEmail.getText().toString();
