@@ -175,8 +175,7 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
                                 rightAnswer.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_right));
                             }
 
-                            currentQuestionIndex++;
-                            currentQuestionView.setText(currentQuestionIndex + 1 + "");
+
 
                             ansA.setEnabled(false);
                             ansB.setEnabled(false);
@@ -186,6 +185,8 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
                     }
 
                     if (submitClicks == 2){
+                        currentQuestionIndex++;
+                        currentQuestionView.setText(currentQuestionIndex + 1 + "");
                         loadNewQuestion();
                     }
                 }

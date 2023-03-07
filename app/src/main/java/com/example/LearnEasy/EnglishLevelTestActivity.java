@@ -159,9 +159,6 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
                                 rightAnswer.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_right));
                             }
 
-                            currentQuestionIndex++;
-                            currentQuestionView.setText(currentQuestionIndex + 1 + "");
-
                             ansA.setEnabled(false);
                             ansB.setEnabled(false);
                             ansC.setEnabled(false);
@@ -170,6 +167,8 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
                     }
 
                     if (submitClicks == 2){
+                        currentQuestionIndex++;
+                        currentQuestionView.setText(currentQuestionIndex + 1 + "");
                         loadNewQuestion();
                     }
 
