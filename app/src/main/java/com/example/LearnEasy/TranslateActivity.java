@@ -4,8 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
@@ -32,11 +34,12 @@ public class TranslateActivity extends AppCompatActivity {
     private TextInputEditText sourceText;
     private AppCompatButton translateBtn;
     private TextView translateTV, goBack;
-    private LinearLayout layout;
 
     RelativeLayout translateContainer;
 
     ProgressBar progressBar;
+
+    LinearLayout mainLayout;
 
 
     String[] fromLanguage = {"From", "English", "French", "Belarusian", "Russian", "Ukrainian", "Czech" , "Arabic", "Hindi"};
@@ -57,15 +60,16 @@ public class TranslateActivity extends AppCompatActivity {
         translateBtn = findViewById(R.id.id_btn_translation);
         translateTV = findViewById(R.id.id_translated_tv);
         goBack = findViewById(R.id.back);
-        layout = findViewById(R.id.main_layout);
+        mainLayout = findViewById(R.id.main_layout);
         translateContainer = findViewById(R.id.translation_container);
         progressBar = findViewById(R.id.progress_bar);
 
-        /* layout.setOnClickListener(v->{
-            InputMethodManager inm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-            inm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),0);
-        });*/
-
+        mainLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                closeKeyboard();
+            }
+        });
 
         goBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,6 +128,14 @@ public class TranslateActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void closeKeyboard() {
+        View view = this.getCurrentFocus();
+        if (view != null) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
     }
 
     private void translateText(int fromLanguageCode, String source) {

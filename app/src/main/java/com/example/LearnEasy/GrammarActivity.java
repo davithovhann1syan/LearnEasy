@@ -102,7 +102,7 @@ public class GrammarActivity extends AppCompatActivity {
                                                     viewLessonWidgetArrayList.add(new ViewLessonWidget(getApplicationContext(), title, information , type, subType, score));
                                                 }
                                                 else {
-                                                    Toast.makeText(GrammarActivity.this, ""+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(GrammarActivity.this, ""+ Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
                                                 }
 
                                             }
@@ -117,8 +117,8 @@ public class GrammarActivity extends AppCompatActivity {
                                 @Override
                                 public void run() {
                                     viewLessonWidgetArrayList.sort(comparator);
-                                    progressBar.setVisibility(View.GONE);
                                     drawWidgets(viewLessonWidgetArrayList);
+                                    progressBar.setVisibility(View.GONE);
                                 }
                             }, 500);
 
