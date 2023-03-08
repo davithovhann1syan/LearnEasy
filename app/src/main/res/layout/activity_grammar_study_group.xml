@@ -12,18 +12,21 @@
     tools:context=".GrammarStudyGroupActivity">
 
     <TextView
+        android:layout_marginTop="60dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="@string/start_your_grammar_course"
         android:textSize="15sp"
         android:textAllCaps="true"
         android:gravity="center"
         android:textStyle="bold"
-        android:textColor="@color/off_white"/>
+        android:textColor="@color/off_white" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+       >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -34,7 +37,7 @@
                 android:id="@+id/nouns"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="20dp"
+                android:layout_marginBottom="20dp"
                 android:background="@drawable/button_background_style"
                 android:paddingHorizontal="25dp"
                 android:paddingVertical="15dp"
@@ -130,28 +133,31 @@
                 android:paddingHorizontal="25dp"
                 android:paddingVertical="15dp"
                 android:text="@string/interjections_conjunctions"
+                android:singleLine="true"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:textAllCaps="true"/>
 
-            <TextView
-                android:id="@+id/back"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/button_background_style"
-                android:paddingHorizontal="15dp"
-                android:paddingVertical="10dp"
-                android:text="@string/go_back"
-                android:textColor="@color/off_white"
-                android:textSize="15sp" />
+
         </LinearLayout>
 
     </ScrollView>
 
+    <TextView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="70dp"
+        android:background="@drawable/button_background_style"
+        android:paddingHorizontal="15dp"
+        android:layout_marginTop="20dp"
+        android:paddingVertical="10dp"
+        android:text="@string/go_back"
+        android:textColor="@color/off_white"
+        android:textSize="15sp" />
 
 </LinearLayout>
 

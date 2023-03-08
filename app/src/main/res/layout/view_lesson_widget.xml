@@ -25,7 +25,7 @@
         <TextView
             android:textColor="@color/off_white"
             android:textStyle="bold"
-            android:textAlignment="center"
+            android:textAlignment="textStart"
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
