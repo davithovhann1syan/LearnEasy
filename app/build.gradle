@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.example.LearnEasy'
+    namespace 'com.example.learneasy'
     compileSdk 33
 
     defaultConfig {

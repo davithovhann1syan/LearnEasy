@@ -1,4 +1,4 @@
-package com.example.LearnEasy;
+package com.example.learneasy;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -15,7 +15,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.constraintlayout.widget.ConstraintLayout;

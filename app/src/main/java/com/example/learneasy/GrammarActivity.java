@@ -1,4 +1,4 @@
-package com.example.LearnEasy;
+package com.example.learneasy;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;

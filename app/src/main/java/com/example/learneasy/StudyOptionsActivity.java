@@ -1,4 +1,4 @@
-package com.example.LearnEasy;
+package com.example.learneasy;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -53,7 +53,7 @@ public class StudyOptionsActivity extends AppCompatActivity {
         vocabularyTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), VocabularyTestActivity.class);
+                Intent intent = new Intent(getApplicationContext(), VocabularyStudyActivity.class);
                 startActivity(intent);
             }
         });

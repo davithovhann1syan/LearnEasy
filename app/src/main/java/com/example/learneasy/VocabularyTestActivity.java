@@ -1,4 +1,4 @@
-package com.example.LearnEasy;
+package com.example.learneasy;
 
 import android.app.AlertDialog;
 import android.graphics.drawable.Drawable;

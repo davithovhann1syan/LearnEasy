@@ -57,6 +57,7 @@
     <string name="enter_your_email_address">Enter your email address:</string>
     <string name="cancel">Cancel</string>
     <string name="reset">Reset</string>
+    <string name="choose_section">choose section</string>
 
     <string-array name="languages">
         <item>English</item>

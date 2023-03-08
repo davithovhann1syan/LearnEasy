@@ -1,4 +1,4 @@
-package com.example.LearnEasy;
+package com.example.learneasy;
 
 import android.content.Context;
 import android.content.Intent;
@@ -85,7 +85,7 @@ public class ViewLessonWidget extends LinearLayout {
         viewLessonName.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, LessonActivity.class);
+                Intent intent = new Intent(context, GrammarLessonActivity.class);
                 intent.putExtra("NAME", name);
                 intent.putExtra("INFO", information);
                 intent.putExtra("TYPE", type);

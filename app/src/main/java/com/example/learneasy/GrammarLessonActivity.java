@@ -1,4 +1,4 @@
-package com.example.LearnEasy;
+package com.example.learneasy;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class LessonActivity extends AppCompatActivity {
+public class GrammarLessonActivity extends AppCompatActivity {
 
     TextView heading;
     TextView information;
@@ -80,4 +80,5 @@ public class LessonActivity extends AppCompatActivity {
     public String getType(){
         return type;
     }
+
 }
