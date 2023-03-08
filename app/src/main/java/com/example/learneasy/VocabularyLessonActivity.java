@@ -1,5 +1,6 @@
 package com.example.learneasy;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -9,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class VocabularyLessonActivity extends AppCompatActivity {
 
     TextView information;
-    TextView backButton, testButton;
+    TextView backButton, testButton, translateButton;
     String info;
     TextView heading;
 
@@ -47,8 +48,9 @@ public class VocabularyLessonActivity extends AppCompatActivity {
         setContentView(R.layout.activity_vocabulary_lesson);
         heading = findViewById(R.id.heading);
         information = findViewById(R.id.information);
-        backButton = findViewById(R.id.back_button);
+        backButton = findViewById(R.id.back);
         testButton = findViewById(R.id.test_button);
+        translateButton = findViewById(R.id.translate_button);
 
         heading.setText(name);
         information.setText(info);
@@ -62,6 +64,14 @@ public class VocabularyLessonActivity extends AppCompatActivity {
                 getApplicationContext().startActivity(intent);
             }
         });*/
+
+        translateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), TranslateActivity.class);
+                startActivity(intent);
+            }
+        });
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
