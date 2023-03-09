@@ -79,7 +79,7 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
             }
         });
 
-        firebaseFirestore= FirebaseFirestore.getInstance();
+        firebaseFirestore = FirebaseFirestore.getInstance();
 
         firebaseFirestore.collection("englishleveltest")
                 .get()
