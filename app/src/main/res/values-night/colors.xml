@@ -7,6 +7,10 @@
     <color name="color_secondary_dark">#7C8DFF</color>
     <color name="off_white">#f7f6f9</color>
 
+    <color name="brown_dark">#5A3F2B</color>
+    <color name="brown">#BE9A6D</color>
+    <color name="brown_light">#DBD0CA</color>
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="light_blue">#2596be</color>

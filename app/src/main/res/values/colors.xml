@@ -10,6 +10,11 @@
     <color name="green">#25C501</color>
     <color name="lavender">#8692f7</color>
 
+
+    <color name="brown_dark">#5A3F2B</color>
+    <color name="brown">#BE9A6D</color>
+    <color name="brown_light">#DBD0CA</color>
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="light_blue">#2596be</color>

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_gravity="center"
-    android:background="@drawable/app_background"
+    android:background="@color/brown_dark"
     android:gravity="center_vertical"
     tools:context=".WelcomeActivity">
 

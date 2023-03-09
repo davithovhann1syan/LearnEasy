@@ -5,7 +5,7 @@
     android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/app_background2"
+    android:background="@color/brown_dark"
     tools:context=".RegisterActivity">
 
     <EditText

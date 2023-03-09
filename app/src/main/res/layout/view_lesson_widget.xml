@@ -44,7 +44,7 @@
             android:paddingHorizontal="20dp"
             android:max="10"
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-            android:progressTint="#3d7c9e"
+            android:progressTint="@color/brown_dark"
             android:progress="3"/>
 
 
@@ -53,7 +53,7 @@
 
 
     <androidx.appcompat.widget.AppCompatButton
-        android:background="@drawable/lesson_background_style"
+        android:background="@drawable/button_test_background"
         android:id="@+id/test_button"
         android:textStyle="bold"
         android:textAllCaps="true"

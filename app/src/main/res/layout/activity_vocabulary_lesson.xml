@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".GrammarLessonActivity"
-    android:background="@drawable/app_background2"
+    android:background="@color/brown_dark"
     android:orientation="vertical"
     >
 
@@ -36,7 +36,7 @@
             app:layout_constraintTop_toTopOf="parent"
             android:paddingTop="20dp"
 
-            android:textSize="15sp"/>
+            android:textSize="20sp"/>
 
         <TextView
             android:id="@+id/information"
@@ -49,7 +49,7 @@
             android:layout_margin="20dp"
             android:layout_gravity="center_horizontal"
             android:textAlignment="center"
-            android:textColor="@color/off_white"
+            android:textColor="@color/brown_dark"
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/back_button"
             app:layout_constraintEnd_toEndOf="parent"
