@@ -45,10 +45,7 @@ public class GrammarActivity extends AppCompatActivity {
         linearLayout = findViewById(R.id.lesson_linear_layout);
         progressBar = findViewById(R.id.progress_bar_grammar);
 
-
-       PreferenceManager preferenceManager = new PreferenceManager(getApplicationContext());
-
-
+        PreferenceManager preferenceManager = new PreferenceManager(getApplicationContext());
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,8 +73,6 @@ public class GrammarActivity extends AppCompatActivity {
                                 String title = documentSnapshot.get("title").toString();
                                 String type = documentSnapshot.get("type").toString();
                                 String subType = documentSnapshot.get("subType").toString();
-
-
 
                                 firebaseFirestore.collection("userScores")
                                         .whereEqualTo("TYPE",type)
@@ -107,11 +102,6 @@ public class GrammarActivity extends AppCompatActivity {
 
                                             }
                                         });
-
-
-
-
-
                             }
                             (new Handler()).postDelayed(new Runnable() {
                                 @Override
@@ -121,15 +111,11 @@ public class GrammarActivity extends AppCompatActivity {
                                     progressBar.setVisibility(View.GONE);
                                 }
                             }, 500);
-
-
                         }
                     }
                 });
 
         viewLessonWidgetArrayList = new ArrayList<>();
-
-
 
     }
 

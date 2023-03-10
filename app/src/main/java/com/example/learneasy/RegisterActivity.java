@@ -36,20 +36,16 @@ public class RegisterActivity extends AppCompatActivity {
     EditText inputEmail, inputPassword, inputConfirmPassword;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     ProgressDialog progressDialog;
-
     FirebaseAuth mAuth;
     FirebaseUser mUser;
-
     GoogleSignInOptions gso;
     GoogleSignInClient gsc;
-
     ConstraintLayout mainLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
         mainLayout = findViewById(R.id.main_layout);
         inputEmail = findViewById(R.id.inputEmailForRegistration);
         inputPassword = findViewById(R.id.inputPasswordForRegistration);
@@ -87,11 +83,6 @@ public class RegisterActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        /*layout.setOnClickListener(v->{
-            InputMethodManager inm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-            inm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),0);
-        });*/
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override

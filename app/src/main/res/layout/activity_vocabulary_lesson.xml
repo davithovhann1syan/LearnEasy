@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="center_horizontal"
-        android:layout_marginHorizontal="15dp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
         >
 
 
@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/heading"
-            android:layout_margin="20dp"
+            android:layout_margin="@dimen/_20sdp"
             android:layout_gravity="center_horizontal"
             android:textColor="@color/off_white"
             android:textAlignment="center"
@@ -34,23 +34,22 @@
             android:textAllCaps="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:paddingTop="20dp"
-
-            android:textSize="20sp"/>
+            android:paddingTop="@dimen/_20sdp"
+            android:textSize="@dimen/_20ssp"/>
 
         <TextView
             android:id="@+id/information"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingVertical="10dp"
-            android:paddingHorizontal="25sp"
+            android:paddingVertical="@dimen/_13sdp"
+            android:paddingHorizontal="@dimen/_20sdp"
             android:background="@drawable/lesson_background_style"
             android:text="@string/text"
-            android:layout_margin="20dp"
+            android:layout_margin="@dimen/_15sdp"
             android:layout_gravity="center_horizontal"
             android:textAlignment="center"
             android:textColor="@color/brown_dark"
-            android:textSize="18sp"
+            android:textSize="@dimen/_15ssp"
             app:layout_constraintBottom_toTopOf="@+id/back_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -68,17 +67,17 @@
                 android:layout_height="wrap_content"
                 android:text="Go to translate"
                 android:background="@drawable/button_background_style"
-                android:paddingHorizontal="15dp"
-                android:layout_margin="10dp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:layout_margin="@dimen/_10sdp"
                 android:layout_gravity="center_horizontal"
-                android:paddingVertical="10dp"
+                android:paddingVertical="@dimen/_10sdp"
                 android:textColor="@color/off_white"
                 android:textAlignment="center"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginBottom="20dp"
-                android:textSize="15sp"/>
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:textSize="@dimen/_10sdp"/>
 
             <TextView
                 android:id="@+id/test_button"
@@ -88,16 +87,16 @@
                 android:text="@string/Take_a_test"
                 android:textAlignment="center"
                 android:background="@drawable/button_background_style_mirror"
-                android:paddingHorizontal="15dp"
-                android:layout_margin="10dp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:layout_margin="@dimen/_10sdp"
                 android:layout_gravity="center_horizontal"
-                android:paddingVertical="10dp"
+                android:paddingVertical="@dimen/_10sdp"
                 android:textColor="@color/off_white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginBottom="20dp"
-                android:textSize="15sp"/>
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:textSize="@dimen/_10sdp"/>
 
         </LinearLayout>
 
@@ -114,15 +113,15 @@
                 android:textAlignment="center"
                 android:background="@drawable/button_background_style_mirror"
                 android:paddingHorizontal="15dp"
-                android:layout_marginHorizontal="100dp"
+                android:layout_marginHorizontal="@dimen/_80sdp"
                 android:layout_gravity="center_horizontal"
-                android:paddingVertical="10dp"
+                android:paddingVertical="@dimen/_10sdp"
                 android:textColor="@color/off_white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginBottom="20dp"
-                android:textSize="15sp"/>
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:textSize="@dimen/_10sdp"/>
 
         </LinearLayout>
 

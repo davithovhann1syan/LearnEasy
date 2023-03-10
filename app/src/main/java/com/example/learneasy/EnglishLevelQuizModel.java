@@ -7,7 +7,6 @@ public class EnglishLevelQuizModel {
     public List<String> choices;
     public String answer;
 
-
     public EnglishLevelQuizModel(String question, List<String> choices, String answer) {
         this.question = question;
         this.choices = choices;

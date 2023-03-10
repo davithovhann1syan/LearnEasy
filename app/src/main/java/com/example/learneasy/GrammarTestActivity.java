@@ -21,6 +21,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
@@ -107,6 +108,8 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
                                     }
 
                                 }
+
+                                Collections.shuffle(arrayList);
 
                                 totalQuestion = arrayList.size();
                                 totalQuestionsTextView.setText(totalQuestion+"");

@@ -6,7 +6,6 @@ public class GrammarQuizModel {
     public String question;
     public List<String> choices;
     public String answer;
-
     public String type;
 
     public GrammarQuizModel(String question, List<String> choices, String answer, String type) {

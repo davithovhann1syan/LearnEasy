@@ -1,7 +1,6 @@
 package com.example.learneasy;
 public class QuestionAnswerVocabulary {
 
-
     public static String choices[][] = {
             {"Tree","Christmas Tree","Three","Apple"},
             {"Apple","Peach","Pomegranate","Olive"},

@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 public class MainActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,19 +36,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-       /* intermediate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),StudyOptionsActivity.class);
-                startActivity(intent);
-            }
-        });
-        advanced.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),StudyOptionsActivity.class);
-                startActivity(intent);
-            }
-        });*/
+
     }
 }

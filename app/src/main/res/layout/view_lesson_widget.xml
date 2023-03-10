@@ -19,7 +19,6 @@
         android:gravity="center"
         android:background="@drawable/button_background_style"
         android:layout_weight="9"
-
         >
 
         <TextView

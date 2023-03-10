@@ -20,17 +20,15 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="20dp">
+            android:layout_margin="@dimen/_15sdp">
 
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="@dimen/_100sdp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentBottom="true"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="0dp"
-                android:layout_marginBottom="0dp"
                 android:src="@drawable/app_logo" />
     </RelativeLayout>
 
@@ -54,7 +52,7 @@
             android:text="@string/greeting"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="25sp"
+            android:textSize="@dimen/_20ssp"
             tools:ignore="MissingConstraints" />
 
 
@@ -74,11 +72,11 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:layout_gravity="center"
-            android:textSize="13sp"
+            android:textSize="@dimen/_10ssp"
             android:layout_marginHorizontal="70dp"
             android:textAlignment="center"
-            android:paddingVertical="10dp"
-            android:paddingHorizontal="15dp"
+            android:paddingVertical="@dimen/_8sdp"
+            android:paddingHorizontal="@dimen/_15sdp"
             android:textColor="@color/off_white"
             android:background="@drawable/button_background_style"
             android:textAllCaps="true"

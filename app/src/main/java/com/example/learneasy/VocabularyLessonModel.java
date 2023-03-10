@@ -6,7 +6,6 @@ public class VocabularyLessonModel{
     private String info;
     private long id;
 
-
     public VocabularyLessonModel(String type, String heading, String info, long id) {
         this.type = type;
         this.heading = heading;

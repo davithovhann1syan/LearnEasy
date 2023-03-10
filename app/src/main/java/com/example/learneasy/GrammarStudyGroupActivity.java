@@ -8,7 +8,6 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class GrammarStudyGroupActivity extends AppCompatActivity {
-
     TextView nouns;
     TextView pronouns;
     TextView verbs;
@@ -16,14 +15,12 @@ public class GrammarStudyGroupActivity extends AppCompatActivity {
     TextView adjectives;
     TextView prepositions;
     TextView interjectionsConjunctions;
-
     TextView back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grammar_study_group);
-
         nouns = findViewById(R.id.nouns);
         pronouns = findViewById(R.id.pronouns);
         verbs = findViewById(R.id.verbs);
@@ -49,9 +46,6 @@ public class GrammarStudyGroupActivity extends AppCompatActivity {
         adjectives.setOnClickListener(v -> startActivity("adjectives"));
         prepositions.setOnClickListener(v -> startActivity("prepositions"));
         interjectionsConjunctions.setOnClickListener(v -> startActivity("interjections"));
-
-
-
 
     }
     void startActivity(String type){

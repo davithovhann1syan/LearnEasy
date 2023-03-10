@@ -12,18 +12,13 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 
 public class ViewLessonWidget extends LinearLayout {
-
     TextView goToButton;
     String name;
-
     String type;
     TextView viewLessonName;
     String information;
-
     ProgressBar progressBar;
-
     String subType;
-
     String score = "0";
 
     public ViewLessonWidget(Context context, String name, String info, String type, String subType, String score) {
@@ -38,7 +33,6 @@ public class ViewLessonWidget extends LinearLayout {
         this.subType = subType;
         this.score = score;
         progressBar.setProgress(Integer.parseInt(score));
-
     }
 
     public ViewLessonWidget(Context context, @Nullable AttributeSet attrs) {
@@ -62,14 +56,12 @@ public class ViewLessonWidget extends LinearLayout {
         init(context);
     }
 
-
-
     private void init(Context context){
 
         viewLessonName = findViewById(R.id.title);
         progressBar = findViewById(R.id.simple_progress_bar);
-
         goToButton = findViewById(R.id.test_button);
+
         goToButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -78,7 +70,6 @@ public class ViewLessonWidget extends LinearLayout {
                 intent.putExtra("TYPE", type);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
-
             }
         });
 
@@ -109,8 +100,8 @@ public class ViewLessonWidget extends LinearLayout {
 
     public void setInformation(String temp){
         information = temp;
-
     }
+
     public String getType(){
         return type;
     }

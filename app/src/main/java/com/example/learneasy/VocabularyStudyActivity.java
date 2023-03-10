@@ -21,9 +21,7 @@ import java.util.Collections;
 import java.util.Comparator;
 
 public class VocabularyStudyActivity extends AppCompatActivity {
-
     TextView back;
-
     AppCompatButton colors, animals, food, clothing , transport, bodyParts, jobs, sports, travel;
 
     @Override
@@ -43,9 +41,7 @@ public class VocabularyStudyActivity extends AppCompatActivity {
         sports = findViewById(R.id.sports);
 
         FirebaseFirestore firebaseFirestore;
-
         ArrayList<VocabularyLessonModel> arrayList = new ArrayList<>();
-
 
         back.setEnabled(false);
         colors.setEnabled(false);
@@ -74,10 +70,7 @@ public class VocabularyStudyActivity extends AppCompatActivity {
             }
         },1000);
 
-
         firebaseFirestore = FirebaseFirestore.getInstance();
-
-
 
         firebaseFirestore.collection("vocabularyLesson")
                         .get()
@@ -101,9 +94,6 @@ public class VocabularyStudyActivity extends AppCompatActivity {
                             }
                         });
 
-
-
-
         back.setOnClickListener(v -> finish());
         colors.setOnClickListener(v -> startActivity(arrayList.get(0).getType(), arrayList.get(0).getHeading(), arrayList.get(0).getInfo()));
         food.setOnClickListener(v -> startActivity(arrayList.get(1).getType(), arrayList.get(1).getHeading(), arrayList.get(1).getInfo()));
@@ -114,8 +104,6 @@ public class VocabularyStudyActivity extends AppCompatActivity {
         jobs.setOnClickListener(v -> startActivity(arrayList.get(6).getType(), arrayList.get(6).getHeading(), arrayList.get(6).getInfo()));
         travel.setOnClickListener(v -> startActivity(arrayList.get(7).getType(), arrayList.get(7).getHeading(), arrayList.get(7).getInfo()));
         sports.setOnClickListener(v -> startActivity(arrayList.get(8).getType(), arrayList.get(8).getHeading(), arrayList.get(8).getInfo()));
-
-
 
     }
     void startActivity(String type, String heading, String info){

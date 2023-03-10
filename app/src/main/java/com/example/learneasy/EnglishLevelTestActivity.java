@@ -21,6 +21,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class EnglishLevelTestActivity extends AppCompatActivity implements View.OnClickListener{
@@ -94,6 +95,8 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
                                 arrayList.add(new EnglishLevelQuizModel(question,choices,answer));
 
                             }
+
+                            Collections.shuffle(arrayList);
 
                             totalQuestion = arrayList.size();
                             totalQuestionsTextView.setText(totalQuestion+"");

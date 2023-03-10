@@ -33,6 +33,7 @@ public class GrammarLessonActivity extends AppCompatActivity {
                 subType = null;
 
             } else {
+
                 name = extras.getString("NAME");
                 info = extras.getString("INFO");
                 type = extras.getString("TYPE");
@@ -40,6 +41,7 @@ public class GrammarLessonActivity extends AppCompatActivity {
 
             }
         } else {
+
             name = (String) savedInstanceState.getSerializable("NAME");
             info = (String) savedInstanceState.getSerializable("INFO");
             type = (String) savedInstanceState.getSerializable("TYPE");
@@ -54,9 +56,7 @@ public class GrammarLessonActivity extends AppCompatActivity {
         information = findViewById(R.id.information);
         backButton = findViewById(R.id.back_button);
         testButton = findViewById(R.id.test_button);
-
         heading.setText(name);
-
         information.setText(info);
 
         testButton.setOnClickListener(new View.OnClickListener() {

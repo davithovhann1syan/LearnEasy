@@ -33,7 +33,6 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 public class LoginActivity extends AppCompatActivity {
-
     private ConstraintLayout layout;
     AppCompatButton btnlogin;
 
@@ -41,21 +40,18 @@ public class LoginActivity extends AppCompatActivity {
     EditText inputEmail, inputPassword;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     ProgressDialog progressDialog;
-
     TextView forgotPassword;
-
-
     FirebaseAuth mAuth;
     FirebaseUser mUser;
     AppCompatButton btnSignInGoogle;
     GoogleSignInOptions gso;
     GoogleSignInClient gsc;
     ConstraintLayout mainLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         layout = findViewById(R.id.main_layout);
         btnlogin = findViewById(R.id.btn_login);
         btnSignInGoogle = findViewById(R.id.btn_google);
@@ -83,7 +79,6 @@ public class LoginActivity extends AppCompatActivity {
                 closeKeyboard();
             }
         });
-        
 
         if (mUser != null) {
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
@@ -147,8 +142,6 @@ public class LoginActivity extends AppCompatActivity {
                 dialog.show();
             }
         });
-
-
     }
 
     private void closeKeyboard() {

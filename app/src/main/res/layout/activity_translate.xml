@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/brown_dark"
-    android:padding="10dp"
+    android:padding="@dimen/_8sdp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
@@ -15,16 +15,16 @@
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="@dimen/_18sdp"
+            android:layout_marginEnd="@dimen/_18sdp"
+            android:layout_marginTop="@dimen/_8sdp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center">
 
             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
                 android:src="@drawable/translate_logo"
                 android:layout_gravity="center"
                 android:layout_marginEnd="4dp"/>
@@ -34,14 +34,14 @@
 
 
         <LinearLayout
-            android:padding="3dp"
+            android:padding="@dimen/_2sdp"
             android:orientation="horizontal"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginStart="@dimen/_18sdp"
+            android:layout_marginEnd="@dimen/_18sdp"
+            android:layout_marginTop="@dimen/_15sdp"
             android:weightSum="3"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="@dimen/_47sdp"
             android:background="@drawable/background"
             android:elevation="4dp">
 
@@ -50,8 +50,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:id="@+id/id_from_spinner"
-                android:layout_margin="3dp"
-                android:padding="3dp"
+                android:layout_margin="@dimen/_3sdp"
+                android:padding="@dimen/_3sdp"
                 android:layout_gravity="center"
                 />
 
@@ -68,23 +68,23 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:id="@+id/id_to_spinner"
-                android:layout_margin="3dp"
-                android:padding="3dp"
+                android:layout_margin="@dimen/_3sdp"
+                android:padding="@dimen/_3sdp"
                 android:layout_gravity="center"
                 />
 
         </LinearLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
             android:padding="0dp"
             app:hintEnabled="false"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="@dimen/_210sdp"
             app:boxBackgroundMode="none"
-            android:elevation="8dp">
+            android:elevation="@dimen/_8sdp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/id_edit_source"
@@ -97,7 +97,7 @@
                 android:importantForAutofill="no"
                 android:inputType="textMultiLine|textImeMultiLine"
                 android:textColor="@color/brown_dark"
-                android:textSize="19sp"
+                android:textSize="@dimen/_16sdp"
                 android:textColorHighlight="@color/color_secondary"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -105,11 +105,12 @@
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:paddingVertical="@dimen/_8sdp"
+            android:layout_margin="@dimen/_20sdp"
             android:id="@+id/id_btn_translation"
             android:textColor="@color/off_white"
             android:text="@string/translate"
-            android:textSize="19sp"
+            android:textSize="@dimen/_15ssp"
             android:textAllCaps="false"
             android:background="@drawable/button_background_style"/>
 
@@ -117,10 +118,10 @@
             android:id="@+id/translation_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
             android:layout_gravity="center"
             android:visibility="gone">
 
@@ -128,9 +129,9 @@
             android:id="@+id/progress_bar"
             android:layout_centerInParent="true"
             android:visibility="gone"
-            android:translationZ="10dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"/>
+            android:translationZ="@dimen/_10sdp"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"/>
 
             <TextView
             android:layout_width="match_parent"
@@ -141,8 +142,8 @@
             android:elevation="3dp"
             android:layout_gravity="center"
             android:textAlignment="center"
-            android:padding="16sp"
-            android:textSize="16sp"
+            android:padding="@dimen/_14sdp"
+            android:textSize="@dimen/_14ssp"
             android:textColor="@color/black"
             android:letterSpacing="0.03"/>
 
@@ -153,14 +154,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/button_background_style"
-            android:paddingHorizontal="15dp"
-            android:paddingVertical="10dp"
+            android:paddingHorizontal="@dimen/_15sdp"
+            android:paddingVertical="@dimen/_8sdp"
             android:textAlignment="center"
             android:text="@string/go_back"
             android:layout_gravity="center"
             android:textColor="@color/off_white"
-            android:textSize="15sp"
-            android:layout_marginTop="10dp" />
+            android:textSize="@dimen/_10ssp"
+            android:layout_marginTop="@dimen/_8sdp" />
 
     </LinearLayout>
 

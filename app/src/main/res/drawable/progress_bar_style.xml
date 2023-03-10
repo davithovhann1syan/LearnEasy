@@ -14,8 +14,8 @@
 
 
         <size
-            android:width="76dip"
-            android:height="76dip" />
+            android:width="@dimen/_72sdp"
+            android:height="@dimen/_72sdp"/>
 
         <gradient
             android:angle="0"

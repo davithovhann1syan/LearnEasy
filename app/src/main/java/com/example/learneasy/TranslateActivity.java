@@ -1,9 +1,5 @@
 package com.example.learneasy;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
-
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +12,10 @@ import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -184,7 +184,7 @@ public class TranslateActivity extends AppCompatActivity {
             case "English":
                 languageCode = FirebaseTranslateLanguage.EN;
                 break;
-            case "France":
+            case "French":
                 languageCode = FirebaseTranslateLanguage.FR;
                 break;
             case "Belarusian":

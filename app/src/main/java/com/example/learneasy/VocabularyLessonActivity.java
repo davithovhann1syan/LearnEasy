@@ -8,12 +8,10 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class VocabularyLessonActivity extends AppCompatActivity {
-
     TextView information;
     TextView backButton, testButton, translateButton;
     String info;
     TextView heading;
-
     String name;
     String type;
 
@@ -22,6 +20,13 @@ public class VocabularyLessonActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_vocabulary_lesson);
+        heading = findViewById(R.id.heading);
+        information = findViewById(R.id.information);
+        backButton = findViewById(R.id.back);
+        testButton = findViewById(R.id.test_button);
+        translateButton = findViewById(R.id.translate_button);
+
 
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
@@ -34,7 +39,6 @@ public class VocabularyLessonActivity extends AppCompatActivity {
                 name = extras.getString("HEADING");
                 info = extras.getString("INFO");
                 type = extras.getString("TYPE");
-
             }
         } else {
             name = (String) savedInstanceState.getSerializable("HEADING");
@@ -43,27 +47,9 @@ public class VocabularyLessonActivity extends AppCompatActivity {
 
         }
 
-
-
-        setContentView(R.layout.activity_vocabulary_lesson);
-        heading = findViewById(R.id.heading);
-        information = findViewById(R.id.information);
-        backButton = findViewById(R.id.back);
-        testButton = findViewById(R.id.test_button);
-        translateButton = findViewById(R.id.translate_button);
-
         heading.setText(name);
         information.setText(info);
 
-        /*testButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), GrammarTestActivity.class);
-                intent.putExtra("SUBTYPE", subType);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                getApplicationContext().startActivity(intent);
-            }
-        });*/
 
         translateButton.setOnClickListener(new View.OnClickListener() {
             @Override

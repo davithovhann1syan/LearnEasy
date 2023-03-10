@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp"
+    android:padding="@dimen/_20sdp"
     android:gravity="center"
     android:background="@color/brown_dark"
     tools:context=".MainActivity">
@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/select_your_preferred_study_option"
-        android:textSize="25sp"
+        android:textSize="@dimen/_15ssp"
         android:textAllCaps="true"
         android:gravity="center"
         android:textStyle="bold"
@@ -26,48 +26,49 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/grammar"
-        android:textSize="25sp"
+        android:textSize="@dimen/_20sdp"
         android:textColor="@color/off_white"
         android:background="@drawable/button_background_style"
-        android:paddingVertical="15dp"
-        android:paddingHorizontal="25dp"
+        android:paddingVertical="@dimen/_12sdp"
+        android:paddingHorizontal="@dimen/_20sdp"
         android:textAlignment="center"
-        android:layout_marginVertical="20dp"/>
+        android:layout_marginVertical="@dimen/_10sdp"/>
 
     <TextView
         android:id="@+id/translate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/translator"
-        android:textSize="25sp"
+        android:textSize="@dimen/_20ssp"
         android:textColor="@color/off_white"
         android:background="@drawable/button_background_style"
-        android:paddingVertical="15dp"
-        android:paddingHorizontal="25dp"
+        android:paddingVertical="@dimen/_12sdp"
+        android:paddingHorizontal="@dimen/_20sdp"
         android:textAlignment="center"
-        android:layout_marginVertical="20dp"/>
+        android:layout_marginVertical="@dimen/_10sdp"/>
     <TextView
         android:id="@+id/vocabulary_test"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/vocabulary"
-        android:textSize="25sp"
+        android:textSize="@dimen/_20ssp"
         android:textColor="@color/off_white"
         android:background="@drawable/button_background_style"
-        android:paddingVertical="15dp"
-        android:paddingHorizontal="25dp"
+        android:paddingVertical="@dimen/_12sdp"
+        android:paddingHorizontal="@dimen/_20sdp"
         android:textAlignment="center"
-        android:layout_marginVertical="20dp"/>
+        android:layout_marginVertical="@dimen/_10sdp"/>
 
     <TextView
         android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/button_background_style"
-        android:paddingHorizontal="15dp"
-        android:paddingVertical="10dp"
+        android:paddingHorizontal="@dimen/_20sdp"
+        android:paddingVertical="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_8sdp"
         android:text="@string/go_back"
         android:textColor="@color/off_white"
-        android:textSize="15sp" />
+        android:textSize="@dimen/_13ssp" />
 
 </LinearLayout>

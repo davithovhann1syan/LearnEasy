@@ -12,11 +12,11 @@
     tools:context=".GrammarStudyGroupActivity">
 
     <TextView
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="@dimen/_50sdp"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_height="@dimen/_30sdp"
         android:text="@string/start_your_grammar_course"
-        android:textSize="15sp"
+        android:textSize="@dimen/_13ssp"
         android:textAllCaps="true"
         android:gravity="center"
         android:textStyle="bold"
@@ -31,96 +31,105 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="20dp">
+            android:padding="@dimen/_18sdp">
 
             <TextView
                 android:id="@+id/nouns"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="@dimen/_13sdp"
                 android:background="@drawable/button_background_style"
                 android:paddingHorizontal="25dp"
-                android:paddingVertical="15dp"
+                android:paddingVertical="@dimen/_12sdp"
                 android:text="@string/nouns"
-
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
-                android:textSize="20sp"
+                android:textSize="@dimen/_16ssp"
                 android:textStyle="bold"
                 android:textAllCaps="true"/>
 
             <TextView
+
                 android:id="@+id/pronouns"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="20dp"
+                android:layout_marginBottom="@dimen/_10sdp"
                 android:background="@drawable/button_background_style"
                 android:paddingHorizontal="25dp"
-                android:paddingVertical="15dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_12sdp"
                 android:text="@string/pronouns"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
-                android:textSize="20sp"
+                android:textSize="@dimen/_16ssp"
                 android:textStyle="bold"
                 android:textAllCaps="true"/>
 
             <TextView
+
                 android:id="@+id/verbs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="20dp"
+                android:layout_marginBottom="@dimen/_10sdp"
                 android:background="@drawable/button_background_style"
                 android:paddingHorizontal="25dp"
-                android:paddingVertical="15dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_12sdp"
                 android:text="@string/verbs"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
-                android:textSize="20sp"
+                android:textSize="@dimen/_16ssp"
                 android:textStyle="bold"
                 android:textAllCaps="true"/>
 
             <TextView
+
                 android:id="@+id/adverbs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="20dp"
+                android:layout_marginBottom="@dimen/_10sdp"
                 android:background="@drawable/button_background_style"
                 android:paddingHorizontal="25dp"
-                android:paddingVertical="15dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_12sdp"
                 android:text="@string/adverbs"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
-                android:textSize="20sp"
+                android:textSize="@dimen/_16ssp"
                 android:textStyle="bold"
                 android:textAllCaps="true"/>
 
             <TextView
+
                 android:id="@+id/adjectives"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="20dp"
+                android:layout_marginBottom="@dimen/_10sdp"
                 android:background="@drawable/button_background_style"
                 android:paddingHorizontal="25dp"
-                android:paddingVertical="15dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_12sdp"
                 android:text="@string/adjectives"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
-                android:textSize="20sp"
+                android:textSize="@dimen/_16ssp"
                 android:textStyle="bold"
                 android:textAllCaps="true"/>
 
             <TextView
+
                 android:id="@+id/prepositions"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="20dp"
+                android:layout_marginBottom="@dimen/_10sdp"
                 android:background="@drawable/button_background_style"
                 android:paddingHorizontal="25dp"
-                android:paddingVertical="15dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_12sdp"
                 android:text="@string/prepositions"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
-                android:textSize="20sp"
+                android:textSize="@dimen/_16ssp"
                 android:textStyle="bold"
                 android:textAllCaps="true"/>
 
@@ -128,15 +137,15 @@
                 android:id="@+id/interjections_conjunction"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="20dp"
+                android:layout_marginBottom="@dimen/_10sdp"
                 android:background="@drawable/button_background_style"
                 android:paddingHorizontal="25dp"
-                android:paddingVertical="15dp"
-                android:text="@string/interjections_conjunctions"
-                android:singleLine="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_12sdp"
+                android:text="@string/prepositions"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
-                android:textSize="20sp"
+                android:textSize="@dimen/_16ssp"
                 android:textStyle="bold"
                 android:textAllCaps="true"/>
 
@@ -148,16 +157,16 @@
     <TextView
         android:id="@+id/back"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_height="@dimen/_32sdp"
         android:layout_gravity="center"
         android:layout_marginBottom="70dp"
         android:background="@drawable/button_background_style"
-        android:paddingHorizontal="15dp"
-        android:layout_marginTop="20dp"
-        android:paddingVertical="10dp"
+        android:paddingHorizontal="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:paddingVertical="@dimen/_8sdp"
         android:text="@string/go_back"
         android:textColor="@color/off_white"
-        android:textSize="15sp" />
+        android:textSize="@dimen/_13ssp" />
 
 </LinearLayout>
 

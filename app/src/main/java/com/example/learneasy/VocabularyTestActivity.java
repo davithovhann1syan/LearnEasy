@@ -30,7 +30,7 @@ public class VocabularyTestActivity extends AppCompatActivity implements View.On
 
         goBack = findViewById(R.id.back);
         totalQuestionsTextView = findViewById(R.id.total_questions);
-        questionImg = findViewById(R.id.question_image);
+       // questionImg = findViewById(R.id.question_image);
         ansA = findViewById(R.id.ans_A);
         ansB = findViewById(R.id.ans_B);
         ansC = findViewById(R.id.ans_C);

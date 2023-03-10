@@ -1,131 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:background="@color/brown_dark"
-android:padding="24dp"
-tools:context=".GrammarTestActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/brown_dark"
+    android:padding="@dimen/_24sdp"
+    tools:context=".GrammarTestActivity">
 
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/total_questions"
-    android:text="@string/total_questions"
-    android:textColor="@color/off_white"
-    android:textAllCaps="true"
-    android:layout_centerHorizontal="true"
-    android:textSize="20sp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/current_question"
+            android:text="@string/current_question"
+            android:textColor="@color/off_white"
+            android:textAllCaps="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/_15ssp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/slash"
+            android:text="/"
+            android:textColor="@color/off_white"
+            android:textAllCaps="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/_15ssp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/total_questions"
+            android:text="@string/total_questions"
+            android:textColor="@color/off_white"
+            android:textAllCaps="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/_15ssp"/>
+
+    </LinearLayout>
 
 
-    <ImageView
-        android:id="@+id/question_image"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_above="@id/choices_layout"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:text="@string/this_will_be_the_question"
+        android:textAlignment="center"
+        android:textColor="@color/off_white"
+        android:textSize="@dimen/_20ssp"
+        android:textStyle="bold" />
+
+
+    <LinearLayout
+        android:id="@+id/choices_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ans_A"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_4sdp"
+            android:padding="@dimen/_10sdp"
+            android:textSize="@dimen/_14ssp"
+            android:background="@drawable/button_background_style"
+            android:text=""
+            android:textColor="@color/off_white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ans_B"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_4sdp"
+            android:padding="@dimen/_10sdp"
+            android:textSize="@dimen/_14ssp"
+            android:background="@drawable/button_background_style"
+            android:text=""
+            android:textColor="@color/off_white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ans_C"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_4sdp"
+            android:textSize="@dimen/_14ssp"
+            android:padding="@dimen/_10sdp"
+            android:background="@drawable/button_background_style"
+            android:text=""
+            android:textColor="@color/off_white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ans_D"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_4sdp"
+            android:textSize="@dimen/_14ssp"
+            android:padding="@dimen/_10sdp"
+            android:background="@drawable/button_background_style"
+            android:text=""
+            android:textColor="@color/off_white" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/back"
+        android:layout_below="@+id/choices_layout"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/submit_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_3sdp"
+            android:textSize="@dimen/_14ssp"
+            android:layout_weight="1"
+            android:background="@drawable/button_background_style"
+            android:text="@string/submit"
+            android:textColor="@color/off_white" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/_16sdp"
+        android:textSize="@dimen/_10ssp"
+        android:paddingVertical="@dimen/_8sdp"
+
+        android:paddingHorizontal="@dimen/_16sdp"
+        android:textColor="@color/off_white"
         android:layout_centerHorizontal="true"
-        android:scaleType="centerCrop"
-        />
-
-
-<LinearLayout
-    android:id="@+id/choices_layout"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_centerInParent="true"
-    android:orientation="vertical">
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/ans_A"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:padding="10dp"
         android:background="@drawable/button_background_style"
-        android:text=""
-        android:textColor="@color/off_white" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/ans_B"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:padding="10dp"
-        android:background="@drawable/button_background_style"
-        android:text=""
-        android:textColor="@color/off_white" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/ans_C"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:padding="10dp"
-        android:background="@drawable/button_background_style"
-        android:text=""
-        android:textColor="@color/off_white" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/ans_D"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:padding="10dp"
-        android:background="@drawable/button_background_style"
-        android:text=""
-        android:textColor="@color/off_white" />
-
-</LinearLayout>
-
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_above="@+id/back"
-    android:gravity="center"
-    android:layout_below="@+id/choices_layout"
-    android:layout_marginTop="20dp"
-    android:orientation="horizontal">
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/submit_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="5dp"
-        android:layout_weight="1"
-        android:background="@drawable/button_background_style"
-        android:text="@string/submit"
-        android:textColor="@color/off_white" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/next_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@drawable/button_background_style_mirror"
-        android:text="@string/next"
-        android:textColor="@color/off_white" />
-
-</LinearLayout>
-
-<TextView
-    android:id="@+id/back"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
-    android:layout_marginBottom="20dp"
-    android:textSize="13sp"
-    android:paddingVertical="10dp"
-    android:paddingHorizontal="15dp"
-    android:textColor="@color/off_white"
-    android:layout_centerHorizontal="true"
-    android:background="@drawable/button_background_style"
-    android:text="@string/go_back" />
+        android:text="@string/go_back" />
 
 
 

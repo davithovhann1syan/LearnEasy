@@ -1,11 +1,11 @@
 package com.example.learneasy;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class StudyOptionsActivity extends AppCompatActivity {
 
@@ -22,17 +22,13 @@ public class StudyOptionsActivity extends AppCompatActivity {
         vocabularyTest = findViewById(R.id.vocabulary_test);
         translate = findViewById(R.id.translate);
 
-
-
-
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 finish();
-
             }
         });
+
         grammar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,7 +44,6 @@ public class StudyOptionsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
 
         vocabularyTest.setOnClickListener(new View.OnClickListener() {
             @Override
