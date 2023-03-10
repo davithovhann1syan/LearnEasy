@@ -43,6 +43,7 @@ public class LoginActivity extends AppCompatActivity {
     TextView forgotPassword;
     FirebaseAuth mAuth;
     FirebaseUser mUser;
+
     AppCompatButton btnSignInGoogle;
     GoogleSignInOptions gso;
     GoogleSignInClient gsc;
@@ -218,8 +219,8 @@ public class LoginActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         if (mAuth.getCurrentUser().isEmailVerified()) {
                             progressDialog.dismiss();
-                            sendUserToNextActivity();
                             Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
+                            sendUserToNextActivity();
                         } else {
                             progressDialog.dismiss();
                             Toast.makeText(LoginActivity.this, "Verify your email address", Toast.LENGTH_SHORT).show();

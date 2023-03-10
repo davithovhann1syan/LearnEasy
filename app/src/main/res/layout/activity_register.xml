@@ -11,7 +11,7 @@
     <EditText
         android:id="@+id/inputConfirmPasswordForRegistration"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_35sdp"
         android:layout_marginTop="@dimen/_12sdp"
         android:autofillHints="password"
         android:background="@drawable/input_bg"
@@ -21,7 +21,7 @@
         android:hint="@string/confirm_password"
         android:inputType="textPassword"
         android:paddingStart="@dimen/_14sdp"
-        android:textSize="@dimen/_15ssp"
+        android:textSize="@dimen/_12ssp"
         android:paddingTop="@dimen/_10sdp"
         android:paddingEnd="@dimen/_10sdp"
         android:paddingBottom="@dimen/_10sdp"
@@ -35,7 +35,7 @@
     <EditText
         android:id="@+id/inputPasswordForRegistration"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_35sdp"
         android:layout_marginTop="@dimen/_12sdp"
         android:autofillHints="password"
         android:background="@drawable/input_bg"
@@ -43,7 +43,7 @@
         android:drawablePadding="@dimen/_10sdp"
         android:ems="10"
         android:hint="@string/password"
-        android:textSize="@dimen/_15ssp"
+        android:textSize="@dimen/_12ssp"
         android:inputType="textPassword"
         android:paddingStart="@dimen/_14sdp"
         android:paddingTop="@dimen/_10sdp"
@@ -59,12 +59,13 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnRegister"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_35sdp"
         android:layout_marginTop="@dimen/_25sdp"
+        android:layout_marginHorizontal="@dimen/_100sdp"
         android:background="@drawable/button_background_style"
         android:text="@string/register"
         android:textColor="@color/off_white"
-        android:textSize="@dimen/_15ssp"
+        android:textSize="@dimen/_12ssp"
         app:layout_constraintEnd_toEndOf="@+id/inputConfirmPasswordForRegistration"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/inputConfirmPasswordForRegistration"
@@ -79,7 +80,7 @@
         app:layout_constraintEnd_toEndOf="@+id/btnRegister"
         android:gravity="center_horizontal"
         app:layout_constraintStart_toStartOf="@+id/btnRegister"
-        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_14sdp"
         app:layout_constraintTop_toBottomOf="@+id/btnRegister">
 
 
@@ -87,7 +88,7 @@
             android:id="@+id/alreadyHaveAccountText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_28sdp"
+
             android:shadowColor="@color/white"
             android:textSize="@dimen/_12ssp"
             android:text="@string/already_have_an_account"
@@ -100,7 +101,6 @@
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_28sdp"
             android:shadowColor="@color/white"
             android:text="@string/log_in"
             android:textSize="@dimen/_12ssp"
@@ -118,7 +118,7 @@
         android:textColor="@color/white"
         android:textSize="@dimen/_25ssp"
         android:textStyle="bold"
-        android:layout_marginTop="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_15sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -129,9 +129,9 @@
     <EditText
         android:id="@+id/inputEmailForRegistration"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_35sdp"
         android:layout_marginStart="@dimen/_25sdp"
-        android:layout_marginTop="@dimen/_35sdp"
+        android:layout_marginTop="@dimen/_15sdp"
         android:layout_marginEnd="@dimen/_25sdp"
         android:autofillHints=""
         android:background="@drawable/input_bg"
@@ -144,7 +144,7 @@
         android:paddingTop="@dimen/_10sdp"
         android:paddingEnd="@dimen/_10sdp"
         android:paddingBottom="@dimen/_10sdp"
-        android:textSize="@dimen/_15ssp"
+        android:textSize="@dimen/_12ssp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -156,11 +156,11 @@
 
     <ImageView
         android:id="@+id/image_view"
-        android:layout_width="@dimen/_153sdp"
-        android:layout_height="@dimen/_129sdp"
-        android:layout_marginBottom="50dp"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_100sdp"
         android:contentDescription="@string/todo"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
         app:layout_constraintBottom_toBottomOf="@id/register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -170,8 +170,10 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_google"
-        android:layout_width="@dimen/_40sdp"
-        android:layout_height="@dimen/_40sdp"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
         android:background="@drawable/ic_google"
         android:drawablePadding="@dimen/_8sdp"
         android:paddingHorizontal="@dimen/_13sdp"
@@ -182,6 +184,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginContainer"
+        app:layout_constraintVertical_bias="0.37"
         tools:ignore="RtlHardcoded,RtlSymmetry" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

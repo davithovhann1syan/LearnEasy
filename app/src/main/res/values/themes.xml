@@ -22,9 +22,5 @@
         <item name="colorPrimaryDark">@color/color_primary</item>
         <item name="colorAccent">@color/black</item>
     </style>
-    
-    <style name="SplashScreen" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="android:windowBackground"> @drawable/background_splashscreen</item>
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-    </style>
+
 </resources>

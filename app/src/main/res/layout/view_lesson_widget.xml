@@ -6,9 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/button_background_style"
-    android:layout_marginStart="16dp"
-    android:layout_marginTop="10dp"
-    android:layout_marginEnd="16dp"
+    android:layout_marginStart="@dimen/_12sdp"
+    android:layout_marginTop="@dimen/_8sdp"
+    android:layout_marginEnd="@dimen/_12sdp"
     >
 
     <LinearLayout
@@ -28,19 +28,19 @@
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="20dp"
-            android:paddingEnd="10dp"
-            android:paddingTop="5dp"
+            android:paddingStart="@dimen/_16sdp"
+            android:paddingEnd="@dimen/_8sdp"
+            android:paddingTop="@dimen/_4sdp"
             android:text=""
-            android:textSize="16sp"
+            android:textSize="@dimen/_12ssp"
             tools:ignore="RtlSymmetry"
-            android:layout_marginBottom="4dp"/>
+            android:layout_marginBottom="@dimen/_3sdp"/>
 
         <ProgressBar
             android:id="@+id/simple_progress_bar"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="20dp"
+            android:paddingHorizontal="@dimen/_16sdp"
             android:max="10"
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             android:progressTint="@color/brown_dark"
@@ -58,11 +58,12 @@
         android:textAllCaps="true"
         android:textColor="@color/off_white"
         android:gravity="center"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="@dimen/_45sdp"
+        android:layout_height="@dimen/_45sdp"
         android:text="@string/test"
-        android:padding="5dp"
-        android:layout_margin="5dp"
+        android:textSize="@dimen/_10ssp"
+        android:padding="@dimen/_3sdp"
+        android:layout_margin="@dimen/_3sdp"
         android:layout_gravity="center_vertical"
         tools:ignore="SpeakableTextPresentCheck" />
 

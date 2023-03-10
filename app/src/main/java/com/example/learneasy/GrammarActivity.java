@@ -108,9 +108,9 @@ public class GrammarActivity extends AppCompatActivity {
                                 public void run() {
                                     viewLessonWidgetArrayList.sort(comparator);
                                     drawWidgets(viewLessonWidgetArrayList);
-                                    progressBar.setVisibility(View.GONE);
                                 }
                             }, 500);
+                            progressBar.setVisibility(View.GONE);
                         }
                     }
                 });
@@ -121,7 +121,6 @@ public class GrammarActivity extends AppCompatActivity {
 
     public void drawWidgets(ArrayList<ViewLessonWidget> list) {
 
-        Bundle extras = getIntent().getExtras();
         Intent intent = getIntent();
         String type = intent.getStringExtra("OPENTYPE");
 
