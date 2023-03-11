@@ -42,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingVertical="@dimen/_13sdp"
-            android:paddingHorizontal="@dimen/_20sdp"
+            android:paddingHorizontal="@dimen/_10sdp"
             android:background="@drawable/lesson_background_style"
             android:text="@string/text"
             android:layout_margin="@dimen/_15sdp"

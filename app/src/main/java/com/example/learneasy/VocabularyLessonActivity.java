@@ -2,10 +2,13 @@ package com.example.learneasy;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import org.checkerframework.common.value.qual.IntRangeFromNonNegative;
 
 public class VocabularyLessonActivity extends AppCompatActivity {
     TextView information;
@@ -65,6 +68,18 @@ public class VocabularyLessonActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        testButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), VocabularyTestActivity.class);
+                intent.putExtra("TYPE", type);
+                Log.i("DAS", type+"");
+                startActivity(intent);
+            }
+        });
+
+
 
     }
 

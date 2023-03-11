@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp"
+    android:padding="@dimen/_10sdp"
     android:gravity="center"
     android:background="@color/brown_dark"
     tools:context=".GrammarStudyGroupActivity">

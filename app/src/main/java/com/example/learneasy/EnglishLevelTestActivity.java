@@ -33,7 +33,7 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
     TextView totalQuestionsTextView, currentQuestionView, goBack;
     TextView questionTextView;
     AppCompatButton ansA, ansB, ansC, ansD;
-    AppCompatButton submitBtn, nextBtn;
+    AppCompatButton submitBtn;
 
 
     int score = 0;
@@ -248,7 +248,7 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
             level = "intermediate";
         }
 
-        Log.i("DAS", level);
+
         new AlertDialog.Builder(this)
                 .setTitle(passStatus)
                 .setMessage("Score is "+ score+" out of "+ totalQuestion + " so your enlish grammar level is approximately " + level + " so we recommend you to pick the course for your english level")
