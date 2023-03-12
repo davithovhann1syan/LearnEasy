@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VocabularyAdvancedStudyGroupActivity"
+    android:background="@color/brown_dark"
+    android:padding="@dimen/_15ssp">
+
+    <TextView
+        android:id="@+id/choose_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="advanced"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/off_white"
+        android:textSize="@dimen/_15ssp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="@dimen/_20ssp"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/choose_section"
+        app:layout_constraintBottom_toTopOf="@+id/back">
+
+        <LinearLayout
+            android:id="@+id/themes_selection_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/choose_section"
+            app:layout_constraintBottom_toTopOf="@+id/back"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="@dimen/_289sdp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/colors"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_background_style"
+                    android:text="Colors"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@color/off_white"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/animals"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_background_style"
+                    android:text="Animals"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@color/off_white"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/food"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_background_style"
+                    android:text="Food"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@color/off_white"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="@dimen/_289sdp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/clothing"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_background_style"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@color/off_white"
+                    android:layout_margin = "@dimen/_10sdp"
+                    android:text="Clothing"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/transport"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_background_style"
+                    android:textStyle="bold"
+                    android:textColor="@color/off_white"
+                    android:textSize="@dimen/_10ssp"
+                    android:layout_margin = "@dimen/_10sdp"
+                    android:text="Transport"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/body_parts"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_background_style"
+                    android:textStyle="bold"
+                    android:textColor="@color/off_white"
+                    android:textSize="@dimen/_10ssp"
+                    android:layout_margin = "@dimen/_10sdp"
+                    android:text="Body parts"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="@dimen/_289sdp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/jobs"
+                    android:layout_width="0dp"
+                    android:textSize="@dimen/_10ssp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_background_style"
+                    android:textStyle="bold"
+                    android:textColor="@color/off_white"
+                    android:layout_margin = "@dimen/_10sdp"
+                    android:text="Jobs"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/sports"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:textSize="@dimen/_10ssp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_background_style"
+                    android:textStyle="bold"
+                    android:textColor="@color/off_white"
+                    android:layout_margin = "@dimen/_10sdp"
+                    android:text="Sports"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/travel"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_10ssp"
+                    android:background="@drawable/button_background_style"
+                    android:textStyle="bold"
+                    android:textColor="@color/off_white"
+                    android:layout_margin = "@dimen/_10sdp"
+                    android:text="Travel"/>
+
+            </LinearLayout>
+
+
+
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+    <TextView
+        android:id="@+id/back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:layout_gravity="center"
+        android:textSize="@dimen/_10ssp"
+        android:layout_marginHorizontal="@dimen/_80sdp"
+        android:textAlignment="center"
+        android:paddingVertical="@dimen/_8sdp"
+        android:paddingHorizontal="@dimen/_15sdp"
+        android:textColor="@color/off_white"
+        android:background="@drawable/button_background_style"
+        android:textAllCaps="true"
+        android:text="@string/go_back"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

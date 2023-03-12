@@ -87,12 +87,9 @@ public class GrammarActivity extends AppCompatActivity {
                                                     String score;
                                                     if (task.getResult().getDocuments().isEmpty()){
                                                         score = "0";
-
                                                     } else {
                                                         score = task.getResult().getDocuments().get(0).get("SCORE")+"";
-
                                                     }
-
 
                                                     viewLessonWidgetArrayList.add(new ViewLessonWidget(getApplicationContext(), title, information , type, subType, score));
                                                 }

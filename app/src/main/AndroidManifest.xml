@@ -16,6 +16,18 @@
         android:theme="@style/NoActionBarTheme"
         tools:targetApi="31">
         <activity
+            android:name=".VocabularyAdvancedStudyGroupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VocabularyIntermediateStudyGroupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GrammarAdvancedStudyGroupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GrammarIntermediateStudyGroupActivity"
+            android:exported="false" />
+        <activity
             android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
@@ -28,16 +40,15 @@
             android:name=".VocabularyLessonActivity"
             android:exported="false" />
         <activity
-            android:name=".VocabularyStudyActivity"
+            android:name=".VocabularyBeginnerStudyGroupActivity"
             android:exported="false" />
         <activity
             android:name=".EnglishLevelTestActivity"
             android:configChanges="orientation"
             android:exported="false"
             android:screenOrientation="portrait" />
-
         <activity
-            android:name=".GrammarStudyGroupActivity"
+            android:name=".GrammarBeginnerStudyGroupActivity"
             android:configChanges="orientation"
             android:exported="false"
             android:screenOrientation="portrait" />

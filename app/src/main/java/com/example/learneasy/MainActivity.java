@@ -36,41 +36,31 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(),StudyOptionsActivity.class);
-                startActivity(intent);
+                startActivity("beginner");
 
             }
         });
 
-        /*intermediate.setOnClickListener(new View.OnClickListener() {
+        intermediate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showDialog();
+                startActivity("intermediate");
             }
-        });*/
+        });
+
+        advanced.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity("advanced");
+            }
+        });
 
     }
 
-   /* private void showDialog(){
-        ConstraintLayout dialogConstraintLayout = findViewById(R.id.dialog_box_layout);
-        View view = LayoutInflater.from(MainActivity.this).inflate(R.layout.dialog_box, dialogConstraintLayout);
-        AppCompatButton finishDialog = findViewById(R.id.dialog_finish);
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setView(view);
-        final AlertDialog alertDialog = builder.create();
-
-        finishDialog.findViewById(R.id.dialog_finish).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                alertDialog.dismiss();
-                finish();
-            }
-        });
-
-        if (alertDialog.getWindow() != null){
-            alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
-        }
-        alertDialog.show();
-    }*/
+    void startActivity(String globalType){
+        Intent intent = new Intent(getApplicationContext(), StudyOptionsActivity.class);
+        intent.putExtra("GLOBALTYPE", globalType);
+        startActivity(intent);
+    }
 }
+

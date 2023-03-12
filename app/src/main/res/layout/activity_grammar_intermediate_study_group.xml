@@ -9,13 +9,13 @@
     android:padding="@dimen/_10sdp"
     android:gravity="center"
     android:background="@color/brown_dark"
-    tools:context=".GrammarStudyGroupActivity">
+    tools:context=".GrammarIntermediateStudyGroupActivity">
 
     <TextView
         android:layout_marginTop="@dimen/_50sdp"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/_30sdp"
-        android:text="@string/start_your_grammar_course"
+        android:text="Start your intermediate grammar course"
         android:textSize="@dimen/_13ssp"
         android:textAllCaps="true"
         android:gravity="center"
@@ -25,7 +25,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-       >
+        >
 
         <LinearLayout
             android:layout_width="match_parent"

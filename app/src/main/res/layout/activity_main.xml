@@ -44,7 +44,7 @@
         android:paddingVertical="@dimen/_8ssp"
         android:paddingHorizontal="@dimen/_15ssp"
         android:layout_marginVertical="20dp"
-        app:drawableEndCompat="@drawable/disabled_button_background"
+
         />
     <TextView
         android:id="@+id/advanced"
@@ -58,7 +58,6 @@
         android:paddingVertical="@dimen/_8ssp"
         android:paddingHorizontal="@dimen/_15ssp"
         android:layout_marginVertical="20dp"
-        app:drawableEndCompat="@drawable/disabled_button_background"
         />
 
     <LinearLayout

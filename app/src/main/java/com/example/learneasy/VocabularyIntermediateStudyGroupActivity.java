@@ -3,7 +3,6 @@ package com.example.learneasy;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -20,14 +19,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class VocabularyStudyActivity extends AppCompatActivity {
+public class VocabularyIntermediateStudyGroupActivity extends AppCompatActivity {
     TextView back;
     AppCompatButton colors, animals, food, clothing , transport, bodyParts, jobs, sports, travel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vocabulary_study);
+        setContentView(R.layout.activity_vocabulary_intermediate_study_groups);
 
         back = findViewById(R.id.back);
         colors = findViewById(R.id.colors);
@@ -73,26 +72,23 @@ public class VocabularyStudyActivity extends AppCompatActivity {
         firebaseFirestore = FirebaseFirestore.getInstance();
 
         firebaseFirestore.collection("vocabularyLesson")
-                        .get()
-                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                            @Override
-                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                                if (task.isSuccessful()){
-                                    for (DocumentSnapshot documentSnapshot: task.getResult()){
-                                        String type = documentSnapshot.get("type").toString();
-                                        String heading = documentSnapshot.get("heading").toString();
-                                        String info = documentSnapshot.get("info").toString();
-                                        long id = (long) documentSnapshot.get("id");
-                                        arrayList.add(new VocabularyLessonModel(type, heading, info, id));
-                                        Collections.sort(arrayList, Comparator.comparingLong(VocabularyLessonModel::getId));
-                                    }
-
-                                    for (int i = 0; i < arrayList.size(); i++) {
-                                        Log.i("DAS", arrayList.get(i).getType() + " X ");
-                                    }
-                                }
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()){
+                            for (DocumentSnapshot documentSnapshot: task.getResult()){
+                                String type = documentSnapshot.get("type").toString();
+                                String heading = documentSnapshot.get("heading").toString();
+                                String info = documentSnapshot.get("info").toString();
+                                long id = (long) documentSnapshot.get("id");
+                                arrayList.add(new VocabularyLessonModel(type, heading, info, id));
+                                Collections.sort(arrayList, Comparator.comparingLong(VocabularyLessonModel::getId));
                             }
-                        });
+
+                        }
+                    }
+                });
 
         back.setOnClickListener(v -> finish());
         colors.setOnClickListener(v -> startActivity(arrayList.get(0).getType(), arrayList.get(0).getHeading(), arrayList.get(0).getInfo()));
@@ -113,4 +109,5 @@ public class VocabularyStudyActivity extends AppCompatActivity {
         intent.putExtra("INFO", info);
         startActivity(intent);
     }
+
 }

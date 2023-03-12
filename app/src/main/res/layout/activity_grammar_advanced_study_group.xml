@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/_10sdp"
+    android:gravity="center"
+    android:background="@color/brown_dark"
+    tools:context=".GrammarAdvancedStudyGroupActivity">
+
+    <TextView
+        android:layout_marginTop="@dimen/_50sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_30sdp"
+        android:text="Start your advanced grammar course"
+        android:textSize="@dimen/_13ssp"
+        android:textAllCaps="true"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/off_white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_18sdp">
+
+            <TextView
+                android:id="@+id/nouns"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_13sdp"
+                android:background="@drawable/button_background_style"
+                android:paddingHorizontal="25dp"
+                android:paddingVertical="@dimen/_12sdp"
+                android:text="@string/nouns"
+                android:textAlignment="center"
+                android:textColor="@color/off_white"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold"
+                android:textAllCaps="true"/>
+
+            <TextView
+
+                android:id="@+id/pronouns"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/button_background_style"
+                android:paddingHorizontal="25dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_12sdp"
+                android:text="@string/pronouns"
+                android:textAlignment="center"
+                android:textColor="@color/off_white"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold"
+                android:textAllCaps="true"/>
+
+            <TextView
+
+                android:id="@+id/verbs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/button_background_style"
+                android:paddingHorizontal="25dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_12sdp"
+                android:text="@string/verbs"
+                android:textAlignment="center"
+                android:textColor="@color/off_white"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold"
+                android:textAllCaps="true"/>
+
+            <TextView
+
+                android:id="@+id/adverbs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/button_background_style"
+                android:paddingHorizontal="25dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_12sdp"
+                android:text="@string/adverbs"
+                android:textAlignment="center"
+                android:textColor="@color/off_white"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold"
+                android:textAllCaps="true"/>
+
+            <TextView
+
+                android:id="@+id/adjectives"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/button_background_style"
+                android:paddingHorizontal="25dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_12sdp"
+                android:text="@string/adjectives"
+                android:textAlignment="center"
+                android:textColor="@color/off_white"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold"
+                android:textAllCaps="true"/>
+
+            <TextView
+
+                android:id="@+id/prepositions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/button_background_style"
+                android:paddingHorizontal="25dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_12sdp"
+                android:text="@string/prepositions"
+                android:textAlignment="center"
+                android:textColor="@color/off_white"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold"
+                android:textAllCaps="true"/>
+
+            <TextView
+                android:id="@+id/interjections_conjunction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/button_background_style"
+                android:paddingHorizontal="25dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_12sdp"
+                android:text="@string/prepositions"
+                android:textAlignment="center"
+                android:textColor="@color/off_white"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold"
+                android:textAllCaps="true"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="70dp"
+        android:background="@drawable/button_background_style"
+        android:paddingHorizontal="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:paddingVertical="@dimen/_8sdp"
+        android:text="@string/go_back"
+        android:textColor="@color/off_white"
+        android:textSize="@dimen/_13ssp" />
+
+</LinearLayout>
+

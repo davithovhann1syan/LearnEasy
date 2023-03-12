@@ -2,12 +2,13 @@ package com.example.learneasy;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class GrammarStudyGroupActivity extends AppCompatActivity {
+public class GrammarBeginnerStudyGroupActivity extends AppCompatActivity {
     TextView nouns;
     TextView pronouns;
     TextView verbs;
@@ -16,11 +17,13 @@ public class GrammarStudyGroupActivity extends AppCompatActivity {
     TextView prepositions;
     TextView interjectionsConjunctions;
     TextView back;
+    String globalType;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_grammar_study_group);
+        setContentView(R.layout.activity_grammar_beginner_study_group);
         nouns = findViewById(R.id.nouns);
         pronouns = findViewById(R.id.pronouns);
         verbs = findViewById(R.id.verbs);
@@ -29,6 +32,12 @@ public class GrammarStudyGroupActivity extends AppCompatActivity {
         prepositions = findViewById(R.id.prepositions);
         interjectionsConjunctions = findViewById(R.id.interjections_conjunction);
         back = findViewById(R.id.back);
+
+        Bundle extras = getIntent().getExtras();
+        globalType = extras.getString("GLOBALTYPE");
+
+        Log.i("DAS", globalType+"");
+
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override

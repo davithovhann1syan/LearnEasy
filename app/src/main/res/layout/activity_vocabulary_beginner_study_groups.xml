@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VocabularyStudyActivity"
+    tools:context=".VocabularyBeginnerStudyGroupActivity"
     android:background="@color/brown_dark"
     android:padding="@dimen/_15ssp">
 
@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/choose_section"
+        android:text="beginner"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@color/off_white"
