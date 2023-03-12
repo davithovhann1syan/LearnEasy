@@ -35,18 +35,6 @@
         android:layout_marginVertical="@dimen/_10sdp"/>
 
     <TextView
-        android:id="@+id/translate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/translator"
-        android:textSize="@dimen/_20ssp"
-        android:textColor="@color/off_white"
-        android:background="@drawable/button_background_style"
-        android:paddingVertical="@dimen/_12sdp"
-        android:paddingHorizontal="@dimen/_20sdp"
-        android:textAlignment="center"
-        android:layout_marginVertical="@dimen/_10sdp"/>
-    <TextView
         android:id="@+id/vocabulary_test"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -58,6 +46,19 @@
         android:paddingHorizontal="@dimen/_20sdp"
         android:textAlignment="center"
         android:layout_marginVertical="@dimen/_10sdp"/>
+
+    <TextView
+        android:id="@+id/translate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_10sdp"
+        android:background="@drawable/button_background_style"
+        android:paddingHorizontal="@dimen/_20sdp"
+        android:paddingVertical="@dimen/_12sdp"
+        android:text="@string/translate"
+        android:textAlignment="center"
+        android:textColor="@color/off_white"
+        android:textSize="@dimen/_20ssp" />
 
     <TextView
         android:id="@+id/back"

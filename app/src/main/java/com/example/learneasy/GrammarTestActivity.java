@@ -275,12 +275,26 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
             });
 
 
-            new AlertDialog.Builder(this)
-                    .setTitle("Result")
-                    .setMessage("Score is "+ score+" out of "+ totalQuestion)
-                    .setPositiveButton("Finish",(dialogInterface, i) -> finish() )
-                    .setCancelable(false)
-                    .show();
+            if (arrayList.size() == 0){
+                new AlertDialog.Builder(this)
+                        .setTitle("Sorry")
+                        .setMessage("Under construction")
+                        .setPositiveButton("go back",(dialogInterface, i) -> finish() )
+                        .setCancelable(false)
+                        .show();
+
+            } else {
+                new AlertDialog.Builder(this)
+                        .setTitle("Result")
+                        .setMessage("Score is "+ score+" out of "+ totalQuestion)
+                        .setPositiveButton("Finish",(dialogInterface, i) -> finish() )
+                        .setCancelable(false)
+                        .show();
+            }
+
+
+
+
 
                     /*{
                         Intent intent = new Intent(getApplicationContext(), GrammarActivity.class);

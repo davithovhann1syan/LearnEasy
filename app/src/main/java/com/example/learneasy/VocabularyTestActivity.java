@@ -257,12 +257,22 @@ public class VocabularyTestActivity extends AppCompatActivity implements View.On
             level = "intermediate";
         }
 
-        new AlertDialog.Builder(this)
-                .setTitle("Result")
-                .setMessage("Score is "+ score+" out of "+ totalQuestion)
-                .setPositiveButton("Finish",(dialogInterface, i) -> finish() )
-                .setCancelable(false)
-                .show();
+        if (arrayList.size() == 0){
+            new AlertDialog.Builder(this)
+                    .setTitle("Sorry")
+                    .setMessage("Under construction")
+                    .setPositiveButton("go back",(dialogInterface, i) -> finish() )
+                    .setCancelable(false)
+                    .show();
+
+        } else {
+            new AlertDialog.Builder(this)
+                    .setTitle("Result")
+                    .setMessage("Score is "+ score+" out of "+ totalQuestion)
+                    .setPositiveButton("Finish",(dialogInterface, i) -> finish() )
+                    .setCancelable(false)
+                    .show();
+        }
 
 
     }
