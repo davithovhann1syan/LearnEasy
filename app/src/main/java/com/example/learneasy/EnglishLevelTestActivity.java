@@ -2,6 +2,7 @@ package com.example.learneasy;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -248,19 +249,73 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
             level = "intermediate";
         }
 
-
-        new AlertDialog.Builder(this)
-                .setTitle(passStatus)
-                .setMessage("Score is "+ score+" out of "+ totalQuestion + " so your enlish grammar level is approximately " + level + " so we recommend you to pick the course for your english level")
-                .setPositiveButton("Click to pick course",(dialogInterface, i) -> goBack() )
-                .setCancelable(false)
-                .show();
-
+        if (arrayList.size() == 0){
+            alertDialogEmpty();
+        } else {
+            alertDialog();
+        }
 
     }
 
-    void goBack(){
-       finish();
+    void finishActivity(){
+        recreate();
+    }
+
+    @SuppressLint("SetTextI18n")
+    void alertDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(EnglishLevelTestActivity.this);
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_result, null);
+        TextView resultField = dialogView.findViewById(R.id.score_text);
+        builder.setView(dialogView);
+        AlertDialog dialog = builder.create();
+
+        if (dialog.getWindow() != null){
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        }
+        dialog.show();
+
+        resultField.setText("Your score is " + score + " out of " + totalQuestion);
+
+
+        dialogView.findViewById(R.id.dialog_finish).setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+                finish();
+            }
+        });
+
+        dialogView.findViewById(R.id.restart_quiz).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                score = 0;
+                currentQuestionIndex = 0;
+                loadNewQuestion();
+                dialog.dismiss();
+            }
+        });
+    }
+
+    void alertDialogEmpty(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(EnglishLevelTestActivity.this);
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_not_ready, null);
+        builder.setView(dialogView);
+        AlertDialog dialog = builder.create();
+
+        if (dialog.getWindow() != null){
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        }
+        dialog.show();
+        dialogView.findViewById(R.id.dialog_finish).setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+                finish();
+            }
+        });
+
     }
 
 }

@@ -60,8 +60,8 @@
         android:id="@+id/btnRegister"
         android:layout_width="0dp"
         android:layout_height="@dimen/_35sdp"
-        android:layout_marginTop="@dimen/_25sdp"
-        android:layout_marginHorizontal="@dimen/_100sdp"
+        android:layout_marginTop="@dimen/_55sdp"
+
         android:background="@drawable/button_background_style"
         android:text="@string/register"
         android:textColor="@color/off_white"

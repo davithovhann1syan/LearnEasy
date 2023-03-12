@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_result"
+    android:background="@drawable/white_box"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dialog_box"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/dialog_background"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/result_title"
+            android:text="@string/not_ready"
+            android:padding="@dimen/_12sdp"
+            android:textSize="@dimen/_14sdp"
+            android:background="@drawable/dialog_forget_style"
+            android:textColor="@color/white"
+            android:drawablePadding="@dimen/_5sdp"
+            android:textAlignment="center"
+            app:layout_constraintTop_toTopOf="parent"
+             />
+
+        <TextView
+            android:id="@+id/score_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_18sdp"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="@dimen/_3sdp"
+            android:backgroundTint="@color/off_white"
+            android:maxLines="1"
+            android:text="This quiz is not ready"
+            android:textAlignment="center"
+            android:textColor="@color/off_white"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/result_title"
+            app:layout_constraintVertical_bias="0.2" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/dialog_finish"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_marginTop="@dimen/_8ssp"
+            android:layout_marginBottom="@dimen/_6ssp"
+            android:background="@drawable/button_background_style"
+            android:text="@string/finish"
+            android:textColor="@color/white"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:textSize="@dimen/_10sdp"
+            app:cornerRadius="@dimen/_16sdp"
+            app:layout_constraintBottom_toBottomOf="@id/dialog_box"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/score_text"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

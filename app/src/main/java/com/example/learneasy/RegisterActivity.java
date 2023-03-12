@@ -1,8 +1,11 @@
 package com.example.learneasy;
 
+import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -125,11 +128,8 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void firebaseAuthWithGoogle(String idToken) {
-
-        //getting user credentials with the help of AuthCredential method and also passing user Token Id.
         AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
 
-        //trying to sign in user using signInWithCredential and passing above credentials of user.
         mAuth.signInWithCredential(credential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -138,7 +138,7 @@ public class RegisterActivity extends AppCompatActivity {
                     startActivity(intent);
 
                 } else {
-                    // If sign in fails, display a message to the user.
+
                     Toast.makeText(RegisterActivity.this, "Authentication Failed", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -174,7 +174,7 @@ public class RegisterActivity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()) {
                                     progressDialog.dismiss();
-                                    Toast.makeText(RegisterActivity.this, "Verify email address", Toast.LENGTH_SHORT).show();
+                                    alertDialog();
                                 } else {
                                     Toast.makeText(RegisterActivity.this, "" + task.getException(), Toast.LENGTH_SHORT).show();
                                 }
@@ -189,6 +189,27 @@ public class RegisterActivity extends AppCompatActivity {
             });
 
         }
+    }
+
+    void alertDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_verify_email, null);
+        builder.setView(dialogView);
+        AlertDialog dialog = builder.create();
+
+        if (dialog.getWindow() != null){
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        }
+        dialog.show();
+        dialogView.findViewById(R.id.dialog_finish).setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+                finish();
+            }
+        });
+
     }
 
     private void sendUserToNextActivity() {

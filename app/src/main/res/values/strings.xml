@@ -58,6 +58,12 @@
     <string name="cancel">Cancel</string>
     <string name="reset">Reset</string>
     <string name="choose_section">choose section</string>
+    <string name="restart">Restart quiz</string>
+    <string name="your_score">YOUR SCORE</string>
+    <string name="finish">finish</string>
+    <string name="result">RESULT</string>
+    <string name="not_ready">Sorry this test is under construction</string>
+    <string name="verify_email">PLEASE VERIFY EMAIL ADDRESS</string>
 
     <string-array name="languages">
         <item>English</item>

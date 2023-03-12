@@ -1,5 +1,6 @@
 package com.example.learneasy;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -49,6 +50,7 @@ public class LoginActivity extends AppCompatActivity {
     GoogleSignInClient gsc;
     ConstraintLayout mainLayout;
 
+    @SuppressLint("CutPasteId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,7 +65,6 @@ public class LoginActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
         forgotPassword = findViewById(R.id.forgot_password);
-        mainLayout = findViewById(R.id.main_layout);
 
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build();
         gsc = GoogleSignIn.getClient(LoginActivity.this, gso);
@@ -170,7 +171,7 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(LoginActivity.this, "Sign in Complete ", Toast.LENGTH_SHORT).show();
             } catch (ApiException e) {
 
-                Toast.makeText(LoginActivity.this, "Authentication Failed Poblems with " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "Authentication failed with problems " + e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }
 
@@ -178,10 +179,8 @@ public class LoginActivity extends AppCompatActivity {
 
     private void firebaseAuthWithGoogle(String idToken) {
 
-        //getting user credentials with the help of AuthCredential method and also passing user Token Id.
         AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
 
-        //trying to sign in user using signInWithCredential and passing above credentials of user.
         mAuth.signInWithCredential(credential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -190,7 +189,7 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(intent);
 
                 } else {
-                    // If sign in fails, display a message to the user.
+
                     Toast.makeText(LoginActivity.this, "Authentication Failed", Toast.LENGTH_SHORT).show();
                 }
             }

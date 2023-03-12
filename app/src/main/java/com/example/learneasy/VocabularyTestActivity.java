@@ -2,6 +2,7 @@ package com.example.learneasy;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -243,42 +244,70 @@ public class VocabularyTestActivity extends AppCompatActivity implements View.On
 
 
     void finishQuiz(){
-        String passStatus = "Result";
-
-        float x = (float) score / totalQuestion;
-
-        if (x < 0.5){
-            level = "beginner";
-
-        }  else if (x >= 0.8) {
-            level = "advanced";
-        }
-        else {
-            level = "intermediate";
-        }
 
         if (arrayList.size() == 0){
-            new AlertDialog.Builder(this)
-                    .setTitle("Sorry")
-                    .setMessage("Under construction")
-                    .setPositiveButton("go back",(dialogInterface, i) -> finish() )
-                    .setCancelable(false)
-                    .show();
-
+            alertDialogEmpty();
         } else {
-            new AlertDialog.Builder(this)
-                    .setTitle("Result")
-                    .setMessage("Score is "+ score+" out of "+ totalQuestion)
-                    .setPositiveButton("Finish",(dialogInterface, i) -> finish() )
-                    .setCancelable(false)
-                    .show();
+            alertDialog();
         }
-
 
     }
 
-    void goBack(){
-        finish();
+    @SuppressLint("SetTextI18n")
+    void alertDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(VocabularyTestActivity.this);
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_result, null);
+        TextView resultField = dialogView.findViewById(R.id.score_text);
+        builder.setView(dialogView);
+        AlertDialog dialog = builder.create();
+
+        if (dialog.getWindow() != null){
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        }
+        dialog.show();
+
+        resultField.setText("Your score is " + score + " out of " + totalQuestion);
+
+
+        dialogView.findViewById(R.id.dialog_finish).setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+                finish();
+            }
+        });
+
+        dialogView.findViewById(R.id.restart_quiz).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                score = 0;
+                currentQuestionIndex = 0;
+                loadNewQuestion();
+                dialog.dismiss();
+            }
+        });
+    }
+
+    void alertDialogEmpty(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(VocabularyTestActivity.this);
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_not_ready, null);
+        builder.setView(dialogView);
+        AlertDialog dialog = builder.create();
+
+        if (dialog.getWindow() != null){
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        }
+        dialog.show();
+        dialogView.findViewById(R.id.dialog_finish).setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+                finish();
+            }
+        });
+
     }
 
 }

@@ -2,10 +2,13 @@ package com.example.learneasy;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +22,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -147,7 +152,7 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
 
 
         (new Handler()).postDelayed(new Runnable() {
-            @SuppressLint("UseCompatLoadingForDrawables")
+            @SuppressLint({"UseCompatLoadingForDrawables", "SetTextI18n"})
             @Override
             public void run() {
                 Drawable bg_style = getResources().getDrawable(R.drawable.bg_button);
@@ -189,7 +194,12 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
 
                     if (submitClicks == 2){
                         currentQuestionIndex++;
-                        currentQuestionView.setText(currentQuestionIndex + 1 + "");
+                        if (currentQuestionIndex == arrayList.size()){
+                            currentQuestionView.setText(currentQuestionIndex+"");
+                        } else{
+                            currentQuestionView.setText(currentQuestionIndex + 1 + "");
+                        }
+
                         loadNewQuestion();
                     }
                 }
@@ -274,41 +284,73 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
                 }
             });
 
-
             if (arrayList.size() == 0){
-                new AlertDialog.Builder(this)
-                        .setTitle("Sorry")
-                        .setMessage("Under construction")
-                        .setPositiveButton("go back",(dialogInterface, i) -> finish() )
-                        .setCancelable(false)
-                        .show();
-
+                alertDialogEmpty();
             } else {
-                new AlertDialog.Builder(this)
-                        .setTitle("Result")
-                        .setMessage("Score is "+ score+" out of "+ totalQuestion)
-                        .setPositiveButton("Finish",(dialogInterface, i) -> finish() )
-                        .setCancelable(false)
-                        .show();
+                alertDialog();
             }
-
-
-
-
-
-                    /*{
-                        Intent intent = new Intent(getApplicationContext(), GrammarActivity.class);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-                        intent.putExtra("OPENTYPE", type);
-                        startActivity(intent);
-                    }*/
 
         }
 
-    void restartQuiz(){
-        score = 0;
-        currentQuestionIndex =0;
-        loadNewQuestion();
+    void finishActivity(){
+        recreate();
+    }
+
+    @SuppressLint("SetTextI18n")
+    void alertDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(GrammarTestActivity.this);
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_result, null);
+        TextView resultField = dialogView.findViewById(R.id.score_text);
+        builder.setView(dialogView);
+        AlertDialog dialog = builder.create();
+
+        if (dialog.getWindow() != null){
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        }
+        dialog.show();
+
+            resultField.setText("Your score is " + score + " out of " + totalQuestion);
+
+
+        dialogView.findViewById(R.id.dialog_finish).setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+                finish();
+            }
+        });
+
+        dialogView.findViewById(R.id.restart_quiz).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                score = 0;
+                currentQuestionIndex = 0;
+                loadNewQuestion();
+                dialog.dismiss();
+            }
+        });
+    }
+
+    void alertDialogEmpty(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(GrammarTestActivity.this);
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_not_ready, null);
+        builder.setView(dialogView);
+        AlertDialog dialog = builder.create();
+
+        if (dialog.getWindow() != null){
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        }
+        dialog.show();
+        dialogView.findViewById(R.id.dialog_finish).setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+                finish();
+            }
+        });
+
     }
 
 }
