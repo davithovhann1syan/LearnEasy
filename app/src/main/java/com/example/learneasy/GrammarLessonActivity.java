@@ -64,6 +64,7 @@ public class GrammarLessonActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), GrammarTestActivity.class);
                 intent.putExtra("SUBTYPE", subType);
+                intent.putExtra("TYPE", type);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 getApplicationContext().startActivity(intent);
             }

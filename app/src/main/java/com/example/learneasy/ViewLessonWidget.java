@@ -12,7 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 
 public class ViewLessonWidget extends LinearLayout {
-    TextView goToButton;
+    TextView testButton;
     String name;
     String type;
     TextView viewLessonName;
@@ -60,9 +60,9 @@ public class ViewLessonWidget extends LinearLayout {
 
         viewLessonName = findViewById(R.id.title);
         progressBar = findViewById(R.id.simple_progress_bar);
-        goToButton = findViewById(R.id.test_button);
+        testButton = findViewById(R.id.test_button);
 
-        goToButton.setOnClickListener(new View.OnClickListener() {
+        testButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, GrammarTestActivity.class);

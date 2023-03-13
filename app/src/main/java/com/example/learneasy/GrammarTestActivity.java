@@ -2,6 +2,7 @@ package com.example.learneasy;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -292,9 +293,7 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
 
         }
 
-    void finishActivity(){
-        recreate();
-    }
+
 
     @SuppressLint("SetTextI18n")
     void alertDialog(){
@@ -317,7 +316,7 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
-                finish();
+                finishActivity();
             }
         });
 
@@ -347,10 +346,17 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
-                finish();
+                finishActivity();
             }
         });
-
     }
 
+    void finishActivity(){
+
+        Intent intent = new Intent(getApplicationContext(), GrammarActivity.class);
+        intent.putExtra("OPENTYPE", type);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+
+    }
 }
