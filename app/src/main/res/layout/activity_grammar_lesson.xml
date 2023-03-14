@@ -16,7 +16,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:layout_gravity="center_horizontal"
-    android:layout_marginHorizontal="@dimen/_25sdp"
+    android:layout_marginHorizontal="@dimen/_15sdp"
     >
 
 

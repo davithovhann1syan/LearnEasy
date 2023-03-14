@@ -9,13 +9,17 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class GrammarIntermediateStudyGroupActivity extends AppCompatActivity {
-    TextView nouns;
-    TextView pronouns;
-    TextView verbs;
-    TextView adverbs;
-    TextView adjectives;
-    TextView prepositions;
-    TextView interjectionsConjunctions;
+    TextView sentenceStructure;
+    TextView phrases;
+    TextView clauses;
+    TextView subjectVerbAgreement;
+    TextView modifiers;
+    TextView punctuation;
+    TextView passiveVoice;
+    TextView reportedSpeech;
+    TextView conditionalSentences;
+    TextView idiomaticExpressions;
+
     TextView back;
     String globalType;
 
@@ -23,13 +27,16 @@ public class GrammarIntermediateStudyGroupActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grammar_intermediate_study_group);
-        nouns = findViewById(R.id.nouns);
-        pronouns = findViewById(R.id.pronouns);
-        verbs = findViewById(R.id.verbs);
-        adverbs = findViewById(R.id.adverbs);
-        adjectives = findViewById(R.id.adjectives);
-        prepositions = findViewById(R.id.prepositions);
-        interjectionsConjunctions = findViewById(R.id.interjections_conjunction);
+        sentenceStructure = findViewById(R.id.sentence_structure);
+        phrases = findViewById(R.id.phrases);
+        clauses = findViewById(R.id.clauses);
+        subjectVerbAgreement = findViewById(R.id.subject_verb_agreement);
+        modifiers = findViewById(R.id.modifiers);
+        passiveVoice = findViewById(R.id.passive_voice);
+        punctuation = findViewById(R.id.punctuation);
+        reportedSpeech = findViewById(R.id.reported_speech);
+        conditionalSentences = findViewById(R.id.conditional_sentences);
+        idiomaticExpressions = findViewById(R.id.idiomatic_expressions);
         back = findViewById(R.id.back);
 
         Bundle extras = getIntent().getExtras();
@@ -46,13 +53,26 @@ public class GrammarIntermediateStudyGroupActivity extends AppCompatActivity {
             }
         });
 
-        nouns.setOnClickListener(v -> startActivity("nouns"));
-        pronouns.setOnClickListener(v -> startActivity("pronouns"));
-        verbs.setOnClickListener(v -> startActivity("verbs"));
-        adverbs.setOnClickListener(v -> startActivity("adverbs"));
-        adjectives.setOnClickListener(v -> startActivity("adjectives"));
-        prepositions.setOnClickListener(v -> startActivity("prepositions"));
-        interjectionsConjunctions.setOnClickListener(v -> startActivity("interjections"));
+        /*
+        * information
+"test"
+subType
+"adjectives_lesson2"
+title
+"Lesson 2: Types of Adjectives"
+type
+"adjectives"*/
+
+        sentenceStructure.setOnClickListener(v -> startActivity("sentenceStructure"));
+        phrases.setOnClickListener(v -> startActivity("phrases"));
+        clauses.setOnClickListener(v -> startActivity("clauses"));
+        subjectVerbAgreement.setOnClickListener(v -> startActivity("subjectVerbAgreement"));
+        modifiers.setOnClickListener(v -> startActivity("modifiers"));
+        passiveVoice.setOnClickListener(v -> startActivity("passiveVoice"));
+        punctuation.setOnClickListener(v -> startActivity("punctuation"));
+        reportedSpeech.setOnClickListener(v -> startActivity("reportedSpeech"));
+        conditionalSentences.setOnClickListener(v -> startActivity("conditionalSentences"));
+        idiomaticExpressions.setOnClickListener(v -> startActivity("idiomaticExpressions"));
 
     }
     void startActivity(String type){

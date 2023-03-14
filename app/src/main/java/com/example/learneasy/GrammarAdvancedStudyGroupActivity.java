@@ -9,13 +9,14 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class GrammarAdvancedStudyGroupActivity extends AppCompatActivity {
-    TextView nouns;
-    TextView pronouns;
-    TextView verbs;
-    TextView adverbs;
-    TextView adjectives;
-    TextView prepositions;
-    TextView interjectionsConjunctions;
+
+    TextView complexSentences;
+    TextView complexVerbTenses;
+    TextView complexNounUsage;
+    TextView complexAdjectiveAdverbUsage;
+    TextView complexPunctuationMechanics;
+    TextView complexStyleUsage;
+    TextView complexSyntax;
     TextView back;
 
     String globalType;
@@ -24,13 +25,14 @@ public class GrammarAdvancedStudyGroupActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grammar_advanced_study_group);
-        nouns = findViewById(R.id.nouns);
-        pronouns = findViewById(R.id.pronouns);
-        verbs = findViewById(R.id.verbs);
-        adverbs = findViewById(R.id.adverbs);
-        adjectives = findViewById(R.id.adjectives);
-        prepositions = findViewById(R.id.prepositions);
-        interjectionsConjunctions = findViewById(R.id.interjections_conjunction);
+        complexSentences = findViewById(R.id.complex_sentences);
+        complexVerbTenses = findViewById(R.id.complex_verb_tenses);
+        complexNounUsage = findViewById(R.id.complex_noun_pronoun_usage);
+        complexAdjectiveAdverbUsage = findViewById(R.id.complex_adjective_adverb_usage);
+        complexPunctuationMechanics = findViewById(R.id.complex_punctuation_mechanics);
+        complexStyleUsage = findViewById(R.id.complex_style_usage);
+        complexSyntax = findViewById(R.id.complex_syntax);
+
         back = findViewById(R.id.back);
 
 
@@ -48,13 +50,13 @@ public class GrammarAdvancedStudyGroupActivity extends AppCompatActivity {
             }
         });
 
-        nouns.setOnClickListener(v -> startActivity("nouns"));
-        pronouns.setOnClickListener(v -> startActivity("pronouns"));
-        verbs.setOnClickListener(v -> startActivity("verbs"));
-        adverbs.setOnClickListener(v -> startActivity("adverbs"));
-        adjectives.setOnClickListener(v -> startActivity("adjectives"));
-        prepositions.setOnClickListener(v -> startActivity("prepositions"));
-        interjectionsConjunctions.setOnClickListener(v -> startActivity("interjections"));
+        complexSentences.setOnClickListener(v -> startActivity("complexSentences"));
+        complexVerbTenses.setOnClickListener(v -> startActivity("complexVerbTenses"));
+        complexNounUsage.setOnClickListener(v -> startActivity("complexNounUsage"));
+        complexAdjectiveAdverbUsage.setOnClickListener(v -> startActivity("complexAdjectiveAdverbUsage"));
+        complexPunctuationMechanics.setOnClickListener(v -> startActivity("complexPunctuationMechanics"));
+        complexStyleUsage.setOnClickListener(v -> startActivity("complexStyleUsage"));
+        complexSyntax.setOnClickListener(v -> startActivity("complexSyntax"));
 
     }
     void startActivity(String type){

@@ -34,14 +34,14 @@
             android:padding="@dimen/_18sdp">
 
             <TextView
-                android:id="@+id/nouns"
+                android:id="@+id/sentence_structure"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_13sdp"
                 android:background="@drawable/button_background_style"
                 android:paddingHorizontal="25dp"
                 android:paddingVertical="@dimen/_12sdp"
-                android:text="@string/nouns"
+                android:text="Sentence Structure"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
                 android:textSize="@dimen/_16ssp"
@@ -50,7 +50,7 @@
 
             <TextView
 
-                android:id="@+id/pronouns"
+                android:id="@+id/phrases"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_10sdp"
@@ -58,7 +58,7 @@
                 android:paddingHorizontal="25dp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:paddingVertical="@dimen/_12sdp"
-                android:text="@string/pronouns"
+                android:text="Phrases"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
                 android:textSize="@dimen/_16ssp"
@@ -67,7 +67,7 @@
 
             <TextView
 
-                android:id="@+id/verbs"
+                android:id="@+id/clauses"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_10sdp"
@@ -75,7 +75,7 @@
                 android:paddingHorizontal="25dp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:paddingVertical="@dimen/_12sdp"
-                android:text="@string/verbs"
+                android:text="Clauses"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
                 android:textSize="@dimen/_16ssp"
@@ -84,7 +84,7 @@
 
             <TextView
 
-                android:id="@+id/adverbs"
+                android:id="@+id/subject_verb_agreement"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_10sdp"
@@ -92,7 +92,7 @@
                 android:paddingHorizontal="25dp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:paddingVertical="@dimen/_12sdp"
-                android:text="@string/adverbs"
+                android:text="Subject-Verb Agreement"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
                 android:textSize="@dimen/_16ssp"
@@ -101,7 +101,7 @@
 
             <TextView
 
-                android:id="@+id/adjectives"
+                android:id="@+id/modifiers"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_10sdp"
@@ -109,7 +109,7 @@
                 android:paddingHorizontal="25dp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:paddingVertical="@dimen/_12sdp"
-                android:text="@string/adjectives"
+                android:text="Modifiers"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
                 android:textSize="@dimen/_16ssp"
@@ -118,7 +118,7 @@
 
             <TextView
 
-                android:id="@+id/prepositions"
+                android:id="@+id/punctuation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_10sdp"
@@ -126,7 +126,7 @@
                 android:paddingHorizontal="25dp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:paddingVertical="@dimen/_12sdp"
-                android:text="@string/prepositions"
+                android:text="Punctuation"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
                 android:textSize="@dimen/_16ssp"
@@ -134,7 +134,7 @@
                 android:textAllCaps="true"/>
 
             <TextView
-                android:id="@+id/interjections_conjunction"
+                android:id="@+id/passive_voice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_10sdp"
@@ -142,12 +142,63 @@
                 android:paddingHorizontal="25dp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:paddingVertical="@dimen/_12sdp"
-                android:text="@string/prepositions"
+                android:text="Passive Voice"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
                 android:textSize="@dimen/_16ssp"
                 android:textStyle="bold"
                 android:textAllCaps="true"/>
+
+            <TextView
+                android:id="@+id/reported_speech"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/button_background_style"
+                android:paddingHorizontal="25dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_12sdp"
+                android:text="Reported Speech"
+                android:textAlignment="center"
+                android:textColor="@color/off_white"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold"
+                android:textAllCaps="true"/>
+
+            <TextView
+                android:id="@+id/conditional_sentences"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/button_background_style"
+                android:paddingHorizontal="25dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_12sdp"
+                android:text="Conditional Sentences"
+                android:textAlignment="center"
+                android:textColor="@color/off_white"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold"
+                android:textAllCaps="true"/>
+
+            <TextView
+                android:id="@+id/idiomatic_expressions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/button_background_style"
+                android:paddingHorizontal="25dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_12sdp"
+                android:text="Idiomatic Expressions"
+                android:textAlignment="center"
+                android:textColor="@color/off_white"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold"
+                android:textAllCaps="true"/>
+
+
+
 
 
         </LinearLayout>

@@ -142,7 +142,7 @@
                 android:paddingHorizontal="25dp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:paddingVertical="@dimen/_12sdp"
-                android:text="@string/prepositions"
+                android:text="@string/interjections_conjunctions"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
                 android:textSize="@dimen/_16ssp"

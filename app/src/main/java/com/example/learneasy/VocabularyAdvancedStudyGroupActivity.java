@@ -21,7 +21,7 @@ import java.util.Comparator;
 
 public class VocabularyAdvancedStudyGroupActivity extends AppCompatActivity {
     TextView back;
-    AppCompatButton colors, animals, food, clothing , transport, bodyParts, jobs, sports, travel;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,43 +29,43 @@ public class VocabularyAdvancedStudyGroupActivity extends AppCompatActivity {
         setContentView(R.layout.activity_vocabulary_advanced_study_group);
 
         back = findViewById(R.id.back);
-        colors = findViewById(R.id.colors);
-        food = findViewById(R.id.food);
-        animals = findViewById(R.id.animals);
-        clothing = findViewById(R.id.clothing);
-        transport = findViewById(R.id.transport);
-        bodyParts = findViewById(R.id.body_parts);
-        jobs = findViewById(R.id.jobs);
-        travel = findViewById(R.id.travel);
-        sports = findViewById(R.id.sports);
+        AppCompatButton economicsAndFinance = findViewById(R.id.economics_and_finance);
+        AppCompatButton internationalRelation = findViewById(R.id.international_relations);
+        AppCompatButton it = findViewById(R.id.it);
+        AppCompatButton marketingAndAdvertising = findViewById(R.id.marketing_and_advertising);
+        AppCompatButton journalismAndMedia = findViewById(R.id.journalism_and_media);
+        AppCompatButton linguistics = findViewById(R.id.linguistics);
+        AppCompatButton philosophy = findViewById(R.id.philosophy);
+        AppCompatButton history = findViewById(R.id.history);
+        AppCompatButton geography = findViewById(R.id.geography);
 
         FirebaseFirestore firebaseFirestore;
         ArrayList<VocabularyLessonModel> arrayList = new ArrayList<>();
 
         back.setEnabled(false);
-        colors.setEnabled(false);
-        food.setEnabled(false);
-        animals.setEnabled(false);
-        clothing.setEnabled(false);
-        transport.setEnabled(false);
-        bodyParts.setEnabled(false);
-        jobs.setEnabled(false);
-        travel.setEnabled(false);
-        sports.setEnabled(false);
+        economicsAndFinance.setEnabled(false);
+        internationalRelation.setEnabled(false);
+        it.setEnabled(false);
+        marketingAndAdvertising.setEnabled(false);
+        journalismAndMedia.setEnabled(false);
+        linguistics.setEnabled(false);
+        philosophy.setEnabled(false);
+        history.setEnabled(false);
+        geography.setEnabled(false);
 
         (new Handler()).postDelayed(new Runnable() {
             @Override
             public void run() {
                 back.setEnabled(true);
-                colors.setEnabled(true);
-                food.setEnabled(true);
-                animals.setEnabled(true);
-                clothing.setEnabled(true);
-                transport.setEnabled(true);
-                bodyParts.setEnabled(true);
-                jobs.setEnabled(true);
-                travel.setEnabled(true);
-                sports.setEnabled(true);
+                economicsAndFinance.setEnabled(true);
+                internationalRelation.setEnabled(true);
+                it.setEnabled(true);
+                marketingAndAdvertising.setEnabled(true);
+                journalismAndMedia.setEnabled(true);
+                linguistics.setEnabled(true);
+                philosophy.setEnabled(true);
+                history.setEnabled(true);
+                geography.setEnabled(true);
             }
         },1000);
 
@@ -91,15 +91,15 @@ public class VocabularyAdvancedStudyGroupActivity extends AppCompatActivity {
                 });
 
         back.setOnClickListener(v -> finish());
-        colors.setOnClickListener(v -> startActivity(arrayList.get(0).getType(), arrayList.get(0).getHeading(), arrayList.get(0).getInfo()));
-        food.setOnClickListener(v -> startActivity(arrayList.get(1).getType(), arrayList.get(1).getHeading(), arrayList.get(1).getInfo()));
-        animals.setOnClickListener(v -> startActivity(arrayList.get(2).getType(), arrayList.get(2).getHeading(), arrayList.get(2).getInfo()));
-        clothing.setOnClickListener(v -> startActivity(arrayList.get(3).getType(), arrayList.get(3).getHeading(), arrayList.get(3).getInfo()));
-        transport.setOnClickListener(v -> startActivity(arrayList.get(4).getType(), arrayList.get(4).getHeading(), arrayList.get(4).getInfo()));
-        bodyParts.setOnClickListener(v -> startActivity(arrayList.get(5).getType(), arrayList.get(5).getHeading(), arrayList.get(5).getInfo()));
-        jobs.setOnClickListener(v -> startActivity(arrayList.get(6).getType(), arrayList.get(6).getHeading(), arrayList.get(6).getInfo()));
-        travel.setOnClickListener(v -> startActivity(arrayList.get(7).getType(), arrayList.get(7).getHeading(), arrayList.get(7).getInfo()));
-        sports.setOnClickListener(v -> startActivity(arrayList.get(8).getType(), arrayList.get(8).getHeading(), arrayList.get(8).getInfo()));
+        economicsAndFinance.setOnClickListener(v -> startActivity(arrayList.get(18).getType(), arrayList.get(18).getHeading(), arrayList.get(18).getInfo()));
+        internationalRelation.setOnClickListener(v -> startActivity(arrayList.get(19).getType(), arrayList.get(19).getHeading(), arrayList.get(19).getInfo()));
+        it.setOnClickListener(v -> startActivity(arrayList.get(20).getType(), arrayList.get(20).getHeading(), arrayList.get(20).getInfo()));
+        marketingAndAdvertising.setOnClickListener(v -> startActivity(arrayList.get(21).getType(), arrayList.get(21).getHeading(), arrayList.get(21).getInfo()));
+        journalismAndMedia.setOnClickListener(v -> startActivity(arrayList.get(22).getType(), arrayList.get(22).getHeading(), arrayList.get(22).getInfo()));
+        linguistics.setOnClickListener(v -> startActivity(arrayList.get(23).getType(), arrayList.get(23).getHeading(), arrayList.get(23).getInfo()));
+        philosophy.setOnClickListener(v -> startActivity(arrayList.get(24).getType(), arrayList.get(24).getHeading(), arrayList.get(24).getInfo()));
+        history.setOnClickListener(v -> startActivity(arrayList.get(25).getType(), arrayList.get(25).getHeading(), arrayList.get(25).getInfo()));
+        geography.setOnClickListener(v -> startActivity(arrayList.get(26).getType(), arrayList.get(26).getHeading(), arrayList.get(26).getInfo()));
 
     }
     void startActivity(String type, String heading, String info){

@@ -49,37 +49,37 @@
                 android:orientation="horizontal">
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/colors"
+                    android:id="@+id/technology"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/_80sdp"
                     android:layout_margin="@dimen/_10sdp"
                     android:layout_weight="1"
                     android:background="@drawable/button_background_style"
-                    android:text="Colors"
+                    android:text="Technology"
                     android:textSize="@dimen/_10ssp"
                     android:textColor="@color/off_white"
                     android:textStyle="bold" />
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/animals"
+                    android:id="@+id/business"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/_80sdp"
                     android:layout_margin="@dimen/_10sdp"
                     android:layout_weight="1"
                     android:background="@drawable/button_background_style"
-                    android:text="Animals"
+                    android:text="Business"
                     android:textSize="@dimen/_10ssp"
                     android:textColor="@color/off_white"
                     android:textStyle="bold" />
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/food"
+                    android:id="@+id/health_and_medicine"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/_80sdp"
                     android:layout_margin="@dimen/_10sdp"
                     android:layout_weight="1"
                     android:background="@drawable/button_background_style"
-                    android:text="Food"
+                    android:text="Health and Medicine"
                     android:textSize="@dimen/_10ssp"
                     android:textColor="@color/off_white"
                     android:textStyle="bold" />
@@ -93,7 +93,7 @@
                 >
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/clothing"
+                    android:id="@+id/science"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/_80sdp"
                     android:layout_weight="1"
@@ -102,10 +102,10 @@
                     android:textSize="@dimen/_10ssp"
                     android:textColor="@color/off_white"
                     android:layout_margin = "@dimen/_10sdp"
-                    android:text="Clothing"/>
+                    android:text="Science"/>
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/transport"
+                    android:id="@+id/law_and_politics"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/_80sdp"
                     android:layout_weight="1"
@@ -114,10 +114,10 @@
                     android:textColor="@color/off_white"
                     android:textSize="@dimen/_10ssp"
                     android:layout_margin = "@dimen/_10sdp"
-                    android:text="Transport"/>
+                    android:text="Law and Politics"/>
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/body_parts"
+                    android:id="@+id/education"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/_80sdp"
                     android:layout_weight="1"
@@ -126,7 +126,7 @@
                     android:textColor="@color/off_white"
                     android:textSize="@dimen/_10ssp"
                     android:layout_margin = "@dimen/_10sdp"
-                    android:text="Body parts"/>
+                    android:text="Education"/>
 
             </LinearLayout>
 
@@ -138,7 +138,7 @@
                 >
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/jobs"
+                    android:id="@+id/arts_and_culture"
                     android:layout_width="0dp"
                     android:textSize="@dimen/_10ssp"
                     android:layout_height="@dimen/_80sdp"
@@ -147,10 +147,10 @@
                     android:textStyle="bold"
                     android:textColor="@color/off_white"
                     android:layout_margin = "@dimen/_10sdp"
-                    android:text="Jobs"/>
+                    android:text="Arts and Culture"/>
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/sports"
+                    android:id="@+id/environment"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/_80sdp"
                     android:textSize="@dimen/_10ssp"
@@ -159,10 +159,10 @@
                     android:textStyle="bold"
                     android:textColor="@color/off_white"
                     android:layout_margin = "@dimen/_10sdp"
-                    android:text="Sports"/>
+                    android:text="Environment"/>
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/travel"
+                    android:id="@+id/psychology"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/_80sdp"
                     android:layout_weight="1"
@@ -171,7 +171,7 @@
                     android:textStyle="bold"
                     android:textColor="@color/off_white"
                     android:layout_margin = "@dimen/_10sdp"
-                    android:text="Travel"/>
+                    android:text="Psychology"/>
 
             </LinearLayout>
 

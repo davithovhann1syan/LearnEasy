@@ -21,7 +21,7 @@ import java.util.Comparator;
 
 public class VocabularyIntermediateStudyGroupActivity extends AppCompatActivity {
     TextView back;
-    AppCompatButton colors, animals, food, clothing , transport, bodyParts, jobs, sports, travel;
+    AppCompatButton technology, business, healthAndMedicine, science , lawAndPolitics, education, artsAndCulture, environment, psychology;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,43 +29,43 @@ public class VocabularyIntermediateStudyGroupActivity extends AppCompatActivity 
         setContentView(R.layout.activity_vocabulary_intermediate_study_groups);
 
         back = findViewById(R.id.back);
-        colors = findViewById(R.id.colors);
-        food = findViewById(R.id.food);
-        animals = findViewById(R.id.animals);
-        clothing = findViewById(R.id.clothing);
-        transport = findViewById(R.id.transport);
-        bodyParts = findViewById(R.id.body_parts);
-        jobs = findViewById(R.id.jobs);
-        travel = findViewById(R.id.travel);
-        sports = findViewById(R.id.sports);
+        technology = findViewById(R.id.technology);
+        business = findViewById(R.id.business);
+        healthAndMedicine = findViewById(R.id.health_and_medicine);
+        science = findViewById(R.id.science);
+        lawAndPolitics = findViewById(R.id.law_and_politics);
+        education = findViewById(R.id.education);
+        artsAndCulture = findViewById(R.id.arts_and_culture);
+        environment = findViewById(R.id.environment);
+        psychology = findViewById(R.id.psychology);
 
         FirebaseFirestore firebaseFirestore;
         ArrayList<VocabularyLessonModel> arrayList = new ArrayList<>();
 
-        back.setEnabled(false);
-        colors.setEnabled(false);
-        food.setEnabled(false);
-        animals.setEnabled(false);
-        clothing.setEnabled(false);
-        transport.setEnabled(false);
-        bodyParts.setEnabled(false);
-        jobs.setEnabled(false);
-        travel.setEnabled(false);
-        sports.setEnabled(false);
+        back.setEnabled(true);
+        technology.setEnabled(false);
+        business.setEnabled(false);
+        healthAndMedicine.setEnabled(false);
+        science.setEnabled(false);
+        lawAndPolitics.setEnabled(false);
+        education.setEnabled(false);
+        artsAndCulture.setEnabled(false);
+        environment.setEnabled(false);
+        psychology.setEnabled(false);
 
         (new Handler()).postDelayed(new Runnable() {
             @Override
             public void run() {
                 back.setEnabled(true);
-                colors.setEnabled(true);
-                food.setEnabled(true);
-                animals.setEnabled(true);
-                clothing.setEnabled(true);
-                transport.setEnabled(true);
-                bodyParts.setEnabled(true);
-                jobs.setEnabled(true);
-                travel.setEnabled(true);
-                sports.setEnabled(true);
+                technology.setEnabled(true);
+                business.setEnabled(true);
+                healthAndMedicine.setEnabled(true);
+                science.setEnabled(true);
+                lawAndPolitics.setEnabled(true);
+                education.setEnabled(true);
+                artsAndCulture.setEnabled(true);
+                environment.setEnabled(true);
+                psychology.setEnabled(true);
             }
         },1000);
 
@@ -91,15 +91,15 @@ public class VocabularyIntermediateStudyGroupActivity extends AppCompatActivity 
                 });
 
         back.setOnClickListener(v -> finish());
-        colors.setOnClickListener(v -> startActivity(arrayList.get(0).getType(), arrayList.get(0).getHeading(), arrayList.get(0).getInfo()));
-        food.setOnClickListener(v -> startActivity(arrayList.get(1).getType(), arrayList.get(1).getHeading(), arrayList.get(1).getInfo()));
-        animals.setOnClickListener(v -> startActivity(arrayList.get(2).getType(), arrayList.get(2).getHeading(), arrayList.get(2).getInfo()));
-        clothing.setOnClickListener(v -> startActivity(arrayList.get(3).getType(), arrayList.get(3).getHeading(), arrayList.get(3).getInfo()));
-        transport.setOnClickListener(v -> startActivity(arrayList.get(4).getType(), arrayList.get(4).getHeading(), arrayList.get(4).getInfo()));
-        bodyParts.setOnClickListener(v -> startActivity(arrayList.get(5).getType(), arrayList.get(5).getHeading(), arrayList.get(5).getInfo()));
-        jobs.setOnClickListener(v -> startActivity(arrayList.get(6).getType(), arrayList.get(6).getHeading(), arrayList.get(6).getInfo()));
-        travel.setOnClickListener(v -> startActivity(arrayList.get(7).getType(), arrayList.get(7).getHeading(), arrayList.get(7).getInfo()));
-        sports.setOnClickListener(v -> startActivity(arrayList.get(8).getType(), arrayList.get(8).getHeading(), arrayList.get(8).getInfo()));
+        technology.setOnClickListener(v -> startActivity(arrayList.get(9).getType(), arrayList.get(9).getHeading(), arrayList.get(9).getInfo()));
+        business.setOnClickListener(v -> startActivity(arrayList.get(10).getType(), arrayList.get(10).getHeading(), arrayList.get(10).getInfo()));
+        healthAndMedicine.setOnClickListener(v -> startActivity(arrayList.get(11).getType(), arrayList.get(11).getHeading(), arrayList.get(11).getInfo()));
+        science.setOnClickListener(v -> startActivity(arrayList.get(12).getType(), arrayList.get(12).getHeading(), arrayList.get(12).getInfo()));
+        lawAndPolitics.setOnClickListener(v -> startActivity(arrayList.get(13).getType(), arrayList.get(13).getHeading(), arrayList.get(13).getInfo()));
+        education.setOnClickListener(v -> startActivity(arrayList.get(14).getType(), arrayList.get(14).getHeading(), arrayList.get(14).getInfo()));
+        artsAndCulture.setOnClickListener(v -> startActivity(arrayList.get(15).getType(), arrayList.get(15).getHeading(), arrayList.get(15).getInfo()));
+        environment.setOnClickListener(v -> startActivity(arrayList.get(16).getType(), arrayList.get(7).getHeading(), arrayList.get(7).getInfo()));
+        psychology.setOnClickListener(v -> startActivity(arrayList.get(17).getType(), arrayList.get(8).getHeading(), arrayList.get(8).getInfo()));
 
     }
     void startActivity(String type, String heading, String info){

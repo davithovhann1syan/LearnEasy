@@ -34,14 +34,14 @@
             android:padding="@dimen/_18sdp">
 
             <TextView
-                android:id="@+id/nouns"
+                android:id="@+id/complex_sentences"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_13sdp"
                 android:background="@drawable/button_background_style"
                 android:paddingHorizontal="25dp"
                 android:paddingVertical="@dimen/_12sdp"
-                android:text="@string/nouns"
+                android:text="Complex sentences and advanced sentence structure"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
                 android:textSize="@dimen/_16ssp"
@@ -50,7 +50,7 @@
 
             <TextView
 
-                android:id="@+id/pronouns"
+                android:id="@+id/complex_verb_tenses"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_10sdp"
@@ -58,7 +58,7 @@
                 android:paddingHorizontal="25dp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:paddingVertical="@dimen/_12sdp"
-                android:text="@string/pronouns"
+                android:text="Advanced verb tenses and forms"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
                 android:textSize="@dimen/_16ssp"
@@ -67,7 +67,7 @@
 
             <TextView
 
-                android:id="@+id/verbs"
+                android:id="@+id/complex_noun_pronoun_usage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_10sdp"
@@ -75,7 +75,7 @@
                 android:paddingHorizontal="25dp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:paddingVertical="@dimen/_12sdp"
-                android:text="@string/verbs"
+                android:text="Advanced noun and pronoun usage"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
                 android:textSize="@dimen/_16ssp"
@@ -84,7 +84,7 @@
 
             <TextView
 
-                android:id="@+id/adverbs"
+                android:id="@+id/complex_adjective_adverb_usage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_10sdp"
@@ -92,7 +92,7 @@
                 android:paddingHorizontal="25dp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:paddingVertical="@dimen/_12sdp"
-                android:text="@string/adverbs"
+                android:text="Advanced adjective and adverb usage"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
                 android:textSize="@dimen/_16ssp"
@@ -101,7 +101,7 @@
 
             <TextView
 
-                android:id="@+id/adjectives"
+                android:id="@+id/complex_punctuation_mechanics"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_10sdp"
@@ -109,7 +109,7 @@
                 android:paddingHorizontal="25dp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:paddingVertical="@dimen/_12sdp"
-                android:text="@string/adjectives"
+                android:text="Advanced punctuation and mechanics"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
                 android:textSize="@dimen/_16ssp"
@@ -118,7 +118,7 @@
 
             <TextView
 
-                android:id="@+id/prepositions"
+                android:id="@+id/complex_style_usage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_10sdp"
@@ -126,7 +126,7 @@
                 android:paddingHorizontal="25dp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:paddingVertical="@dimen/_12sdp"
-                android:text="@string/prepositions"
+                android:text="Advanced style and usage"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
                 android:textSize="@dimen/_16ssp"
@@ -134,7 +134,7 @@
                 android:textAllCaps="true"/>
 
             <TextView
-                android:id="@+id/interjections_conjunction"
+                android:id="@+id/complex_syntax"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_10sdp"
@@ -142,7 +142,7 @@
                 android:paddingHorizontal="25dp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:paddingVertical="@dimen/_12sdp"
-                android:text="@string/prepositions"
+                android:text="Advanced Syntax"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
                 android:textSize="@dimen/_16ssp"
