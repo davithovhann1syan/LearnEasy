@@ -55,7 +55,7 @@
                     android:layout_margin="@dimen/_10sdp"
                     android:layout_weight="1"
                     android:background="@drawable/button_background_style"
-                    android:text="Economics and Finance"
+                    android:text="Economics"
                     android:textSize="@dimen/_10ssp"
                     android:textColor="@color/off_white"
                     android:textStyle="bold" />
@@ -67,7 +67,7 @@
                     android:layout_margin="@dimen/_10sdp"
                     android:layout_weight="1"
                     android:background="@drawable/button_background_style"
-                    android:text="International Relations"
+                    android:text="Int. Relations"
                     android:textSize="@dimen/_10ssp"
                     android:textColor="@color/off_white"
                     android:textStyle="bold" />
@@ -79,7 +79,7 @@
                     android:layout_margin="@dimen/_10sdp"
                     android:layout_weight="1"
                     android:background="@drawable/button_background_style"
-                    android:text="Information Technology"
+                    android:text="IT"
                     android:textSize="@dimen/_10ssp"
                     android:textColor="@color/off_white"
                     android:textStyle="bold" />
@@ -102,7 +102,7 @@
                     android:textSize="@dimen/_10ssp"
                     android:textColor="@color/off_white"
                     android:layout_margin = "@dimen/_10sdp"
-                    android:text="Marketing and Advertising"/>
+                    android:text="Advertising"/>
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/linguistics"
@@ -126,7 +126,7 @@
                     android:textColor="@color/off_white"
                     android:textSize="@dimen/_10ssp"
                     android:layout_margin = "@dimen/_10sdp"
-                    android:text="Journalism and Media"/>
+                    android:text="Media"/>
 
             </LinearLayout>
 

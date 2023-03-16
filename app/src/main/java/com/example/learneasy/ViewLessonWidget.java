@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.annotation.Nullable;
 
@@ -70,6 +71,7 @@ public class ViewLessonWidget extends LinearLayout {
                 intent.putExtra("TYPE", type);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
+
             }
         });
 

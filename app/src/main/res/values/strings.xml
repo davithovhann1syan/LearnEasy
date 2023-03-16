@@ -62,7 +62,7 @@
     <string name="your_score">YOUR SCORE</string>
     <string name="finish">finish</string>
     <string name="result">RESULT</string>
-    <string name="not_ready">Sorry this test is under construction</string>
+    <string name="not_ready">under construction</string>
     <string name="verify_email">PLEASE VERIFY EMAIL ADDRESS</string>
 
     <string-array name="languages">

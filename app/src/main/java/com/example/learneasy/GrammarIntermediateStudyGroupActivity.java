@@ -42,7 +42,6 @@ public class GrammarIntermediateStudyGroupActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         globalType = extras.getString("GLOBALTYPE");
 
-        Log.i("DAS", globalType+"");
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,16 +51,6 @@ public class GrammarIntermediateStudyGroupActivity extends AppCompatActivity {
 
             }
         });
-
-        /*
-        * information
-"test"
-subType
-"adjectives_lesson2"
-title
-"Lesson 2: Types of Adjectives"
-type
-"adjectives"*/
 
         sentenceStructure.setOnClickListener(v -> startActivity("sentenceStructure"));
         phrases.setOnClickListener(v -> startActivity("phrases"));

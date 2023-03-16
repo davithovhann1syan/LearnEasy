@@ -1,7 +1,9 @@
 package com.example.learneasy;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -13,6 +15,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -29,13 +32,14 @@ public class GrammarActivity extends AppCompatActivity {
 
     LinearLayout linearLayout;
 
+    ConstraintLayout mainLayout;
+
     FirebaseFirestore firebaseFirestore;
 
     ArrayList<ViewLessonWidget> viewLessonWidgetArrayList;
 
     ProgressBar progressBar;
 
-    String highScore;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -45,6 +49,7 @@ public class GrammarActivity extends AppCompatActivity {
         TextView back = findViewById(R.id.back);
         linearLayout = findViewById(R.id.lesson_linear_layout);
         progressBar = findViewById(R.id.progress_bar_grammar);
+        mainLayout = findViewById(R.id.grammar_layout);
 
         PreferenceManager preferenceManager = new PreferenceManager(getApplicationContext());
         back.setOnClickListener(new View.OnClickListener() {
@@ -93,6 +98,9 @@ public class GrammarActivity extends AppCompatActivity {
                                                     }
 
                                                     viewLessonWidgetArrayList.add(new ViewLessonWidget(getApplicationContext(), title, information , type, subType, score));
+
+
+
                                                 }
                                                 else {
                                                     Toast.makeText(GrammarActivity.this, ""+ Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
@@ -104,8 +112,11 @@ public class GrammarActivity extends AppCompatActivity {
                             (new Handler()).postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
-                                    viewLessonWidgetArrayList.sort(comparator);
-                                    drawWidgets(viewLessonWidgetArrayList);
+
+                                        viewLessonWidgetArrayList.sort(comparator);
+                                        drawWidgets(viewLessonWidgetArrayList);
+                                        Log.i("DAS", viewLessonWidgetArrayList.size()+"");
+
                                 }
                             }, 500);
                             progressBar.setVisibility(View.GONE);
@@ -122,11 +133,38 @@ public class GrammarActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String type = intent.getStringExtra("OPENTYPE");
 
+        int i = 0;
+
         for (ViewLessonWidget widget : list) {
             if (Objects.equals(widget.getType(), type)){
                 linearLayout.addView(widget);
+                i++;
             }
         }
+        if (i == 0){
+            alertDialogEmpty();
+        }
+    }
+
+    void alertDialogEmpty(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(GrammarActivity.this);
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_not_ready, null);
+        builder.setView(dialogView);
+        AlertDialog dialog = builder.create();
+
+        if (dialog.getWindow() != null){
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        }
+        dialog.show();
+        dialogView.findViewById(R.id.dialog_finish).setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+                mainLayout.setClickable(false);
+                finish();
+            }
+        });
     }
 
 }

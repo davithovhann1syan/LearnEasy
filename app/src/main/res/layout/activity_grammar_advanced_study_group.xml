@@ -33,6 +33,7 @@
             android:orientation="vertical"
             android:padding="@dimen/_18sdp">
 
+
             <TextView
                 android:id="@+id/complex_sentences"
                 android:layout_width="match_parent"
@@ -41,6 +42,8 @@
                 android:background="@drawable/button_background_style"
                 android:paddingHorizontal="25dp"
                 android:paddingVertical="@dimen/_12sdp"
+                android:singleLine="true"
+                android:scrollHorizontally="true"
                 android:text="Complex sentences and advanced sentence structure"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"

@@ -22,6 +22,16 @@ import java.util.Comparator;
 public class VocabularyAdvancedStudyGroupActivity extends AppCompatActivity {
     TextView back;
 
+    AppCompatButton economicsAndFinance;
+    AppCompatButton internationalRelation;
+    AppCompatButton it;
+    AppCompatButton marketingAndAdvertising;
+    AppCompatButton journalismAndMedia;
+    AppCompatButton linguistics;
+    AppCompatButton philosophy;
+    AppCompatButton history;
+    AppCompatButton geography;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,15 +39,15 @@ public class VocabularyAdvancedStudyGroupActivity extends AppCompatActivity {
         setContentView(R.layout.activity_vocabulary_advanced_study_group);
 
         back = findViewById(R.id.back);
-        AppCompatButton economicsAndFinance = findViewById(R.id.economics_and_finance);
-        AppCompatButton internationalRelation = findViewById(R.id.international_relations);
-        AppCompatButton it = findViewById(R.id.it);
-        AppCompatButton marketingAndAdvertising = findViewById(R.id.marketing_and_advertising);
-        AppCompatButton journalismAndMedia = findViewById(R.id.journalism_and_media);
-        AppCompatButton linguistics = findViewById(R.id.linguistics);
-        AppCompatButton philosophy = findViewById(R.id.philosophy);
-        AppCompatButton history = findViewById(R.id.history);
-        AppCompatButton geography = findViewById(R.id.geography);
+        economicsAndFinance = findViewById(R.id.economics_and_finance);
+        internationalRelation = findViewById(R.id.international_relations);
+        it = findViewById(R.id.it);
+        marketingAndAdvertising = findViewById(R.id.marketing_and_advertising);
+        journalismAndMedia = findViewById(R.id.journalism_and_media);
+        linguistics = findViewById(R.id.linguistics);
+        philosophy = findViewById(R.id.philosophy);
+        history = findViewById(R.id.history);
+        geography = findViewById(R.id.geography);
 
         FirebaseFirestore firebaseFirestore;
         ArrayList<VocabularyLessonModel> arrayList = new ArrayList<>();
@@ -103,11 +113,18 @@ public class VocabularyAdvancedStudyGroupActivity extends AppCompatActivity {
 
     }
     void startActivity(String type, String heading, String info){
-        Intent intent = new Intent(getApplicationContext(), VocabularyLessonActivity.class);
-        intent.putExtra("TYPE", type);
-        intent.putExtra("HEADING", heading);
-        intent.putExtra("INFO", info);
-        startActivity(intent);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(getApplicationContext(), VocabularyLessonActivity.class);
+                intent.putExtra("TYPE", type);
+                intent.putExtra("HEADING", heading);
+                intent.putExtra("INFO", info);
+                startActivity(intent);
+            }
+        },0);
+
     }
 
 }

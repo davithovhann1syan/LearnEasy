@@ -23,6 +23,7 @@ public class WelcomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
+
         next = findViewById(R.id.next_page);
         logOut = findViewById(R.id.log_out);
 

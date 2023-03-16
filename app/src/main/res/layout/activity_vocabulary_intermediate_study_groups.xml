@@ -79,7 +79,7 @@
                     android:layout_margin="@dimen/_10sdp"
                     android:layout_weight="1"
                     android:background="@drawable/button_background_style"
-                    android:text="Health and Medicine"
+                    android:text="Health"
                     android:textSize="@dimen/_10ssp"
                     android:textColor="@color/off_white"
                     android:textStyle="bold" />
@@ -114,7 +114,7 @@
                     android:textColor="@color/off_white"
                     android:textSize="@dimen/_10ssp"
                     android:layout_margin = "@dimen/_10sdp"
-                    android:text="Law and Politics"/>
+                    android:text="Law"/>
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/education"
@@ -147,7 +147,7 @@
                     android:textStyle="bold"
                     android:textColor="@color/off_white"
                     android:layout_margin = "@dimen/_10sdp"
-                    android:text="Arts and Culture"/>
+                    android:text="Art"/>
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/environment"

@@ -27,14 +27,13 @@ import com.google.firebase.firestore.QuerySnapshot;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 
 public class GrammarTestActivity extends AppCompatActivity implements View.OnClickListener{
-
-        int bestScore = 0;
 
         String subType, type;
 
@@ -44,9 +43,6 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
         TextView questionTextView;
         AppCompatButton ansA, ansB, ansC, ansD;
         AppCompatButton submitBtn, nextBtn;
-
-
-
 
         int score = 0;
 
@@ -110,24 +106,16 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
 
                                     if (Objects.equals(subType, type)){
                                         arrayList.add(new GrammarQuizModel(question,choices,answer,type));
-
                                     }
 
                                 }
 
                                 Collections.shuffle(arrayList);
-
                                 totalQuestion = arrayList.size();
                                 totalQuestionsTextView.setText(totalQuestion+"");
                                 currentQuestionView.setText(currentQuestionIndex+1+"");
 
                                 loadNewQuestion();
-
-
-
-
-
-
 
                             }
 
@@ -316,7 +304,7 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
-                finishActivity();
+                finish();
             }
         });
 
@@ -359,4 +347,8 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
         startActivity(intent);
 
     }
+
+
+
 }
+

@@ -39,8 +39,6 @@ public class GrammarAdvancedStudyGroupActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         globalType = extras.getString("GLOBALTYPE");
 
-        Log.i("DAS", globalType+"");
-
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

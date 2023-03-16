@@ -2,6 +2,7 @@ package com.example.learneasy;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -50,10 +51,10 @@ public class VocabularyLessonActivity extends AppCompatActivity {
 
         }
 
+
+
         heading.setText(name);
         information.setText(info);
-
-
         translateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,13 +75,9 @@ public class VocabularyLessonActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), VocabularyTestActivity.class);
                 intent.putExtra("TYPE", type);
-                Log.i("DAS", type+"");
-                startActivity(intent);
+                                startActivity(intent);
             }
         });
-
-
-
     }
 
     public String getType(){

@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/brown_dark"
-    tools:context=".GrammarActivity">
+    tools:context=".GrammarActivity"
+    android:id="@+id/grammar_layout">
 
     <ProgressBar
         android:id="@+id/progress_bar_grammar"

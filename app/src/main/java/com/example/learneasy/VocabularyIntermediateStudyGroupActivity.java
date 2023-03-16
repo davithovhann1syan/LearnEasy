@@ -98,8 +98,8 @@ public class VocabularyIntermediateStudyGroupActivity extends AppCompatActivity 
         lawAndPolitics.setOnClickListener(v -> startActivity(arrayList.get(13).getType(), arrayList.get(13).getHeading(), arrayList.get(13).getInfo()));
         education.setOnClickListener(v -> startActivity(arrayList.get(14).getType(), arrayList.get(14).getHeading(), arrayList.get(14).getInfo()));
         artsAndCulture.setOnClickListener(v -> startActivity(arrayList.get(15).getType(), arrayList.get(15).getHeading(), arrayList.get(15).getInfo()));
-        environment.setOnClickListener(v -> startActivity(arrayList.get(16).getType(), arrayList.get(7).getHeading(), arrayList.get(7).getInfo()));
-        psychology.setOnClickListener(v -> startActivity(arrayList.get(17).getType(), arrayList.get(8).getHeading(), arrayList.get(8).getInfo()));
+        environment.setOnClickListener(v -> startActivity(arrayList.get(16).getType(), arrayList.get(16).getHeading(), arrayList.get(16).getInfo()));
+        psychology.setOnClickListener(v -> startActivity(arrayList.get(17).getType(), arrayList.get(17).getHeading(), arrayList.get(17).getInfo()));
 
     }
     void startActivity(String type, String heading, String info){
