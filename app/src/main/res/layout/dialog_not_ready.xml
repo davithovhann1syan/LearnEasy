@@ -54,7 +54,7 @@
             android:layout_marginTop="@dimen/_8ssp"
             android:layout_marginBottom="@dimen/_6ssp"
             android:background="@drawable/button_background_style"
-            android:text="@string/finish"
+            android:text="OK"
             android:textColor="@color/white"
             android:layout_marginHorizontal="@dimen/_5sdp"
             android:textSize="@dimen/_10sdp"

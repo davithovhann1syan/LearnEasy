@@ -304,7 +304,7 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
-                finish();
+                finishActivity();
             }
         });
 
@@ -334,18 +334,36 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
+                //quizQuestions();
                 finishActivity();
+
             }
         });
     }
 
-    void finishActivity(){
+  void finishActivity(){
 
         Intent intent = new Intent(getApplicationContext(), GrammarActivity.class);
         intent.putExtra("OPENTYPE", type);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
 
+    }
+
+ //adding new questions in db
+    void quizQuestions(){
+
+        ArrayList<GrammarQuizModel> list = new ArrayList<>();
+
+
+        for (GrammarQuizModel x: list){
+            HashMap<String, Object> map = new HashMap<>();
+            map.put("question", x.question);
+            map.put("choices", x.choices);
+            map.put("answer", x.answer);
+            map.put("type", x.type);
+            firebaseFirestore.collection("grammarquiz").add(map);
+        }
     }
 
 
