@@ -42,7 +42,7 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
         TextView totalQuestionsTextView, currentQuestionView, goBack;
         TextView questionTextView;
         AppCompatButton ansA, ansB, ansC, ansD;
-        AppCompatButton submitBtn, nextBtn;
+        AppCompatButton submitBtn;
 
         int score = 0;
 

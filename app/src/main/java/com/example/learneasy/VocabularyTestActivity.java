@@ -140,7 +140,7 @@ public class VocabularyTestActivity extends AppCompatActivity implements View.On
 
 
         (new Handler()).postDelayed(new Runnable() {
-            @SuppressLint("UseCompatLoadingForDrawables")
+            @SuppressLint({"UseCompatLoadingForDrawables", "SetTextI18n"})
             @Override
             public void run() {
                 Drawable bg_style = getResources().getDrawable(R.drawable.button_background_style);
@@ -160,7 +160,7 @@ public class VocabularyTestActivity extends AppCompatActivity implements View.On
 
                     if (submitClicks == 1){
                         if (selectedAnswer == null){
-
+                            submitClicks = 0;
                             Toast.makeText(VocabularyTestActivity.this, "Please select any option", Toast.LENGTH_SHORT).show();
                         } else {
                             submitBtn.setText("NEXT");
@@ -205,7 +205,7 @@ public class VocabularyTestActivity extends AppCompatActivity implements View.On
 
 
 
-    @SuppressLint("UseCompatLoadingForDrawables")
+    @SuppressLint({"UseCompatLoadingForDrawables", "SetTextI18n"})
     void loadNewQuestion(){
 
         submitBtn.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style));
@@ -244,6 +244,12 @@ public class VocabularyTestActivity extends AppCompatActivity implements View.On
 
 
     void finishQuiz(){
+
+        submitBtn.setEnabled(false);
+        ansA.setEnabled(false);
+        ansB.setEnabled(false);
+        ansC.setEnabled(false);
+        ansD.setEnabled(false);
 
         if (arrayList.size() == 0){
             alertDialogEmpty();

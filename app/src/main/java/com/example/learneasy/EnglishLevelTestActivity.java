@@ -235,6 +235,26 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
 
 
     void finishQuiz(){
+
+        submitBtn.setEnabled(false);
+        ansA.setEnabled(false);
+        ansB.setEnabled(false);
+        ansC.setEnabled(false);
+        ansD.setEnabled(false);
+
+
+        if (arrayList.size() == 0){
+            alertDialogEmpty();
+        } else {
+            alertDialog();
+        }
+
+    }
+
+    @SuppressLint("SetTextI18n")
+
+    void alertDialog(){
+
         String passStatus = "Result";
 
         float x = (float) score / totalQuestion;
@@ -249,20 +269,6 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
             level = "intermediate";
         }
 
-        if (arrayList.size() == 0){
-            alertDialogEmpty();
-        } else {
-            alertDialog();
-        }
-
-    }
-
-    void finishActivity(){
-        recreate();
-    }
-
-    @SuppressLint("SetTextI18n")
-    void alertDialog(){
         AlertDialog.Builder builder = new AlertDialog.Builder(EnglishLevelTestActivity.this);
         View dialogView = getLayoutInflater().inflate(R.layout.dialog_result, null);
         TextView resultField = dialogView.findViewById(R.id.score_text);
@@ -274,7 +280,7 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
         }
         dialog.show();
 
-        resultField.setText("Your score is " + score + " out of " + totalQuestion);
+        resultField.setText("Your score is " + score + " out of " + totalQuestion + "so your english level is approximately: " + passStatus);
 
 
         dialogView.findViewById(R.id.dialog_finish).setOnClickListener(new View.OnClickListener() {
