@@ -151,7 +151,7 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
 
                     if (submitClicks == 1){
                         if (selectedAnswer == null){
-
+                            submitClicks = 0;
                             Toast.makeText(EnglishLevelTestActivity.this, "Please select any option", Toast.LENGTH_SHORT).show();
                         } else {
                             submitBtn.setText("NEXT");
