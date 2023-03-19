@@ -81,7 +81,7 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
             goBack.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    finish();
+                    finishActivity();
                 }
             });
 
@@ -161,6 +161,7 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
 
                     if (submitClicks == 1){
                         if (selectedAnswer == null){
+                            submitClicks = 0;
                             Toast.makeText(GrammarTestActivity.this, "Please select any option", Toast.LENGTH_SHORT).show();
                         } else {
                             submitBtn.setText("NEXT");
@@ -188,8 +189,9 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
                         } else{
                             currentQuestionView.setText(currentQuestionIndex + 1 + "");
                         }
+                            loadNewQuestion();
 
-                        loadNewQuestion();
+
                     }
                 }
 
@@ -247,6 +249,12 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
 
     }
         void finishQuiz(){
+
+            submitBtn.setEnabled(false);
+            ansA.setEnabled(false);
+            ansB.setEnabled(false);
+            ansC.setEnabled(false);
+            ansD.setEnabled(false);
 
             PreferenceManager preferenceManager = new PreferenceManager(getApplicationContext());
             preferenceManager.putString(subType, score+"");
@@ -334,9 +342,7 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
-                //quizQuestions();
                 finishActivity();
-
             }
         });
     }
@@ -347,24 +353,22 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
         intent.putExtra("OPENTYPE", type);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
-
     }
 
- //adding new questions in db
+/* //adding new questions in db
     void quizQuestions(){
 
-        ArrayList<GrammarQuizModel> list = new ArrayList<>();
+        ArrayList<VocabularyQuizModel> list = new ArrayList<>();
 
-
-        for (GrammarQuizModel x: list){
+        for (VocabularyQuizModel x: list){
             HashMap<String, Object> map = new HashMap<>();
             map.put("question", x.question);
             map.put("choices", x.choices);
             map.put("answer", x.answer);
             map.put("type", x.type);
-            firebaseFirestore.collection("grammarquiz").add(map);
+            firebaseFirestore.collection("vocabularyQuiz").add(map);
         }
-    }
+    }*/
 
 
 

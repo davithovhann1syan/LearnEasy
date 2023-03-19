@@ -38,7 +38,7 @@
             android:layout_marginBottom="@dimen/_3sdp"
             android:backgroundTint="@color/off_white"
             android:maxLines="1"
-            android:text="This quiz is not ready"
+            android:text="This section is not ready"
             android:textAlignment="center"
             android:textColor="@color/off_white"
             android:textSize="@dimen/_12sdp"
