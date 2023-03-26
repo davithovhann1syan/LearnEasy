@@ -42,7 +42,6 @@ public class VocabularyIntermediateStudyGroupActivity extends AppCompatActivity 
         FirebaseFirestore firebaseFirestore;
         ArrayList<VocabularyLessonModel> arrayList = new ArrayList<>();
 
-        back.setEnabled(true);
         technology.setEnabled(false);
         business.setEnabled(false);
         healthAndMedicine.setEnabled(false);
@@ -52,22 +51,6 @@ public class VocabularyIntermediateStudyGroupActivity extends AppCompatActivity 
         artsAndCulture.setEnabled(false);
         environment.setEnabled(false);
         psychology.setEnabled(false);
-
-        (new Handler()).postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                back.setEnabled(true);
-                technology.setEnabled(true);
-                business.setEnabled(true);
-                healthAndMedicine.setEnabled(true);
-                science.setEnabled(true);
-                lawAndPolitics.setEnabled(true);
-                education.setEnabled(true);
-                artsAndCulture.setEnabled(true);
-                environment.setEnabled(true);
-                psychology.setEnabled(true);
-            }
-        },1000);
 
         firebaseFirestore = FirebaseFirestore.getInstance();
 
@@ -84,6 +67,19 @@ public class VocabularyIntermediateStudyGroupActivity extends AppCompatActivity 
                                 long id = (long) documentSnapshot.get("id");
                                 arrayList.add(new VocabularyLessonModel(type, heading, info, id));
                                 Collections.sort(arrayList, Comparator.comparingLong(VocabularyLessonModel::getId));
+
+                                if (arrayList.size() == task.getResult().getDocuments().size()){
+                                    technology.setEnabled(true);
+                                    business.setEnabled(true);
+                                    healthAndMedicine.setEnabled(true);
+                                    science.setEnabled(true);
+                                    lawAndPolitics.setEnabled(true);
+                                    education.setEnabled(true);
+                                    artsAndCulture.setEnabled(true);
+                                    environment.setEnabled(true);
+                                    psychology.setEnabled(true);
+                                }
+
                             }
 
                         }

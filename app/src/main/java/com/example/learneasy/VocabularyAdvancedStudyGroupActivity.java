@@ -52,7 +52,6 @@ public class VocabularyAdvancedStudyGroupActivity extends AppCompatActivity {
         FirebaseFirestore firebaseFirestore;
         ArrayList<VocabularyLessonModel> arrayList = new ArrayList<>();
 
-        back.setEnabled(false);
         economicsAndFinance.setEnabled(false);
         internationalRelation.setEnabled(false);
         it.setEnabled(false);
@@ -63,21 +62,7 @@ public class VocabularyAdvancedStudyGroupActivity extends AppCompatActivity {
         history.setEnabled(false);
         geography.setEnabled(false);
 
-        (new Handler()).postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                back.setEnabled(true);
-                economicsAndFinance.setEnabled(true);
-                internationalRelation.setEnabled(true);
-                it.setEnabled(true);
-                marketingAndAdvertising.setEnabled(true);
-                journalismAndMedia.setEnabled(true);
-                linguistics.setEnabled(true);
-                philosophy.setEnabled(true);
-                history.setEnabled(true);
-                geography.setEnabled(true);
-            }
-        },1000);
+
 
         firebaseFirestore = FirebaseFirestore.getInstance();
 
@@ -94,6 +79,19 @@ public class VocabularyAdvancedStudyGroupActivity extends AppCompatActivity {
                                 long id = (long) documentSnapshot.get("id");
                                 arrayList.add(new VocabularyLessonModel(type, heading, info, id));
                                 Collections.sort(arrayList, Comparator.comparingLong(VocabularyLessonModel::getId));
+
+                                if (arrayList.size() == task.getResult().getDocuments().size()){
+                                    economicsAndFinance.setEnabled(true);
+                                    internationalRelation.setEnabled(true);
+                                    it.setEnabled(true);
+                                    marketingAndAdvertising.setEnabled(true);
+                                    journalismAndMedia.setEnabled(true);
+                                    linguistics.setEnabled(true);
+                                    philosophy.setEnabled(true);
+                                    history.setEnabled(true);
+                                    geography.setEnabled(true);
+                                }
+
                             }
 
                         }

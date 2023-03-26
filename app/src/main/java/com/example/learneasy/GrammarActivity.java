@@ -5,8 +5,6 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -74,6 +72,7 @@ public class GrammarActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()){
+                            Task<QuerySnapshot> snapshotTask = task;
                             for (DocumentSnapshot documentSnapshot: task.getResult()){
                                 String information = documentSnapshot.get("information").toString();
                                 String title = documentSnapshot.get("title").toString();
@@ -99,7 +98,10 @@ public class GrammarActivity extends AppCompatActivity {
 
                                                     viewLessonWidgetArrayList.add(new ViewLessonWidget(getApplicationContext(), title, information , type, subType, score));
 
-
+                                                    if (viewLessonWidgetArrayList.size() == snapshotTask.getResult().getDocuments().size()){
+                                                        viewLessonWidgetArrayList.sort(comparator);
+                                                        drawWidgets(viewLessonWidgetArrayList);
+                                                    }
 
                                                 }
                                                 else {
@@ -108,17 +110,9 @@ public class GrammarActivity extends AppCompatActivity {
 
                                             }
                                         });
+
+
                             }
-                            (new Handler()).postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-
-                                        viewLessonWidgetArrayList.sort(comparator);
-                                        drawWidgets(viewLessonWidgetArrayList);
-                                        Log.i("DAS", viewLessonWidgetArrayList.size()+"");
-
-                                }
-                            }, 500);
                             progressBar.setVisibility(View.GONE);
                         }
                     }

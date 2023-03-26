@@ -53,42 +53,39 @@ public class VocabularyBeginnerStudyGroupActivity extends AppCompatActivity {
         travel.setEnabled(false);
         sports.setEnabled(false);
 
-        (new Handler()).postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                back.setEnabled(true);
-                colors.setEnabled(true);
-                food.setEnabled(true);
-                animals.setEnabled(true);
-                clothing.setEnabled(true);
-                transport.setEnabled(true);
-                bodyParts.setEnabled(true);
-                jobs.setEnabled(true);
-                travel.setEnabled(true);
-                sports.setEnabled(true);
-            }
-        },1000);
-
         firebaseFirestore = FirebaseFirestore.getInstance();
 
         firebaseFirestore.collection("vocabularyLesson")
-                        .get()
-                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                            @Override
-                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                                if (task.isSuccessful()){
-                                    for (DocumentSnapshot documentSnapshot: task.getResult()){
-                                        String type = documentSnapshot.get("type").toString();
-                                        String heading = documentSnapshot.get("heading").toString();
-                                        String info = documentSnapshot.get("info").toString();
-                                        long id = (long) documentSnapshot.get("id");
-                                        arrayList.add(new VocabularyLessonModel(type, heading, info, id));
-                                        Collections.sort(arrayList, Comparator.comparingLong(VocabularyLessonModel::getId));
-                                    }
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()){
+                            for (DocumentSnapshot documentSnapshot: task.getResult()){
+                                String type = documentSnapshot.get("type").toString();
+                                String heading = documentSnapshot.get("heading").toString();
+                                String info = documentSnapshot.get("info").toString();
+                                long id = (long) documentSnapshot.get("id");
+                                arrayList.add(new VocabularyLessonModel(type, heading, info, id));
+                                Collections.sort(arrayList, Comparator.comparingLong(VocabularyLessonModel::getId));
 
+                                if (arrayList.size() == task.getResult().getDocuments().size()){
+                                    colors.setEnabled(true);
+                                    food.setEnabled(true);
+                                    animals.setEnabled(true);
+                                    clothing.setEnabled(true);
+                                    transport.setEnabled(true);
+                                    bodyParts.setEnabled(true);
+                                    jobs.setEnabled(true);
+                                    travel.setEnabled(true);
+                                    sports.setEnabled(true);
                                 }
+
                             }
-                        });
+
+                        }
+                    }
+                });
 
         back.setOnClickListener(v -> finish());
         colors.setOnClickListener(v -> startActivity(arrayList.get(0).getType(), arrayList.get(0).getHeading(), arrayList.get(0).getInfo()));

@@ -27,8 +27,6 @@ import java.util.List;
 
 public class EnglishLevelTestActivity extends AppCompatActivity implements View.OnClickListener{
 
-    int bestScore = 0;
-
     FirebaseFirestore firebaseFirestore;
 
     TextView totalQuestionsTextView, currentQuestionView, goBack;
@@ -41,7 +39,6 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
     int totalQuestion = 1;
     int currentQuestionIndex = 0;
     String level = "?";
-
     int submitClicks = 0;
 
 
@@ -131,7 +128,7 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
 
 
         (new Handler()).postDelayed(new Runnable() {
-            @SuppressLint("UseCompatLoadingForDrawables")
+            @SuppressLint({"UseCompatLoadingForDrawables", "SetTextI18n"})
             @Override
             public void run() {
                 Drawable bg_style = getResources().getDrawable(R.drawable.button_background_style);
@@ -146,15 +143,13 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
 
                     submitClicks++;
 
-
-
-
                     if (submitClicks == 1){
                         if (selectedAnswer == null){
                             submitClicks = 0;
                             Toast.makeText(EnglishLevelTestActivity.this, "Please select any option", Toast.LENGTH_SHORT).show();
                         } else {
                             submitBtn.setText("NEXT");
+
                             if (selectedAnswer.getText().toString().equals(arrayList.get(currentQuestionIndex).answer)) {
                                 rightAnswer.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_right));
                                 score++;
@@ -162,7 +157,6 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
                                 wrongAnswer.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_wrong));
                                 rightAnswer.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_selection_right));
                             }
-
                             ansA.setEnabled(false);
                             ansB.setEnabled(false);
                             ansC.setEnabled(false);
@@ -231,8 +225,6 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
         ansD.setText(arrayList.get(currentQuestionIndex).choices.get(3));
 
     }
-
-
 
     void finishQuiz(){
 
