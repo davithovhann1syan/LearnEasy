@@ -34,10 +34,10 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 public class LoginActivity extends AppCompatActivity {
-    private ConstraintLayout layout;
-    AppCompatButton btnlogin;
+    AppCompatButton btnLogin;
 
     TextView createNewAccount;
+
     EditText inputEmail, inputPassword;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     ProgressDialog progressDialog;
@@ -55,8 +55,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        layout = findViewById(R.id.main_layout);
-        btnlogin = findViewById(R.id.btn_login);
+        btnLogin = findViewById(R.id.btn_login);
         btnSignInGoogle = findViewById(R.id.btn_google);
         createNewAccount = findViewById(R.id.textViewSignUp);
         inputEmail = findViewById(R.id.input_email);
@@ -83,10 +82,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        if (mUser != null) {
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-        }
-
         createNewAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -96,7 +91,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        btnlogin.setOnClickListener(new View.OnClickListener() {
+        btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 closeKeyboard();
@@ -186,7 +181,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, WelcomeActivity.class);
                     startActivity(intent);
 
                 } else {
