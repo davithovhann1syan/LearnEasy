@@ -3,6 +3,8 @@ package com.example.learneasy;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -32,6 +34,8 @@ public class VocabularyAdvancedStudyGroupActivity extends AppCompatActivity {
     AppCompatButton history;
     AppCompatButton geography;
 
+    ProgressBar progressBar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +52,7 @@ public class VocabularyAdvancedStudyGroupActivity extends AppCompatActivity {
         philosophy = findViewById(R.id.philosophy);
         history = findViewById(R.id.history);
         geography = findViewById(R.id.geography);
+        progressBar = findViewById(R.id.progress_bar_vocabulary);
 
         FirebaseFirestore firebaseFirestore;
         ArrayList<VocabularyLessonModel> arrayList = new ArrayList<>();
@@ -81,6 +86,7 @@ public class VocabularyAdvancedStudyGroupActivity extends AppCompatActivity {
                                 Collections.sort(arrayList, Comparator.comparingLong(VocabularyLessonModel::getId));
 
                                 if (arrayList.size() == task.getResult().getDocuments().size()){
+                                    progressBar.setVisibility(View.INVISIBLE);
                                     economicsAndFinance.setEnabled(true);
                                     internationalRelation.setEnabled(true);
                                     it.setEnabled(true);

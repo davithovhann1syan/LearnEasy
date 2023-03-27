@@ -15,7 +15,7 @@
         android:layout_marginTop="@dimen/_50sdp"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/_30sdp"
-        android:text="Start your advanced grammar course"
+        android:text="@string/start_your_grammar_course"
         android:textSize="@dimen/_13ssp"
         android:textAllCaps="true"
         android:gravity="center"
@@ -42,7 +42,7 @@
                 android:background="@drawable/button_background_style"
                 android:paddingHorizontal="25dp"
                 android:paddingVertical="@dimen/_12sdp"
-                android:text="Complex sentences and advanced sentence structure"
+                android:text="@string/complex_sentences_and_advanced_sentence_structure"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
                 android:textSize="@dimen/_16ssp"
@@ -55,16 +55,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_10sdp"
-                android:background="@drawable/background_not_ready"
+                android:gravity="center"
+                android:paddingStart="@dimen/_50sdp"
+                android:background="@drawable/button_background_style"
                 android:paddingHorizontal="25dp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:paddingVertical="@dimen/_12sdp"
-                android:text="Advanced verb tenses and forms"
+                android:text="@string/advanced_verb_tenses_and_forms"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
                 android:textSize="@dimen/_16ssp"
                 android:textStyle="bold"
-                android:textAllCaps="true"/>
+                android:textAllCaps="true"
+                tools:ignore="RtlSymmetry"
+                app:drawableEndCompat="@drawable/drawable_under_construction" />
 
             <TextView
 
@@ -72,16 +76,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_10sdp"
-                android:background="@drawable/background_not_ready"
+                android:gravity="center"
+                android:paddingStart="@dimen/_50sdp"
+                android:background="@drawable/button_background_style"
                 android:paddingHorizontal="25dp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:paddingVertical="@dimen/_12sdp"
-                android:text="Advanced noun and pronoun usage"
+                android:text="@string/advanced_noun_and_pronoun_usage"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
                 android:textSize="@dimen/_16ssp"
                 android:textStyle="bold"
-                android:textAllCaps="true"/>
+                android:textAllCaps="true"
+                tools:ignore="RtlSymmetry"
+                app:drawableEndCompat="@drawable/drawable_under_construction" />
 
             <TextView
 
@@ -89,16 +97,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_10sdp"
-                android:background="@drawable/background_not_ready"
+                android:gravity="center"
+                android:paddingStart="@dimen/_50sdp"
+                android:background="@drawable/button_background_style"
                 android:paddingHorizontal="25dp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:paddingVertical="@dimen/_12sdp"
-                android:text="Advanced adjective and adverb usage"
+                android:text="@string/advanced_adjective_and_adverb_usage"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
                 android:textSize="@dimen/_16ssp"
                 android:textStyle="bold"
-                android:textAllCaps="true"/>
+                android:textAllCaps="true"
+                tools:ignore="RtlSymmetry"
+                app:drawableEndCompat="@drawable/drawable_under_construction" />
 
             <TextView
 
@@ -106,16 +118,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_10sdp"
-                android:background="@drawable/background_not_ready"
+                android:gravity="center"
+                android:paddingStart="@dimen/_50sdp"
+                android:background="@drawable/button_background_style"
                 android:paddingHorizontal="25dp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:paddingVertical="@dimen/_12sdp"
-                android:text="Advanced punctuation and mechanics"
+                android:text="@string/advanced_punctuation_and_mechanics"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
                 android:textSize="@dimen/_16ssp"
                 android:textStyle="bold"
-                android:textAllCaps="true"/>
+                android:textAllCaps="true"
+                tools:ignore="RtlSymmetry"
+                app:drawableEndCompat="@drawable/drawable_under_construction" />
 
             <TextView
 
@@ -123,32 +139,40 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_10sdp"
-                android:background="@drawable/background_not_ready"
+                android:gravity="center"
+                android:paddingStart="@dimen/_50sdp"
+                android:background="@drawable/button_background_style"
                 android:paddingHorizontal="25dp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:paddingVertical="@dimen/_12sdp"
-                android:text="Advanced style and usage"
+                android:text="@string/advanced_style_and_usage"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
                 android:textSize="@dimen/_16ssp"
                 android:textStyle="bold"
-                android:textAllCaps="true"/>
+                android:textAllCaps="true"
+                tools:ignore="RtlSymmetry"
+                app:drawableEndCompat="@drawable/drawable_under_construction" />
 
             <TextView
                 android:id="@+id/complex_syntax"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_10sdp"
-                android:background="@drawable/background_not_ready"
+                android:gravity="center"
+                android:paddingStart="@dimen/_50sdp"
+                android:background="@drawable/button_background_style"
                 android:paddingHorizontal="25dp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:paddingVertical="@dimen/_12sdp"
-                android:text="Advanced Syntax"
+                android:text="@string/advanced_syntax"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
                 android:textSize="@dimen/_16ssp"
                 android:textStyle="bold"
-                android:textAllCaps="true"/>
+                android:textAllCaps="true"
+                tools:ignore="RtlSymmetry"
+                app:drawableEndCompat="@drawable/drawable_under_construction" />
 
 
         </LinearLayout>

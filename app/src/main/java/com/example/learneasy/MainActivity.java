@@ -14,15 +14,25 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 public class MainActivity extends AppCompatActivity {
+    TextView beginner, intermediate, advanced, back;
+    AppCompatButton test;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView beginner = findViewById(R.id.beginner);
-        TextView intermediate = findViewById(R.id.intermediate);
-        TextView advanced = findViewById(R.id.advanced);
-        AppCompatButton test = findViewById(R.id.take_a_test);
+        beginner = findViewById(R.id.beginner);
+        intermediate = findViewById(R.id.intermediate);
+        advanced = findViewById(R.id.advanced);
+        test = findViewById(R.id.take_a_test);
+        back = findViewById(R.id.back);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         test.setOnClickListener(new View.OnClickListener() {
             @Override

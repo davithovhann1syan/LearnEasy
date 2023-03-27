@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="advanced"
+        android:text="@string/choose_vocabulary_field_to_study"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@color/off_white"
@@ -26,7 +26,22 @@
         android:layout_marginTop="@dimen/_20ssp"
         />
 
+
+    <ProgressBar
+        android:id="@+id/progress_bar_vocabulary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/choose_section"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/scroll_layout"
+        android:outlineAmbientShadowColor="@color/off_white"
+        android:indeterminateDrawable="@drawable/progress_bar_style"
+        />
+
     <ScrollView
+        android:id="@+id/scroll_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/choose_section"
@@ -55,7 +70,7 @@
                     android:layout_margin="@dimen/_10sdp"
                     android:layout_weight="1"
                     android:background="@drawable/button_background_style"
-                    android:text="Economics"
+                    android:text="@string/economics"
                     android:textSize="@dimen/_10ssp"
                     android:textColor="@color/off_white"
                     android:textStyle="bold" />
@@ -67,7 +82,7 @@
                     android:layout_margin="@dimen/_10sdp"
                     android:layout_weight="1"
                     android:background="@drawable/button_background_style"
-                    android:text="Int. Relations"
+                    android:text="@string/int_relations"
                     android:textSize="@dimen/_10ssp"
                     android:textColor="@color/off_white"
                     android:textStyle="bold" />
@@ -79,7 +94,7 @@
                     android:layout_margin="@dimen/_10sdp"
                     android:layout_weight="1"
                     android:background="@drawable/button_background_style"
-                    android:text="IT"
+                    android:text="@string/it"
                     android:textSize="@dimen/_10ssp"
                     android:textColor="@color/off_white"
                     android:textStyle="bold" />
@@ -102,7 +117,7 @@
                     android:textSize="@dimen/_10ssp"
                     android:textColor="@color/off_white"
                     android:layout_margin = "@dimen/_10sdp"
-                    android:text="Advertising"/>
+                    android:text="@string/advertising"/>
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/linguistics"
@@ -114,7 +129,7 @@
                     android:textColor="@color/off_white"
                     android:textSize="@dimen/_10ssp"
                     android:layout_margin = "@dimen/_10sdp"
-                    android:text="Linguistics"/>
+                    android:text="@string/linguistics"/>
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/journalism_and_media"
@@ -126,7 +141,7 @@
                     android:textColor="@color/off_white"
                     android:textSize="@dimen/_10ssp"
                     android:layout_margin = "@dimen/_10sdp"
-                    android:text="Media"/>
+                    android:text="@string/media"/>
 
             </LinearLayout>
 
@@ -147,7 +162,7 @@
                     android:textStyle="bold"
                     android:textColor="@color/off_white"
                     android:layout_margin = "@dimen/_10sdp"
-                    android:text="Philosophy"/>
+                    android:text="@string/philosophy"/>
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/history"
@@ -159,7 +174,7 @@
                     android:textStyle="bold"
                     android:textColor="@color/off_white"
                     android:layout_margin = "@dimen/_10sdp"
-                    android:text="History"/>
+                    android:text="@string/history"/>
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/geography"
@@ -171,7 +186,7 @@
                     android:textStyle="bold"
                     android:textColor="@color/off_white"
                     android:layout_margin = "@dimen/_10sdp"
-                    android:text="Geography"/>
+                    android:text="@string/geography"/>
 
             </LinearLayout>
 

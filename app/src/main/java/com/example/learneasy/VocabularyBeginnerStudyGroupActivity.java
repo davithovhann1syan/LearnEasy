@@ -3,6 +3,8 @@ package com.example.learneasy;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -23,6 +25,8 @@ public class VocabularyBeginnerStudyGroupActivity extends AppCompatActivity {
     TextView back;
     AppCompatButton colors, animals, food, clothing , transport, bodyParts, jobs, sports, travel;
 
+    ProgressBar progressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,11 +42,11 @@ public class VocabularyBeginnerStudyGroupActivity extends AppCompatActivity {
         jobs = findViewById(R.id.jobs);
         travel = findViewById(R.id.travel);
         sports = findViewById(R.id.sports);
+        progressBar = findViewById(R.id.progress_bar_vocabulary);
 
         FirebaseFirestore firebaseFirestore;
         ArrayList<VocabularyLessonModel> arrayList = new ArrayList<>();
 
-        back.setEnabled(false);
         colors.setEnabled(false);
         food.setEnabled(false);
         animals.setEnabled(false);
@@ -70,6 +74,7 @@ public class VocabularyBeginnerStudyGroupActivity extends AppCompatActivity {
                                 Collections.sort(arrayList, Comparator.comparingLong(VocabularyLessonModel::getId));
 
                                 if (arrayList.size() == task.getResult().getDocuments().size()){
+                                    progressBar.setVisibility(View.INVISIBLE);
                                     colors.setEnabled(true);
                                     food.setEnabled(true);
                                     animals.setEnabled(true);

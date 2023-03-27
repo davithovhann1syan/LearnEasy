@@ -3,6 +3,8 @@ package com.example.learneasy;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -23,6 +25,7 @@ public class VocabularyIntermediateStudyGroupActivity extends AppCompatActivity 
     TextView back;
     AppCompatButton technology, business, healthAndMedicine, science , lawAndPolitics, education, artsAndCulture, environment, psychology;
 
+    ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +41,7 @@ public class VocabularyIntermediateStudyGroupActivity extends AppCompatActivity 
         artsAndCulture = findViewById(R.id.arts_and_culture);
         environment = findViewById(R.id.environment);
         psychology = findViewById(R.id.psychology);
+        progressBar = findViewById(R.id.progress_bar_vocabulary);
 
         FirebaseFirestore firebaseFirestore;
         ArrayList<VocabularyLessonModel> arrayList = new ArrayList<>();
@@ -69,6 +73,7 @@ public class VocabularyIntermediateStudyGroupActivity extends AppCompatActivity 
                                 Collections.sort(arrayList, Comparator.comparingLong(VocabularyLessonModel::getId));
 
                                 if (arrayList.size() == task.getResult().getDocuments().size()){
+                                    progressBar.setVisibility(View.INVISIBLE);
                                     technology.setEnabled(true);
                                     business.setEnabled(true);
                                     healthAndMedicine.setEnabled(true);

@@ -8,11 +8,10 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.annotation.Nullable;
 
-public class ViewLessonWidget extends LinearLayout {
+public class GrammarLessonsView extends LinearLayout {
     TextView testButton;
     String name;
     String type;
@@ -22,7 +21,7 @@ public class ViewLessonWidget extends LinearLayout {
     String subType;
     String score = "0";
 
-    public ViewLessonWidget(Context context, String name, String info, String type, String subType, String score) {
+    public GrammarLessonsView(Context context, String name, String info, String type, String subType, String score) {
         super(context);
         LayoutInflater inflater = context.getSystemService(LayoutInflater.class);
         View v = inflater.inflate(R.layout.view_lesson_widget, this, true);
@@ -36,21 +35,21 @@ public class ViewLessonWidget extends LinearLayout {
         progressBar.setProgress(Integer.parseInt(score));
     }
 
-    public ViewLessonWidget(Context context, @Nullable AttributeSet attrs) {
+    public GrammarLessonsView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         LayoutInflater inflater = context.getSystemService(LayoutInflater.class);
         View v = inflater.inflate(R.layout.view_lesson_widget, this, true);
         init(context);
     }
 
-    public ViewLessonWidget(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public GrammarLessonsView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         LayoutInflater inflater = context.getSystemService(LayoutInflater.class);
         View v = inflater.inflate(R.layout.view_lesson_widget, this, true);
         init(context);
     }
 
-    public ViewLessonWidget(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public GrammarLessonsView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         LayoutInflater inflater = context.getSystemService(LayoutInflater.class);
         View v = inflater.inflate(R.layout.view_lesson_widget, this, true);

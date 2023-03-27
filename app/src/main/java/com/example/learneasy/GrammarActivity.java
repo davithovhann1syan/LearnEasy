@@ -34,7 +34,7 @@ public class GrammarActivity extends AppCompatActivity {
 
     FirebaseFirestore firebaseFirestore;
 
-    ArrayList<ViewLessonWidget> viewLessonWidgetArrayList;
+    ArrayList<GrammarLessonsView> grammarLessonsViewArrayList;
 
     ProgressBar progressBar;
 
@@ -57,9 +57,9 @@ public class GrammarActivity extends AppCompatActivity {
             }
         });
 
-        Comparator<ViewLessonWidget> comparator = new Comparator<ViewLessonWidget>() {
+        Comparator<GrammarLessonsView> comparator = new Comparator<GrammarLessonsView>() {
             @Override
-            public int compare(ViewLessonWidget viewLessonWidget, ViewLessonWidget t1) {
+            public int compare(GrammarLessonsView viewLessonWidget, GrammarLessonsView t1) {
                 return viewLessonWidget.name.compareTo(t1.name);
             }
         };
@@ -96,11 +96,11 @@ public class GrammarActivity extends AppCompatActivity {
                                                         score = task.getResult().getDocuments().get(0).get("SCORE")+"";
                                                     }
 
-                                                    viewLessonWidgetArrayList.add(new ViewLessonWidget(getApplicationContext(), title, information , type, subType, score));
+                                                    grammarLessonsViewArrayList.add(new GrammarLessonsView(getApplicationContext(), title, information , type, subType, score));
 
-                                                    if (viewLessonWidgetArrayList.size() == snapshotTask.getResult().getDocuments().size()){
-                                                        viewLessonWidgetArrayList.sort(comparator);
-                                                        drawWidgets(viewLessonWidgetArrayList);
+                                                    if (grammarLessonsViewArrayList.size() == snapshotTask.getResult().getDocuments().size()){
+                                                        grammarLessonsViewArrayList.sort(comparator);
+                                                        drawWidgets(grammarLessonsViewArrayList);
                                                     }
 
                                                 }
@@ -118,18 +118,18 @@ public class GrammarActivity extends AppCompatActivity {
                     }
                 });
 
-        viewLessonWidgetArrayList = new ArrayList<>();
+        grammarLessonsViewArrayList = new ArrayList<>();
 
     }
 
-    public void drawWidgets(ArrayList<ViewLessonWidget> list) {
+    public void drawWidgets(ArrayList<GrammarLessonsView> list) {
 
         Intent intent = getIntent();
         String type = intent.getStringExtra("OPENTYPE");
 
         int i = 0;
 
-        for (ViewLessonWidget widget : list) {
+        for (GrammarLessonsView widget : list) {
             if (Objects.equals(widget.getType(), type)){
                 linearLayout.addView(widget);
                 i++;

@@ -15,7 +15,7 @@
         android:layout_marginTop="@dimen/_50sdp"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/_30sdp"
-        android:text="Start your intermediate grammar course"
+        android:text="@string/start_your_grammar_course"
         android:textSize="@dimen/_13ssp"
         android:textAllCaps="true"
         android:gravity="center"
@@ -38,15 +38,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_13sdp"
+                android:gravity="center"
+                android:paddingStart="@dimen/_50sdp"
                 android:background="@drawable/button_background_style"
                 android:paddingHorizontal="25dp"
                 android:paddingVertical="@dimen/_12sdp"
-                android:text="Sentence Structure"
+                android:text="@string/sentence_structure"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
                 android:textSize="@dimen/_16ssp"
                 android:textStyle="bold"
-                android:textAllCaps="true"/>
+                android:textAllCaps="true"
+                app:drawableEndCompat="@drawable/drawable_under_construction"
+                tools:ignore="RtlSymmetry" />
 
             <TextView
 
@@ -54,16 +58,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_10sdp"
-                android:background="@drawable/background_not_ready"
+                android:gravity="center"
+                android:paddingStart="@dimen/_50sdp"
+                android:background="@drawable/button_background_style"
                 android:paddingHorizontal="25dp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:paddingVertical="@dimen/_12sdp"
-                android:text="Phrases"
+                android:text="@string/phrases"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
                 android:textSize="@dimen/_16ssp"
                 android:textStyle="bold"
-                android:textAllCaps="true"/>
+                android:textAllCaps="true"
+                app:drawableEndCompat="@drawable/drawable_under_construction"
+                tools:ignore="RtlSymmetry" />
 
             <TextView
 
@@ -71,16 +79,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_10sdp"
-                android:background="@drawable/background_not_ready"
+                android:gravity="center"
+                android:paddingStart="@dimen/_50sdp"
+                android:background="@drawable/button_background_style"
                 android:paddingHorizontal="25dp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:paddingVertical="@dimen/_12sdp"
-                android:text="Clauses"
+                android:text="@string/clauses"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
                 android:textSize="@dimen/_16ssp"
                 android:textStyle="bold"
-                android:textAllCaps="true"/>
+                android:textAllCaps="true"
+                app:drawableEndCompat="@drawable/drawable_under_construction"
+                tools:ignore="RtlSymmetry" />
 
             <TextView
 
@@ -88,16 +100,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_10sdp"
-                android:background="@drawable/background_not_ready"
+                android:gravity="center"
+                android:paddingStart="@dimen/_50sdp"
+                android:background="@drawable/button_background_style"
                 android:paddingHorizontal="25dp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:paddingVertical="@dimen/_12sdp"
-                android:text="Subject-Verb Agreement"
+                android:text="@string/subject_verb_agreement"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
                 android:textSize="@dimen/_16ssp"
                 android:textStyle="bold"
-                android:textAllCaps="true"/>
+                android:textAllCaps="true"
+                app:drawableEndCompat="@drawable/drawable_under_construction"
+                tools:ignore="RtlSymmetry" />
 
             <TextView
 
@@ -105,16 +121,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_10sdp"
-                android:background="@drawable/background_not_ready"
+                android:gravity="center"
+                android:paddingStart="@dimen/_50sdp"
+                android:background="@drawable/button_background_style"
                 android:paddingHorizontal="25dp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:paddingVertical="@dimen/_12sdp"
-                android:text="Modifiers"
+                android:text="@string/modifiers"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
                 android:textSize="@dimen/_16ssp"
                 android:textStyle="bold"
-                android:textAllCaps="true"/>
+                android:textAllCaps="true"
+                app:drawableEndCompat="@drawable/drawable_under_construction"
+                tools:ignore="RtlSymmetry" />
 
             <TextView
 
@@ -122,80 +142,100 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_10sdp"
-                android:background="@drawable/background_not_ready"
+                android:gravity="center"
+                android:paddingStart="@dimen/_50sdp"
+                android:background="@drawable/button_background_style"
                 android:paddingHorizontal="25dp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:paddingVertical="@dimen/_12sdp"
-                android:text="Punctuation"
+                android:text="@string/punctuation"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
                 android:textSize="@dimen/_16ssp"
                 android:textStyle="bold"
-                android:textAllCaps="true"/>
+                android:textAllCaps="true"
+                app:drawableEndCompat="@drawable/drawable_under_construction"
+                tools:ignore="RtlSymmetry" />
 
             <TextView
                 android:id="@+id/passive_voice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_10sdp"
-                android:background="@drawable/background_not_ready"
+                android:gravity="center"
+                android:paddingStart="@dimen/_50sdp"
+                android:background="@drawable/button_background_style"
                 android:paddingHorizontal="25dp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:paddingVertical="@dimen/_12sdp"
-                android:text="Passive Voice"
+                android:text="@string/passive_voice"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
                 android:textSize="@dimen/_16ssp"
                 android:textStyle="bold"
-                android:textAllCaps="true"/>
+                android:textAllCaps="true"
+                tools:ignore="RtlSymmetry"
+                app:drawableEndCompat="@drawable/drawable_under_construction" />
 
             <TextView
                 android:id="@+id/reported_speech"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_10sdp"
-                android:background="@drawable/background_not_ready"
+                android:gravity="center"
+                android:paddingStart="@dimen/_50sdp"
+                android:background="@drawable/button_background_style"
                 android:paddingHorizontal="25dp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:paddingVertical="@dimen/_12sdp"
-                android:text="Reported Speech"
+                android:text="@string/reported_speech"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
                 android:textSize="@dimen/_16ssp"
                 android:textStyle="bold"
-                android:textAllCaps="true"/>
+                android:textAllCaps="true"
+                tools:ignore="RtlSymmetry"
+                app:drawableEndCompat="@drawable/drawable_under_construction" />
 
             <TextView
                 android:id="@+id/conditional_sentences"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_10sdp"
-                android:background="@drawable/background_not_ready"
+                android:gravity="center"
+                android:paddingStart="@dimen/_50sdp"
+                android:background="@drawable/button_background_style"
                 android:paddingHorizontal="25dp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:paddingVertical="@dimen/_12sdp"
-                android:text="Conditional Sentences"
+                android:text="@string/conditional_sentences"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
                 android:textSize="@dimen/_16ssp"
                 android:textStyle="bold"
-                android:textAllCaps="true"/>
+                android:textAllCaps="true"
+                tools:ignore="RtlSymmetry"
+                app:drawableEndCompat="@drawable/drawable_under_construction" />
 
             <TextView
                 android:id="@+id/idiomatic_expressions"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_10sdp"
-                android:background="@drawable/background_not_ready"
+                android:gravity="center"
+                android:paddingStart="@dimen/_50sdp"
+                android:background="@drawable/button_background_style"
                 android:paddingHorizontal="25dp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:paddingVertical="@dimen/_12sdp"
-                android:text="Idiomatic Expressions"
+                android:text="@string/idiomatic_expressions"
                 android:textAlignment="center"
                 android:textColor="@color/off_white"
                 android:textSize="@dimen/_16ssp"
                 android:textStyle="bold"
-                android:textAllCaps="true"/>
+                android:textAllCaps="true"
+                tools:ignore="RtlSymmetry"
+                app:drawableEndCompat="@drawable/drawable_under_construction" />
 
 
 

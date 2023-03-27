@@ -119,10 +119,10 @@ public class LoginActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()){
-                                    Toast.makeText(LoginActivity.this, "Check your email", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(LoginActivity.this, "Check your email address", Toast.LENGTH_SHORT).show();
                                     dialog.dismiss();
                                 } else {
-                                    Toast.makeText(LoginActivity.this, "Unable to send, failed", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(LoginActivity.this, "Unable to send you email, please try again", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });
@@ -164,10 +164,10 @@ public class LoginActivity extends AppCompatActivity {
             try {
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 firebaseAuthWithGoogle(account.getIdToken());
-                Toast.makeText(LoginActivity.this, "Sign in Complete ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "Logged in successfully ", Toast.LENGTH_SHORT).show();
             } catch (ApiException e) {
 
-                Toast.makeText(LoginActivity.this, "Authentication failed with problems " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "Authentication failed with problem: " + e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }
 
@@ -200,7 +200,7 @@ public class LoginActivity extends AppCompatActivity {
 
         if (!email.matches(emailPattern)) {
             inputEmail.setError("Enter Valid email");
-        } else if (password.isEmpty() || password.length() < 6) {
+        } else if (password.isEmpty() || password.length() < 8) {
             inputPassword.setError("Enter valid password");
         } else {
             progressDialog.setMessage("Waiting for Login...");
@@ -218,7 +218,7 @@ public class LoginActivity extends AppCompatActivity {
                             sendUserToNextActivity();
                         } else {
                             progressDialog.dismiss();
-                            Toast.makeText(LoginActivity.this, "Verify your email address", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Please verify your email address before signing in", Toast.LENGTH_SHORT).show();
                         }
                     } else {
                         progressDialog.dismiss();

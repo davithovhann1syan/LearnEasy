@@ -129,6 +129,7 @@
             android:id="@+id/progress_bar"
             android:layout_centerInParent="true"
             android:visibility="gone"
+            android:indeterminateDrawable="@drawable/progress_bar_style"
             android:translationZ="@dimen/_10sdp"
             android:layout_width="@dimen/_25sdp"
             android:layout_height="@dimen/_25sdp"/>

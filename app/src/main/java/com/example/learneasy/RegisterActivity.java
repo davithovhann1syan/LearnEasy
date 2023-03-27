@@ -118,10 +118,10 @@ public class RegisterActivity extends AppCompatActivity {
             try {
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 firebaseAuthWithGoogle(account.getIdToken());
-                Toast.makeText(RegisterActivity.this, "Sign in Complete ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegisterActivity.this, "Signed in successfully", Toast.LENGTH_SHORT).show();
             } catch (ApiException e) {
 
-                Toast.makeText(RegisterActivity.this, "Authentication Failed Poblems with " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegisterActivity.this, "Authentication failed with problem: " + e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }
 
