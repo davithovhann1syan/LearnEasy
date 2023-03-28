@@ -190,6 +190,9 @@ public class TranslateActivity extends AppCompatActivity {
             case "Belarusian":
                 languageCode = FirebaseTranslateLanguage.BE;
                 break;
+            case "Ukrainian":
+                languageCode = FirebaseTranslateLanguage.UK;
+                break;
             case "Russian":
                 languageCode = FirebaseTranslateLanguage.RU;
                 break;
