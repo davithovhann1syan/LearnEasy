@@ -20,7 +20,6 @@ public class VocabularyLessonActivity extends AppCompatActivity {
     String type;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +33,7 @@ public class VocabularyLessonActivity extends AppCompatActivity {
 
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
-            if(extras == null) {
+            if (extras == null) {
                 name = null;
                 info = null;
                 type = null;
@@ -50,7 +49,6 @@ public class VocabularyLessonActivity extends AppCompatActivity {
             type = (String) savedInstanceState.getSerializable("TYPE");
 
         }
-
 
 
         heading.setText(name);
@@ -75,12 +73,12 @@ public class VocabularyLessonActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), VocabularyTestActivity.class);
                 intent.putExtra("TYPE", type);
-                                startActivity(intent);
+                startActivity(intent);
             }
         });
     }
 
-    public String getType(){
+    public String getType() {
         return type;
     }
 

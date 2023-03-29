@@ -33,101 +33,101 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 
-public class GrammarTestActivity extends AppCompatActivity implements View.OnClickListener{
+public class GrammarTestActivity extends AppCompatActivity implements View.OnClickListener {
 
-        String subType, type;
+    String subType, type;
 
-        FirebaseFirestore firebaseFirestore;
+    FirebaseFirestore firebaseFirestore;
 
-        TextView totalQuestionsTextView, currentQuestionView, goBack;
-        TextView questionTextView;
-        AppCompatButton ansA, ansB, ansC, ansD;
-        AppCompatButton submitBtn;
+    TextView totalQuestionsTextView, currentQuestionView, goBack;
+    TextView questionTextView;
+    AppCompatButton ansA, ansB, ansC, ansD;
+    AppCompatButton submitBtn;
 
-        int score = 0;
+    int score = 0;
 
-        int submitClicks = 0;
+    int submitClicks = 0;
 
-        int totalQuestion = 1;
-        int currentQuestionIndex = 0;
-        AppCompatButton rightAnswer, wrongAnswer, selectedAnswer;
+    int totalQuestion = 1;
+    int currentQuestionIndex = 0;
+    AppCompatButton rightAnswer, wrongAnswer, selectedAnswer;
 
-        ArrayList<GrammarQuizModel> arrayList = new ArrayList<>();
+    ArrayList<GrammarQuizModel> arrayList = new ArrayList<>();
 
-        @SuppressLint("SetTextI18n")
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_grammar_test_activity);
+    @SuppressLint("SetTextI18n")
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_grammar_test_activity);
 
-            goBack = findViewById(R.id.back);
-            totalQuestionsTextView = findViewById(R.id.total_questions);
-            questionTextView = findViewById(R.id.question);
-            ansA = findViewById(R.id.ans_A);
-            ansB = findViewById(R.id.ans_B);
-            ansC = findViewById(R.id.ans_C);
-            ansD = findViewById(R.id.ans_D);
-            submitBtn = findViewById(R.id.submit_btn);
-            currentQuestionView = findViewById(R.id.current_question);
+        goBack = findViewById(R.id.back);
+        totalQuestionsTextView = findViewById(R.id.total_questions);
+        questionTextView = findViewById(R.id.question);
+        ansA = findViewById(R.id.ans_A);
+        ansB = findViewById(R.id.ans_B);
+        ansC = findViewById(R.id.ans_C);
+        ansD = findViewById(R.id.ans_D);
+        submitBtn = findViewById(R.id.submit_btn);
+        currentQuestionView = findViewById(R.id.current_question);
 
-            ansA.setOnClickListener(this);
-            ansB.setOnClickListener(this);
-            ansC.setOnClickListener(this);
-            ansD.setOnClickListener(this);
-            submitBtn.setOnClickListener(this);
-            totalQuestionsTextView.setText(totalQuestion+"");
+        ansA.setOnClickListener(this);
+        ansB.setOnClickListener(this);
+        ansC.setOnClickListener(this);
+        ansD.setOnClickListener(this);
+        submitBtn.setOnClickListener(this);
+        totalQuestionsTextView.setText(totalQuestion + "");
 
 
-            goBack.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    finishActivity();
-                }
-            });
+        goBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finishActivity();
+            }
+        });
 
-            firebaseFirestore= FirebaseFirestore.getInstance();
+        firebaseFirestore = FirebaseFirestore.getInstance();
 
-            firebaseFirestore.collection("grammarquiz")
-                    .get()
-                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                        @Override
-                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                            if (task.isSuccessful()){
+        firebaseFirestore.collection("grammarquiz")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
 
-                                Bundle extras = getIntent().getExtras();
-                                subType = extras.getString("SUBTYPE");
-                                type = extras.getString("TYPE");
+                            Bundle extras = getIntent().getExtras();
+                            subType = extras.getString("SUBTYPE");
+                            type = extras.getString("TYPE");
 
-                                for (DocumentSnapshot documentSnapshot: task.getResult()) {
-                                    List<String> choices = (List<String>) documentSnapshot.get("choices");
-                                    String question = documentSnapshot.get("question").toString();
-                                    String answer = documentSnapshot.get("answer").toString();
-                                    String type = documentSnapshot.get("type").toString();
+                            for (DocumentSnapshot documentSnapshot : task.getResult()) {
+                                List<String> choices = (List<String>) documentSnapshot.get("choices");
+                                String question = documentSnapshot.get("question").toString();
+                                String answer = documentSnapshot.get("answer").toString();
+                                String type = documentSnapshot.get("type").toString();
 
-                                    if (Objects.equals(subType, type)){
-                                        arrayList.add(new GrammarQuizModel(question,choices,answer,type));
-                                    }
-
+                                if (Objects.equals(subType, type)) {
+                                    arrayList.add(new GrammarQuizModel(question, choices, answer, type));
                                 }
-
-                                Collections.shuffle(arrayList);
-                                totalQuestion = arrayList.size();
-                                totalQuestionsTextView.setText(totalQuestion+"");
-                                currentQuestionView.setText(currentQuestionIndex+1+"");
-
-                                loadNewQuestion();
 
                             }
 
+                            Collections.shuffle(arrayList);
+                            totalQuestion = arrayList.size();
+                            totalQuestionsTextView.setText(totalQuestion + "");
+                            currentQuestionView.setText(currentQuestionIndex + 1 + "");
+
+                            loadNewQuestion();
+
                         }
-                    });
+
+                    }
+                });
 
 
-        }
+    }
 
     public void onClick(View view) {
 
-        if (ansA.getText().equals(arrayList.get(currentQuestionIndex).answer)){
+        if (ansA.getText().equals(arrayList.get(currentQuestionIndex).answer)) {
             rightAnswer = ansA;
         } else if (ansB.getText().equals(arrayList.get(currentQuestionIndex).answer)) {
             rightAnswer = ansB;
@@ -152,15 +152,13 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
                 ansD.setBackgroundDrawable(bg_style);
                 AppCompatButton clickedButton = (AppCompatButton) view;
 
-                if(clickedButton.getId()==R.id.submit_btn){
+                if (clickedButton.getId() == R.id.submit_btn) {
 
                     submitClicks++;
 
 
-
-
-                    if (submitClicks == 1){
-                        if (selectedAnswer == null){
+                    if (submitClicks == 1) {
+                        if (selectedAnswer == null) {
                             submitClicks = 0;
                             Toast.makeText(GrammarTestActivity.this, "Please select any option", Toast.LENGTH_SHORT).show();
                         } else {
@@ -174,7 +172,6 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
                             }
 
 
-
                             ansA.setEnabled(false);
                             ansB.setEnabled(false);
                             ansC.setEnabled(false);
@@ -182,39 +179,36 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
                         }
                     }
 
-                    if (submitClicks == 2){
+                    if (submitClicks == 2) {
                         currentQuestionIndex++;
-                        if (currentQuestionIndex == arrayList.size()){
-                            currentQuestionView.setText(currentQuestionIndex+"");
-                        } else{
+                        if (currentQuestionIndex == arrayList.size()) {
+                            currentQuestionView.setText(currentQuestionIndex + "");
+                        } else {
                             currentQuestionView.setText(currentQuestionIndex + 1 + "");
                         }
-                            loadNewQuestion();
+                        loadNewQuestion();
 
 
                     }
-                }
-
-                else {
+                } else {
                     submitBtn.setBackgroundDrawable(bg_style);
                     selectedAnswer = clickedButton;
                     clickedButton.setBackgroundDrawable(bg_select);
 
-                    if (!selectedAnswer.getText().toString().equals(arrayList.get(currentQuestionIndex).answer)){
+                    if (!selectedAnswer.getText().toString().equals(arrayList.get(currentQuestionIndex).answer)) {
                         wrongAnswer = selectedAnswer;
                     }
 
                 }
             }
-        },200);
+        }, 200);
 
 
     }
 
 
-
     @SuppressLint("UseCompatLoadingForDrawables")
-    void loadNewQuestion(){
+    void loadNewQuestion() {
 
         submitBtn.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style));
 
@@ -235,8 +229,7 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
         selectedAnswer = null;
 
 
-
-        if(currentQuestionIndex == totalQuestion ){
+        if (currentQuestionIndex == totalQuestion) {
             finishQuiz();
             return;
         }
@@ -248,63 +241,63 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
         ansD.setText(arrayList.get(currentQuestionIndex).choices.get(3));
 
     }
-        void finishQuiz(){
 
-            submitBtn.setEnabled(false);
-            ansA.setEnabled(false);
-            ansB.setEnabled(false);
-            ansC.setEnabled(false);
-            ansD.setEnabled(false);
+    void finishQuiz() {
 
-            PreferenceManager preferenceManager = new PreferenceManager(getApplicationContext());
-            preferenceManager.putString(subType, score+"");
+        submitBtn.setEnabled(false);
+        ansA.setEnabled(false);
+        ansB.setEnabled(false);
+        ansC.setEnabled(false);
+        ansD.setEnabled(false);
 
-            firebaseFirestore.collection("userScores")
-                    .whereEqualTo("TYPE",type)
-                    .whereEqualTo("SUBTYPE", subType)
-                    .whereEqualTo("USERID", FirebaseAuth.getInstance().getCurrentUser().getUid())
-                    .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                    if (task.isSuccessful()){
-                        if (!task.getResult().isEmpty()){
-                            firebaseFirestore.collection("userScores").document(task.getResult().getDocuments().get(0).getId()).update("SCORE", score);
-                        } else {
-                            HashMap<String, Object> hashMap = new HashMap<>();
-                            hashMap.put("TYPE", type);
-                            hashMap.put("SUBTYPE", subType);
-                            hashMap.put("SCORE", score);
-                            hashMap.put("USERID", FirebaseAuth.getInstance().getCurrentUser().getUid());
-                            firebaseFirestore.collection("userScores").add(hashMap);
+        PreferenceManager preferenceManager = new PreferenceManager(getApplicationContext());
+        preferenceManager.putString(subType, score + "");
+
+        firebaseFirestore.collection("userScores")
+                .whereEqualTo("TYPE", type)
+                .whereEqualTo("SUBTYPE", subType)
+                .whereEqualTo("USERID", FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            if (!task.getResult().isEmpty()) {
+                                firebaseFirestore.collection("userScores").document(task.getResult().getDocuments().get(0).getId()).update("SCORE", score);
+                            } else {
+                                HashMap<String, Object> hashMap = new HashMap<>();
+                                hashMap.put("TYPE", type);
+                                hashMap.put("SUBTYPE", subType);
+                                hashMap.put("SCORE", score);
+                                hashMap.put("USERID", FirebaseAuth.getInstance().getCurrentUser().getUid());
+                                firebaseFirestore.collection("userScores").add(hashMap);
+                            }
                         }
                     }
-                }
-            });
+                });
 
-            if (arrayList.size() == 0){
-                alertDialogEmpty();
-            } else {
-                alertDialog();
-            }
-
+        if (arrayList.size() == 0) {
+            alertDialogEmpty();
+        } else {
+            alertDialog();
         }
 
+    }
 
 
     @SuppressLint("SetTextI18n")
-    void alertDialog(){
+    void alertDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(GrammarTestActivity.this);
         View dialogView = getLayoutInflater().inflate(R.layout.dialog_result, null);
         TextView resultField = dialogView.findViewById(R.id.score_text);
         builder.setView(dialogView);
         AlertDialog dialog = builder.create();
 
-        if (dialog.getWindow() != null){
+        if (dialog.getWindow() != null) {
             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
         }
         dialog.show();
 
-            resultField.setText("Your score is " + score + " out of " + totalQuestion);
+        resultField.setText("Your score is " + score + " out of " + totalQuestion);
 
 
         dialogView.findViewById(R.id.dialog_finish).setOnClickListener(new View.OnClickListener() {
@@ -327,13 +320,13 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
         });
     }
 
-    void alertDialogEmpty(){
+    void alertDialogEmpty() {
         AlertDialog.Builder builder = new AlertDialog.Builder(GrammarTestActivity.this);
         View dialogView = getLayoutInflater().inflate(R.layout.dialog_not_ready, null);
         builder.setView(dialogView);
         AlertDialog dialog = builder.create();
 
-        if (dialog.getWindow() != null){
+        if (dialog.getWindow() != null) {
             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
         }
         dialog.show();
@@ -347,7 +340,7 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
         });
     }
 
-  void finishActivity(){
+    void finishActivity() {
 
         Intent intent = new Intent(getApplicationContext(), GrammarActivity.class);
         intent.putExtra("OPENTYPE", type);
@@ -369,7 +362,6 @@ public class GrammarTestActivity extends AppCompatActivity implements View.OnCli
             firebaseFirestore.collection("vocabularyQuiz").add(map);
         }
     }*/
-
 
 
 }

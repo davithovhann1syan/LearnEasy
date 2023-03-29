@@ -146,7 +146,6 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
 
-
     private void PerformAuth() {
         String email = inputEmail.getText().toString();
         String password = inputPassword.getText().toString();
@@ -191,13 +190,13 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
-    void alertDialog(){
+    void alertDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
         View dialogView = getLayoutInflater().inflate(R.layout.dialog_verify_email, null);
         builder.setView(dialogView);
         AlertDialog dialog = builder.create();
 
-        if (dialog.getWindow() != null){
+        if (dialog.getWindow() != null) {
             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
         }
         dialog.show();

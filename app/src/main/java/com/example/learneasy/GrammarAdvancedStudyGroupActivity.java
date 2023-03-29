@@ -57,7 +57,8 @@ public class GrammarAdvancedStudyGroupActivity extends AppCompatActivity {
         complexSyntax.setOnClickListener(v -> startActivity("complexSyntax"));
 
     }
-    void startActivity(String type){
+
+    void startActivity(String type) {
         Intent intent = new Intent(getApplicationContext(), GrammarActivity.class);
         intent.putExtra("OPENTYPE", type);
         startActivity(intent);

@@ -64,7 +64,8 @@ public class GrammarIntermediateStudyGroupActivity extends AppCompatActivity {
         idiomaticExpressions.setOnClickListener(v -> startActivity("idiomaticExpressions"));
 
     }
-    void startActivity(String type){
+
+    void startActivity(String type) {
         Intent intent = new Intent(getApplicationContext(), GrammarActivity.class);
         intent.putExtra("OPENTYPE", type);
         startActivity(intent);

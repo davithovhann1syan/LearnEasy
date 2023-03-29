@@ -20,7 +20,6 @@
             android:text="@string/current_question"
             android:textColor="@color/off_white"
             android:textAllCaps="true"
-            android:layout_centerHorizontal="true"
             android:textSize="@dimen/_15ssp"
             />
 
@@ -28,10 +27,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/slash"
-            android:text="/"
+            android:text="@string/slash"
             android:textColor="@color/off_white"
             android:textAllCaps="true"
-            android:layout_centerHorizontal="true"
             android:textSize="@dimen/_15ssp"/>
 
         <TextView
@@ -41,7 +39,6 @@
             android:text="@string/total_questions"
             android:textColor="@color/off_white"
             android:textAllCaps="true"
-            android:layout_centerHorizontal="true"
             android:textSize="@dimen/_15ssp"/>
 
     </LinearLayout>

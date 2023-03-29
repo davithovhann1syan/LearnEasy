@@ -2,69 +2,66 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/lessonMainWidget"
-    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/button_background_style"
     android:layout_marginStart="@dimen/_12sdp"
     android:layout_marginTop="@dimen/_8sdp"
     android:layout_marginEnd="@dimen/_12sdp"
-    >
+    android:background="@drawable/button_background_style"
+    android:orientation="horizontal">
 
     <LinearLayout
         android:id="@+id/widget_lesson_text"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:background="@drawable/button_background_style"
         android:layout_weight="9"
-        >
+        android:background="@drawable/button_background_style"
+        android:gravity="center"
+        android:orientation="vertical">
 
         <TextView
-            android:textColor="@color/off_white"
-            android:textStyle="bold"
-            android:textAlignment="textStart"
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_3sdp"
             android:paddingStart="@dimen/_16sdp"
-            android:paddingEnd="@dimen/_8sdp"
             android:paddingTop="@dimen/_4sdp"
+            android:paddingEnd="@dimen/_8sdp"
             android:text=""
+            android:textAlignment="textStart"
+            android:textColor="@color/off_white"
             android:textSize="@dimen/_12ssp"
-            tools:ignore="RtlSymmetry"
-            android:layout_marginBottom="@dimen/_3sdp"/>
+            android:textStyle="bold"
+            tools:ignore="RtlSymmetry" />
 
         <ProgressBar
             android:id="@+id/simple_progress_bar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="@dimen/_16sdp"
             android:max="10"
-            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-            android:progressTint="@color/brown_dark"
-            android:progress="3"/>
+            android:paddingHorizontal="@dimen/_16sdp"
+            android:progress="3"
+            android:progressTint="@color/brown_dark" />
 
 
     </LinearLayout>
 
 
-
     <androidx.appcompat.widget.AppCompatButton
-        android:background="@drawable/button_test_background"
         android:id="@+id/test_button"
-        android:textStyle="bold"
-        android:textAllCaps="true"
-        android:textColor="@color/off_white"
-        android:gravity="center"
         android:layout_width="@dimen/_45sdp"
         android:layout_height="@dimen/_45sdp"
-        android:text="@string/test"
-        android:textSize="@dimen/_10ssp"
-        android:padding="@dimen/_3sdp"
-        android:layout_margin="@dimen/_3sdp"
         android:layout_gravity="center_vertical"
+        android:layout_margin="@dimen/_3sdp"
+        android:background="@drawable/button_test_background"
+        android:gravity="center"
+        android:padding="@dimen/_3sdp"
+        android:text="@string/test"
+        android:textAllCaps="true"
+        android:textColor="@color/off_white"
+        android:textSize="@dimen/_10ssp"
+        android:textStyle="bold"
         tools:ignore="SpeakableTextPresentCheck" />
 
 </LinearLayout>

@@ -15,7 +15,7 @@
         <item name="android:statusBarColor">@color/brown_dark</item>
         <!-- Customize your theme here. -->w
     </style>
-    
+
     <style name="NoActionBarTheme" parent="Theme.MyApplication">
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>

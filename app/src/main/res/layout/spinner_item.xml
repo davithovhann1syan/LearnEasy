@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/brown_light"
     android:gravity="center"
     android:padding="@dimen/_4sdp"
-    android:textSize="@dimen/_10ssp"
     android:textAlignment="center"
-    android:textColor="@color/brown_dark">
+    android:textColor="@color/brown_dark"
+    android:textSize="@dimen/_10ssp">
 
 </TextView>

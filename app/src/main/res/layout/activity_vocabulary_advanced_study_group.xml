@@ -1,62 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VocabularyAdvancedStudyGroupActivity"
     android:background="@color/brown_dark"
-    android:padding="@dimen/_15ssp">
+    android:padding="@dimen/_15ssp"
+    tools:context=".VocabularyAdvancedStudyGroupActivity">
 
     <TextView
         android:id="@+id/choose_section"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_20ssp"
         android:text="@string/choose_vocabulary_field_to_study"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@color/off_white"
         android:textSize="@dimen/_15ssp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="@dimen/_20ssp"
-        />
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <ProgressBar
         android:id="@+id/progress_bar_vocabulary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/choose_section"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/scroll_layout"
-        android:outlineAmbientShadowColor="@color/off_white"
         android:indeterminateDrawable="@drawable/progress_bar_style"
-        />
+        android:outlineAmbientShadowColor="@color/off_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/scroll_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/choose_section" />
 
     <ScrollView
         android:id="@+id/scroll_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/choose_section"
-        app:layout_constraintBottom_toTopOf="@+id/back">
+        app:layout_constraintBottom_toTopOf="@+id/back"
+        app:layout_constraintTop_toBottomOf="@id/choose_section">
 
         <LinearLayout
             android:id="@+id/themes_selection_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/choose_section"
+            android:gravity="center"
+            android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/back"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            android:orientation="vertical"
-            android:gravity="center">
+            app:layout_constraintTop_toBottomOf="@+id/choose_section">
 
             <LinearLayout
                 android:layout_width="@dimen/_289sdp"
@@ -71,8 +68,8 @@
                     android:layout_weight="1"
                     android:background="@drawable/button_background_style"
                     android:text="@string/economics"
-                    android:textSize="@dimen/_10ssp"
                     android:textColor="@color/off_white"
+                    android:textSize="@dimen/_10ssp"
                     android:textStyle="bold" />
 
                 <androidx.appcompat.widget.AppCompatButton
@@ -83,8 +80,8 @@
                     android:layout_weight="1"
                     android:background="@drawable/button_background_style"
                     android:text="@string/int_relations"
-                    android:textSize="@dimen/_10ssp"
                     android:textColor="@color/off_white"
+                    android:textSize="@dimen/_10ssp"
                     android:textStyle="bold" />
 
                 <androidx.appcompat.widget.AppCompatButton
@@ -95,8 +92,8 @@
                     android:layout_weight="1"
                     android:background="@drawable/button_background_style"
                     android:text="@string/it"
-                    android:textSize="@dimen/_10ssp"
                     android:textColor="@color/off_white"
+                    android:textSize="@dimen/_10ssp"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -104,44 +101,43 @@
             <LinearLayout
                 android:layout_width="@dimen/_289sdp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
+                android:orientation="horizontal">
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/marketing_and_advertising"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/_80sdp"
+                    android:layout_margin="@dimen/_10sdp"
                     android:layout_weight="1"
                     android:background="@drawable/button_background_style"
-                    android:textStyle="bold"
-                    android:textSize="@dimen/_10ssp"
+                    android:text="@string/advertising"
                     android:textColor="@color/off_white"
-                    android:layout_margin = "@dimen/_10sdp"
-                    android:text="@string/advertising"/>
+                    android:textSize="@dimen/_10ssp"
+                    android:textStyle="bold" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/linguistics"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/_80sdp"
+                    android:layout_margin="@dimen/_10sdp"
                     android:layout_weight="1"
                     android:background="@drawable/button_background_style"
-                    android:textStyle="bold"
+                    android:text="@string/linguistics"
                     android:textColor="@color/off_white"
                     android:textSize="@dimen/_10ssp"
-                    android:layout_margin = "@dimen/_10sdp"
-                    android:text="@string/linguistics"/>
+                    android:textStyle="bold" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/journalism_and_media"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/_80sdp"
+                    android:layout_margin="@dimen/_10sdp"
                     android:layout_weight="1"
                     android:background="@drawable/button_background_style"
-                    android:textStyle="bold"
+                    android:text="@string/media"
                     android:textColor="@color/off_white"
                     android:textSize="@dimen/_10ssp"
-                    android:layout_margin = "@dimen/_10sdp"
-                    android:text="@string/media"/>
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -149,50 +145,45 @@
             <LinearLayout
                 android:layout_width="@dimen/_289sdp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
+                android:orientation="horizontal">
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/philosophy"
                     android:layout_width="0dp"
-                    android:textSize="@dimen/_10ssp"
                     android:layout_height="@dimen/_80sdp"
+                    android:layout_margin="@dimen/_10sdp"
                     android:layout_weight="1"
                     android:background="@drawable/button_background_style"
-                    android:textStyle="bold"
+                    android:text="@string/philosophy"
                     android:textColor="@color/off_white"
-                    android:layout_margin = "@dimen/_10sdp"
-                    android:text="@string/philosophy"/>
+                    android:textSize="@dimen/_10ssp"
+                    android:textStyle="bold" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/history"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/_80sdp"
-                    android:textSize="@dimen/_10ssp"
+                    android:layout_margin="@dimen/_10sdp"
                     android:layout_weight="1"
                     android:background="@drawable/button_background_style"
-                    android:textStyle="bold"
+                    android:text="@string/history"
                     android:textColor="@color/off_white"
-                    android:layout_margin = "@dimen/_10sdp"
-                    android:text="@string/history"/>
+                    android:textSize="@dimen/_10ssp"
+                    android:textStyle="bold" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/geography"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/_80sdp"
+                    android:layout_margin="@dimen/_10sdp"
                     android:layout_weight="1"
-                    android:textSize="@dimen/_10ssp"
                     android:background="@drawable/button_background_style"
-                    android:textStyle="bold"
+                    android:text="@string/geography"
                     android:textColor="@color/off_white"
-                    android:layout_margin = "@dimen/_10sdp"
-                    android:text="@string/geography"/>
+                    android:textSize="@dimen/_10ssp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
-
-
-
-
 
 
         </LinearLayout>
@@ -201,25 +192,22 @@
     </ScrollView>
 
 
-
     <TextView
         android:id="@+id/back"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/_20sdp"
         android:layout_gravity="center"
-        android:textSize="@dimen/_10ssp"
         android:layout_marginHorizontal="@dimen/_80sdp"
-        android:textAlignment="center"
-        android:paddingVertical="@dimen/_8sdp"
-        android:paddingHorizontal="@dimen/_15sdp"
-        android:textColor="@color/off_white"
+        android:layout_marginBottom="@dimen/_20sdp"
         android:background="@drawable/button_background_style"
-        android:textAllCaps="true"
+        android:paddingHorizontal="@dimen/_15sdp"
+        android:paddingVertical="@dimen/_8sdp"
         android:text="@string/go_back"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-
-
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/off_white"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

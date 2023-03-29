@@ -1,90 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/dialog_forgot"
-    android:background="@drawable/white_box"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dialog_forgot"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/white_box">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dialog_box"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/dialog_box"
-        app:layout_constraintTop_toTopOf="parent"
         android:background="@drawable/dialog_background"
-        >
+        app:layout_constraintTop_toTopOf="parent">
+
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/forgot_title"
-            android:text="@string/forgot_password"
-            android:padding="@dimen/_12sdp"
-            android:textSize="@dimen/_14sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:background="@drawable/dialog_forget_style"
-            android:textColor="@color/white"
             android:drawablePadding="@dimen/_5sdp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:drawableLeftCompat="@drawable/baseline_lock_reset_24" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/desc"
-            android:text="@string/enter_your_email_address"
-            android:layout_marginStart="@dimen/_18sdp"
-            android:layout_marginEnd="@dimen/_18sdp"
-            android:layout_marginTop="@dimen/_7ssp"
+            android:padding="@dimen/_12sdp"
+            android:text="@string/forgot_password"
+            android:textColor="@color/white"
             android:textSize="@dimen/_14sdp"
-            android:textColor="@color/off_white"
-            app:layout_constraintTop_toBottomOf="@id/forgot_title"
-            app:layout_constraintBottom_toTopOf="@id/email_box"/>
-        <EditText
+            app:drawableLeftCompat="@drawable/baseline_lock_reset_24"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/desc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/email_box"
+            android:layout_marginStart="@dimen/_18sdp"
+            android:layout_marginTop="@dimen/_7ssp"
+            android:layout_marginEnd="@dimen/_18sdp"
+            android:text="@string/enter_your_email_address"
             android:textColor="@color/off_white"
-            android:textSize="@dimen/_18sdp"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintBottom_toTopOf="@id/email_box"
+            app:layout_constraintTop_toBottomOf="@id/forgot_title" />
+
+        <EditText
+            android:id="@+id/email_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/_18sdp"
             android:layout_marginBottom="@dimen/_28sdp"
-            android:maxLines="1"
             android:backgroundTint="@color/off_white"
-            app:layout_constraintStart_toStartOf="parent"
+            android:maxLines="1"
+            android:textColor="@color/off_white"
+            android:textSize="@dimen/_18sdp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/forgot_title"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/forgot_title" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_cancel"
             android:layout_width="0dp"
             android:layout_height="@dimen/_38sdp"
-            android:id="@+id/btn_cancel"
             android:layout_marginStart="@dimen/_18sdp"
+            android:layout_marginTop="@dimen/_8ssp"
             android:layout_marginEnd="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_6ssp"
-            android:layout_marginTop="@dimen/_8ssp"
+            android:background="@drawable/button_background_style"
             android:text="@string/cancel"
             android:textColor="@color/white"
             android:textSize="@dimen/_10sdp"
-            app:cornerRadius = "@dimen/_16sdp"
-            app:layout_constraintStart_toStartOf="parent"
-            android:background="@drawable/button_background_style"
-            app:layout_constraintTop_toBottomOf="@id/email_box"
+            app:cornerRadius="@dimen/_16sdp"
             app:layout_constraintBottom_toBottomOf="@id/dialog_box"
-            app:layout_constraintEnd_toStartOf="@id/btn_reset"/>
+            app:layout_constraintEnd_toStartOf="@id/btn_reset"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/email_box" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_reset"
             android:layout_width="0dp"
             android:layout_height="@dimen/_38sdp"
-            android:id="@+id/btn_reset"
-            android:text="@string/reset"
             android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_8ssp"
             android:layout_marginEnd="@dimen/_18sdp"
             android:layout_marginBottom="@dimen/_6ssp"
-            android:layout_marginTop="@dimen/_8ssp"
-            android:textColor="@color/white"
             android:background="@drawable/button_background_style_mirror"
+            android:text="@string/reset"
+            android:textColor="@color/white"
             android:textSize="@dimen/_10sdp"
-            app:cornerRadius = "@dimen/_16sdp"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:cornerRadius="@dimen/_16sdp"
             app:layout_constraintBottom_toBottomOf="@id/dialog_box"
-            app:layout_constraintStart_toEndOf="@id/btn_cancel"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_cancel" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

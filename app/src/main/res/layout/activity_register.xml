@@ -21,12 +21,12 @@
         android:hint="@string/confirm_password"
         android:inputType="textPassword"
         android:paddingStart="@dimen/_14sdp"
-        android:textSize="@dimen/_12ssp"
         android:paddingTop="@dimen/_10sdp"
         android:paddingEnd="@dimen/_10sdp"
         android:paddingBottom="@dimen/_10sdp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
+        android:textSize="@dimen/_12ssp"
         app:layout_constraintEnd_toEndOf="@+id/inputPasswordForRegistration"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/inputPasswordForRegistration"
@@ -43,7 +43,6 @@
         android:drawablePadding="@dimen/_10sdp"
         android:ems="10"
         android:hint="@string/password"
-        android:textSize="@dimen/_12ssp"
         android:inputType="textPassword"
         android:paddingStart="@dimen/_14sdp"
         android:paddingTop="@dimen/_10sdp"
@@ -51,6 +50,7 @@
         android:paddingBottom="@dimen/_10sdp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
+        android:textSize="@dimen/_12ssp"
         app:layout_constraintEnd_toEndOf="@+id/inputEmailForRegistration"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/inputEmailForRegistration"
@@ -72,15 +72,14 @@
         app:layout_constraintTop_toBottomOf="@+id/inputConfirmPasswordForRegistration" />
 
 
-
     <LinearLayout
         android:id="@+id/loginContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="@+id/btnRegister"
-        android:gravity="center_horizontal"
-        app:layout_constraintStart_toStartOf="@+id/btnRegister"
         android:layout_marginTop="@dimen/_14sdp"
+        android:gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/btnRegister"
+        app:layout_constraintStart_toStartOf="@+id/btnRegister"
         app:layout_constraintTop_toBottomOf="@+id/btnRegister">
 
 
@@ -89,23 +88,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
+            android:layout_marginEnd="@dimen/_8sdp"
             android:shadowColor="@color/white"
-            android:textSize="@dimen/_12ssp"
             android:text="@string/already_have_an_account"
             android:textColor="@color/white"
-            android:layout_marginEnd="@dimen/_8sdp"
-            />
+            android:textSize="@dimen/_12ssp" />
 
         <TextView
             android:id="@+id/alreadyHaveAccount"
-            android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:shadowColor="@color/white"
             android:text="@string/log_in"
-            android:textSize="@dimen/_12ssp"
             android:textColor="@color/white"
-            />
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold" />
 
 
     </LinearLayout>
@@ -114,11 +111,11 @@
         android:id="@+id/register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
         android:text="@string/register"
         android:textColor="@color/white"
         android:textSize="@dimen/_25ssp"
         android:textStyle="bold"
-        android:layout_marginTop="@dimen/_15sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -144,9 +141,9 @@
         android:paddingTop="@dimen/_10sdp"
         android:paddingEnd="@dimen/_10sdp"
         android:paddingBottom="@dimen/_10sdp"
-        android:textSize="@dimen/_12ssp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
+        android:textSize="@dimen/_12ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -158,9 +155,9 @@
         android:id="@+id/image_view"
         android:layout_width="@dimen/_150sdp"
         android:layout_height="@dimen/_100sdp"
-        android:contentDescription="@string/todo"
         android:layout_marginTop="@dimen/_20sdp"
         android:layout_marginBottom="@dimen/_20sdp"
+        android:contentDescription="@string/todo"
         app:layout_constraintBottom_toBottomOf="@id/register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

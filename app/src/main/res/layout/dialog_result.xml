@@ -1,32 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/dialog_result"
-    android:background="@drawable/white_box"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dialog_result"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/white_box">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dialog_box"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/dialog_box"
-        app:layout_constraintTop_toTopOf="parent"
         android:background="@drawable/dialog_background"
-        >
+        app:layout_constraintTop_toTopOf="parent">
+
         <TextView
+            android:id="@+id/result_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/result_title"
-            android:text="@string/result"
-            android:padding="@dimen/_12sdp"
-            android:textSize="@dimen/_14sdp"
             android:background="@drawable/dialog_forget_style"
-            android:textColor="@color/white"
             android:drawablePadding="@dimen/_5sdp"
+            android:padding="@dimen/_12sdp"
+            android:text="@string/result"
             android:textAlignment="center"
-            app:layout_constraintTop_toTopOf="parent"
-             />
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/score_text"
@@ -37,8 +35,8 @@
             android:layout_marginBottom="@dimen/_3sdp"
             android:backgroundTint="@color/off_white"
             android:maxLines="1"
-            android:textColor="@color/off_white"
             android:textAlignment="center"
+            android:textColor="@color/off_white"
             android:textSize="@dimen/_12sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -46,38 +44,38 @@
             app:layout_constraintVertical_bias="0.297" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/dialog_finish"
             android:layout_width="0dp"
             android:layout_height="@dimen/_38sdp"
-            android:id="@+id/dialog_finish"
             android:layout_marginStart="@dimen/_18sdp"
+            android:layout_marginTop="@dimen/_8ssp"
             android:layout_marginEnd="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_6ssp"
-            android:layout_marginTop="@dimen/_8ssp"
+            android:background="@drawable/button_background_style"
             android:text="@string/finish"
             android:textColor="@color/white"
             android:textSize="@dimen/_10sdp"
-            app:cornerRadius = "@dimen/_16sdp"
-            app:layout_constraintStart_toStartOf="parent"
-            android:background="@drawable/button_background_style"
-            app:layout_constraintTop_toBottomOf="@id/score_text"
+            app:cornerRadius="@dimen/_16sdp"
             app:layout_constraintBottom_toBottomOf="@id/dialog_box"
-            app:layout_constraintEnd_toStartOf="@id/restart_quiz"/>
+            app:layout_constraintEnd_toStartOf="@id/restart_quiz"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/score_text" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/restart_quiz"
             android:layout_width="0dp"
             android:layout_height="@dimen/_38sdp"
-            android:id="@+id/restart_quiz"
-            android:text="@string/restart"
             android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_8ssp"
             android:layout_marginEnd="@dimen/_18sdp"
             android:layout_marginBottom="@dimen/_6ssp"
-            android:layout_marginTop="@dimen/_8ssp"
-            android:textColor="@color/white"
             android:background="@drawable/button_background_style"
+            android:text="@string/restart"
+            android:textColor="@color/white"
             android:textSize="@dimen/_10sdp"
-            app:cornerRadius = "@dimen/_16sdp"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:cornerRadius="@dimen/_16sdp"
             app:layout_constraintBottom_toBottomOf="@id/dialog_box"
-            app:layout_constraintStart_toEndOf="@id/dialog_finish"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/dialog_finish" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

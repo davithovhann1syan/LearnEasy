@@ -1,32 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/dialog_result"
-    android:background="@drawable/white_box"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dialog_result"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/white_box">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dialog_box"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/dialog_box"
-        app:layout_constraintTop_toTopOf="parent"
         android:background="@drawable/dialog_background"
-        >
+        app:layout_constraintTop_toTopOf="parent">
+
         <TextView
+            android:id="@+id/result_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/result_title"
-            android:text="@string/verify_email"
-            android:padding="@dimen/_12sdp"
-            android:textSize="@dimen/_14sdp"
             android:background="@drawable/dialog_forget_style"
-            android:textColor="@color/white"
             android:drawablePadding="@dimen/_5sdp"
+            android:padding="@dimen/_12sdp"
+            android:text="@string/verify_email"
             android:textAlignment="center"
-            app:layout_constraintTop_toTopOf="parent"
-             />
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/score_text"
@@ -36,9 +34,9 @@
             android:layout_marginStart="4dp"
             android:layout_marginBottom="@dimen/_3sdp"
             android:backgroundTint="@color/off_white"
-            android:textAlignment="center"
-            android:text="You've received email, please check your inbox"
             android:maxLines="1"
+            android:text="You've received email, please check your inbox"
+            android:textAlignment="center"
             android:textColor="@color/off_white"
             android:textSize="@dimen/_12sdp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -50,9 +48,9 @@
             android:id="@+id/dialog_finish"
             android:layout_width="0dp"
             android:layout_height="@dimen/_38sdp"
+            android:layout_marginHorizontal="@dimen/_5sdp"
             android:layout_marginTop="@dimen/_8ssp"
             android:layout_marginBottom="@dimen/_6ssp"
-            android:layout_marginHorizontal="@dimen/_5sdp"
             android:background="@drawable/button_background_style"
             android:text="ok"
             android:textColor="@color/white"

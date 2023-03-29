@@ -109,13 +109,6 @@
     <string name="art">Art</string>
     <string name="environment">Environment</string>
     <string name="psychology">Psychology</string>
-
-    <string-array name="languages">
-        <item>English</item>
-        <item>Spanish</item>
-        <item>German</item>
-        <item>French</item>
-        <item>Italian</item>
-    </string-array>
+    <string name="slash">/</string>
 
 </resources>

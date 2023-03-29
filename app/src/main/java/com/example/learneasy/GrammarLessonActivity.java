@@ -26,7 +26,7 @@ public class GrammarLessonActivity extends AppCompatActivity {
 
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
-            if(extras == null) {
+            if (extras == null) {
                 name = null;
                 info = null;
                 type = null;
@@ -48,7 +48,6 @@ public class GrammarLessonActivity extends AppCompatActivity {
             subType = (String) savedInstanceState.getSerializable("SUBTYPE");
 
         }
-
 
 
         setContentView(R.layout.activity_grammar_lesson);
@@ -73,12 +72,13 @@ public class GrammarLessonActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();            }
+                finish();
+            }
         });
 
     }
 
-    public String getType(){
+    public String getType() {
         return type;
     }
 

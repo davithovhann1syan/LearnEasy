@@ -9,6 +9,7 @@ public class VocabularyQuizModel {
     public String type;
 
     public VocabularyQuizModel(String question, List<String> choices, String answer, String type) {
+
         this.question = question;
         this.choices = choices;
         this.answer = answer;

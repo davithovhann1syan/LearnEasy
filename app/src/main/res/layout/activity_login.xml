@@ -141,7 +141,7 @@
         android:drawablePadding="@dimen/_10sdp"
         android:ems="10"
         android:textSize="@dimen/_12ssp"
-        android:hint="Password"
+        android:hint="@string/password"
         android:inputType="textPassword"
         android:paddingStart="@dimen/_14sdp"
         android:paddingTop="@dimen/_10sdp"

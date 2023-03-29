@@ -26,7 +26,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
-public class VocabularyTestActivity extends AppCompatActivity implements View.OnClickListener{
+public class VocabularyTestActivity extends AppCompatActivity implements View.OnClickListener {
 
     int bestScore = 0;
 
@@ -90,27 +90,27 @@ public class VocabularyTestActivity extends AppCompatActivity implements View.On
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()){
+                        if (task.isSuccessful()) {
 
                             Bundle extras = getIntent().getExtras();
                             typeLesson = extras.getString("TYPE");
-                            Log.i("DAS", typeLesson+"");
-                            for (DocumentSnapshot documentSnapshot: task.getResult()) {
+                            Log.i("DAS", typeLesson + "");
+                            for (DocumentSnapshot documentSnapshot : task.getResult()) {
                                 String question = documentSnapshot.get("question").toString();
                                 List<String> choices = (List<String>) documentSnapshot.get("choices");
                                 String answer = documentSnapshot.get("answer").toString();
                                 String type = documentSnapshot.get("type").toString();
 
-                                if (Objects.equals(typeLesson, type)){
-                                    arrayList.add(new VocabularyQuizModel(question,choices,answer,type));
+                                if (Objects.equals(typeLesson, type)) {
+                                    arrayList.add(new VocabularyQuizModel(question, choices, answer, type));
 
                                 }
                             }
 
                             Collections.shuffle(arrayList);
                             totalQuestion = arrayList.size();
-                            totalQuestionsTextView.setText(totalQuestion+"");
-                            currentQuestionView.setText(currentQuestionIndex+1+"");
+                            totalQuestionsTextView.setText(totalQuestion + "");
+                            currentQuestionView.setText(currentQuestionIndex + 1 + "");
 
                             loadNewQuestion();
 
@@ -120,13 +120,12 @@ public class VocabularyTestActivity extends AppCompatActivity implements View.On
                 });
 
 
-
     }
 
 
     public void onClick(View view) {
 
-        if (ansA.getText().equals(arrayList.get(currentQuestionIndex).answer)){
+        if (ansA.getText().equals(arrayList.get(currentQuestionIndex).answer)) {
             rightAnswer = ansA;
         } else if (ansB.getText().equals(arrayList.get(currentQuestionIndex).answer)) {
             rightAnswer = ansB;
@@ -151,15 +150,13 @@ public class VocabularyTestActivity extends AppCompatActivity implements View.On
                 ansD.setBackgroundDrawable(bg_style);
                 AppCompatButton clickedButton = (AppCompatButton) view;
 
-                if(clickedButton.getId()==R.id.submit_btn){
+                if (clickedButton.getId() == R.id.submit_btn) {
 
                     submitClicks++;
 
 
-
-
-                    if (submitClicks == 1){
-                        if (selectedAnswer == null){
+                    if (submitClicks == 1) {
+                        if (selectedAnswer == null) {
                             submitClicks = 0;
                             Toast.makeText(VocabularyTestActivity.this, "Please select any option", Toast.LENGTH_SHORT).show();
                         } else {
@@ -179,34 +176,31 @@ public class VocabularyTestActivity extends AppCompatActivity implements View.On
                         }
                     }
 
-                    if (submitClicks == 2){
+                    if (submitClicks == 2) {
                         currentQuestionIndex++;
                         currentQuestionView.setText(currentQuestionIndex + 1 + "");
                         loadNewQuestion();
                     }
 
-                }
-
-                else {
+                } else {
                     submitBtn.setBackgroundDrawable(bg_style);
                     selectedAnswer = clickedButton;
                     clickedButton.setBackgroundDrawable(bg_select);
 
-                    if (!selectedAnswer.getText().toString().equals(arrayList.get(currentQuestionIndex).answer)){
+                    if (!selectedAnswer.getText().toString().equals(arrayList.get(currentQuestionIndex).answer)) {
                         wrongAnswer = selectedAnswer;
                     }
 
                 }
             }
-        },200);
+        }, 200);
 
 
     }
 
 
-
     @SuppressLint({"UseCompatLoadingForDrawables", "SetTextI18n"})
-    void loadNewQuestion(){
+    void loadNewQuestion() {
 
         submitBtn.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style));
 
@@ -227,8 +221,7 @@ public class VocabularyTestActivity extends AppCompatActivity implements View.On
         selectedAnswer = null;
 
 
-
-        if(currentQuestionIndex == totalQuestion ){
+        if (currentQuestionIndex == totalQuestion) {
             finishQuiz();
             return;
         }
@@ -242,8 +235,7 @@ public class VocabularyTestActivity extends AppCompatActivity implements View.On
     }
 
 
-
-    void finishQuiz(){
+    void finishQuiz() {
 
         submitBtn.setEnabled(false);
         ansA.setEnabled(false);
@@ -251,7 +243,7 @@ public class VocabularyTestActivity extends AppCompatActivity implements View.On
         ansC.setEnabled(false);
         ansD.setEnabled(false);
 
-        if (arrayList.size() == 0){
+        if (arrayList.size() == 0) {
             alertDialogEmpty();
         } else {
             alertDialog();
@@ -260,14 +252,14 @@ public class VocabularyTestActivity extends AppCompatActivity implements View.On
     }
 
     @SuppressLint("SetTextI18n")
-    void alertDialog(){
+    void alertDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(VocabularyTestActivity.this);
         View dialogView = getLayoutInflater().inflate(R.layout.dialog_result, null);
         TextView resultField = dialogView.findViewById(R.id.score_text);
         builder.setView(dialogView);
         AlertDialog dialog = builder.create();
 
-        if (dialog.getWindow() != null){
+        if (dialog.getWindow() != null) {
             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
         }
         dialog.show();
@@ -295,13 +287,13 @@ public class VocabularyTestActivity extends AppCompatActivity implements View.On
         });
     }
 
-    void alertDialogEmpty(){
+    void alertDialogEmpty() {
         AlertDialog.Builder builder = new AlertDialog.Builder(VocabularyTestActivity.this);
         View dialogView = getLayoutInflater().inflate(R.layout.dialog_not_ready, null);
         builder.setView(dialogView);
         AlertDialog dialog = builder.create();
 
-        if (dialog.getWindow() != null){
+        if (dialog.getWindow() != null) {
             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
         }
         dialog.show();

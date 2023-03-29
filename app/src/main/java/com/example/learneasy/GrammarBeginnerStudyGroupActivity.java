@@ -54,7 +54,8 @@ public class GrammarBeginnerStudyGroupActivity extends AppCompatActivity {
         interjectionsConjunctions.setOnClickListener(v -> startActivity("interjections"));
 
     }
-    void startActivity(String type){
+
+    void startActivity(String type) {
         Intent intent = new Intent(getApplicationContext(), GrammarActivity.class);
         intent.putExtra("OPENTYPE", type);
         startActivity(intent);

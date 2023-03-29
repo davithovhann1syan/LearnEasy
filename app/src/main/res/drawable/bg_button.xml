@@ -15,7 +15,9 @@
                 android:startColor="@color/brown"
                 android:type="linear" />
             <corners android:radius="@dimen/_12sdp" />
-            <stroke android:color="@color/brown_light" android:width="3dp"/>
+            <stroke
+                android:width="3dp"
+                android:color="@color/brown_light" />
         </shape>
 
 

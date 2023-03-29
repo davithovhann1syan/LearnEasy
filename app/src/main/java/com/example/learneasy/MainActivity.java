@@ -16,6 +16,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 public class MainActivity extends AppCompatActivity {
     TextView beginner, intermediate, advanced, back;
     AppCompatButton test;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    void startActivity(String globalType){
+    void startActivity(String globalType) {
         Intent intent = new Intent(getApplicationContext(), StudyOptionsActivity.class);
         intent.putExtra("GLOBALTYPE", globalType);
         startActivity(intent);

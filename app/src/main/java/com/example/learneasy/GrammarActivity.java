@@ -71,41 +71,40 @@ public class GrammarActivity extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             Task<QuerySnapshot> snapshotTask = task;
-                            for (DocumentSnapshot documentSnapshot: task.getResult()){
+                            for (DocumentSnapshot documentSnapshot : task.getResult()) {
                                 String information = documentSnapshot.get("information").toString();
                                 String title = documentSnapshot.get("title").toString();
                                 String type = documentSnapshot.get("type").toString();
                                 String subType = documentSnapshot.get("subType").toString();
 
                                 firebaseFirestore.collection("userScores")
-                                        .whereEqualTo("TYPE",type)
+                                        .whereEqualTo("TYPE", type)
                                         .whereEqualTo("SUBTYPE", subType)
                                         .whereEqualTo("USERID", FirebaseAuth.getInstance().getCurrentUser().getUid())
                                         .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                                             @Override
                                             public void onComplete(@NonNull Task<QuerySnapshot> task) {
 
-                                                if (task.isSuccessful()){
+                                                if (task.isSuccessful()) {
 
                                                     String score;
-                                                    if (task.getResult().getDocuments().isEmpty()){
+                                                    if (task.getResult().getDocuments().isEmpty()) {
                                                         score = "0";
                                                     } else {
-                                                        score = task.getResult().getDocuments().get(0).get("SCORE")+"";
+                                                        score = task.getResult().getDocuments().get(0).get("SCORE") + "";
                                                     }
 
-                                                    grammarLessonsViewArrayList.add(new GrammarLessonsView(getApplicationContext(), title, information , type, subType, score));
+                                                    grammarLessonsViewArrayList.add(new GrammarLessonsView(getApplicationContext(), title, information, type, subType, score));
 
-                                                    if (grammarLessonsViewArrayList.size() == snapshotTask.getResult().getDocuments().size()){
+                                                    if (grammarLessonsViewArrayList.size() == snapshotTask.getResult().getDocuments().size()) {
                                                         grammarLessonsViewArrayList.sort(comparator);
                                                         drawWidgets(grammarLessonsViewArrayList);
                                                     }
 
-                                                }
-                                                else {
-                                                    Toast.makeText(GrammarActivity.this, ""+ Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
+                                                } else {
+                                                    Toast.makeText(GrammarActivity.this, "" + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
                                                 }
 
                                             }
@@ -130,23 +129,23 @@ public class GrammarActivity extends AppCompatActivity {
         int i = 0;
 
         for (GrammarLessonsView widget : list) {
-            if (Objects.equals(widget.getType(), type)){
+            if (Objects.equals(widget.getType(), type)) {
                 linearLayout.addView(widget);
                 i++;
             }
         }
-        if (i == 0){
+        if (i == 0) {
             alertDialogEmpty();
         }
     }
 
-    void alertDialogEmpty(){
+    void alertDialogEmpty() {
         AlertDialog.Builder builder = new AlertDialog.Builder(GrammarActivity.this);
         View dialogView = getLayoutInflater().inflate(R.layout.dialog_not_ready, null);
         builder.setView(dialogView);
         AlertDialog dialog = builder.create();
 
-        if (dialog.getWindow() != null){
+        if (dialog.getWindow() != null) {
             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
         }
         dialog.show();

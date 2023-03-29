@@ -9,9 +9,11 @@ public class GrammarQuizModel {
     public String type;
 
     public GrammarQuizModel(String question, List<String> choices, String answer, String type) {
+
         this.question = question;
         this.choices = choices;
         this.answer = answer;
         this.type = type;
+
     }
 }

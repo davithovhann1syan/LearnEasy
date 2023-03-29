@@ -23,9 +23,10 @@ import java.util.Comparator;
 
 public class VocabularyIntermediateStudyGroupActivity extends AppCompatActivity {
     TextView back;
-    AppCompatButton technology, business, healthAndMedicine, science , lawAndPolitics, education, artsAndCulture, environment, psychology;
+    AppCompatButton technology, business, healthAndMedicine, science, lawAndPolitics, education, artsAndCulture, environment, psychology;
 
     ProgressBar progressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,8 +64,8 @@ public class VocabularyIntermediateStudyGroupActivity extends AppCompatActivity 
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()){
-                            for (DocumentSnapshot documentSnapshot: task.getResult()){
+                        if (task.isSuccessful()) {
+                            for (DocumentSnapshot documentSnapshot : task.getResult()) {
                                 String type = documentSnapshot.get("type").toString();
                                 String heading = documentSnapshot.get("heading").toString();
                                 String info = documentSnapshot.get("info").toString();
@@ -72,7 +73,7 @@ public class VocabularyIntermediateStudyGroupActivity extends AppCompatActivity 
                                 arrayList.add(new VocabularyLessonModel(type, heading, info, id));
                                 Collections.sort(arrayList, Comparator.comparingLong(VocabularyLessonModel::getId));
 
-                                if (arrayList.size() == task.getResult().getDocuments().size()){
+                                if (arrayList.size() == task.getResult().getDocuments().size()) {
                                     progressBar.setVisibility(View.INVISIBLE);
                                     technology.setEnabled(true);
                                     business.setEnabled(true);
@@ -103,7 +104,8 @@ public class VocabularyIntermediateStudyGroupActivity extends AppCompatActivity 
         psychology.setOnClickListener(v -> startActivity(arrayList.get(17).getType(), arrayList.get(17).getHeading(), arrayList.get(17).getInfo()));
 
     }
-    void startActivity(String type, String heading, String info){
+
+    void startActivity(String type, String heading, String info) {
         Intent intent = new Intent(getApplicationContext(), VocabularyLessonActivity.class);
         intent.putExtra("TYPE", type);
         intent.putExtra("HEADING", heading);

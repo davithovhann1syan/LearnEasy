@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class EnglishLevelTestActivity extends AppCompatActivity implements View.OnClickListener{
+public class EnglishLevelTestActivity extends AppCompatActivity implements View.OnClickListener {
 
     FirebaseFirestore firebaseFirestore;
 
@@ -85,20 +85,20 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()){
-                            for (DocumentSnapshot documentSnapshot: task.getResult()) {
+                        if (task.isSuccessful()) {
+                            for (DocumentSnapshot documentSnapshot : task.getResult()) {
                                 String question = documentSnapshot.get("question").toString();
                                 List<String> choices = (List<String>) documentSnapshot.get("choices");
                                 String answer = documentSnapshot.get("answer").toString();
-                                arrayList.add(new EnglishLevelQuizModel(question,choices,answer));
+                                arrayList.add(new EnglishLevelQuizModel(question, choices, answer));
 
                             }
 
                             Collections.shuffle(arrayList);
 
                             totalQuestion = arrayList.size();
-                            totalQuestionsTextView.setText(totalQuestion+"");
-                            currentQuestionView.setText(currentQuestionIndex+1+"");
+                            totalQuestionsTextView.setText(totalQuestion + "");
+                            currentQuestionView.setText(currentQuestionIndex + 1 + "");
 
                             loadNewQuestion();
 
@@ -108,13 +108,12 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
                 });
 
 
-
     }
 
 
     public void onClick(View view) {
 
-        if (ansA.getText().equals(arrayList.get(currentQuestionIndex).answer)){
+        if (ansA.getText().equals(arrayList.get(currentQuestionIndex).answer)) {
             rightAnswer = ansA;
         } else if (ansB.getText().equals(arrayList.get(currentQuestionIndex).answer)) {
             rightAnswer = ansB;
@@ -139,12 +138,12 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
                 ansD.setBackgroundDrawable(bg_style);
                 AppCompatButton clickedButton = (AppCompatButton) view;
 
-                if(clickedButton.getId()==R.id.submit_btn){
+                if (clickedButton.getId() == R.id.submit_btn) {
 
                     submitClicks++;
 
-                    if (submitClicks == 1){
-                        if (selectedAnswer == null){
+                    if (submitClicks == 1) {
+                        if (selectedAnswer == null) {
                             submitClicks = 0;
                             Toast.makeText(EnglishLevelTestActivity.this, "Please select any option", Toast.LENGTH_SHORT).show();
                         } else {
@@ -164,34 +163,31 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
                         }
                     }
 
-                    if (submitClicks == 2){
+                    if (submitClicks == 2) {
                         currentQuestionIndex++;
                         currentQuestionView.setText(currentQuestionIndex + 1 + "");
                         loadNewQuestion();
                     }
 
-                }
-
-                else {
+                } else {
                     submitBtn.setBackgroundDrawable(bg_style);
                     selectedAnswer = clickedButton;
                     clickedButton.setBackgroundDrawable(bg_select);
 
-                    if (!selectedAnswer.getText().toString().equals(arrayList.get(currentQuestionIndex).answer)){
+                    if (!selectedAnswer.getText().toString().equals(arrayList.get(currentQuestionIndex).answer)) {
                         wrongAnswer = selectedAnswer;
                     }
 
                 }
             }
-        },200);
+        }, 200);
 
 
     }
 
 
-
     @SuppressLint("UseCompatLoadingForDrawables")
-    void loadNewQuestion(){
+    void loadNewQuestion() {
 
         submitBtn.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_background_style));
 
@@ -212,8 +208,7 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
         selectedAnswer = null;
 
 
-
-        if(currentQuestionIndex == totalQuestion ){
+        if (currentQuestionIndex == totalQuestion) {
             finishQuiz();
             return;
         }
@@ -226,7 +221,7 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
 
     }
 
-    void finishQuiz(){
+    void finishQuiz() {
 
         submitBtn.setEnabled(false);
         ansA.setEnabled(false);
@@ -235,7 +230,7 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
         ansD.setEnabled(false);
 
 
-        if (arrayList.size() == 0){
+        if (arrayList.size() == 0) {
             alertDialogEmpty();
         } else {
             alertDialog();
@@ -244,20 +239,18 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
     }
 
     @SuppressLint("SetTextI18n")
-
-    void alertDialog(){
+    void alertDialog() {
 
         String passStatus = "Result";
 
         float x = (float) score / totalQuestion;
 
-        if (x < 0.5){
+        if (x < 0.5) {
             level = "beginner";
 
-        }  else if (x >= 0.8) {
+        } else if (x >= 0.8) {
             level = "advanced";
-        }
-        else {
+        } else {
             level = "intermediate";
         }
 
@@ -267,7 +260,7 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
         builder.setView(dialogView);
         AlertDialog dialog = builder.create();
 
-        if (dialog.getWindow() != null){
+        if (dialog.getWindow() != null) {
             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
         }
         dialog.show();
@@ -295,13 +288,13 @@ public class EnglishLevelTestActivity extends AppCompatActivity implements View.
         });
     }
 
-    void alertDialogEmpty(){
+    void alertDialogEmpty() {
         AlertDialog.Builder builder = new AlertDialog.Builder(EnglishLevelTestActivity.this);
         View dialogView = getLayoutInflater().inflate(R.layout.dialog_not_ready, null);
         builder.setView(dialogView);
         AlertDialog dialog = builder.create();
 
-        if (dialog.getWindow() != null){
+        if (dialog.getWindow() != null) {
             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
         }
         dialog.show();

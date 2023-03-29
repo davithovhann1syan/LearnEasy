@@ -30,10 +30,9 @@ import java.util.Objects;
 
 public class TranslateActivity extends AppCompatActivity {
 
-    private Spinner fromSpinner, toSpinner;
-    private TextInputEditText sourceText;
-    private AppCompatButton translateBtn;
-    private TextView translateTV, goBack;
+    TextInputEditText sourceText;
+    AppCompatButton translateBtn;
+    TextView translateTV, goBack;
 
     RelativeLayout translateContainer;
 
@@ -54,8 +53,8 @@ public class TranslateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_translate);
 
-        fromSpinner = findViewById(R.id.id_from_spinner);
-        toSpinner = findViewById(R.id.id_to_spinner);
+        Spinner fromSpinner = findViewById(R.id.id_from_spinner);
+        Spinner toSpinner = findViewById(R.id.id_to_spinner);
         sourceText = findViewById(R.id.id_edit_source);
         translateBtn = findViewById(R.id.id_btn_translation);
         translateTV = findViewById(R.id.id_translated_tv);
@@ -171,7 +170,7 @@ public class TranslateActivity extends AppCompatActivity {
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(TranslateActivity.this, "Failed to download model!! Check your internet connection.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(TranslateActivity.this, "Failed to translate!! Check your internet connection.", Toast.LENGTH_SHORT).show();
             }
         });
 

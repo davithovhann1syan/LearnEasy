@@ -68,7 +68,6 @@ public class VocabularyAdvancedStudyGroupActivity extends AppCompatActivity {
         geography.setEnabled(false);
 
 
-
         firebaseFirestore = FirebaseFirestore.getInstance();
 
         firebaseFirestore.collection("vocabularyLesson")
@@ -76,8 +75,8 @@ public class VocabularyAdvancedStudyGroupActivity extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()){
-                            for (DocumentSnapshot documentSnapshot: task.getResult()){
+                        if (task.isSuccessful()) {
+                            for (DocumentSnapshot documentSnapshot : task.getResult()) {
                                 String type = documentSnapshot.get("type").toString();
                                 String heading = documentSnapshot.get("heading").toString();
                                 String info = documentSnapshot.get("info").toString();
@@ -85,7 +84,7 @@ public class VocabularyAdvancedStudyGroupActivity extends AppCompatActivity {
                                 arrayList.add(new VocabularyLessonModel(type, heading, info, id));
                                 Collections.sort(arrayList, Comparator.comparingLong(VocabularyLessonModel::getId));
 
-                                if (arrayList.size() == task.getResult().getDocuments().size()){
+                                if (arrayList.size() == task.getResult().getDocuments().size()) {
                                     progressBar.setVisibility(View.INVISIBLE);
                                     economicsAndFinance.setEnabled(true);
                                     internationalRelation.setEnabled(true);
@@ -116,7 +115,8 @@ public class VocabularyAdvancedStudyGroupActivity extends AppCompatActivity {
         geography.setOnClickListener(v -> startActivity(arrayList.get(26).getType(), arrayList.get(26).getHeading(), arrayList.get(26).getInfo()));
 
     }
-    void startActivity(String type, String heading, String info){
+
+    void startActivity(String type, String heading, String info) {
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -127,8 +127,7 @@ public class VocabularyAdvancedStudyGroupActivity extends AppCompatActivity {
                 intent.putExtra("INFO", info);
                 startActivity(intent);
             }
-        },0);
+        }, 0);
 
     }
-
 }

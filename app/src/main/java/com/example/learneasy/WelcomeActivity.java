@@ -30,7 +30,7 @@ public class WelcomeActivity extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -43,7 +43,6 @@ public class WelcomeActivity extends AppCompatActivity {
                 FirebaseAuth.getInstance().signOut();
             }
         });
-
 
 
     }

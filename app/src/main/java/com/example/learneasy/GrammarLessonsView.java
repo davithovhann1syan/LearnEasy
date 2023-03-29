@@ -56,7 +56,7 @@ public class GrammarLessonsView extends LinearLayout {
         init(context);
     }
 
-    private void init(Context context){
+    private void init(Context context) {
 
         viewLessonName = findViewById(R.id.title);
         progressBar = findViewById(R.id.simple_progress_bar);
@@ -90,20 +90,20 @@ public class GrammarLessonsView extends LinearLayout {
 
     }
 
-    public void setName(String temp){
+    public void setName(String temp) {
         name = temp;
         viewLessonName.setText(name);
     }
 
-    public void setType(String temp){
+    public void setType(String temp) {
         type = temp;
     }
 
-    public void setInformation(String temp){
+    public void setInformation(String temp) {
         information = temp;
     }
 
-    public String getType(){
+    public String getType() {
         return type;
     }
 }

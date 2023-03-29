@@ -1,90 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/brown_dark"
-    android:padding="@dimen/_8sdp"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:padding="@dimen/_8sdp">
 
     <LinearLayout
-        android:orientation="vertical"
+        android:id="@+id/main_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/brown_dark"
-        android:id="@+id/main_layout">
+        android:orientation="vertical">
 
         <LinearLayout
-            android:orientation="horizontal"
-            android:layout_marginStart="@dimen/_18sdp"
-            android:layout_marginEnd="@dimen/_18sdp"
-            android:layout_marginTop="@dimen/_8sdp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center">
+            android:layout_marginStart="@dimen/_18sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_18sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <ImageView
                 android:layout_width="@dimen/_100sdp"
                 android:layout_height="@dimen/_100sdp"
-                android:src="@drawable/translate_logo"
                 android:layout_gravity="center"
-                android:layout_marginEnd="4dp"/>
+                android:layout_marginEnd="4dp"
+                android:src="@drawable/translate_logo" />
 
 
         </LinearLayout>
 
 
         <LinearLayout
-            android:padding="@dimen/_2sdp"
-            android:orientation="horizontal"
-            android:layout_marginStart="@dimen/_18sdp"
-            android:layout_marginEnd="@dimen/_18sdp"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:weightSum="3"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_47sdp"
+            android:layout_marginStart="@dimen/_18sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_18sdp"
             android:background="@drawable/background"
-            android:elevation="4dp">
+            android:elevation="4dp"
+            android:orientation="horizontal"
+            android:padding="@dimen/_2sdp"
+            android:weightSum="3">
 
             <Spinner
+                android:id="@+id/id_from_spinner"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:id="@+id/id_from_spinner"
-                android:layout_margin="@dimen/_3sdp"
-                android:padding="@dimen/_3sdp"
                 android:layout_gravity="center"
-                />
+                android:layout_margin="@dimen/_3sdp"
+                android:layout_weight="1"
+                android:padding="@dimen/_3sdp" />
 
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/switch_logo"
                 android:layout_gravity="center"
-                />
+                android:layout_weight="1"
+                android:src="@drawable/switch_logo" />
 
             <Spinner
+                android:id="@+id/id_to_spinner"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:id="@+id/id_to_spinner"
-                android:layout_margin="@dimen/_3sdp"
-                android:padding="@dimen/_3sdp"
                 android:layout_gravity="center"
-                />
+                android:layout_margin="@dimen/_3sdp"
+                android:layout_weight="1"
+                android:padding="@dimen/_3sdp" />
 
         </LinearLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_210sdp"
             android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_20sdp"
             android:layout_marginEnd="@dimen/_20sdp"
+            android:elevation="@dimen/_8sdp"
             android:padding="0dp"
-            app:hintEnabled="false"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_210sdp"
             app:boxBackgroundMode="none"
-            android:elevation="@dimen/_8sdp">
+            app:hintEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/id_edit_source"
@@ -97,56 +94,56 @@
                 android:importantForAutofill="no"
                 android:inputType="textMultiLine|textImeMultiLine"
                 android:textColor="@color/brown_dark"
-                android:textSize="@dimen/_16sdp"
-                android:textColorHighlight="@color/color_secondary"/>
+                android:textColorHighlight="@color/color_secondary"
+                android:textSize="@dimen/_16sdp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/id_btn_translation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingVertical="@dimen/_8sdp"
             android:layout_margin="@dimen/_20sdp"
-            android:id="@+id/id_btn_translation"
-            android:textColor="@color/off_white"
+            android:background="@drawable/button_background_style"
+            android:paddingVertical="@dimen/_8sdp"
             android:text="@string/translate"
-            android:textSize="@dimen/_15ssp"
             android:textAllCaps="false"
-            android:background="@drawable/button_background_style"/>
+            android:textColor="@color/off_white"
+            android:textSize="@dimen/_15ssp" />
 
         <RelativeLayout
             android:id="@+id/translation_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_gravity="center"
             android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginEnd="@dimen/_20sdp"
             android:layout_marginBottom="@dimen/_10sdp"
-            android:layout_gravity="center"
             android:visibility="gone">
 
             <ProgressBar
-            android:id="@+id/progress_bar"
-            android:layout_centerInParent="true"
-            android:visibility="gone"
-            android:indeterminateDrawable="@drawable/progress_bar_style"
-            android:translationZ="@dimen/_10sdp"
-            android:layout_width="@dimen/_25sdp"
-            android:layout_height="@dimen/_25sdp"/>
+                android:id="@+id/progress_bar"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_centerInParent="true"
+                android:indeterminateDrawable="@drawable/progress_bar_style"
+                android:translationZ="@dimen/_10sdp"
+                android:visibility="gone" />
 
             <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/id_translated_tv"
-            android:text="@string/translated_text"
-            android:background="@drawable/background"
-            android:elevation="3dp"
-            android:layout_gravity="center"
-            android:textAlignment="center"
-            android:padding="@dimen/_14sdp"
-            android:textSize="@dimen/_14ssp"
-            android:textColor="@color/black"
-            android:letterSpacing="0.03"/>
+                android:id="@+id/id_translated_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/background"
+                android:elevation="3dp"
+                android:letterSpacing="0.03"
+                android:padding="@dimen/_14sdp"
+                android:text="@string/translated_text"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp" />
 
         </RelativeLayout>
 
@@ -154,15 +151,15 @@
             android:id="@+id/back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_8sdp"
             android:background="@drawable/button_background_style"
             android:paddingHorizontal="@dimen/_15sdp"
             android:paddingVertical="@dimen/_8sdp"
-            android:textAlignment="center"
             android:text="@string/go_back"
-            android:layout_gravity="center"
+            android:textAlignment="center"
             android:textColor="@color/off_white"
-            android:textSize="@dimen/_10ssp"
-            android:layout_marginTop="@dimen/_8sdp" />
+            android:textSize="@dimen/_10ssp" />
 
     </LinearLayout>
 

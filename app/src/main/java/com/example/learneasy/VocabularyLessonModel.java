@@ -1,6 +1,6 @@
 package com.example.learneasy;
 
-public class VocabularyLessonModel{
+public class VocabularyLessonModel {
     private String type;
     private String heading;
     private String info;

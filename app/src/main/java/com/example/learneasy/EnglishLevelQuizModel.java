@@ -11,6 +11,5 @@ public class EnglishLevelQuizModel {
         this.question = question;
         this.choices = choices;
         this.answer = answer;
-
     }
 }

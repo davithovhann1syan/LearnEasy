@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:layout_gravity="center"
     android:background="@color/brown_dark"
     android:gravity="center_vertical"
+    android:orientation="vertical"
     tools:context=".WelcomeActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_gravity="center_horizontal">
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1">
 
         <RelativeLayout
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="@dimen/_15sdp">
@@ -30,23 +30,23 @@
                 android:layout_alignParentBottom="true"
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/app_logo" />
-    </RelativeLayout>
+
+        </RelativeLayout>
 
     </LinearLayout>
-
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:layout_weight="2">
 
         <TextView
             android:id="@+id/greeting"
-            android:layout_gravity="center_vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:layout_marginHorizontal="20dp"
             android:gravity="center_horizontal"
             android:text="@string/greeting"
@@ -59,47 +59,47 @@
     </LinearLayout>
 
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
         android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
         android:orientation="vertical">
 
         <TextView
-            android:layout_marginTop="@dimen/_20sdp"
             android:id="@+id/next_page"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/_10sdp"
             android:layout_gravity="center"
-            android:textSize="@dimen/_10ssp"
             android:layout_marginHorizontal="70dp"
-            android:textAlignment="center"
-            android:paddingVertical="@dimen/_8sdp"
-            android:paddingHorizontal="@dimen/_15sdp"
-            android:textColor="@color/off_white"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
             android:background="@drawable/button_background_style"
+            android:paddingHorizontal="@dimen/_15sdp"
+            android:paddingVertical="@dimen/_8sdp"
+            android:text="@string/start_journey"
+            android:textAlignment="center"
             android:textAllCaps="true"
-            android:text="@string/start_journey" />
+            android:textColor="@color/off_white"
+            android:textSize="@dimen/_10ssp" />
 
         <TextView
             android:id="@+id/log_out"
-            android:layout_marginTop="@dimen/_1sdp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/_20sdp"
             android:layout_gravity="center"
+            android:layout_marginHorizontal="70dp"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:paddingHorizontal="@dimen/_15sdp"
+            android:paddingVertical="@dimen/_8sdp"
+            android:text="@string/logout"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/off_white"
             android:textSize="@dimen/_10ssp"
             android:textStyle="italic"
-            android:layout_marginHorizontal="70dp"
-            android:textAlignment="center"
-            android:paddingVertical="@dimen/_8sdp"
-            android:paddingHorizontal="@dimen/_15sdp"
-            android:textColor="@color/off_white"
-            android:textAllCaps="true"
-            android:text="@string/logout" />
+            tools:ignore="AllCaps" />
 
 
     </LinearLayout>

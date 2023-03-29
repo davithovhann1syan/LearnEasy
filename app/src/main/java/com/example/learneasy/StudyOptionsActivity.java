@@ -18,6 +18,7 @@ public class StudyOptionsActivity extends AppCompatActivity {
     String globalType;
 
     TextView heading;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +32,6 @@ public class StudyOptionsActivity extends AppCompatActivity {
         globalType = extras.getString("GLOBALTYPE");
 
 
-
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,22 +42,22 @@ public class StudyOptionsActivity extends AppCompatActivity {
         grammar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               if (Objects.equals(globalType, "beginner")){
-                   Intent intent = new Intent(getApplicationContext(), GrammarBeginnerStudyGroupActivity.class);
-                   intent.putExtra("GLOBALTYPE", globalType);
-                   startActivity(intent);
+                if (Objects.equals(globalType, "beginner")) {
+                    Intent intent = new Intent(getApplicationContext(), GrammarBeginnerStudyGroupActivity.class);
+                    intent.putExtra("GLOBALTYPE", globalType);
+                    startActivity(intent);
 
-               } else if (Objects.equals(globalType, "intermediate")) {
-                   Intent intent = new Intent(getApplicationContext(), GrammarIntermediateStudyGroupActivity.class);
-                   intent.putExtra("GLOBALTYPE", globalType);
-                   startActivity(intent);
+                } else if (Objects.equals(globalType, "intermediate")) {
+                    Intent intent = new Intent(getApplicationContext(), GrammarIntermediateStudyGroupActivity.class);
+                    intent.putExtra("GLOBALTYPE", globalType);
+                    startActivity(intent);
 
-               } else if (Objects.equals(globalType, "advanced")) {
-                   Intent intent = new Intent(getApplicationContext(), GrammarAdvancedStudyGroupActivity.class);
-                   intent.putExtra("GLOBALTYPE", globalType);
-                   startActivity(intent);
+                } else if (Objects.equals(globalType, "advanced")) {
+                    Intent intent = new Intent(getApplicationContext(), GrammarAdvancedStudyGroupActivity.class);
+                    intent.putExtra("GLOBALTYPE", globalType);
+                    startActivity(intent);
 
-               }
+                }
             }
         });
 
@@ -72,7 +72,7 @@ public class StudyOptionsActivity extends AppCompatActivity {
         vocabularyTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (Objects.equals(globalType, "beginner")){
+                if (Objects.equals(globalType, "beginner")) {
                     Intent intent = new Intent(getApplicationContext(), VocabularyBeginnerStudyGroupActivity.class);
                     intent.putExtra("GLOBALTYPE", globalType);
                     startActivity(intent);
