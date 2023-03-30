@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Learn Easy</string>
+    <string name="app_name">Learn_Easy</string>
     <string name="register">Register</string>
     <string name="login">Login</string>
     <string name="confirm_password">Confirm Password</string>
